@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('tracking_no');
             $table->string('city');
             $table->string('shipping_address');
+            $table->string('shipping_address_2');
             $table->string('tracking_no');
             $table->string('country');
             $table->timestamps();
