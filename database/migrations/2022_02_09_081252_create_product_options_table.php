@@ -15,6 +15,10 @@ class CreateProductOptionsTable extends Migration
     {
         Schema::create('product_options', function (Blueprint $table) {
             $table->id();
+            $table->string('product_id');
+            $table->string('option_id');
+            $table->string('option_group_id');
+            $table->string('option_price');
             $table->timestamps();
         });
     }
