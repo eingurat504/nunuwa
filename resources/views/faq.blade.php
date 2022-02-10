@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- molla/cart.html  22 Nov 2019 09:55:06 GMT -->
+<!-- molla/faq.html  22 Nov 2019 10:04:03 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -559,166 +559,215 @@
         <main class="main">
             <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
                 <div class="container">
-                    <h1 class="page-title">Shopping Cart<span>Shop</span></h1>
+                    <h1 class="page-title">F.A.Q<span>Pages</span></h1>
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <div class="container">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">FAQ</li>
                     </ol>
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
 
             <div class="page-content">
-                <div class="cart">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-9">
-                                <table class="table table-cart table-mobile">
-                                    <thead>
-                                        <tr>
-                                            <th>Product</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-                                            <th>Total</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
+                <div class="container">
+                    <h2 class="title text-center mb-3">Shipping Information</h2><!-- End .title -->
+                    <div class="accordion accordion-rounded" id="accordion-1">
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading-1">
+                                <h2 class="card-title">
+                                    <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                                        How will my parcel be delivered?
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse-1" class="collapse show" aria-labelledby="heading-1" data-parent="#accordion-1">
+                                <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                    <tbody>
-                                        <tr>
-                                            <td class="product-col">
-                                                <div class="product">
-                                                    <figure class="product-media">
-                                                        <a href="#">
-                                                            <img src="assets/images/products/table/product-1.jpg" alt="Product image">
-                                                        </a>
-                                                    </figure>
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading-2">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                        Do I pay for delivery?
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse-2" class="collapse" aria-labelledby="heading-2" data-parent="#accordion-1">
+                                <div class="card-body">
+                                    Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                                    <h3 class="product-title">
-                                                        <a href="#">Beige knitted elastic runner shoes</a>
-                                                    </h3><!-- End .product-title -->
-                                                </div><!-- End .product -->
-                                            </td>
-                                            <td class="price-col">$84.00</td>
-                                            <td class="quantity-col">
-                                                <div class="cart-product-quantity">
-                                                    <input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                                </div><!-- End .cart-product-quantity -->
-                                            </td>
-                                            <td class="total-col">$84.00</td>
-                                            <td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-col">
-                                                <div class="product">
-                                                    <figure class="product-media">
-                                                        <a href="#">
-                                                            <img src="assets/images/products/table/product-2.jpg" alt="Product image">
-                                                        </a>
-                                                    </figure>
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading-3">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                        Will I be charged customs fees?
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-1">
+                                <div class="card-body">
+                                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                                    <h3 class="product-title">
-                                                        <a href="#">Blue utility pinafore denim dress</a>
-                                                    </h3><!-- End .product-title -->
-                                                </div><!-- End .product -->
-                                            </td>
-                                            <td class="price-col">$76.00</td>
-                                            <td class="quantity-col">
-                                                <div class="cart-product-quantity">
-                                                    <input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                                </div><!-- End .cart-product-quantity -->                                 
-                                            </td>
-                                            <td class="total-col">$76.00</td>
-                                            <td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-                                        </tr>
-                                    </tbody>
-                                </table><!-- End .table table-wishlist -->
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading-4">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                                        My item has become faulty
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse-4" class="collapse" aria-labelledby="heading-4" data-parent="#accordion-1">
+                                <div class="card-body">
+                                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
+                    </div><!-- End .accordion -->
 
-                                <div class="cart-bottom">
-                                    <div class="cart-discount">
-                                        <form action="#">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" required placeholder="coupon code">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
-                                                </div><!-- .End .input-group-append -->
-                                            </div><!-- End .input-group -->
-                                        </form>
-                                    </div><!-- End .cart-discount -->
+                    <h2 class="title text-center mb-3">Orders and Returns</h2><!-- End .title -->
+                    <div class="accordion accordion-rounded" id="accordion-2">
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading2-1">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse2-1" aria-expanded="false" aria-controls="collapse2-1">
+                                        Tracking my order
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse2-1" class="collapse" aria-labelledby="heading2-1" data-parent="#accordion-2">
+                                <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                    <a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
-                                </div><!-- End .cart-bottom -->
-                            </div><!-- End .col-lg-9 -->
-                            <aside class="col-lg-3">
-                                <div class="summary summary-cart">
-                                    <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading2-2">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse2-2" aria-expanded="false" aria-controls="collapse2-2">
+                                        I haven’t received my order
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse2-2" class="collapse" aria-labelledby="heading2-2" data-parent="#accordion-2">
+                                <div class="card-body">
+                                    Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                    <table class="table table-summary">
-                                        <tbody>
-                                            <tr class="summary-subtotal">
-                                                <td>Subtotal:</td>
-                                                <td>$160.00</td>
-                                            </tr><!-- End .summary-subtotal -->
-                                            <tr class="summary-shipping">
-                                                <td>Shipping:</td>
-                                                <td>&nbsp;</td>
-                                            </tr>
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading2-3">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse2-3" aria-expanded="false" aria-controls="collapse2-3">
+                                        How can I return an item?
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse2-3" class="collapse" aria-labelledby="heading2-3" data-parent="#accordion-2">
+                                <div class="card-body">
+                                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
+                    </div><!-- End .accordion -->
 
-                                            <tr class="summary-shipping-row">
-                                                <td>
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="free-shipping" name="shipping" class="custom-control-input">
-                                                        <label class="custom-control-label" for="free-shipping">Free Shipping</label>
-                                                    </div><!-- End .custom-control -->
-                                                </td>
-                                                <td>$0.00</td>
-                                            </tr><!-- End .summary-shipping-row -->
+                    <h2 class="title text-center mb-3">Payments</h2><!-- End .title -->
+                    <div class="accordion accordion-rounded" id="accordion-3">
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading3-1">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse3-1" aria-expanded="false" aria-controls="collapse3-1">
+                                        What payment types can I use?
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse3-1" class="collapse" aria-labelledby="heading3-1" data-parent="#accordion-3">
+                                <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                            <tr class="summary-shipping-row">
-                                                <td>
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="standart-shipping" name="shipping" class="custom-control-input">
-                                                        <label class="custom-control-label" for="standart-shipping">Standart:</label>
-                                                    </div><!-- End .custom-control -->
-                                                </td>
-                                                <td>$10.00</td>
-                                            </tr><!-- End .summary-shipping-row -->
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading3-2">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse3-2" aria-expanded="false" aria-controls="collapse3-2">
+                                        Can I pay by Gift Card?
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse3-2" class="collapse" aria-labelledby="heading3-2" data-parent="#accordion-3">
+                                <div class="card-body">
+                                    Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                            <tr class="summary-shipping-row">
-                                                <td>
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="express-shipping" name="shipping" class="custom-control-input">
-                                                        <label class="custom-control-label" for="express-shipping">Express:</label>
-                                                    </div><!-- End .custom-control -->
-                                                </td>
-                                                <td>$20.00</td>
-                                            </tr><!-- End .summary-shipping-row -->
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading3-3">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse3-3" aria-expanded="false" aria-controls="collapse3-3">
+                                        I can't make a payment
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse3-3" class="collapse" aria-labelledby="heading3-3" data-parent="#accordion-3">
+                                <div class="card-body">
+                                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
 
-                                            <tr class="summary-shipping-estimate">
-                                                <td>Estimate for Your Country<br> <a href="dashboard.html">Change address</a></td>
-                                                <td>&nbsp;</td>
-                                            </tr><!-- End .summary-shipping-estimate -->
-
-                                            <tr class="summary-total">
-                                                <td>Total:</td>
-                                                <td>$160.00</td>
-                                            </tr><!-- End .summary-total -->
-                                        </tbody>
-                                    </table><!-- End .table table-summary -->
-
-                                    <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
-                                </div><!-- End .summary -->
-
-                                <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
-                            </aside><!-- End .col-lg-3 -->
-                        </div><!-- End .row -->
-                    </div><!-- End .container -->
-                </div><!-- End .cart -->
+                        <div class="card card-box card-sm bg-light">
+                            <div class="card-header" id="heading3-4">
+                                <h2 class="card-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse3-4" aria-expanded="false" aria-controls="collapse3-4">
+                                        Has my payment gone through?
+                                    </a>
+                                </h2>
+                            </div><!-- End .card-header -->
+                            <div id="collapse3-4" class="collapse" aria-labelledby="heading3-4" data-parent="#accordion-3">
+                                <div class="card-body">
+                                    Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. 
+                                </div><!-- End .card-body -->
+                            </div><!-- End .collapse -->
+                        </div><!-- End .card -->
+                    </div><!-- End .accordion -->
+                </div><!-- End .container -->
             </div><!-- End .page-content -->
+
+            <div class="cta cta-display bg-image pt-4 pb-4" style="background-image: url(assets/images/backgrounds/cta/bg-7.jpg);">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 col-lg-9 col-xl-7">
+                            <div class="row no-gutters flex-column flex-sm-row align-items-sm-center">
+                                <div class="col">
+                                    <h3 class="cta-title text-white">If You Have More Questions</h3><!-- End .cta-title -->
+                                    <p class="cta-desc text-white">Quisque volutpat mattis eros</p><!-- End .cta-desc -->
+                                </div><!-- End .col -->
+
+                                <div class="col-auto">
+                                    <a href="contact.html" class="btn btn-outline-white"><span>CONTACT US</span><i class="icon-long-arrow-right"></i></a>
+                                </div><!-- End .col-auto -->
+                            </div><!-- End .row no-gutters -->
+                        </div><!-- End .col-md-10 col-lg-9 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+            </div><!-- End .cta -->
         </main><!-- End .main -->
 
         <footer class="footer">
@@ -1091,11 +1140,10 @@
     <script src="assets/js/jquery.waypoints.min.js"></script>
     <script src="assets/js/superfish.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/bootstrap-input-spinner.js"></script>
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 </body>
 
 
-<!-- molla/cart.html  22 Nov 2019 09:55:06 GMT -->
+<!-- molla/faq.html  22 Nov 2019 10:04:04 GMT -->
 </html>
