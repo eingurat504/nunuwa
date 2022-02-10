@@ -45,4 +45,16 @@ class ProductCategory extends Model
     protected $fillable = [
         'name',
     ];
+
+
+    /**
+     * Products in this category.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_category', 'category_id', 'product_id', 'id');
+    }
+    
 }

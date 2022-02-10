@@ -48,4 +48,45 @@ class Product extends Model
         'category_id',
         'price'
     ];
+
+/**
+     * Get the product images.
+     *
+     * @param string $value
+     *
+     * @return string
+     */
+    public function getImagesAttribute($value)
+    {
+        if (empty($value)) {
+            return [];
+        }
+
+        return json_decode($value, true);
+    }
+
+    /**
+     * Categories to which this product belongs.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'product_category', 'product_id', 'category_id', 'id');
+    }
+
+    // /**
+    //  * Orders having this product.
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    //  */
+    // public function orders()
+    // {
+    //     return $this->belongsToMany(Store::class, 'order_product', 'product_id', 'order_id', 'id')
+    //         ->withPivot([
+    //             'quantity',
+    //             'unit_price',
+    //         ]);
+    // }
+
 }
