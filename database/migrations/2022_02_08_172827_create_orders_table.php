@@ -19,12 +19,11 @@ class CreateOrdersTable extends Migration
             $table->string('email');
             $table->string('phone_no');
             $table->integer('amount');
-            $table->string('user_id');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('tracking_no');
             $table->string('city');
             $table->string('shipping_address');
             $table->string('shipping_address_2');
-            $table->string('tracking_no');
             $table->string('country');
             $table->timestamps();
         });
