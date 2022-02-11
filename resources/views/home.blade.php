@@ -248,7 +248,7 @@
                                     <nav class="side-nav">
                                         <ul class="menu-vertical sf-arrows">
                                             <li class="megamenu-container">
-                                                <a class="sf-with-ul" href="#"><i class="icon-laptop"></i>Electronics</a>
+                                                <a class="sf-with-ul" href="{{ route('electronics.index') }}"><i class="icon-laptop"></i>Electronics</a>
 
                                                 <div class="megamenu">
                                                     <div class="row no-gutters">
