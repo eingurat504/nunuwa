@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         $clothings = Product::inRandomOrder()->take(8)->get();
 
-        $cookings = Product::inRandomOrder()->take(8)->get();
+        $cookings = Product::inRandomOrder()->where('id', 1)->take(8)->get();
 
         $electronics = Product::inRandomOrder()->take(8)->get();
 
@@ -41,6 +41,10 @@ class HomeController extends Controller
         return view('home', [
             'categories' => $categories,
             'products' => $products,
+            'cookings' => $categories,
+            'electonics' => $products,
+            'furnitures' => $categories,
+            'clothings' => $products,
         ]);
     }
 }
