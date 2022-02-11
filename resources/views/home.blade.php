@@ -311,7 +311,7 @@
                                                 </div><!-- End .megamenu -->
                                             </li>
                                             <li class="megamenu-container">
-                                                <a class="sf-with-ul" href="#"><i class="icon-couch"></i>Furniture</a>
+                                                <a class="sf-with-ul" href="{{ route('furniture.index') }}"><i class="icon-couch"></i>Furniture</a>
 
                                                 <div class="megamenu">
                                                     <div class="row no-gutters">
@@ -373,7 +373,7 @@
                                                 </div><!-- End .megamenu -->
                                             </li>
                                             <li class="megamenu-container">
-                                                <a class="sf-with-ul" href="#"><i class="icon-concierge-bell"></i>Cooking</a>
+                                                <a class="sf-with-ul" href="{{ route('cooking.index') }}"><i class="icon-concierge-bell"></i>Cooking</a>
 
                                                 <div class="megamenu">
                                                     <div class="menu-col">
@@ -443,7 +443,7 @@
                                                 </div><!-- End .megamenu -->
                                             </li>
                                             <li class="megamenu-container">
-                                                <a class="sf-with-ul" href="#"><i class="icon-tshirt"></i>Clothing</a>
+                                                <a class="sf-with-ul" href="{{ route('clothing.index') }}"><i class="icon-tshirt"></i>Clothing</a>
 
                                                 <div class="megamenu">
                                                     <div class="row no-gutters">
@@ -532,14 +532,14 @@
                                                     </div><!-- End .menu-brands -->
                                                 </div><!-- End .megamenu -->
                                             </li>
-                                            <li><a href="#"><i class="icon-blender"></i>Home Appliances</a></li>
-                                            <li><a href="#"><i class="icon-heartbeat"></i>Healthy & Beauty</a></li>
-                                            <li><a href="#"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
-                                            <li><a href="#"><i class="icon-map-signs"></i>Travel & Outdoor</a></li>
-                                            <li><a href="#"><i class="icon-mobile-alt"></i>Smart Phones</a></li>
+                                            <li><a href="{{ route('audio.index') }}"><i class="icon-blender"></i>Home Appliances</a></li>
+                                            <li><a href="{{ route('healthy.index') }}"><i class="icon-heartbeat"></i>Healthy & Beauty</a></li>
+                                            <li><a href="{{ route('shoes.index') }}"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
+                                            <li><a href="{{ route('travel.index') }}"><i class="icon-map-signs"></i>Travel & Outdoor</a></li>
+                                            <li><a href="{{ route('phones.index') }}"><i class="icon-mobile-alt"></i>Smart Phones</a></li>
                                             <li><a href="#"><i class="icon-tv"></i>TV & Audio</a></li>
                                             <li><a href="#"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
-                                            <li><a href="#"><i class="icon-music"></i>Musical Instruments</a></li>
+                                            <li><a href="{{ route('instruments.index') }}"><i class="icon-music"></i>Musical Instruments</a></li>
                                             <li><a href="#"><i class="icon-gift"></i>Gift Ideas</a></li>
                                         </ul><!-- End .menu-vertical -->
                                     </nav><!-- End .side-nav -->

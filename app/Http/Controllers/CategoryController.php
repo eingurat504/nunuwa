@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         // $categories = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('electronics', [
+        return view('category.electronics', [
             // 'categories' => $categories,
         ]);
     }
@@ -42,7 +42,7 @@ class CategoryController extends Controller
 
         $appliances = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('appliances', [
+        return view('category.appliances', [
             // 'appliances' => $appliances,
         ]);
     }
@@ -57,7 +57,7 @@ class CategoryController extends Controller
 
         $healthy = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('healthy', [
+        return view('category.healthy', [
             // 'healthy' => $healthy,
         ]);
     }
@@ -72,7 +72,7 @@ class CategoryController extends Controller
 
         $clothings = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('clothing', [
+        return view('category.clothing', [
             // 'clothings' => $clothings,
         ]);
     }
@@ -87,7 +87,7 @@ class CategoryController extends Controller
 
         $furnitues = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('furnitues', [
+        return view('category.furnitues', [
             // 'furnitues' => $furnitues,
         ]);
     }
@@ -102,7 +102,7 @@ class CategoryController extends Controller
 
         // $phones = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('phones', [
+        return view('category.phones', [
             'phones' => $phones,
         ]);
     }
@@ -117,7 +117,7 @@ class CategoryController extends Controller
 
         // $audios = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('tv_audio', [
+        return view('category.tv_audio', [
             'audios' => $audios,
         ]);
     }
@@ -132,7 +132,7 @@ class CategoryController extends Controller
 
         // $instruments = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('musical', [
+        return view('category.musical', [
             'instruments' => $instruments,
         ]);
     }
@@ -147,7 +147,7 @@ class CategoryController extends Controller
 
         // $shoes = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('shoes', [
+        return view('category.shoes', [
             'shoes' => $shoes,
         ]);
     }
