@@ -30,6 +30,14 @@ class HomeController extends Controller
 
         $products = Product::inRandomOrder()->take(8)->get();
 
+        $clothings = Product::inRandomOrder()->take(8)->get();
+
+        $cookings = Product::inRandomOrder()->take(8)->get();
+
+        $electronics = Product::inRandomOrder()->take(8)->get();
+
+        $furnitures = Product::inRandomOrder()->take(8)->get();
+
         return view('home', [
             'categories' => $categories,
             'products' => $products,
