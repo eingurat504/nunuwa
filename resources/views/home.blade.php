@@ -532,9 +532,9 @@
                                                     </div><!-- End .menu-brands -->
                                                 </div><!-- End .megamenu -->
                                             </li>
-                                            <li><a href="{{ route('audio.index') }}"><i class="icon-blender"></i>Home Appliances</a></li>
+                                            <li><a href="{{ route('audios.index') }}"><i class="icon-blender"></i>Home Appliances</a></li>
                                             <li><a href="{{ route('healthy.index') }}"><i class="icon-heartbeat"></i>Healthy & Beauty</a></li>
-                                            <li><a href="{{ route('shoes.index') }}"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
+                                            <li><a href="{{ route('foot_wear.index') }}"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
                                             <li><a href="{{ route('travel.index') }}"><i class="icon-map-signs"></i>Travel & Outdoor</a></li>
                                             <li><a href="{{ route('phones.index') }}"><i class="icon-mobile-alt"></i>Smart Phones</a></li>
                                             <li><a href="#"><i class="icon-tv"></i>TV & Audio</a></li>

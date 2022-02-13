@@ -76,3 +76,82 @@ Route::group(['prefix' => '/clothing', 'as' => 'clothing.'], function () {
     // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
 });
 
+Route::group(['prefix' => '/audios', 'as' => 'audios.'], function () {
+    Route::get('/', [CategoryController::class, 'getTVAudios'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
+
+Route::group(['prefix' => '/healthy', 'as' => 'healthy.'], function () {
+    Route::get('/', [CategoryController::class, 'getTVAudios'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
+Route::group(['prefix' => '/foot_wear', 'as' => 'foot_wear.'], function () {
+    Route::get('/', [CategoryController::class, 'getShoes'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
+
+Route::group(['prefix' => '/travel', 'as' => 'travel.'], function () {
+    Route::get('/', [CategoryController::class, 'getTravel'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
+
+Route::group(['prefix' => '/phones', 'as' => 'phones.'], function () {
+    Route::get('/', [CategoryController::class, 'getPhones'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
+Route::group(['prefix' => '/instruments', 'as' => 'instruments.'], function () {
+    Route::get('/', [CategoryController::class, 'getInstruments'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
+
+
+
+
+
+
+
+
+
+
