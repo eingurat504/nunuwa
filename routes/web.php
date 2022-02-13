@@ -43,6 +43,17 @@ Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
 });
 
 
+Route::group(['prefix' => '/backpack', 'as' => 'backpack.'], function () {
+    Route::get('/', [CategoryController::class, 'getBackPacks'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
 
 Route::group(['prefix' => '/electronics', 'as' => 'electronics.'], function () {
     Route::get('/', [CategoryController::class, 'getElectronics'])->name('index');

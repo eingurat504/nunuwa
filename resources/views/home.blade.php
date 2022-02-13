@@ -538,7 +538,7 @@
                                             <li><a href="{{ route('travel.index') }}"><i class="icon-map-signs"></i>Travel & Outdoor</a></li>
                                             <li><a href="{{ route('phones.index') }}"><i class="icon-mobile-alt"></i>Smart Phones</a></li>
                                             <li><a href="{{ route('audios.index') }}"><i class="icon-tv"></i>TV & Audio</a></li>
-                                            <li><a href="#"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
+                                            <li><a href="{{ route('backpack.index') }}"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
                                             <li><a href="{{ route('instruments.index') }}"><i class="icon-music"></i>Musical Instruments</a></li>
                                             <li><a href="#"><i class="icon-gift"></i>Gift Ideas</a></li>
                                         </ul><!-- End .menu-vertical -->

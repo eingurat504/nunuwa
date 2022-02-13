@@ -63,6 +63,21 @@ class CategoryController extends Controller
         ]);
     }
 
+        /**
+     * Show Backpacks.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getBackPacks()
+    {
+
+        $appliances = ProductCategory::inRandomOrder()->take(4)->get();
+
+        return view('category.backpack', [
+            // 'appliances' => $appliances,
+        ]);
+    }
+
     /**
      * Show Healthy items.
      *
