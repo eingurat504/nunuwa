@@ -147,7 +147,7 @@ Route::group(['prefix' => '/phones', 'as' => 'phones.'], function () {
 });
 
 Route::group(['prefix' => '/instruments', 'as' => 'instruments.'], function () {
-    Route::get('/', [CategoryController::class, 'getInstruments'])->name('index');
+    Route::get('/', [CategoryController::class, 'getMusicalInstruments'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');

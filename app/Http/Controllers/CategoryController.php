@@ -149,7 +149,7 @@ class CategoryController extends Controller
         // $instruments = ProductCategory::inRandomOrder()->take(4)->get();
 
         return view('category.musical', [
-            'instruments' => $instruments,
+            // 'instruments' => $instruments,
         ]);
     }
 
