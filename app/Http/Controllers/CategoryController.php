@@ -134,7 +134,7 @@ class CategoryController extends Controller
         // $audios = ProductCategory::inRandomOrder()->take(4)->get();
 
         return view('category.tv_audio', [
-            'audios' => $audios,
+            // 'audios' => $audios,
         ]);
     }
 
