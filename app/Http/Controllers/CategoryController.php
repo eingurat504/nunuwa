@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\ProductCategory;
 
 use Illuminate\Http\Request;
 
@@ -15,6 +16,21 @@ class CategoryController extends Controller
     public function __construct()
     {
       
+    }
+
+        /**
+     * Show Home Appliances.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getHomeAppliances()
+    {
+
+        // $categories = ProductCategory::inRandomOrder()->take(4)->get();
+
+        return view('category.appliances', [
+            // 'categories' => $categories,
+        ]);
     }
 
     /**
@@ -47,6 +63,21 @@ class CategoryController extends Controller
         ]);
     }
 
+        /**
+     * Show Backpacks.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getBackPacks()
+    {
+
+        $appliances = ProductCategory::inRandomOrder()->take(4)->get();
+
+        return view('category.backpack', [
+            // 'appliances' => $appliances,
+        ]);
+    }
+
     /**
      * Show Healthy items.
      *
@@ -67,7 +98,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getClothings()
+    public function getClothing()
     {
 
         $clothings = ProductCategory::inRandomOrder()->take(4)->get();
@@ -82,25 +113,25 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getFurnitures()
+    public function getFurniture()
     {
 
         $furnitues = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('category.furnitues', [
+        return view('category.furniture', [
             // 'furnitues' => $furnitues,
         ]);
     }
 
     /**
-     * Show Phones.
+     * Show Smart Phones.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getPhones()
+    public function getSmartPhones()
     {
 
-        // $phones = ProductCategory::inRandomOrder()->take(4)->get();
+        $phones = ProductCategory::inRandomOrder()->take(4)->get();
 
         return view('category.phones', [
             'phones' => $phones,
@@ -118,7 +149,7 @@ class CategoryController extends Controller
         // $audios = ProductCategory::inRandomOrder()->take(4)->get();
 
         return view('category.tv_audio', [
-            'audios' => $audios,
+            // 'audios' => $audios,
         ]);
     }
 
@@ -133,7 +164,7 @@ class CategoryController extends Controller
         // $instruments = ProductCategory::inRandomOrder()->take(4)->get();
 
         return view('category.musical', [
-            'instruments' => $instruments,
+            // 'instruments' => $instruments,
         ]);
     }
 
@@ -148,7 +179,22 @@ class CategoryController extends Controller
         // $shoes = ProductCategory::inRandomOrder()->take(4)->get();
 
         return view('category.shoes', [
-            'shoes' => $shoes,
+            // 'shoes' => $shoes,
+        ]);
+    }
+
+        /**
+     * Show Shoes.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getCookingEquipment()
+    {
+
+        // $shoes = ProductCategory::inRandomOrder()->take(4)->get();
+
+        return view('category.cooking', [
+            // 'shoes' => $shoes,
         ]);
     }
 }

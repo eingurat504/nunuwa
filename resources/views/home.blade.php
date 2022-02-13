@@ -532,13 +532,13 @@
                                                     </div><!-- End .menu-brands -->
                                                 </div><!-- End .megamenu -->
                                             </li>
-                                            <li><a href="{{ route('audio.index') }}"><i class="icon-blender"></i>Home Appliances</a></li>
+                                            <li><a href="{{ route('appliances.index') }}"><i class="icon-blender"></i>Home Appliances</a></li>
                                             <li><a href="{{ route('healthy.index') }}"><i class="icon-heartbeat"></i>Healthy & Beauty</a></li>
-                                            <li><a href="{{ route('shoes.index') }}"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
+                                            <li><a href="{{ route('foot_wear.index') }}"><i class="icon-shoe-prints"></i>Shoes & Boots</a></li>
                                             <li><a href="{{ route('travel.index') }}"><i class="icon-map-signs"></i>Travel & Outdoor</a></li>
                                             <li><a href="{{ route('phones.index') }}"><i class="icon-mobile-alt"></i>Smart Phones</a></li>
-                                            <li><a href="#"><i class="icon-tv"></i>TV & Audio</a></li>
-                                            <li><a href="#"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
+                                            <li><a href="{{ route('audios.index') }}"><i class="icon-tv"></i>TV & Audio</a></li>
+                                            <li><a href="{{ route('backpack.index') }}"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
                                             <li><a href="{{ route('instruments.index') }}"><i class="icon-music"></i>Musical Instruments</a></li>
                                             <li><a href="#"><i class="icon-gift"></i>Gift Ideas</a></li>
                                         </ul><!-- End .menu-vertical -->
@@ -2385,7 +2385,7 @@
                                 <div class="cat-banner row no-gutters">
                                     <div class="cat-banner-list col-sm-6 d-xl-none d-xxl-flex" style="background-image: url(assets/images/demos/demo-14/banners/banner-bg-1.jpg);">
                                         <div class="banner-list-content">
-                                            <h2><a href="#">Electronics</a></h2>
+                                            <h2><a href="#">BackPacks and Bags</a></h2>
 
                                             <ul>
                                                 <li><a href="#">Cell Phones</a></li>

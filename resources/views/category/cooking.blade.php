@@ -23,7 +23,7 @@
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-        <!-- Plugins CSS File -->
+    <!-- Plugins CSS File -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -562,7 +562,7 @@
         <main class="main">
             <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
                 <div class="container">
-                    <h1 class="page-title">Home Appliances<span>Shop</span></h1>
+                    <h1 class="page-title">Cooking Equipments<span>Shop</span></h1>
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
@@ -1311,7 +1311,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget widget-about">
-                                <img src="{{ asset('images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+                                <img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
                                 <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
 
                                 <div class="social-icons">

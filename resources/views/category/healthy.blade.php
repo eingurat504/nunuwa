@@ -24,12 +24,12 @@
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/plugins/magnific-popup/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/owl-carousel/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/magnific-popup/magnific-popup.css') }}">    
+    <link rel="stylesheet" href="{{ asset('css/plugins/nouislider/nouislider.css') }}">
 </head>
 
 <body>
@@ -562,7 +562,7 @@
         <main class="main">
             <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
                 <div class="container">
-                    <h1 class="page-title">Grid 3 Columns<span>Shop</span></h1>
+                    <h1 class="page-title">Healthy & Beauty<span>Shop</span></h1>
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
