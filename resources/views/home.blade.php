@@ -2385,7 +2385,7 @@
                                 <div class="cat-banner row no-gutters">
                                     <div class="cat-banner-list col-sm-6 d-xl-none d-xxl-flex" style="background-image: url(assets/images/demos/demo-14/banners/banner-bg-1.jpg);">
                                         <div class="banner-list-content">
-                                            <h2><a href="#">Electronics</a></h2>
+                                            <h2><a href="#">BackPacks and Bags</a></h2>
 
                                             <ul>
                                                 <li><a href="#">Cell Phones</a></li>
