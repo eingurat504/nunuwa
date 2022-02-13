@@ -109,11 +109,11 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show Phones.
+     * Show Smart Phones.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getPhones()
+    public function getSmartPhones()
     {
 
         // $phones = ProductCategory::inRandomOrder()->take(4)->get();
