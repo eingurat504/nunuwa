@@ -31,6 +31,18 @@ Auth::routes();
 // Route::get('/travel', [App\Http\Controllers\HomeController::class, 'index'])->name('travel');
 // Route::get('/tv_audio', [App\Http\Controllers\HomeController::class, 'index'])->name('tv_audio');
 
+Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
+    Route::get('/', [CategoryController::class, 'getHomeAppliances'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');     
+    // Route::get('/', [CategoryController::class, 'index'])->name('index');
+    // Route::get('/{product}', [ProductController::class, 'show'])->name('show');
+});
+
+
 
 Route::group(['prefix' => '/electronics', 'as' => 'electronics.'], function () {
     Route::get('/', [CategoryController::class, 'getElectronics'])->name('index');
@@ -55,7 +67,7 @@ Route::group(['prefix' => '/furniture', 'as' => 'furniture.'], function () {
 });
 
 Route::group(['prefix' => '/cooking', 'as' => 'cooking.'], function () {
-    Route::get('/', [CategoryController::class, 'getCookingEqupment'])->name('index');
+    Route::get('/', [CategoryController::class, 'getCookingEquipment'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
