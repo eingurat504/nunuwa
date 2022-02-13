@@ -124,7 +124,7 @@ Route::group(['prefix' => '/foot_wear', 'as' => 'foot_wear.'], function () {
 
 
 Route::group(['prefix' => '/travel', 'as' => 'travel.'], function () {
-    Route::get('/', [CategoryController::class, 'getTravel'])->name('index');
+    Route::get('/', [CategoryController::class, 'getTravelOutDoor'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
@@ -135,7 +135,7 @@ Route::group(['prefix' => '/travel', 'as' => 'travel.'], function () {
 });
 
 
-Route::group(['prefix' => '/phones', 'as' => 'phones.'], function () {
+Route::group(['prefix' => '/smart_phones', 'as' => 'phones.'], function () {
     Route::get('/', [CategoryController::class, 'getSmartPhones'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');
     // Route::get('/', [CategoryController::class, 'index'])->name('index');

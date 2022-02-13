@@ -116,7 +116,7 @@ class CategoryController extends Controller
     public function getSmartPhones()
     {
 
-        // $phones = ProductCategory::inRandomOrder()->take(4)->get();
+        $phones = ProductCategory::inRandomOrder()->take(4)->get();
 
         return view('category.phones', [
             'phones' => $phones,
