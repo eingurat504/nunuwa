@@ -103,7 +103,7 @@ class CategoryController extends Controller
 
         $clothings = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('category.clothing', [
+        return view('category.clothing.index', [
             // 'clothings' => $clothings,
         ]);
     }
@@ -118,7 +118,7 @@ class CategoryController extends Controller
 
         $furnitues = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('category.furniture', [
+        return view('category.furniture.index', [
             // 'furnitues' => $furnitues,
         ]);
     }
@@ -193,7 +193,7 @@ class CategoryController extends Controller
 
         // $shoes = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('category.cooking', [
+        return view('category.cooking.index', [
             // 'shoes' => $shoes,
         ]);
     }
