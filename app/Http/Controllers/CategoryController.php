@@ -118,7 +118,7 @@ class CategoryController extends Controller
 
         $furnitues = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('category.furniture', [
+        return view('category.furniture.index', [
             // 'furnitues' => $furnitues,
         ]);
     }
