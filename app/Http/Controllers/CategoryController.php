@@ -193,7 +193,7 @@ class CategoryController extends Controller
 
         // $shoes = ProductCategory::inRandomOrder()->take(4)->get();
 
-        return view('category.cooking', [
+        return view('category.cooking.index', [
             // 'shoes' => $shoes,
         ]);
     }
