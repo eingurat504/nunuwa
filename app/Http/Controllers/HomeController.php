@@ -1,5 +1,7 @@
 <?php
 
+// https://www.laravelcode.com/post/how-to-make-admin-auth-in-laravel8-with-example
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
