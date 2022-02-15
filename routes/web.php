@@ -72,8 +72,9 @@ Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
     Route::get('/{product}', [ProductController::class, 'getProductDetails'])->name('show');
 });
 
-Route::get('admin/login', function(){
-    ddd('testing.......');
+
+Route::group(['prefix' => '/admin', 'as' => 'admin.'], function () {
+      ddd('testing.......');
 });
 
 
