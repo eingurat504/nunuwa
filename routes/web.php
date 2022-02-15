@@ -73,11 +73,6 @@ Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
 });
 
 
-Route::group(['prefix' => '/admin', 'as' => 'admin.'], function () {
-      ddd('testing.......');
-});
-
-
 
 
 
