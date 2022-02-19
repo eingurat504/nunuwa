@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductOptions extends Model
+class ProductOption extends Model
 {
     use HasFactory;
 
@@ -23,13 +23,6 @@ class ProductOptions extends Model
      * @var string
      */
     protected $primaryKey = 'id';
-
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     *
-     * @var bool
-     */
-    public $incrementing = false;
 
     /**
      * Indicates if the model should be timestamped.

@@ -14,7 +14,7 @@ class CreateProductOptionsTable extends Migration
     public function up()
     {
         Schema::create('product_options', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->foreignId('option_id')->constrained('options')->onDelete('cascade');
             $table->foreignId('option_group_id')->constrained('option_groups')->onDelete('cascade');
