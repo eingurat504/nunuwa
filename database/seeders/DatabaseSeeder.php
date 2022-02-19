@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\OptionGroup;
 use App\Models\Option;
 use App\Models\Order;
+use App\Models\ProductOption;
 
 
 class DatabaseSeeder extends Seeder
@@ -22,5 +23,7 @@ class DatabaseSeeder extends Seeder
         Order::factory(10)->create();
         OptionGroup::factory(10)->create();
         Product::factory(10)->create();
+        ProductOption::factory(10)->create();
+
     }
 }
