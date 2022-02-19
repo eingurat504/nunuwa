@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\ProductCategory;
+use App\Models\Product;
 
 use Illuminate\Http\Request;
 
@@ -41,10 +42,10 @@ class CategoryController extends Controller
     public function getElectronics()
     {
 
-        // $categories = ProductCategory::inRandomOrder()->take(4)->get();
+        $electronics = Product::inRandomOrder()->get();
 
         return view('category.electronics', [
-            // 'categories' => $categories,
+            'electronics' => $electronics,
         ]);
     }
 
