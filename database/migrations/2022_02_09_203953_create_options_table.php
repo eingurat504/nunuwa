@@ -14,7 +14,7 @@ class CreateOptionsTable extends Migration
     public function up()
     {
         Schema::create('options', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->foreignId('option_group_id')->constrained('option_groups')->onDelete('cascade');
             $table->string('name');
             $table->timestamps();

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\OptionGroup;
 
 class OptionFactory extends Factory
 {
@@ -14,7 +15,11 @@ class OptionFactory extends Factory
     public function definition()
     {
         return [
-            //
+
+            'name' => $this->faker->sentence(4),
+            'option_group_id' => function () {
+                return OptionGroup::factory()->create()->id;
+            },
         ];
     }
 }
