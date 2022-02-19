@@ -69,7 +69,7 @@ Route::group(['prefix' => '/instruments', 'as' => 'instruments.'], function () {
 });
 
 Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
-    Route::get('/{product}', [ProductController::class, 'getProductDetails'])->name('show');
+    Route::get('/', [ProductController::class, 'show'])->name('show');
 });
 
 
