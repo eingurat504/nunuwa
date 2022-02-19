@@ -28,7 +28,7 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
-        return view('home', [
+        return view('products.show', [
             'product' => $product,
         ]);
     }
