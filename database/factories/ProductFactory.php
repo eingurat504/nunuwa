@@ -26,6 +26,8 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->sentence(4),
             'price' => 800,
+            'stock' => 800,
+            'sku' => 800,
             'description' => $this->faker->word(),
             'category_id' => function () {
                 return ProductCategory::factory()->create()->id;

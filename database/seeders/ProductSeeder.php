@@ -14,6 +14,6 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-         $create_product = Product::firstOrCreate(['name'=>'create projects','description'=>'web']);
+         // $create_product = Product::firstOrCreate(['name'=>'create projects','description'=>'web']);
     }
 }
