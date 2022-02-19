@@ -42,8 +42,8 @@ class CategoryController extends Controller
     public function getElectronics()
     {
 
-        $electronics = Product::inRandomOrder()->get();
-
+        $electronics = Product::with('categories')->inRandomOrder()->get();
+dd($electronics);
         return view('category.electronics', [
             'electronics' => $electronics,
         ]);
