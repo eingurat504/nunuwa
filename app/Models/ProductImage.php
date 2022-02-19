@@ -9,7 +9,21 @@ class ProductImage extends Model
 {
     use HasFactory;
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
     protected $table = 'product_images';
+
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
+
 
 
     protected $fillable = ['product_id', 'image_path', 'image_name'];
