@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ProductImage;
 
 class Product extends Model
 {
@@ -88,5 +89,16 @@ class Product extends Model
     //             'unit_price',
     //         ]);
     // }
+
+    /**
+     * Images for this product.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function product_images()
+    {
+        return $this->hasMany(ProductImage::class,'product_id');
+    }
+
 
 }
