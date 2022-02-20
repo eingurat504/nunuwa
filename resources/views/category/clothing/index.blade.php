@@ -669,7 +669,7 @@
                                                     <div class="product-cat">
                                                         <a href="#">{{ $clothing->category->name }}</a>
                                                     </div>
-                                                    <h3 class="product-title"><a href="#">{{ $clothing->name }}</a></h3>
+                                                    <h3 class="product-title"><a href="{{ route('products.show', $clothing->id) }}">{{ $clothing->name }}</a></h3>
                                                     <div class="product-price">${{ $clothing->price }}</div>
                                                     <div class="ratings-container">
                                                         <div class="ratings">

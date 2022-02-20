@@ -669,7 +669,7 @@
                                                     <div class="product-cat">
                                                         <a href="#">{{ $travel->category->name }}</a>
                                                     </div>
-                                                    <h3 class="product-title"><a href="#">{{ $travel->name }}</a></h3>
+                                                    <h3 class="product-title"><a href="{{ route('products.show', $travel->id) }}">{{ $travel->name }}</a></h3>
                                                     <div class="product-price">${{ $travel->price }}</div>
                                                     <div class="ratings-container">
                                                         <div class="ratings">

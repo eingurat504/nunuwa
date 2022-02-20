@@ -2482,181 +2482,44 @@
                                             }
                                         }
                                     }'>
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-14.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
+                            
+                                    @foreach($clothings as $cloth)
+                                        <div class="product text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="{{ asset('images/demos/demo-14/products/product-16.jpg') }}" alt="Product image" class="product-image">
+                                                </a>
 
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
+                                                <div class="product-action-vertical">
+                                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
+                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+                                                    <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
+                                                </div><!-- End .product-action-vertical -->
 
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
+                                                </div><!-- End .product-action -->
+                                            </figure><!-- End .product-media -->
 
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Shoes</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">Beige faux suede runner  trainers</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $64.00
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 12 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
+                                            <div class="product-body">
+                                                <div class="product-cat">
+                                                    <a href="#">{{ $cloth->category->name }}</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title"><a href="{{ route('products.show', $cloth->id) }}">{{ $cloth->name }}</a></h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    ${{ $cloth->price }}
+                                                </div><!-- End .product-price -->
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 6 Reviews )</span>
+                                                </div><!-- End .rating-container -->
+                                            </div><!-- End .product-body -->
+                                        </div>
+                                    @endforeach
 
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <span class="product-label label-new">New</span>
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-15.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
-
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Accessories</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">Black boucle check scarf</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $36.00
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 4 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
-
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-16.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
-
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">T-Shirts</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">Carronade Large <br>Suspension Lamp</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $56.00
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 6 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
-
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-17.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
-
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Bags</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">Triple compartment cross body bag</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $64.00
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 40%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 4 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-
-                                            <div class="product-nav product-nav-dots">
-                                                <a href="#" class="active" style="background: #f1f1f1;"><span class="sr-only">Color name</span></a>
-                                                <a href="#" style="background: #333333;"><span class="sr-only">Color name</span></a>
-                                            </div><!-- End .product-nav -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
-
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-14.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
-
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Shoes</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">Beige faux suede runner  trainers</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $64.00
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 12 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
+                
                                 </div><!-- End .owl-carousel -->
                             </div><!-- End .col-xl-9 -->
                         </div><!-- End .row cat-banner-row -->
@@ -2726,188 +2589,48 @@
                                             }
                                         }
                                     }'>
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <span class="product-label label-sale">Sale</span>
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-18.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
 
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
+                                    @foreach($cookings as $cook) 
 
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
+                                        <div class="product text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">Sale</span>
+                                                <a href="product.html">
+                                                    <img src="{{ asset('images/demos/demo-14/products/product-18.jpg') }}" alt="Product image" class="product-image">
+                                                </a>
 
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Cooking Appliances</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">KitchenAid Professional  500 Series Stand Mixer</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                <span class="new-price">$249.99</span>
-                                                <span class="old-price">Was $299.99</span>
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 7 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
+                                                <div class="product-action-vertical">
+                                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
+                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+                                                    <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
+                                                </div><!-- End .product-action-vertical -->
 
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-19.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
+                                                </div>
+                                            </figure>
 
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Dinnerware</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">MoDRN Industrial 7 Piece</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $40.00
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 3 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
-
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-20.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
-
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Cookware</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">Cuisinart French Classic 3 Piece</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $44.99
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 0 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
-
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <span class="product-label label-new">New</span>
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-21.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
-
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Cooking Appliances</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">KitchenAid - KSB1570WH Classic 5-Speed Blender</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                $75.00
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 4 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-
-                                            <div class="product-nav product-nav-dots">
-                                                <a href="#" class="active" style="background: #f1f1f1;"><span class="sr-only">Color name</span></a>
-                                                <a href="#" style="background: #c00b1b;"><span class="sr-only">Color name</span></a>
-                                            </div><!-- End .product-nav -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
-
-                                    <div class="product text-center">
-                                        <figure class="product-media">
-                                            <span class="product-label label-sale">Sale</span>
-                                            <a href="product.html">
-                                                <img src="{{ asset('images/demos/demo-14/products/product-18.jpg') }}" alt="Product image" class="product-image">
-                                            </a>
-
-                                            <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
-                                                <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                                                <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
-                                            </div><!-- End .product-action-vertical -->
-
-                                            <div class="product-action">
-                                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                                            </div><!-- End .product-action -->
-                                        </figure><!-- End .product-media -->
-
-                                        <div class="product-body">
-                                            <div class="product-cat">
-                                                <a href="#">Cooking Appliances</a>
-                                            </div><!-- End .product-cat -->
-                                            <h3 class="product-title"><a href="product.html">KitchenAid Professional  500 Series Stand Mixer</a></h3><!-- End .product-title -->
-                                            <div class="product-price">
-                                                <span class="new-price">$249.99</span>
-                                                <span class="old-price">Was $299.99</span>
-                                            </div><!-- End .product-price -->
-                                            <div class="ratings-container">
-                                                <div class="ratings">
-                                                    <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                                </div><!-- End .ratings -->
-                                                <span class="ratings-text">( 7 Reviews )</span>
-                                            </div><!-- End .rating-container -->
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product -->
-                                </div><!-- End .owl-carousel -->
-                            </div><!-- End .col-xl-9 -->
-                        </div><!-- End .row cat-banner-row -->
+                                            <div class="product-body">
+                                                <div class="product-cat">
+                                                    <a href="#">{{ $cook->category->name }}</a>
+                                                </div>
+                                                <h3 class="product-title"><a href="{{ route('products.show', $cook->id)}}">{{ $cook->name }}</a></h3>
+                                                <div class="product-price">
+                                                    <span class="new-price">{{ $cook->price }}</span>
+                                                    <span class="old-price">Was $299.99</span>
+                                                </div>
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 100%;"></div>
+                                                    </div>
+                                                    <span class="ratings-text">( 7 Reviews )</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="mb-3"></div><!-- End .mb-3 -->
 
