@@ -28,24 +28,24 @@ class HomeController extends Controller
     public function index()
     {
 
-        $categories = ProductCategory::inRandomOrder()->take(4)->get();
+        $categories = Product::with('category')->inRandomOrder()->take(4)->get();
 
-        $products = Product::inRandomOrder()->take(8)->get();
+        $products = Product::with('category')->inRandomOrder()->take(8)->get();
 
-        $clothings = Product::inRandomOrder()->take(8)->get();
+        $clothings = Product::with('category')->inRandomOrder()->take(8)->get();
 
-        $cookings = Product::inRandomOrder()->where('id', 1)->take(8)->get();
+        $cookings = Product::with('category')->inRandomOrder()->where('id', 1)->take(8)->get();
 
-        $electronics = Product::inRandomOrder()->take(8)->get();
+        $electronics = Product::with('category')->inRandomOrder()->take(8)->get();
 
-        $furnitures = Product::inRandomOrder()->take(8)->get();
+        $furnitures = Product::with('category')->inRandomOrder()->take(8)->get();
 
         return view('home', [
             'categories' => $categories,
             'products' => $products,
             'cookings' => $categories,
-            'electonics' => $products,
-            'furnitures' => $categories,
+            'electronics' => $electronics,
+            'furnitures' => $furnitures,
             'clothings' => $products,
         ]);
     }
