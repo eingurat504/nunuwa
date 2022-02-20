@@ -667,7 +667,7 @@
 
                                                 <div class="product-body">
                                                     <div class="product-cat">
-                                                        <a href="#">Bags</a>
+                                                        <a href="#">{{ $electronic->category->name }}</a>
                                                     </div>
                                                     <h3 class="product-title"><a href="#">{{ $electronic->name }}</a></h3>
                                                     <div class="product-price">${{ $electronic->price }}</div>
