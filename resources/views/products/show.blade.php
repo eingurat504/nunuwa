@@ -24,12 +24,12 @@
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/owl-carousel/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/magnific-popup/magnific-popup.css') }}">
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/nouislider/nouislider.css') }}">
 </head>
 
 <body>
@@ -590,28 +590,28 @@
                                 <div class="product-gallery product-gallery-vertical">
                                     <div class="row">
                                         <figure class="product-main-image">
-                                            <img id="product-zoom" src="assets/images/products/single/1.jpg" data-zoom-image="assets/images/products/single/1-big.jpg" alt="product image">
+                                            <img id="product-zoom" src="{{ asset('images/products/single/1.jpg') }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}" alt="product image">
 
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
                                             </a>
-                                        </figure><!-- End .product-main-image -->
+                                        </figure>
 
                                         <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#" data-image="assets/images/products/single/1.jpg" data-zoom-image="assets/images/products/single/1-big.jpg">
-                                                <img src="assets/images/products/single/1-small.jpg" alt="product side">
+                                            <a class="product-gallery-item active" href="#" data-image="{{ asset('images/products/single/1.jpg') }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/1-small.jpg') }}" alt="product side">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/2.jpg" data-zoom-image="assets/images/products/single/2-big.jpg">
-                                                <img src="assets/images/products/single/2-small.jpg" alt="product cross">
+                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/2.jpg') }}" data-zoom-image="{{ asset('images/products/single/2-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/2-small.jpg') }}" alt="product cross">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/3.jpg" data-zoom-image="assets/images/products/single/3-big.jpg">
-                                                <img src="assets/images/products/single/3-small.jpg" alt="product with model">
+                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/3.jpg') }}" data-zoom-image="{{ asset('images/products/single/3-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/3-small.jpg') }}" alt="product with model">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/4.jpg" data-zoom-image="assets/images/products/single/4-big.jpg">
-                                                <img src="assets/images/products/single/4-small.jpg" alt="product back">
+                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/4.jpg') }}" data-zoom-image="{{ asset('images/products/single/4-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/4-small.jpg') }}" alt="product back">
                                             </a>
                                         </div><!-- End .product-image-gallery -->
                                     </div><!-- End .row -->
@@ -620,7 +620,7 @@
 
                             <div class="col-md-6">
                                 <div class="product-details">
-                                    <h1 class="product-title">Dark yellow lace cut out swing dress</h1><!-- End .product-title -->
+                                    <h1 class="product-title">{{ $product->name }}</h1><!-- End .product-title -->
 
                                     <div class="ratings-container">
                                         <div class="ratings">
@@ -629,12 +629,10 @@
                                         <a class="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews )</a>
                                     </div><!-- End .rating-container -->
 
-                                    <div class="product-price">
-                                        $84.00
-                                    </div><!-- End .product-price -->
+                                    <div class="product-price"> ${{ $product->price }} </div>
 
                                     <div class="product-content">
-                                        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
+                                        <p> {{ $product->description }} </p>
                                     </div><!-- End .product-content -->
 
                                     <div class="details-filter-row details-row-size">
@@ -642,10 +640,10 @@
 
                                         <div class="product-nav product-nav-thumbs">
                                             <a href="#" class="active">
-                                                <img src="assets/images/products/single/1-thumb.jpg" alt="product desc">
+                                                <img src="{{ asset('images/products/single/1-thumb.jpg') }}" alt="product desc">
                                             </a>
                                             <a href="#">
-                                                <img src="assets/images/products/single/2-thumb.jpg" alt="product desc">
+                                                <img src="{{ asset('images/products/single/2-thumb.jpg') }}" alt="product desc">
                                             </a>
                                         </div><!-- End .product-nav -->
                                     </div><!-- End .details-filter-row -->
@@ -721,16 +719,10 @@
                             <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
                                 <div class="product-desc-content">
                                     <h3>Product Information</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>
-                                    <ul>
-                                        <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
-                                        <li>Vivamus finibus vel mauris ut vehicula.</li>
-                                        <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
-                                    </ul>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>
-                                </div><!-- End .product-desc-content -->
-                            </div><!-- .End .tab-pane -->
+                                    
+                                    <p> {{ $product->description }} </p>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="product-info-tab" role="tabpanel" aria-labelledby="product-info-link">
                                 <div class="product-desc-content">
                                     <h3>Information</h3>
@@ -848,7 +840,7 @@
                             <figure class="product-media">
                                 <span class="product-label label-new">New</span>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-4.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-4.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -879,14 +871,14 @@
 
                                 <div class="product-nav product-nav-thumbs">
                                     <a href="#" class="active">
-                                        <img src="assets/images/products/product-4-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-4-thumb.jpg') }}" alt="product desc">
                                     </a>
                                     <a href="#">
-                                        <img src="assets/images/products/product-4-2-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-4-2-thumb.jpg') }}" alt="product desc">
                                     </a>
 
                                     <a href="#">
-                                        <img src="assets/images/products/product-4-3-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-4-3-thumb.jpg') }}" alt="product desc">
                                     </a>
                                 </div><!-- End .product-nav -->
                             </div><!-- End .product-body -->
@@ -896,7 +888,7 @@
                             <figure class="product-media">
                                 <span class="product-label label-out">Out of Stock</span>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-6.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-6.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -931,7 +923,7 @@
                             <figure class="product-media">
                                 <span class="product-label label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-11.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-11.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -952,33 +944,33 @@
                                 <h3 class="product-title"><a href="product.html">Light brown studded Wide fit wedges</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $110.00
-                                </div><!-- End .product-price -->
+                                </div>
                                 <div class="ratings-container">
                                     <div class="ratings">
-                                        <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                                        <div class="ratings-val" style="width: 80%;"></div>
                                     </div><!-- End .ratings -->
                                     <span class="ratings-text">( 1 Reviews )</span>
                                 </div><!-- End .rating-container -->
 
                                 <div class="product-nav product-nav-thumbs">
                                     <a href="#" class="active">
-                                        <img src="assets/images/products/product-11-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-11-thumb.jpg') }}" alt="product desc">
                                     </a>
                                     <a href="#">
-                                        <img src="assets/images/products/product-11-2-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-11-2-thumb.jpg') }}" alt="product desc">
                                     </a>
 
                                     <a href="#">
-                                        <img src="assets/images/products/product-11-3-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-11-3-thumb.jpg') }}" alt="product desc">
                                     </a>
-                                </div><!-- End .product-nav -->
-                            </div><!-- End .product-body -->
+                                </div>
+                            </div>
                         </div><!-- End .product -->
 
                         <div class="product product-7 text-center">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-10.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-10.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1012,7 +1004,7 @@
                         <div class="product product-7 text-center">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-7.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-7.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1029,23 +1021,24 @@
                             <div class="product-body">
                                 <div class="product-cat">
                                     <a href="#">Jeans</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Blue utility pinafore denim dress</a></h3><!-- End .product-title -->
+                                </div>
+                                <h3 class="product-title"><a href="product.html">Blue utility pinafore denim dress</a></h3>
                                 <div class="product-price">
                                     $76.00
-                                </div><!-- End .product-price -->
+                                </div>
                                 <div class="ratings-container">
                                     <div class="ratings">
-                                        <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-                                    </div><!-- End .ratings -->
+                                        <div class="ratings-val" style="width: 20%;"></div>
+                                    </div>
                                     <span class="ratings-text">( 2 Reviews )</span>
-                                </div><!-- End .rating-container -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                    </div><!-- End .owl-carousel -->
-                </div><!-- End .container -->
-            </div><!-- End .page-content -->
-        </main><!-- End .main -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- End .main -->
 
         <footer class="footer">
             <div class="footer-middle">
@@ -1053,7 +1046,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget widget-about">
-                                <img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+                                <img src="{{ asset('images/logo.png') }}" class="footer-logo" alt="Footer Logo" width="105" height="25">
                                 <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
 
                                 <div class="social-icons">
@@ -1062,13 +1055,13 @@
                                     <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
                                     <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
                                     <a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
-                                </div><!-- End .soial-icons -->
-                            </div><!-- End .widget about-widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
-                                <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
+                                <h4 class="widget-title">Useful Links</h4>
 
                                 <ul class="widget-list">
                                     <li><a href="about.html">About Molla</a></li>
@@ -1076,13 +1069,13 @@
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="contact.html">Contact us</a></li>
                                     <li><a href="login.html">Log in</a></li>
-                                </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                                </ul>
+                            </div>
+                        </div>
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
-                                <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+                                <h4 class="widget-title">Customer Service</h4>
 
                                 <ul class="widget-list">
                                     <li><a href="#">Payment Methods</a></li>
@@ -1091,13 +1084,13 @@
                                     <li><a href="#">Shipping</a></li>
                                     <li><a href="#">Terms and conditions</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
-                                </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                                </ul>
+                            </div>
+                        </div>
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
-                                <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
+                                <h4 class="widget-title">My Account</h4>
 
                                 <ul class="widget-list">
                                     <li><a href="#">Sign In</a></li>
@@ -1105,12 +1098,12 @@
                                     <li><a href="#">My Wishlist</a></li>
                                     <li><a href="#">Track My Order</a></li>
                                     <li><a href="#">Help</a></li>
-                                </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
-            </div><!-- End .footer-middle -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="footer-bottom">
                 <div class="container">
@@ -1131,15 +1124,15 @@
                 <div class="col-6">
                     <figure class="product-media">
                         <a href="product.html">
-                            <img src="assets/images/products/sticky/product-1.jpg" alt="Product image">
+                            <img src="{{ asset('images/products/sticky/product-1.jpg') }}" alt="Product image">
                         </a>
                     </figure><!-- End .product-media -->
-                    <h4 class="product-title"><a href="product.html">Dark yellow lace cut out swing dress</a></h4><!-- End .product-title -->
+                    <h4 class="product-title"><a href="product.html">{{ $product->name }}</a></h4><!-- End .product-title -->
                 </div><!-- End .col-6 -->
 
                 <div class="col-6 justify-content-end">
                     <div class="product-price">
-                        $84.00
+                        ${{ $product->price }}
                     </div><!-- End .product-price -->
                     <div class="product-details-quantity">
                         <input type="number" id="sticky-cart-qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
@@ -1428,39 +1421,30 @@
                                                     <i class="icon-facebook-f"></i>
                                                     Login With Facebook
                                                 </a>
-                                            </div><!-- End .col-6 -->
-                                        </div><!-- End .row -->
-                                    </div><!-- End .form-choice -->
-                                </div><!-- .End .tab-pane -->
-                            </div><!-- End .tab-content -->
-                        </div><!-- End .form-tab -->
-                    </div><!-- End .form-box -->
-                </div><!-- End .modal-body -->
-            </div><!-- End .modal-content -->
-        </div><!-- End .modal-dialog -->
-    </div><!-- End .modal -->
+                                            </div>
+                                        </div>                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- Plugins JS File -->
+    <!-- Plugins JS File -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/jquery.hoverIntent.min.js') }}"></script>
     <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('js/superfish.min.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ asset('js/jquery.elevateZoom.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.plugin.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <!-- Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/demos/demo-14.js') }}"></script>
-
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
 </body>
-
-
-<!-- molla/product.html  22 Nov 2019 09:55:05 GMT -->
 </html>
