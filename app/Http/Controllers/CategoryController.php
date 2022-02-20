@@ -124,6 +124,21 @@ class CategoryController extends Controller
         ]);
     }
 
+        /**
+     * Show Travel and Outdoors.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getTravelOutDoor()
+    {
+
+        $travels = Product::with('category')->inRandomOrder()->get();
+
+        return view('category.travel', [
+            'travels' => $travels,
+        ]);
+    }
+
     /**
      * Show Smart Phones.
      *
