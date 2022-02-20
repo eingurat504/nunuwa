@@ -49,7 +49,7 @@ Route::group(['prefix' => '/audios', 'as' => 'audios.'], function () {
 });
 
 Route::group(['prefix' => '/healthy', 'as' => 'healthy.'], function () {
-    Route::get('/', [CategoryController::class, 'getTVAudios'])->name('index');
+    Route::get('/', [CategoryController::class, 'getHealthy'])->name('index');
 });
 
 Route::group(['prefix' => '/foot_wear', 'as' => 'foot_wear.'], function () {

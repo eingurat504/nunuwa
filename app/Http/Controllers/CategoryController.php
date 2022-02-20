@@ -27,10 +27,10 @@ class CategoryController extends Controller
     public function getHomeAppliances()
     {
 
-        // $categories = ProductCategory::inRandomOrder()->take(4)->get();
+        $appliances = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.appliances', [
-            // 'categories' => $categories,
+            'appliances' => $appliances,
         ]);
     }
 
@@ -57,10 +57,10 @@ class CategoryController extends Controller
     public function getAppliances()
     {
 
-        $appliances = ProductCategory::inRandomOrder()->take(4)->get();
+        $appliances = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.appliances', [
-            // 'appliances' => $appliances,
+            'appliances' => $appliances,
         ]);
     }
 
@@ -72,10 +72,10 @@ class CategoryController extends Controller
     public function getBackPacks()
     {
 
-        $appliances = ProductCategory::inRandomOrder()->take(4)->get();
+        $backpacks = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.backpack', [
-            // 'appliances' => $appliances,
+            'backpacks' => $backpacks,
         ]);
     }
 
@@ -87,10 +87,10 @@ class CategoryController extends Controller
     public function getHealthy()
     {
 
-        $healthy = ProductCategory::inRandomOrder()->take(4)->get();
+        $beauties = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.healthy', [
-            // 'healthy' => $healthy,
+            'beauties' => $beauties,
         ]);
     }
 
@@ -124,6 +124,21 @@ class CategoryController extends Controller
         ]);
     }
 
+        /**
+     * Show Travel and Outdoors.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getTravelOutDoor()
+    {
+
+        $travels = Product::with('category')->inRandomOrder()->get();
+
+        return view('category.travel', [
+            'travels' => $travels,
+        ]);
+    }
+
     /**
      * Show Smart Phones.
      *
@@ -132,7 +147,7 @@ class CategoryController extends Controller
     public function getSmartPhones()
     {
 
-        $phones = ProductCategory::inRandomOrder()->take(4)->get();
+        $phones = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.phones', [
             'phones' => $phones,
@@ -147,10 +162,10 @@ class CategoryController extends Controller
     public function getTVAudios()
     {
 
-        // $audios = ProductCategory::inRandomOrder()->take(4)->get();
+        $audios = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.tv_audio', [
-            // 'audios' => $audios,
+            'audios' => $audios,
         ]);
     }
 
@@ -162,10 +177,10 @@ class CategoryController extends Controller
     public function getMusicalInstruments()
     {
 
-        // $instruments = ProductCategory::inRandomOrder()->take(4)->get();
+        $instruments = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.musical', [
-            // 'instruments' => $instruments,
+            'instruments' => $instruments,
         ]);
     }
 
@@ -177,10 +192,10 @@ class CategoryController extends Controller
     public function getShoes()
     {
 
-        // $shoes = ProductCategory::inRandomOrder()->take(4)->get();
+        $shoes = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.shoes', [
-            // 'shoes' => $shoes,
+            'shoes' => $shoes,
         ]);
     }
 
