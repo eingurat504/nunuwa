@@ -595,7 +595,7 @@
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
                                             </a>
-                                        </figure><!-- End .product-main-image -->
+                                        </figure>
 
                                         <div id="product-zoom-gallery" class="product-image-gallery">
                                             <a class="product-gallery-item active" href="#" data-image="{{ asset('images/products/single/1.jpg') }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}">
@@ -719,16 +719,10 @@
                             <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
                                 <div class="product-desc-content">
                                     <h3>Product Information</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>
-                                    <ul>
-                                        <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
-                                        <li>Vivamus finibus vel mauris ut vehicula.</li>
-                                        <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
-                                    </ul>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>
-                                </div><!-- End .product-desc-content -->
-                            </div><!-- .End .tab-pane -->
+                                    
+                                    <p> {{ $product->description }} </p>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="product-info-tab" role="tabpanel" aria-labelledby="product-info-link">
                                 <div class="product-desc-content">
                                     <h3>Information</h3>
@@ -1027,23 +1021,24 @@
                             <div class="product-body">
                                 <div class="product-cat">
                                     <a href="#">Jeans</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Blue utility pinafore denim dress</a></h3><!-- End .product-title -->
+                                </div>
+                                <h3 class="product-title"><a href="product.html">Blue utility pinafore denim dress</a></h3>
                                 <div class="product-price">
                                     $76.00
-                                </div><!-- End .product-price -->
+                                </div>
                                 <div class="ratings-container">
                                     <div class="ratings">
-                                        <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-                                    </div><!-- End .ratings -->
+                                        <div class="ratings-val" style="width: 20%;"></div>
+                                    </div>
                                     <span class="ratings-text">( 2 Reviews )</span>
-                                </div><!-- End .rating-container -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                    </div><!-- End .owl-carousel -->
-                </div><!-- End .container -->
-            </div><!-- End .page-content -->
-        </main><!-- End .main -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- End .main -->
 
         <footer class="footer">
             <div class="footer-middle">
@@ -1051,7 +1046,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget widget-about">
-                                <img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+                                <img src="{{ asset('images/logo.png') }}" class="footer-logo" alt="Footer Logo" width="105" height="25">
                                 <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
 
                                 <div class="social-icons">
@@ -1060,13 +1055,13 @@
                                     <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
                                     <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
                                     <a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
-                                </div><!-- End .soial-icons -->
-                            </div><!-- End .widget about-widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
-                                <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
+                                <h4 class="widget-title">Useful Links</h4>
 
                                 <ul class="widget-list">
                                     <li><a href="about.html">About Molla</a></li>
@@ -1074,13 +1069,13 @@
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="contact.html">Contact us</a></li>
                                     <li><a href="login.html">Log in</a></li>
-                                </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                                </ul>
+                            </div>
+                        </div>
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
-                                <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+                                <h4 class="widget-title">Customer Service</h4>
 
                                 <ul class="widget-list">
                                     <li><a href="#">Payment Methods</a></li>
@@ -1089,13 +1084,13 @@
                                     <li><a href="#">Shipping</a></li>
                                     <li><a href="#">Terms and conditions</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
-                                </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                                </ul>
+                            </div>
+                        </div>
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
-                                <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
+                                <h4 class="widget-title">My Account</h4>
 
                                 <ul class="widget-list">
                                     <li><a href="#">Sign In</a></li>
@@ -1103,12 +1098,12 @@
                                     <li><a href="#">My Wishlist</a></li>
                                     <li><a href="#">Track My Order</a></li>
                                     <li><a href="#">Help</a></li>
-                                </ul><!-- End .widget-list -->
-                            </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
-            </div><!-- End .footer-middle -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="footer-bottom">
                 <div class="container">
