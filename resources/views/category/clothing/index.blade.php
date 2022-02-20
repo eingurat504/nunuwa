@@ -651,7 +651,7 @@
                                             <div class="product product-7 text-center">
                                                 <figure class="product-media">
                                                     <a href="product.html">
-                                                        <img src="{{ asset('images/products/product-9.jpg') }}" alt="Product image" class="product-image">
+                                                        <img src="{{ asset('images/products/product-14.jpg') }}" alt="Product image" class="product-image">
                                                     </a>
 
                                                     <div class="product-action-vertical">
