@@ -192,10 +192,10 @@ class CategoryController extends Controller
     public function getCookingEquipment()
     {
 
-        // $shoes = ProductCategory::inRandomOrder()->take(4)->get();
+        $cookings = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.cooking.index', [
-            // 'shoes' => $shoes,
+            'cookings' => $cookings,
         ]);
     }
 }
