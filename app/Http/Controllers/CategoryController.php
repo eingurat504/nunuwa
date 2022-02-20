@@ -102,10 +102,10 @@ class CategoryController extends Controller
     public function getClothing()
     {
 
-        $clothings = ProductCategory::inRandomOrder()->take(4)->get();
+        $clothings = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.clothing.index', [
-            // 'clothings' => $clothings,
+            'clothings' => $clothings,
         ]);
     }
 
