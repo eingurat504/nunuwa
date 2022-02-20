@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +70,7 @@ Route::group(['prefix' => '/instruments', 'as' => 'instruments.'], function () {
 });
 
 Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
-    Route::get('/', [ProductController::class, 'show'])->name('show');
+    Route::get('/{product}', [ProductController::class, 'showProduct'])->name('show');
 });
 
 

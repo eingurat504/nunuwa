@@ -24,12 +24,12 @@
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/owl-carousel/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/magnific-popup/magnific-popup.css') }}">
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/nouislider/nouislider.css') }}">
 </head>
 
 <body>
@@ -590,7 +590,7 @@
                                 <div class="product-gallery product-gallery-vertical">
                                     <div class="row">
                                         <figure class="product-main-image">
-                                            <img id="product-zoom" src="assets/images/products/single/1.jpg" data-zoom-image="assets/images/products/single/1-big.jpg" alt="product image">
+                                            <img id="product-zoom" src="{{ asset('images/products/single/1.jpg') }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}" alt="product image">
 
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
@@ -598,20 +598,20 @@
                                         </figure><!-- End .product-main-image -->
 
                                         <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#" data-image="assets/images/products/single/1.jpg" data-zoom-image="assets/images/products/single/1-big.jpg">
-                                                <img src="assets/images/products/single/1-small.jpg" alt="product side">
+                                            <a class="product-gallery-item active" href="#" data-image="{{ asset('images/products/single/1.jpg') }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/1-small.jpg') }}" alt="product side">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/2.jpg" data-zoom-image="assets/images/products/single/2-big.jpg">
-                                                <img src="assets/images/products/single/2-small.jpg" alt="product cross">
+                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/2.jpg') }}" data-zoom-image="{{ asset('images/products/single/2-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/2-small.jpg') }}" alt="product cross">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/3.jpg" data-zoom-image="assets/images/products/single/3-big.jpg">
-                                                <img src="assets/images/products/single/3-small.jpg" alt="product with model">
+                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/3.jpg') }}" data-zoom-image="{{ asset('images/products/single/3-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/3-small.jpg') }}" alt="product with model">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/4.jpg" data-zoom-image="assets/images/products/single/4-big.jpg">
-                                                <img src="assets/images/products/single/4-small.jpg" alt="product back">
+                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/4.jpg') }}" data-zoom-image="{{ asset('images/products/single/4-big.jpg') }}">
+                                                <img src="{{ asset('images/products/single/4-small.jpg') }}" alt="product back">
                                             </a>
                                         </div><!-- End .product-image-gallery -->
                                     </div><!-- End .row -->
@@ -620,7 +620,7 @@
 
                             <div class="col-md-6">
                                 <div class="product-details">
-                                    <h1 class="product-title">Dark yellow lace cut out swing dress</h1><!-- End .product-title -->
+                                    <h1 class="product-title">{{ $product->name }}</h1><!-- End .product-title -->
 
                                     <div class="ratings-container">
                                         <div class="ratings">
@@ -629,12 +629,10 @@
                                         <a class="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews )</a>
                                     </div><!-- End .rating-container -->
 
-                                    <div class="product-price">
-                                        $84.00
-                                    </div><!-- End .product-price -->
+                                    <div class="product-price"> ${{ $product->price }} </div>
 
                                     <div class="product-content">
-                                        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
+                                        <p> {{ $product->description }} </p>
                                     </div><!-- End .product-content -->
 
                                     <div class="details-filter-row details-row-size">
@@ -642,10 +640,10 @@
 
                                         <div class="product-nav product-nav-thumbs">
                                             <a href="#" class="active">
-                                                <img src="assets/images/products/single/1-thumb.jpg" alt="product desc">
+                                                <img src="{{ asset('images/products/single/1-thumb.jpg') }}" alt="product desc">
                                             </a>
                                             <a href="#">
-                                                <img src="assets/images/products/single/2-thumb.jpg" alt="product desc">
+                                                <img src="{{ asset('images/products/single/2-thumb.jpg') }}" alt="product desc">
                                             </a>
                                         </div><!-- End .product-nav -->
                                     </div><!-- End .details-filter-row -->
@@ -848,7 +846,7 @@
                             <figure class="product-media">
                                 <span class="product-label label-new">New</span>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-4.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-4.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -879,14 +877,14 @@
 
                                 <div class="product-nav product-nav-thumbs">
                                     <a href="#" class="active">
-                                        <img src="assets/images/products/product-4-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-4-thumb.jpg') }}" alt="product desc">
                                     </a>
                                     <a href="#">
-                                        <img src="assets/images/products/product-4-2-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-4-2-thumb.jpg') }}" alt="product desc">
                                     </a>
 
                                     <a href="#">
-                                        <img src="assets/images/products/product-4-3-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-4-3-thumb.jpg') }}" alt="product desc">
                                     </a>
                                 </div><!-- End .product-nav -->
                             </div><!-- End .product-body -->
@@ -896,7 +894,7 @@
                             <figure class="product-media">
                                 <span class="product-label label-out">Out of Stock</span>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-6.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-6.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -931,7 +929,7 @@
                             <figure class="product-media">
                                 <span class="product-label label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-11.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-11.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -952,33 +950,33 @@
                                 <h3 class="product-title"><a href="product.html">Light brown studded Wide fit wedges</a></h3><!-- End .product-title -->
                                 <div class="product-price">
                                     $110.00
-                                </div><!-- End .product-price -->
+                                </div>
                                 <div class="ratings-container">
                                     <div class="ratings">
-                                        <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                                        <div class="ratings-val" style="width: 80%;"></div>
                                     </div><!-- End .ratings -->
                                     <span class="ratings-text">( 1 Reviews )</span>
                                 </div><!-- End .rating-container -->
 
                                 <div class="product-nav product-nav-thumbs">
                                     <a href="#" class="active">
-                                        <img src="assets/images/products/product-11-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-11-thumb.jpg') }}" alt="product desc">
                                     </a>
                                     <a href="#">
-                                        <img src="assets/images/products/product-11-2-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-11-2-thumb.jpg') }}" alt="product desc">
                                     </a>
 
                                     <a href="#">
-                                        <img src="assets/images/products/product-11-3-thumb.jpg" alt="product desc">
+                                        <img src="{{ asset('images/products/product-11-3-thumb.jpg') }}" alt="product desc">
                                     </a>
-                                </div><!-- End .product-nav -->
-                            </div><!-- End .product-body -->
+                                </div>
+                            </div>
                         </div><!-- End .product -->
 
                         <div class="product product-7 text-center">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-10.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-10.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1012,7 +1010,7 @@
                         <div class="product product-7 text-center">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-7.jpg" alt="Product image" class="product-image">
+                                    <img src="{{ asset('images/products/product-7.jpg') }}" alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1131,15 +1129,15 @@
                 <div class="col-6">
                     <figure class="product-media">
                         <a href="product.html">
-                            <img src="assets/images/products/sticky/product-1.jpg" alt="Product image">
+                            <img src="{{ asset('images/products/sticky/product-1.jpg') }}" alt="Product image">
                         </a>
                     </figure><!-- End .product-media -->
-                    <h4 class="product-title"><a href="product.html">Dark yellow lace cut out swing dress</a></h4><!-- End .product-title -->
+                    <h4 class="product-title"><a href="product.html">{{ $product->name }}</a></h4><!-- End .product-title -->
                 </div><!-- End .col-6 -->
 
                 <div class="col-6 justify-content-end">
                     <div class="product-price">
-                        $84.00
+                        ${{ $product->price }}
                     </div><!-- End .product-price -->
                     <div class="product-details-quantity">
                         <input type="number" id="sticky-cart-qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
@@ -1428,39 +1426,30 @@
                                                     <i class="icon-facebook-f"></i>
                                                     Login With Facebook
                                                 </a>
-                                            </div><!-- End .col-6 -->
-                                        </div><!-- End .row -->
-                                    </div><!-- End .form-choice -->
-                                </div><!-- .End .tab-pane -->
-                            </div><!-- End .tab-content -->
-                        </div><!-- End .form-tab -->
-                    </div><!-- End .form-box -->
-                </div><!-- End .modal-body -->
-            </div><!-- End .modal-content -->
-        </div><!-- End .modal-dialog -->
-    </div><!-- End .modal -->
+                                            </div>
+                                        </div>                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- Plugins JS File -->
+    <!-- Plugins JS File -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/jquery.hoverIntent.min.js') }}"></script>
     <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('js/superfish.min.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ asset('js/jquery.elevateZoom.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.plugin.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <!-- Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/demos/demo-14.js') }}"></script>
-
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
 </body>
-
-
-<!-- molla/product.html  22 Nov 2019 09:55:05 GMT -->
 </html>
