@@ -17,7 +17,7 @@
         </div><!-- End .container -->
     </nav><!-- End .breadcrumb-nav -->
 
-    <div class="page-content">
+    <div class="page-content col-md-10 text-center">
         <div class="checkout">
             <div class="container">
                 <div class="checkout-discount">
