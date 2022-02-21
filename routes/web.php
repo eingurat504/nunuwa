@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +73,11 @@ Route::group(['prefix' => '/instruments', 'as' => 'instruments.'], function () {
 Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
     Route::get('/{product}', [ProductController::class, 'showProduct'])->name('show');
 });
+
+Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
+    Route::get('/', [CartController::class, 'showCart'])->name('cart');
+});
+
 
 
 
