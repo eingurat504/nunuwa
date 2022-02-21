@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,8 +76,14 @@ Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
 });
 
 Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
-    Route::get('/', [CartController::class, 'showCart'])->name('cart');
+    Route::get('/', [CartController::class, 'showCart'])->name('index');
 });
+
+Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
+    Route::get('/', [CheckoutController::class, 'showCheckout'])->name('index');
+    Route::post('/', [CheckoutController::class, 'store'])->name('store');
+});
+
 
 
 
