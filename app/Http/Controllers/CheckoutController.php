@@ -8,8 +8,6 @@ use App\Models\Order;
 class CheckoutController extends Controller
 {
 
-
-
 	/**
      * Create a new controller instance.
      *
