@@ -24,9 +24,9 @@
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -512,7 +512,7 @@
 
                                         <figure class="product-image-container">
                                             <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-1.jpg" alt="product">
+                                                <img src="{{ asset('images/products/cart/product-1.jpg') }}" alt="product">
                                             </a>
                                         </figure>
                                         <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -532,7 +532,7 @@
 
                                         <figure class="product-image-container">
                                             <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-2.jpg" alt="product">
+                                                <img src="{{ asset('images/products/cart/product-2.jpg') }}" alt="product">
                                             </a>
                                         </figure>
                                         <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -594,7 +594,7 @@
                                                 <div class="product">
                                                     <figure class="product-media">
                                                         <a href="#">
-                                                            <img src="assets/images/products/table/product-1.jpg" alt="Product image">
+                                                            <img src="{{ asset('images/products/table/product-1.jpg') }}" alt="Product image">
                                                         </a>
                                                     </figure>
 
@@ -617,7 +617,7 @@
                                                 <div class="product">
                                                     <figure class="product-media">
                                                         <a href="#">
-                                                            <img src="assets/images/products/table/product-2.jpg" alt="Product image">
+                                                            <img src="{{ asset('images/products/table/product-2.jpg') }}" alt="Product image">
                                                         </a>
                                                     </figure>
 
