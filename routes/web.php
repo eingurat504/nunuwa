@@ -80,7 +80,7 @@ Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
 });
 
 Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
-    Route::get('/', [CheckoutController::class, 'index'])->name('index');
+    Route::get('/', [CheckoutController::class, 'showCheckout'])->name('index');
     // Route::post('/', [CheckoutController::class, 'store'])->name('store');
 });
 
