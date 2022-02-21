@@ -42,7 +42,7 @@ class CategoryController extends Controller
     public function getElectronics()
     {
 
-        $electronics = Product::with('category')->inRandomOrder()->get();
+        $electronics = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.electronics', [
             'electronics' => $electronics,
@@ -117,7 +117,7 @@ class CategoryController extends Controller
     public function getFurniture()
     {
 
-        $furnitures = Product::with('category')->inRandomOrder()->get();
+        $furnitures = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.furniture.index', [
             'furnitures' => $furnitures,
@@ -132,7 +132,7 @@ class CategoryController extends Controller
     public function getTravelOutDoor()
     {
 
-        $travels = Product::with('category')->inRandomOrder()->get();
+        $travels = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.travel', [
             'travels' => $travels,
