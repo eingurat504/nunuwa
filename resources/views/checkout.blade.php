@@ -581,7 +581,7 @@
                                 <label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
                             </form>
                         </div><!-- End .checkout-discount -->
-                        <form action="#">
+                        <form action="{{ route('checkout.store') }}" method="POST">
                             <div class="row">
                                 <div class="col-lg-9">
                                     <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
@@ -1137,16 +1137,13 @@
     </div><!-- End .modal -->
 
     <!-- Plugins JS File -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.hoverIntent.min.js"></script>
-    <script src="assets/js/jquery.waypoints.min.js"></script>
-    <script src="assets/js/superfish.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.hoverIntent.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/superfish.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
-
-
-<!-- molla/checkout.html  22 Nov 2019 09:55:06 GMT -->
 </html>
