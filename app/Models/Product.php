@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductImage;
 use App\Models\ProductCategory;
-use App\Models\ProductView;
+use App\Models\ProductReview;
 
 class Product extends Model
 {
@@ -102,7 +102,7 @@ class Product extends Model
      */
     public function product_reviews()
     {
-        return $this->hasMany(ProductView::class,'product_id');
+        return $this->hasMany(ProductReview::class,'product_id');
     }
 
 }
