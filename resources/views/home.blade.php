@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-
-
 @section('content')
 <div class="mb-lg-2"></div>
 <div class="container-fluid">
