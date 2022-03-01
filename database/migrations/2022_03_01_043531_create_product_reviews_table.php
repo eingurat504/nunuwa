@@ -17,6 +17,7 @@ class CreateProductReviewsTable extends Migration
             $table->bigIncrements('id');
             $table->foreignId('product_id')->nullable();
             $table->foreignId('user_id')->nullable();
+            $table->text('title', 100);
             $table->text('remarks', 1000);
             $table->timestamps();
         });
