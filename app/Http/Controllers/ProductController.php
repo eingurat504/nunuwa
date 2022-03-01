@@ -27,7 +27,7 @@ class ProductController extends Controller
     public function showProduct($id)
     {
 
-        $product = Product::with('category')->find($id);
+        $product = Product::with('category:id,name')->find($id);
 
         $reviews = ProductReview::where('product_id', $product->id)->get();
         

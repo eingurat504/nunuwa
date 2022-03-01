@@ -123,9 +123,9 @@
                                     <div class="product-details-footer">
                                         <div class="product-cat">
                                             <span>Category:</span>
-                                            <a href="#">Women</a>,
-                                            <a href="#">Dresses</a>,
-                                            <a href="#">Yellow</a>
+                                            <a href="#">{{ $product->category->name }}</a>
+                                           <!--  <a href="#">Dresses</a>,
+                                            <a href="#">Yellow</a> -->
                                         </div><!-- End .product-cat -->
 
                                         <div class="social-icons social-icons-sm">
