@@ -30,10 +30,14 @@ class ProductController extends Controller
         $product = Product::with('category:id,name')->findorfail($id);
 
         $reviews = ProductReview::where('product_id', $product->id)->get();
-        
+
+        $related_products = Product::with('category:id,name')
+                            ->where('category_id',$product->category->id)->get();
+     
         return view('products.show', [
             'product' => $product,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'related_products' => $related_products
         ]);
     }
 }
