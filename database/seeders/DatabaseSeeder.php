@@ -8,6 +8,7 @@ use App\Models\OptionGroup;
 use App\Models\Option;
 use App\Models\Order;
 use App\Models\ProductOption;
+use App\Models\ProductReview;
 
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +25,6 @@ class DatabaseSeeder extends Seeder
         OptionGroup::factory(10)->create();
         Product::factory(10)->create();
         ProductOption::factory(10)->create();
-
+        ProductReview::factory(10)->create();
     }
 }

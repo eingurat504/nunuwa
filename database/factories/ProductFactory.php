@@ -25,8 +25,8 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(4),
-            'price' => 800,
-            'stock' => 800,
+            'price' => $this->faker->numberBetween($min = 1500, $max = 6000),
+            'stock' => $this->faker->randomDigit,
             'sku' => 800,
             'description' => $this->faker->word(),
             'category_id' => function () {

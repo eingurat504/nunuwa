@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductImage;
 use App\Models\ProductCategory;
+use App\Models\ProductReview;
 
 class Product extends Model
 {
@@ -94,5 +95,14 @@ class Product extends Model
         return $this->hasMany(ProductImage::class,'product_id');
     }
 
+    /**
+     * Reviews for this product.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function product_reviews()
+    {
+        return $this->hasMany(ProductReview::class,'product_id');
+    }
 
 }
