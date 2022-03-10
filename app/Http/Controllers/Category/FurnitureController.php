@@ -24,12 +24,12 @@ class FurnitureController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getShoes()
+    public function getBedRooms()
     {
 
         $electronics = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.clothing.shoes', [
+        return view('category.furniture.bed_room', [
             'electronics' => $electronics,
         ]);
     }
@@ -39,12 +39,12 @@ class FurnitureController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getBags()
+    public function getKitchen()
     {
 
         $appliances = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.clothing.shoes', [
+        return view('category.furniture.kitchen', [
             'appliances' => $appliances,
         ]);
     }
@@ -54,12 +54,12 @@ class FurnitureController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getAccessories()
+    public function getChairs()
     {
 
         $backpacks = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.clothing.accessories', [
+        return view('category.furniture.chairs', [
             'backpacks' => $backpacks,
         ]);
     }
@@ -69,12 +69,12 @@ class FurnitureController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getjewelary()
+    public function getTables()
     {
 
         $beauties = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.healthy', [
+        return view('category.furniture.tables', [
             'beauties' => $beauties,
         ]);
     }
@@ -84,12 +84,12 @@ class FurnitureController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getClothing()
+    public function get()
     {
 
         $clothings = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.clothing.index', [
+        return view('category.furniture.index', [
             'clothings' => $clothings,
         ]);
     }
@@ -119,7 +119,7 @@ class FurnitureController extends Controller
 
         $travels = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.travel', [
+        return view('category.furniture.travel', [
             'travels' => $travels,
         ]);
     }
@@ -129,12 +129,12 @@ class FurnitureController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getTrending()
+    public function getCabinates()
     {
-dd('testing');
+
         $phones = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.phones', [
+        return view('category.furniture.cabinates', [
             'phones' => $phones,
         ]);
     }
