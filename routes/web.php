@@ -33,10 +33,38 @@ Route::group(['prefix' => '/backpack', 'as' => 'backpack.'], function () {
 
 Route::group(['prefix' => '/electronics', 'as' => 'electronics.'], function () {
     Route::get('/', [CategoryController::class, 'getElectronics'])->name('index');
+    Route::get('/accessories', [App\Http\Controllers\Category\ElectronicController::class, 'getMonitors'])
+    ->name('monitors.index');
+    Route::get('/shoes', [App\Http\Controllers\Category\ElectronicController::class, 'getMonitors'])
+    ->name('shoes.index');
+    Route::get('/laptops', [App\Http\Controllers\Category\ElectronicController::class, 'getLaptops'])
+    ->name('laptops.index');
+    Route::get('/printers', [App\Http\Controllers\Category\ElectronicController::class, 'getPrinters'])
+    ->name('printers.index');
+    Route::get('/trending', [App\Http\Controllers\Category\ElectronicController::class, 'getTablets'])
+    ->name('tablets.index');
+    Route::get('/best_sellers', [App\Http\Controllers\Category\ElectronicController::class, 'getDrives'])
+    ->name('drivers.index');
+    Route::get('/new_arrivals', [App\Http\Controllers\Category\ElectronicController::class, 'getAccessories'])
+    ->name('accessories.index');
 });
 
 Route::group(['prefix' => '/furniture', 'as' => 'furniture.'], function () {
     Route::get('/', [CategoryController::class, 'getFurniture'])->name('index');
+    Route::get('/chairs', [App\Http\Controllers\Category\ElectronicController::class, 'getChairs'])
+    ->name('chairs.index');
+    Route::get('/coffee_tables', [App\Http\Controllers\Category\ElectronicController::class, 'getCoffeTables'])
+    ->name('coffee_tables.index');
+    Route::get('/dressers', [App\Http\Controllers\Category\ElectronicController::class, 'getDressers'])
+    ->name('dressers.index');
+    Route::get('/beds', [App\Http\Controllers\Category\ElectronicController::class, 'getBeds'])
+    ->name('beds.index');
+    Route::get('/cabinets', [App\Http\Controllers\Category\ElectronicController::class, 'getNightStands'])
+    ->name('cabinets.index');
+    Route::get('/night_stands', [App\Http\Controllers\Category\ElectronicController::class, 'getDrives'])
+    ->name('night_stands.index');
+    Route::get('/dinning_sets', [App\Http\Controllers\Category\ElectronicController::class, 'getDiningSets'])
+    ->name('dinning_sets.index');
 });
 
 Route::group(['prefix' => '/cooking', 'as' => 'cooking.'], function () {
