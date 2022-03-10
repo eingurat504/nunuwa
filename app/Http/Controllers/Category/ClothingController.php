@@ -19,21 +19,6 @@ class ClothingController extends Controller
       
     }
 
-        /**
-     * Show Home Appliances.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function getClothing()
-    {
-
-        $appliances = Product::with('category')->inRandomOrder()->take(9)->get();
-
-        return view('category.index', [
-            'appliances' => $appliances,
-        ]);
-    }
-
     /**
      * Show Electronics.
      *
@@ -146,7 +131,7 @@ class ClothingController extends Controller
      */
     public function getTrending()
     {
-
+dd('testing');
         $phones = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.phones', [

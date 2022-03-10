@@ -45,6 +45,20 @@ Route::group(['prefix' => '/cooking', 'as' => 'cooking.'], function () {
 
 Route::group(['prefix' => '/clothing', 'as' => 'clothing.'], function () {
     Route::get('/', [CategoryController::class, 'getClothing'])->name('index');
+    Route::get('/accessories', [App\Http\Controllers\Category\ClothingController::class, 'getAccessories'])
+    ->name('accessories.index');
+    Route::get('/shoes', [App\Http\Controllers\Category\ClothingController::class, 'getShoes'])
+    ->name('shoes.index');
+    Route::get('/bags', [App\Http\Controllers\Category\ClothingController::class, 'getBags'])
+    ->name('bags.index');
+    Route::get('/jewelery_watches', [App\Http\Controllers\Category\ClothingController::class, 'getJewelery'])
+    ->name('watches.index');
+    Route::get('/trending', [App\Http\Controllers\Category\ClothingController::class, 'getTrending'])
+    ->name('index');
+    Route::get('/best_sellers', [App\Http\Controllers\Category\ClothingController::class, 'getBestSellers'])
+    ->name('sellers.index');
+    Route::get('/new_arrivals', [App\Http\Controllers\Category\ClothingController::class, 'getArrivals'])
+    ->name('arrivals.index');
 });
 
 Route::group(['prefix' => '/audios', 'as' => 'audios.'], function () {
