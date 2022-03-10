@@ -44,7 +44,7 @@ class CategoryController extends Controller
 
         $electronics = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.electronics', [
+        return view('category.electronics.index', [
             'electronics' => $electronics,
         ]);
     }
