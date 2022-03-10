@@ -92,7 +92,7 @@
                             <div class="col-6 col-md-4 col-lg-4">
                                 <div class="product product-7 text-center">
                                     <figure class="product-media">
-                                        <a href="product.html">
+                                        <a href="{{ route('products.show' ,$travel->id) }}">
                                             <img src="{{ asset('images/products/product-12.jpg') }}" alt="Product image" class="product-image">
                                         </a>
 

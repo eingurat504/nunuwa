@@ -256,7 +256,7 @@
                         @foreach($related_products as $related_product) 
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product.html">
+                                    <a href="{{ route('products.show', $related_product->id) }}">
                                         <img src="{{ asset('images/products/product-7.jpg') }}" alt="Product image" class="product-image">
                                     </a>
 
