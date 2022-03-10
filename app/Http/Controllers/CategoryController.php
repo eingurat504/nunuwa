@@ -74,7 +74,7 @@ class CategoryController extends Controller
 
         $backpacks = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.backpack', [
+        return view('category.backpack.index', [
             'backpacks' => $backpacks,
         ]);
     }
