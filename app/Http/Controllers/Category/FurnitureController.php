@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class FurnitureController extends Controller
 {
-    //
-        /**
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -49,7 +49,7 @@ class FurnitureController extends Controller
         ]);
     }
 
-        /**
+    /**
      * Show Backpacks.
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -109,12 +109,12 @@ class FurnitureController extends Controller
         ]);
     }
 
-        /**
+    /**
      * Show Travel and Outdoors.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getBestsellers()
+    public function getBestSellers()
     {
 
         $travels = Product::with('category')->inRandomOrder()->take(9)->get();
@@ -125,7 +125,7 @@ class FurnitureController extends Controller
     }
 
     /**
-     * Show Smart Phones.
+     * Show Carbinates.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
