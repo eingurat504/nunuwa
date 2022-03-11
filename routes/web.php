@@ -34,7 +34,7 @@ Route::group(['prefix' => '/backpack', 'as' => 'backpack.'], function () {
 
 Route::group(['prefix' => '/electronics', 'as' => 'electronics.'], function () {
     Route::get('/', [CategoryController::class, 'getElectronics'])->name('index');
-    Route::get('/accessories', [ElectronicController::class, 'getMonitors'])->name('monitors.index');
+    Route::get('/accessories', [ElectronicController::class, 'getAccessories'])->name('accessories.index');
     Route::get('/shoes', [ElectronicController::class, 'getMonitors'])->name('shoes.index');
     Route::get('/laptops', [ElectronicController::class, 'getLaptops'])->name('laptops.index');
     Route::get('/printers', [ElectronicController::class, 'getPrinters'])->name('printers.index');

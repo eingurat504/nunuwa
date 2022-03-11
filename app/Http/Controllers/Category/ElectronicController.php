@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Category;
 use App\Models\ProductCategory;
 use App\Models\Product;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
@@ -57,10 +58,10 @@ class ElectronicController extends Controller
     public function getAccessories()
     {
 
-        $backpacks = Product::with('category')->inRandomOrder()->take(9)->get();
+        $accessories = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.clothing.accessories', [
-            'backpacks' => $backpacks,
+            'accessories' => $accessories,
         ]);
     }
 
