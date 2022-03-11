@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Category\ElectronicController;
+use App\Http\Controllers\Category\FurnitureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +51,11 @@ Route::group(['prefix' => '/furniture', 'as' => 'furniture.'], function () {
     Route::get('/dressers', [FurnitureController::class, 'getDressers'])->name('dressers.index');
     Route::get('/beds', [FurnitureController::class, 'getBeds'])->name('beds.index');
     Route::get('/cabinets', [FurnitureController::class, 'getNightStands'])->name('cabinets.index');
-    Route::get('/night_stands', [FurnitureController::class, 'getDrives'])->name('night_stands.index');
+    Route::get('/night_stands', [FurnitureController::class, 'getNightStands'])->name('night_stands.index');
     Route::get('/dinning_sets', [FurnitureController::class, 'getDiningSets'])->name('dinning_sets.index');
+    Route::get('/bedding_room', [FurnitureController::class, 'getBeddings'])->name('beddings.index');
+    Route::get('/decorations', [FurnitureController::class, 'getDecorations'])->name('decorations.index');
+    Route::get('/kitchen', [FurnitureController::class, 'getDiningSets'])->name('dinning_sets.index');
 });
 
 Route::group(['prefix' => '/cooking', 'as' => 'cooking.'], function () {
