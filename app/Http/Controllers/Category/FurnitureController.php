@@ -28,10 +28,10 @@ class FurnitureController extends Controller
     public function getKitchenCabinates()
     {
 
-        $kitchen_sets = Product::with('category')->inRandomOrder()->take(9)->get();
+        $kitchen_cabinets = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.furniture.kitchen', [
-            'kitchen_sets' => $kitchen_sets,
+            'kitchen_cabinets' => $kitchen_cabinets,
         ]);
     }
 
