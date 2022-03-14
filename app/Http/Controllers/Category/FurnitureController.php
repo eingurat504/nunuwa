@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Category;
 use App\Models\ProductCategory;
 use App\Models\Product;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
 class FurnitureController extends Controller
 {
-    //
-        /**
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -20,77 +21,93 @@ class FurnitureController extends Controller
     }
 
     /**
-     * Show Electronics.
+     * Show Kitchen Cabinets.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getBedRooms()
+    public function getKitchenCabinates()
     {
 
-        $electronics = Product::with('category')->inRandomOrder()->take(9)->get();
+        $kitchen_sets = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.furniture.bed_room', [
-            'electronics' => $electronics,
+        return view('category.furniture.kitchen', [
+            'kitchen_sets' => $kitchen_sets,
         ]);
     }
 
     /**
-     * Show Appliances.
+     * Show Kitchen Cabinets.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getKitchen()
+    public function getDiningSets()
     {
 
-        $appliances = Product::with('category')->inRandomOrder()->take(9)->get();
+        $kitchen_sets = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.furniture.kitchen', [
-            'appliances' => $appliances,
+            'kitchen_sets' => $kitchen_sets,
         ]);
     }
-
-        /**
-     * Show Backpacks.
+    /**
+     * Show Chairs.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function getChairs()
     {
 
-        $backpacks = Product::with('category')->inRandomOrder()->take(9)->get();
+        $chairs = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.furniture.chairs', [
-            'backpacks' => $backpacks,
+            'chairs' => $chairs,
         ]);
     }
 
-    /**
-     * Show Healthy items.
+        /**
+     * Show Chairs.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function getTables()
     {
 
-        $beauties = Product::with('category')->inRandomOrder()->take(9)->get();
+        $chairs = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.furniture.tables', [
-            'beauties' => $beauties,
+        return view('category.furniture.chairs', [
+            'chairs' => $chairs,
+        ]);
+    }
+
+
+
+    /**
+     * Show Chairs.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getBeds()
+    {
+
+        $chairs = Product::with('category')->inRandomOrder()->take(9)->get();
+
+        return view('category.furniture.bed_room', [
+            'chairs' => $chairs,
         ]);
     }
 
     /**
-     * Show Clothing.
+     * Show Tables.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function get()
+    public function getTables()
     {
 
-        $clothings = Product::with('category')->inRandomOrder()->take(9)->get();
+        $tables = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.furniture.index', [
-            'clothings' => $clothings,
+        return view('category.furniture.tables', [
+            'tables' => $tables,
         ]);
     }
 
@@ -109,12 +126,12 @@ class FurnitureController extends Controller
         ]);
     }
 
-        /**
+    /**
      * Show Travel and Outdoors.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getBestsellers()
+    public function getBestSellers()
     {
 
         $travels = Product::with('category')->inRandomOrder()->take(9)->get();
@@ -125,17 +142,17 @@ class FurnitureController extends Controller
     }
 
     /**
-     * Show Smart Phones.
+     * Show Carbinates.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getCabinates()
+    public function getCoffeTables()
     {
 
-        $phones = Product::with('category')->inRandomOrder()->take(9)->get();
+        $coffee_tables = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.furniture.cabinates', [
-            'phones' => $phones,
+        return view('category.furniture.coffee_tables', [
+            'coffee_tables' => $coffee_tables,
         ]);
     }
 

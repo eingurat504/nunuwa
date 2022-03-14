@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
     <div class="container">
-        <h1 class="page-title">Clothing<span>Shop</span></h1>
+        <h1 class="page-title">Coffee Tables<span>Shop</span></h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
@@ -11,7 +11,8 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Clothing</li>
+            <li class="breadcrumb-item active" aria-current="page">Furniture</li>
+            <li class="breadcrumb-item active" aria-current="page">Coffee Tables</li>
         </ol>
     </div><!-- End .container -->
 </nav><!-- End .breadcrumb-nav -->
@@ -87,12 +88,12 @@
                 <div class="products mb-3">
                     <div class="row justify-content-center">
 
-                        @foreach($accessories as $accessory)
+                        @foreach($coffee_tables as $coffee_table)
                             <div class="col-6 col-md-4 col-lg-4">
                                 <div class="product product-7 text-center">
                                     <figure class="product-media">
                                         <a href="product.html">
-                                            <img src="{{ asset('images/products/product-14.jpg') }}" alt="Product image" class="product-image">
+                                            <img src="{{ asset('images/products/product-12.jpg') }}" alt="Product image" class="product-image">
                                         </a>
 
                                         <div class="product-action-vertical">
@@ -108,10 +109,10 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">{{ $accessory->category->name }}</a>
+                                            <a href="#">{{ $coffee_table->category->name }}</a>
                                         </div>
-                                        <h3 class="product-title"><a href="#">{{ $accessory->name }}</a></h3>
-                                        <div class="product-price">${{ $accessory->price }}</div>
+                                        <h3 class="product-title"><a href="#">{{ $coffee_table->name }}</a></h3>
+                                        <div class="product-price">${{ $coffee_table->price }}</div>
                                         <div class="ratings-container">
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->

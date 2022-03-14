@@ -5,6 +5,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Category\ElectronicController;
+use App\Http\Controllers\Category\FurnitureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,45 +28,35 @@ Auth::routes();
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
     Route::get('/', [CategoryController::class, 'getHomeAppliances'])->name('index');
 });
-
 Route::group(['prefix' => '/backpack', 'as' => 'backpack.'], function () {
     Route::get('/', [CategoryController::class, 'getBackPacks'])->name('index');
 });
 
 Route::group(['prefix' => '/electronics', 'as' => 'electronics.'], function () {
     Route::get('/', [CategoryController::class, 'getElectronics'])->name('index');
-    Route::get('/accessories', [App\Http\Controllers\Category\ElectronicController::class, 'getMonitors'])
-    ->name('monitors.index');
-    Route::get('/shoes', [App\Http\Controllers\Category\ElectronicController::class, 'getMonitors'])
-    ->name('shoes.index');
-    Route::get('/laptops', [App\Http\Controllers\Category\ElectronicController::class, 'getLaptops'])
-    ->name('laptops.index');
-    Route::get('/printers', [App\Http\Controllers\Category\ElectronicController::class, 'getPrinters'])
-    ->name('printers.index');
-    Route::get('/trending', [App\Http\Controllers\Category\ElectronicController::class, 'getTablets'])
-    ->name('tablets.index');
-    Route::get('/best_sellers', [App\Http\Controllers\Category\ElectronicController::class, 'getDrives'])
-    ->name('drivers.index');
-    Route::get('/new_arrivals', [App\Http\Controllers\Category\ElectronicController::class, 'getAccessories'])
-    ->name('accessories.index');
+    Route::get('/accessories', [ElectronicController::class, 'getAccessories'])->name('accessories.index');
+    Route::get('/shoes', [ElectronicController::class, 'getMonitors'])->name('shoes.index');
+    Route::get('/laptops', [ElectronicController::class, 'getLaptops'])->name('laptops.index');
+    Route::get('/printers', [ElectronicController::class, 'getPrinters'])->name('printers.index');
+    Route::get('/trending', [ElectronicController::class, 'getTablets'])->name('tablets.index');
+    Route::get('/best_sellers', [ElectronicController::class, 'getDrives'])->name('drivers.index');
+    Route::get('/new_arrivals', [ElectronicController::class, 'getAccessories'])->name('accessories.index');
 });
 
 Route::group(['prefix' => '/furniture', 'as' => 'furniture.'], function () {
     Route::get('/', [CategoryController::class, 'getFurniture'])->name('index');
-    Route::get('/chairs', [App\Http\Controllers\Category\ElectronicController::class, 'getChairs'])
-    ->name('chairs.index');
-    Route::get('/coffee_tables', [App\Http\Controllers\Category\ElectronicController::class, 'getCoffeTables'])
-    ->name('coffee_tables.index');
-    Route::get('/dressers', [App\Http\Controllers\Category\ElectronicController::class, 'getDressers'])
-    ->name('dressers.index');
-    Route::get('/beds', [App\Http\Controllers\Category\ElectronicController::class, 'getBeds'])
-    ->name('beds.index');
-    Route::get('/cabinets', [App\Http\Controllers\Category\ElectronicController::class, 'getNightStands'])
-    ->name('cabinets.index');
-    Route::get('/night_stands', [App\Http\Controllers\Category\ElectronicController::class, 'getDrives'])
-    ->name('night_stands.index');
-    Route::get('/dinning_sets', [App\Http\Controllers\Category\ElectronicController::class, 'getDiningSets'])
-    ->name('dinning_sets.index');
+    Route::get('/chairs', [FurnitureController::class, 'getChairs'])->name('chairs.index');
+    Route::get('/coffee_tables', [FurnitureController::class, 'getCoffeTables'])->name('coffee_tables.index');
+    Route::get('/dressers', [FurnitureController::class, 'getDressers'])->name('dressers.index');
+    Route::get('/beds', [FurnitureController::class, 'getBeds'])->name('beds.index');
+    Route::get('/cabinets', [FurnitureController::class, 'getNightStands'])->name('cabinets.index');
+    Route::get('/night_stands', [FurnitureController::class, 'getNightStands'])->name('night_stands.index');
+    Route::get('/dining_sets', [FurnitureController::class, 'getDiningSets'])->name('dining_sets.index');
+    Route::get('/bedding_room', [FurnitureController::class, 'getBeddings'])->name('beddings.index');
+    Route::get('/decorations', [FurnitureController::class, 'getDecorations'])->name('decorations.index');
+    Route::get('/kitchen', [FurnitureController::class, 'getDiningSets'])->name('dinning_sets.index');
+
+    Route::get('/tables', [FurnitureController::class, 'getTables'])->name('tables.index');
 });
 
 Route::group(['prefix' => '/cooking', 'as' => 'cooking.'], function () {
@@ -73,20 +65,13 @@ Route::group(['prefix' => '/cooking', 'as' => 'cooking.'], function () {
 
 Route::group(['prefix' => '/clothing', 'as' => 'clothing.'], function () {
     Route::get('/', [CategoryController::class, 'getClothing'])->name('index');
-    Route::get('/accessories', [App\Http\Controllers\Category\ClothingController::class, 'getAccessories'])
-    ->name('accessories.index');
-    Route::get('/shoes', [App\Http\Controllers\Category\ClothingController::class, 'getShoes'])
-    ->name('shoes.index');
-    Route::get('/bags', [App\Http\Controllers\Category\ClothingController::class, 'getBags'])
-    ->name('bags.index');
-    Route::get('/jewelery_watches', [App\Http\Controllers\Category\ClothingController::class, 'getJewelery'])
-    ->name('watches.index');
-    Route::get('/trending', [App\Http\Controllers\Category\ClothingController::class, 'getTrending'])
-    ->name('index');
-    Route::get('/best_sellers', [App\Http\Controllers\Category\ClothingController::class, 'getBestSellers'])
-    ->name('sellers.index');
-    Route::get('/new_arrivals', [App\Http\Controllers\Category\ClothingController::class, 'getArrivals'])
-    ->name('arrivals.index');
+    Route::get('/accessories', [ClothingController::class, 'getAccessories'])->name('accessories.index');
+    Route::get('/shoes', [ClothingController::class, 'getShoes'])->name('shoes.index');
+    Route::get('/bags', [ClothingController::class, 'getBags'])->name('bags.index');
+    Route::get('/jewelery_watches', [ClothingController::class, 'getJewelery'])->name('watches.index');
+    Route::get('/trending', [ClothingController::class, 'getTrending'])->name('index');
+    Route::get('/best_sellers', [ClothingController::class, 'getBestSellers'])->name('sellers.index');
+    Route::get('/new_arrivals', [ClothingController::class, 'getArrivals'])->name('arrivals.index');
 });
 
 Route::group(['prefix' => '/audios', 'as' => 'audios.'], function () {
