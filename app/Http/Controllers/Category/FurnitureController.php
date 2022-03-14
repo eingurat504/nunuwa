@@ -79,6 +79,21 @@ class FurnitureController extends Controller
         ]);
     }
 
+        /**
+     * Show Chairs.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getDressers()
+    {
+
+        $dressers = Product::with('category')->inRandomOrder()->take(9)->get();
+
+        return view('category.furniture.dressers', [
+            'dressers' => $dressers,
+        ]);
+    }
+
     /**
      * Show Tables.
      *
