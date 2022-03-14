@@ -28,10 +28,10 @@ class FurnitureController extends Controller
     public function getKitchenCabinates()
     {
 
-        $kitchen_sets = Product::with('category')->inRandomOrder()->take(9)->get();
+        $kitchen_cabinets = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.furniture.kitchen', [
-            'kitchen_sets' => $kitchen_sets,
+            'kitchen_cabinets' => $kitchen_cabinets,
         ]);
     }
 
@@ -64,23 +64,6 @@ class FurnitureController extends Controller
         ]);
     }
 
-        /**
-     * Show Chairs.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function getTables()
-    {
-
-        $chairs = Product::with('category')->inRandomOrder()->take(9)->get();
-
-        return view('category.furniture.chairs', [
-            'chairs' => $chairs,
-        ]);
-    }
-
-
-
     /**
      * Show Chairs.
      *
@@ -93,6 +76,21 @@ class FurnitureController extends Controller
 
         return view('category.furniture.bed_room', [
             'chairs' => $chairs,
+        ]);
+    }
+
+        /**
+     * Show Chairs.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function getDressers()
+    {
+
+        $dressers = Product::with('category')->inRandomOrder()->take(9)->get();
+
+        return view('category.furniture.dressers', [
+            'dressers' => $dressers,
         ]);
     }
 

@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
     <div class="container">
-        <h1 class="page-title">Tables<span>Shop</span></h1>
+        <h1 class="page-title">Furniture<span>Shop</span></h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
@@ -11,8 +11,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="#">Furniture</a>v</li>
-            <li class="breadcrumb-item active" aria-current="page">Tables</li>
+            <li class="breadcrumb-item active" aria-current="page">Furniture</li>
         </ol>
     </div><!-- End .container -->
 </nav><!-- End .breadcrumb-nav -->
@@ -88,11 +87,11 @@
                 <div class="products mb-3">
                     <div class="row justify-content-center">
 
-                        @foreach($tables as $table)
+                        @foreach($kitchen_cabinets as $kitchen_cabinet)
                             <div class="col-6 col-md-4 col-lg-4">
                                 <div class="product product-7 text-center">
                                     <figure class="product-media">
-                                        <a href="product.html">
+                                        <a href="{{ route('products.show',$kitchen_cabinet->id) }}">
                                             <img src="{{ asset('images/products/product-12.jpg') }}" alt="Product image" class="product-image">
                                         </a>
 
@@ -109,10 +108,10 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">{{ $table->category->name }}</a>
+                                            <a href="#">{{ $kitchen_cabinet->category->name }}</a>
                                         </div>
-                                        <h3 class="product-title"><a href="#">{{ $table->name }}</a></h3>
-                                        <div class="product-price">${{ $table->price }}</div>
+                                        <h3 class="product-title"><a href="#">{{ $kitchen_cabinet->name }}</a></h3>
+                                        <div class="product-price">${{ $kitchen_cabinet->price }}</div>
                                         <div class="ratings-container">
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->

@@ -54,8 +54,7 @@ Route::group(['prefix' => '/furniture', 'as' => 'furniture.'], function () {
     Route::get('/dining_sets', [FurnitureController::class, 'getDiningSets'])->name('dining_sets.index');
     Route::get('/bedding_room', [FurnitureController::class, 'getBeddings'])->name('beddings.index');
     Route::get('/decorations', [FurnitureController::class, 'getDecorations'])->name('decorations.index');
-    Route::get('/kitchen', [FurnitureController::class, 'getDiningSets'])->name('dinning_sets.index');
-
+    Route::get('/kitchen', [FurnitureController::class, 'getKitchenCabinates'])->name('kitchen_cabinets.index');
     Route::get('/tables', [FurnitureController::class, 'getTables'])->name('tables.index');
 });
 
