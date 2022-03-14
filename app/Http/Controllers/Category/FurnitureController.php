@@ -64,23 +64,6 @@ class FurnitureController extends Controller
         ]);
     }
 
-        /**
-     * Show Chairs.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function getTables()
-    {
-
-        $chairs = Product::with('category')->inRandomOrder()->take(9)->get();
-
-        return view('category.furniture.chairs', [
-            'chairs' => $chairs,
-        ]);
-    }
-
-
-
     /**
      * Show Chairs.
      *
