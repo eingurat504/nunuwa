@@ -28,7 +28,6 @@ Auth::routes();
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
     Route::get('/', [CategoryController::class, 'getHomeAppliances'])->name('index');
 });
-
 Route::group(['prefix' => '/backpack', 'as' => 'backpack.'], function () {
     Route::get('/', [CategoryController::class, 'getBackPacks'])->name('index');
 });
@@ -52,10 +51,12 @@ Route::group(['prefix' => '/furniture', 'as' => 'furniture.'], function () {
     Route::get('/beds', [FurnitureController::class, 'getBeds'])->name('beds.index');
     Route::get('/cabinets', [FurnitureController::class, 'getNightStands'])->name('cabinets.index');
     Route::get('/night_stands', [FurnitureController::class, 'getNightStands'])->name('night_stands.index');
-    Route::get('/dinning_sets', [FurnitureController::class, 'getDiningSets'])->name('dinning_sets.index');
+    Route::get('/dining_sets', [FurnitureController::class, 'getDiningSets'])->name('dining_sets.index');
     Route::get('/bedding_room', [FurnitureController::class, 'getBeddings'])->name('beddings.index');
     Route::get('/decorations', [FurnitureController::class, 'getDecorations'])->name('decorations.index');
     Route::get('/kitchen', [FurnitureController::class, 'getDiningSets'])->name('dinning_sets.index');
+
+    Route::get('/tables', [FurnitureController::class, 'getTables'])->name('tables.index');
 });
 
 Route::group(['prefix' => '/cooking', 'as' => 'cooking.'], function () {
