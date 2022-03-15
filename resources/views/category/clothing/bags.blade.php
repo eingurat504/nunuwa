@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
     <div class="container">
-        <h1 class="page-title">Shoes<span>Shop</span></h1>
+        <h1 class="page-title">Bags<span>Shop</span></h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
@@ -87,7 +87,7 @@
                 <div class="products mb-3">
                     <div class="row justify-content-center">
 
-                        @foreach($shoes as $shoe)
+                        @foreach($bags as $bag)
                             <div class="col-6 col-md-4 col-lg-4">
                                 <div class="product product-7 text-center">
                                     <figure class="product-media">
@@ -108,10 +108,10 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">{{ $shoe->category->name }}</a>
+                                            <a href="#">{{ $bag->category->name }}</a>
                                         </div>
-                                        <h3 class="product-title"><a href="#">{{ $shoe->name }}</a></h3>
-                                        <div class="product-price">${{ $shoe->price }}</div>
+                                        <h3 class="product-title"><a href="#">{{ $bag->name }}</a></h3>
+                                        <div class="product-price">${{ $bag->price }}</div>
                                         <div class="ratings-container">
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->

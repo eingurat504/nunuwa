@@ -28,10 +28,10 @@ class ClothingController extends Controller
     public function getShoes()
     {
 
-        $electronics = Product::with('category')->inRandomOrder()->take(9)->get();
+        $shoes = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.clothing.shoes', [
-            'electronics' => $electronics,
+            'shoes' => $shoes,
         ]);
     }
 
@@ -43,10 +43,10 @@ class ClothingController extends Controller
     public function getBags()
     {
 
-        $appliances = Product::with('category')->inRandomOrder()->take(9)->get();
+        $bags = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.clothing.shoes', [
-            'appliances' => $appliances,
+        return view('category.clothing.bags', [
+            'bags' => $bags,
         ]);
     }
 
@@ -58,10 +58,10 @@ class ClothingController extends Controller
     public function getAccessories()
     {
 
-        $backpacks = Product::with('category')->inRandomOrder()->take(9)->get();
+        $accessories = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.clothing.accessories', [
-            'backpacks' => $backpacks,
+            'accessories' => $accessories,
         ]);
     }
 
@@ -70,13 +70,13 @@ class ClothingController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getjewelary()
+    public function getJewelery()
     {
 
-        $beauties = Product::with('category')->inRandomOrder()->take(9)->get();
+        $jewleries = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.healthy', [
-            'beauties' => $beauties,
+        return view('category.clothing.jewlery', [
+            'jewleries' => $jewleries,
         ]);
     }
 
@@ -118,10 +118,10 @@ class ClothingController extends Controller
     public function getBestsellers()
     {
 
-        $travels = Product::with('category')->inRandomOrder()->take(9)->get();
+        $sellers = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.travel', [
-            'travels' => $travels,
+        return view('category.best_sellers', [
+            'sellers' => $tsellersravels,
         ]);
     }
 
@@ -132,11 +132,11 @@ class ClothingController extends Controller
      */
     public function getTrending()
     {
-dd('testing');
-        $phones = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.phones', [
-            'phones' => $phones,
+        $trends = Product::with('category')->inRandomOrder()->take(9)->get();
+
+        return view('category.trending', [
+            'trends' => $trends,
         ]);
     }
 
