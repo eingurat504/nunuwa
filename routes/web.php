@@ -71,6 +71,20 @@ Route::group(['prefix' => '/clothing', 'as' => 'clothing.'], function () {
     Route::get('/trending', [ClothingController::class, 'getTrending'])->name('index');
     Route::get('/best_sellers', [ClothingController::class, 'getBestSellers'])->name('sellers.index');
     Route::get('/new_arrivals', [ClothingController::class, 'getArrivals'])->name('arrivals.index');
+    Route::get('/accessories', [ClothingController::class, 'getAccessories'])
+    ->name('accessories.index');
+    Route::get('/shoes', [ClothingController::class, 'getShoes'])
+    ->name('shoes.index');
+    Route::get('/bags', [ClothingController::class, 'getBags'])
+    ->name('bags.index');
+    Route::get('/jewelery_watches', [ClothingController::class, 'getJewelery'])
+    ->name('watches.index');
+    Route::get('/trending', [ClothingController::class, 'getTrending'])
+    ->name('index');
+    Route::get('/best_sellers', [ClothingController::class, 'getBestSellers'])
+    ->name('sellers.index');
+    Route::get('/new_arrivals', [ClothingController::class, 'getArrivals'])
+    ->name('arrivals.index');
 });
 
 Route::group(['prefix' => '/audios', 'as' => 'audios.'], function () {
