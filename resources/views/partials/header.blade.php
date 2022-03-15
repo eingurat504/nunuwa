@@ -414,8 +414,8 @@
                                                             <div class="col-md-6">
                                                                 <div class="menu-title">Women</div><!-- End .menu-title -->
                                                                 <ul>
-                                                                    <li><a href="{{ route('') }}"><strong>New Arrivals</strong></a></li>
-                                                                    <li><a href="{{ route('') }}"><strong>Best Sellers</strong></a></li>
+                                                                    <li><a href="{{ route('clothing.arrivals.index') }}"><strong>New Arrivals</strong></a></li>
+                                                                    <li><a href="{{ route('clothing.sellers.index') }}"><strong>Best Sellers</strong></a></li>
                                                                     <li><a href="{{ route('') }}"><strong>Trending</strong></a></li>
                                                                     <li><a href="{{ route('clothing.index') }}">Clothing</a></li>
                                                                     <li><a href="{{ route('clothing.shoes.index') }}">Shoes</a></li>
