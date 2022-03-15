@@ -416,12 +416,12 @@
                                                                 <ul>
                                                                     <li><a href="{{ route('clothing.arrivals.index') }}"><strong>New Arrivals</strong></a></li>
                                                                     <li><a href="{{ route('clothing.sellers.index') }}"><strong>Best Sellers</strong></a></li>
-                                                                    <li><a href="{{ route('') }}"><strong>Trending</strong></a></li>
+                                                                    <li><a href="{{ route('clothing.trending.index') }}"><strong>Trending</strong></a></li>
                                                                     <li><a href="{{ route('clothing.index') }}">Clothing</a></li>
                                                                     <li><a href="{{ route('clothing.shoes.index') }}">Shoes</a></li>
                                                                     <li><a href="{{ route('clothing.bags.index') }}">Bags</a></li>
                                                                     <li><a href="{{ route('clothing.accessories.index') }}">Accessories</a></li>
-                                                                    <li><a href="{{ route('clothing.Jewlery.index') }}">Jewlery & Watches</a></li>
+                                                                    <li><a href="{{ route('clothing.jewlery.index') }}">Jewlery & Watches</a></li>
                                                                     <li><a href="{{ route('clothing.bags.index') }}"><strong>Sale</strong></a></li>
                                                                 </ul>
                                                             </div><!-- End .col-md-6 -->
@@ -433,7 +433,7 @@
                                                                     <li><a href="{{ route('clothing.sellers.index') }}"><strong>Best Sellers</strong></a></li>
                                                                     <li><a href="{{ route('clothing.trending.index') }}"><strong>Trending</strong></a></li>
                                                                     <li><a href="{{ route('clothing.index') }}">Clothing</a></li>
-                                                                    <li><a href="{{ route('clohting.index.index') }}">Shoes</a></li>
+                                                                    <li><a href="{{ route('clothing.shoes.index') }}">Shoes</a></li>
                                                                     <li><a href="{{ route('clothing.bags.index') }}">Bags</a></li>
                                                                     <li><a href="{{ route('clothing.accessories.index') }}">Accessories</a></li>
                                                                     <li><a href="{{ route('clothing.jewlery.index') }}">Jewlery & Watches</a></li>

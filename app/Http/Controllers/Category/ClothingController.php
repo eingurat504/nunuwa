@@ -70,13 +70,13 @@ class ClothingController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getjewelary()
+    public function getJewelery()
     {
 
-        $beauties = Product::with('category')->inRandomOrder()->take(9)->get();
+        $jeweleries = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.healthy', [
-            'beauties' => $beauties,
+        return view('category.jewelery', [
+            'jeweleries' => $jeweleries,
         ]);
     }
 
@@ -132,11 +132,11 @@ class ClothingController extends Controller
      */
     public function getTrending()
     {
-dd('testing');
-        $phones = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.phones', [
-            'phones' => $phones,
+        $trends = Product::with('category')->inRandomOrder()->take(9)->get();
+
+        return view('category.trending', [
+            'trends' => $trends,
         ]);
     }
 
