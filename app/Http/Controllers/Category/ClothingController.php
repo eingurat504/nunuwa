@@ -28,10 +28,10 @@ class ClothingController extends Controller
     public function getShoes()
     {
 
-        $electronics = Product::with('category')->inRandomOrder()->take(9)->get();
+        $shoes = Product::with('category')->inRandomOrder()->take(9)->get();
 
         return view('category.clothing.shoes', [
-            'electronics' => $electronics,
+            'shoes' => $shoes,
         ]);
     }
 
@@ -43,10 +43,10 @@ class ClothingController extends Controller
     public function getBags()
     {
 
-        $appliances = Product::with('category')->inRandomOrder()->take(9)->get();
+        $bags = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.clothing.shoes', [
-            'appliances' => $appliances,
+        return view('category.clothing.bags', [
+            'bags' => $bags,
         ]);
     }
 
@@ -118,10 +118,10 @@ class ClothingController extends Controller
     public function getBestsellers()
     {
 
-        $travels = Product::with('category')->inRandomOrder()->take(9)->get();
+        $sellers = Product::with('category')->inRandomOrder()->take(9)->get();
 
-        return view('category.travel', [
-            'travels' => $travels,
+        return view('category.best_sellers', [
+            'sellers' => $tsellersravels,
         ]);
     }
 
