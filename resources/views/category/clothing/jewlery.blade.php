@@ -87,7 +87,7 @@
                 <div class="products mb-3">
                     <div class="row justify-content-center">
 
-                        @foreach($clothings as $clothing)
+                        @foreach($jewleries as $jewlery)
                             <div class="col-6 col-md-4 col-lg-4">
                                 <div class="product product-7 text-center">
                                     <figure class="product-media">
@@ -108,10 +108,10 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">{{ $clothing->category->name }}</a>
+                                            <a href="#">{{ $jewlery->category->name }}</a>
                                         </div>
-                                        <h3 class="product-title"><a href="#">{{ $clothing->name }}</a></h3>
-                                        <div class="product-price">${{ $clothing->price }}</div>
+                                        <h3 class="product-title"><a href="#">{{ $jewlery->name }}</a></h3>
+                                        <div class="product-price">${{ $jewlery->price }}</div>
                                         <div class="ratings-container">
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->
