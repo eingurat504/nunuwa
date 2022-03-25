@@ -16,11 +16,11 @@ use App\Http\Controllers\CategoryController;
 
 // Auth::routes();
 
-Route::get('admin/login', function(){
-    ddd('testing.......');
-});
+// Route::get('admin/login', function(){
+//     ddd('testing.......');
+// });
 
-// Route::get('admin/login','Auth\AuthController@getLogin')->name('adminLogin');
+Route::get('admin/login','Auth\AuthController@login')->name('login');
 // Route::post('admin/login', 'Auth\AuthController@postLogin')->name('adminLoginPost');
 // Route::get('admin/logout', 'Auth\AuthController@logout')->name('adminLogout');
 
