@@ -18,7 +18,7 @@ class AuthController extends Controller
      */
     protected function login()
     {
-        return view('admin.products.show');
+        return view('admin.auth.login');
     }
 
 
