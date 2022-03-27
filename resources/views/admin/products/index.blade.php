@@ -349,84 +349,68 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Products</h4>
 
-              <!-- Striped Rows -->
               <div class="card">
-                <h5 class="card-header">Products</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>Category</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
-                        <th class="text-center">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                      @foreach($products as $product)
-                      <tr>
-                        <td><a href="{{ route('category.show', $product->category->id) }}">{{ $product->category->name }}</a></td>
-                        <td><a href="{{ route('product.show', $product->id) }}">{{$product->name }}</a></td>
-                        <td>${{ $product->price }}</td>
-                        <td>{{ $product->created_at }}</td>
-                        <td>{{ $product->updated_at }}</td>
-                        <td class="text-center">
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
+                <div class="card-header d-flex align-items-center justify-content-between">
+                  <h5 class="card-title m-0 me-2">Products</h5>
+                  <div class="dropdown">
+                    <button
+                      class="btn p-0"
+                      type="button"
+                      id="transactionID"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                      <a class="dropdown-item" href="{{ route('product.create') }}">Create Product</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Category</th>
+                              <th>Name</th>
+                              <th>Price</th>
+                              <th>Created At</th>
+                              <th>Updated At</th>
+                              <th class="text-center">Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody class="table-border-bottom-0">
+                            @foreach($products as $product)
+                            <tr>
+                              <td><a href="{{ route('category.show', $product->category->id) }}">{{ $product->category->name }}</a></td>
+                              <td><a href="{{ route('product.show', $product->id) }}">{{$product->name }}</a></td>
+                              <td>${{ $product->price }}</td>
+                              <td>{{ $product->created_at }}</td>
+                              <td>{{ $product->updated_at }}</td>
+                              <td class="text-center">
+                                <div class="dropdown">
+                                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"
+                                      ><i class="bx bx-edit-alt me-2"></i> Edit</a
+                                    >
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="bx bx-trash me-2"></i> Delete</a
+                                    >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+                    </div>
                 </div>
               </div>
-              <!--/ Striped Rows -->
-
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
 
             <div class="content-backdrop fade"></div>
           </div>
