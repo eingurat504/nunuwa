@@ -363,7 +363,7 @@
                           class="form-control"
                           id="defaultFormControlInput"
                           placeholder="name"
-                          value="{{ old('name') }}"
+                          value="{{ old('name', $category->name) }}"
                           aria-describedby="defaultFormControlHelp" />
                         
                       </div>
