@@ -356,6 +356,9 @@
                     <h5 class="card-header">Default</h5>
                     <div class="card-body">
                       <form method="POST" action="{{ route('product.update', $product->id) }}">
+
+                       {{ method_field('PUT') }}
+
                         <div class="row">
                           <div class="mb-3 col-md-12">
                             <label for="firstName" class="form-label">Name</label>
