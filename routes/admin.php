@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +22,8 @@ Route::get('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     // Admin Dashboard
-    Route::get('dashboard','AdminController@dashboard')->name('dashboard'); 
-    Route::get('test','AdminController@dashboard')->name('dashboard'); 
+    Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
+    Route::get('/products/categories','CategoryController@index')->name('products.categories'); 
 });
 
 
