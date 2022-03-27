@@ -23,7 +23,22 @@ Route::get('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     // Admin Dashboard
     Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
-    Route::get('/products/categories','CategoryController@index')->name('products.categories'); 
+
+    // categories
+    Route::get('/categories','CategoryController@index')->name('category.index');
+    Route::get('/categories/create','CategoryController@create')->name('category.create');
+    Route::post('/categories/store','CategoryController@store')->name('category.store');
+    Route::get('/categories/{category}','CategoryController@show')->name('category.show');
+    Route::get('/categories/{category}/edit','CategoryController@edit')->name('category.edit');
+    Route::put('/categories/{category}/update','CategoryController@update')->name('category.update');
+
+    // products
+    Route::get('/products','ProductController@index')->name('products.index'); 
+    Route::get('/products/create','ProductController@create')->name('products.create'); 
+    Route::post('/products/store','ProductController@store')->name('products.store'); 
+    Route::get('/products/{product}','ProductController@show')->name('products.show'); 
+    Route::get('/products/{product}/edit','ProductController@edit')->name('products.edit');
+    Route::put('/products/{product}/update','ProductController@update')->name('products.update');  
 });
 
 
