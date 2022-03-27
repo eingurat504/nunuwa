@@ -351,55 +351,49 @@
                 <a href="{{ route('product.index') }}">Products</a> /</span>{{$product->name }} <span class="text-muted fw-light"> / Edit</span></h4>
 
               <div class="row">
-
                 <div class="col-md-6">
                   <div class="card mb-4">
                     <h5 class="card-header">Default</h5>
                     <div class="card-body">
-                      <div>
-                        <label for="defaultFormControlInput" class="form-label">CTEGORY</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="defaultFormControlInput"
-                          placeholder="name"
-                          value="{{ old('name', $product->name) }}"
-                          aria-describedby="defaultFormControlHelp" />
-                        
-                      </div>
-                      <div>
-                        <label for="defaultFormControlInput" class="form-label">Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="defaultFormControlInput"
-                          placeholder="name"
-                          value="{{ old('name', $product->name) }}"
-                          aria-describedby="defaultFormControlHelp" />
-                        
-                      </div>
-                      <div>
-                        <label for="defaultFormControlInput" class="form-label">Price</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="defaultFormControlInput"
-                          placeholder="name"
-                          value="{{ old('name', $product->price) }}"
-                          aria-describedby="defaultFormControlHelp" />
-                        
-                      </div>
-                      <div>
-                        <label for="defaultFormControlInput" class="form-label">Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="defaultFormControlInput"
-                          placeholder="name"
-                          value="{{ old('name', $product->name) }}"
-                          aria-describedby="defaultFormControlHelp" />
-                        
-                      </div>
+                      <form method="POST" action="{{ route('product.update', $product->id) }}">
+
+                       {{ method_field('PUT') }}
+
+                        <div class="row">
+                          <div class="mb-3 col-md-12">
+                            <label for="firstName" class="form-label">Name</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName" value="{{ old('name', $product->name) }}"/>
+                          </div>
+
+                          <div class="mb-3 col-md-12">
+                            <label for="organization" class="form-label">Category</label>
+                            <select class="form-control" id="category"
+                               name="category" value="{{ old('category') }}">
+                                 <option value="1">1</option>
+                                 <option value="2">2</option>
+                                 <option value="3">3</option>
+                                 <option value="4">4</option>
+                                 <option value="5">5</option>
+                            </select>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label for="email" class="form-label">Price</label>
+                            <input class="form-control" type="integer" id="price"
+                              name="price" value="{{ old('price', $product->price) }}" placeholder="price" />
+
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label for="state" class="form-label">Description</label>
+                            <textarea class="form-control" type="text" id="description" name="description" placeholder="description">
+                              
+                            </textarea> 
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="submit" class="btn btn-primary me-2">Save</button>
+                          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>

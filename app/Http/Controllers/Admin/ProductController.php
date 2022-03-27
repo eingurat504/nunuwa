@@ -78,9 +78,20 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
-        $category = Product::findOrfail($id);
+        $product = Product::findOrfail($id);
 
-        return view('admin.products.index');
+        DB::table('products')
+        ->where('id', $product->id)
+        ->update([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+            // 'updated_by' => $request->description,
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect()->route('product.index');
+
     }
 
 
