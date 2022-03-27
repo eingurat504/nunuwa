@@ -217,7 +217,7 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link">
+              <a href="{{ route('product.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -363,7 +363,7 @@
                           class="form-control"
                           id="defaultFormControlInput"
                           placeholder="name"
-                          value="{{ old('name') }}"
+                          value="{{ old('name', $category->name) }}"
                           aria-describedby="defaultFormControlHelp" />
                         
                       </div>

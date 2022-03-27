@@ -33,12 +33,12 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     Route::put('/categories/{category}/update','CategoryController@update')->name('category.update');
 
     // products
-    Route::get('/products','ProductController@index')->name('products.index'); 
-    Route::get('/products/create','ProductController@create')->name('products.create'); 
-    Route::post('/products/store','ProductController@store')->name('products.store'); 
-    Route::get('/products/{product}','ProductController@show')->name('products.show'); 
-    Route::get('/products/{product}/edit','ProductController@edit')->name('products.edit');
-    Route::put('/products/{product}/update','ProductController@update')->name('products.update');  
+    Route::get('/products','ProductController@index')->name('product.index'); 
+    Route::get('/products/create','ProductController@create')->name('product.create'); 
+    Route::post('/products/store','ProductController@store')->name('product.store'); 
+    Route::get('/products/{product}','ProductController@show')->name('product.show'); 
+    Route::get('/products/{product}/edit','ProductController@edit')->name('product.edit');
+    Route::put('/products/{product}/update','ProductController@update')->name('product.update');  
 });
 
 
