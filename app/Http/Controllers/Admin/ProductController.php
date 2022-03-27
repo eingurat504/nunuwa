@@ -24,32 +24,87 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the admin dashboard.
+     * Show products.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function dashboard()
+    public function index()
     {
 
-        $categories = Product::with('category')->inRandomOrder()->take(4)->get();
-
-        $products = Product::with('category')->inRandomOrder()->take(8)->get();
-
-        $clothings = Product::with('category')->inRandomOrder()->take(8)->get();
-
-        $cookings = Product::with('category')->inRandomOrder()->where('id', 1)->take(8)->get();
-
-        $electronics = Product::with('category')->inRandomOrder()->take(8)->get();
-
-        $furnitures = Product::with('category')->inRandomOrder()->take(8)->get();
-
-        return view('admin.index', [
-            'categories' => $categories,
+        $products = Product::get();
+        return view('admin.products.index', [
             'products' => $products,
-            'cookings' => $categories,
-            'electronics' => $electronics,
-            'furnitures' => $furnitures,
-            'clothings' => $products,
         ]);
+    }
+
+     /**
+     * Show product details.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function show($id)
+    {
+
+        $product = Product::findOrfail($id);
+
+        return view('admin.products.show', [
+            'product' => $product,
+        ]);
+    }
+
+
+    /**
+     * Show product categories.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function edit($id)
+    {
+
+        $product = Product::findOrfail($id);
+
+        return view('admin.products.edit', [
+            'product' => $product,
+        ]);
+    }
+
+
+
+    /**
+     * Show update product.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function update(Request $request, $id)
+    {
+
+        $category = Product::findOrfail($id);
+
+        return view('admin.products.index');
+    }
+
+
+    /**
+     * Show create product .
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function create()
+    {
+
+        return view('admin.products.create');
+    }
+
+
+    /**
+     * Show store product.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function store(Request $request)
+    {
+
+
+        return view('admin.products.index');
     }
 }
