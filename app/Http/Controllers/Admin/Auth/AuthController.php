@@ -7,10 +7,19 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    //
+    
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return \App\Models\User
+     */
+    protected function getlogin()
+    {
+        return view('admin.auth.login');
+    }
 
-
-        /**
+    /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
@@ -20,6 +29,7 @@ class AuthController extends Controller
     {
         return view('admin.auth.login');
     }
+
 
 
 }

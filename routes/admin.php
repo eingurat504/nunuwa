@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\Admin\Auth\AuthController;
+use App\Http\Controllers\Admin\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,19 +15,15 @@ use App\Http\Controllers\CategoryController;
 */
 
 // Auth::routes();
+Route::get('admin/login','Auth\AuthController@getlogin')->name('admin.login.index');
+Route::post('admin/login', 'Auth\AuthController@login')->name('admin.login');
+Route::get('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
-// Route::get('admin/login', function(){
-//     ddd('testing.......');
-// });
-
-Route::get('admin/login','Auth\AuthController@login')->name('login');
-// Route::post('admin/login', 'Auth\AuthController@postLogin')->name('adminLoginPost');
-// Route::get('admin/logout', 'Auth\AuthController@logout')->name('adminLogout');
-
-// Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
-//     // Admin Dashboard
-//     Route::get('dashboard','AuthController@dashboard')->name('dashboard'); 
-// });
+Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
+    // Admin Dashboard
+    Route::get('dashboard','AdminController@dashboard')->name('dashboard'); 
+    Route::get('test','AdminController@dashboard')->name('dashboard'); 
+});
 
 
 
