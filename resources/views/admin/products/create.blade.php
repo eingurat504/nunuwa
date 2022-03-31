@@ -356,24 +356,23 @@
                     <h5 class="card-header">Default</h5>
                     <div class="card-body">
                       <form method="POST" action="{{ route('product.store') }}">
-
-                       {{ method_field('PUT') }}
+                        
+                          {{ csrf_field() }}
 
                         <div class="row">
                           <div class="mb-3 col-md-12">
-                            <label for="firstName" class="form-label">Name</label>
-                            <input class="form-control" type="text" id="firstName" name="firstName" value="{{ old('name') }}"/>
+                            <label for="name" class="form-label">Name</label>
+                            <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}"/>
                           </div>
 
                           <div class="mb-3 col-md-12">
                             <label for="organization" class="form-label">Category</label>
                             <select class="form-control" id="category"
                                name="category" value="{{ old('category') }}">
-                                 <option value="1">1</option>
-                                 <option value="2">2</option>
-                                 <option value="3">3</option>
-                                 <option value="4">4</option>
-                                 <option value="5">5</option>
+                                  <option value="">Choose category</option>
+                                 @foreach($categories as $category) 
+                                      <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                 @endforeach
                             </select>
                           </div>
                           <div class="mb-3 col-md-12">
@@ -383,7 +382,7 @@
 
                           </div>
                           <div class="mb-3 col-md-12">
-                            <label for="state" class="form-label">Description</label>
+                            <label for="description" class="form-label">Description</label>
                             <textarea class="form-control" type="text" id="description" name="description" placeholder="description">
                               {{ old('description') }}
                             </textarea> 

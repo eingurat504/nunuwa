@@ -360,10 +360,12 @@
 
                        {{ method_field('PUT') }}
 
+                       {{ csrf_field() }}
+
                         <div class="row">
                           <div class="mb-3 col-md-12">
-                            <label for="firstName" class="form-label">Name</label>
-                            <input class="form-control" type="text" id="firstName" name="firstName" value="{{ old('name') }}"/>
+                            <label for="name" class="form-label">Name</label>
+                            <input class="form-control" type="text" id="name" name="name" value="{{ old('name', $category->name) }}"/>
                           </div>
                           <div class="mb-3 col-md-12">
                             <label for="state" class="form-label">Description</label>

@@ -81,7 +81,14 @@ class CategoryController extends Controller
 
         $category = ProductCategory::findOrfail($id);
 
-        return view('admin.products.category.index');
+        ProductCategory::where('id', $category->id)
+            ->update([
+                'name' => $request->input('name', $category->name),
+                // 'description' => $request->input('description', $category->description),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+        return redirect()->route('category.index');
     }
 
 
