@@ -367,7 +367,7 @@
                     <i class="bx bx-dots-vertical-rounded"></i>
                   </button>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                    <a class="dropdown-item" href="{{ route('product.create') }}">Create Category</a>
+                    <a class="dropdown-item" href="{{ route('category.create') }}">Create</a>
                   </div>
                 </div>
               </div>
