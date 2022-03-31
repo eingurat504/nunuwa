@@ -347,8 +347,8 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
-                <a href="{{ route('product.index') }}">Products</a> /</span>{{$product->name }} <span class="text-muted fw-light"> / Edit</span></h4>
+               <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
+                <a href="{{ route('product.index') }}">Products</a> /</span>{{$product->name }} <span class="text-muted fw-light"> / Edit</span></h6>
 
               <div class="row">
                 <div class="col-md-6">
@@ -390,7 +390,7 @@
                         </div>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save</button>
-                          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                          <a href="{{ route('product.index') }}" class="btn btn-outline-secondary">Cancel</a>
                         </div>
                       </form>
                     </div>

@@ -349,7 +349,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Categories</h4>
+              <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Home /</span> Categories</h6>
 
               <!-- Striped Rows -->
               <div class="card">
@@ -367,7 +367,7 @@
                     <i class="bx bx-dots-vertical-rounded"></i>
                   </button>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                    <a class="dropdown-item" href="{{ route('product.create') }}">Create Category</a>
+                    <a class="dropdown-item" href="{{ route('category.create') }}">Create</a>
                   </div>
                 </div>
               </div>

@@ -31,7 +31,7 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = ProductCategory::take(10)->get();
+        $categories = ProductCategory::get();
 
         return view('admin.products.category.index', [
             'categories' => $categories,
@@ -101,11 +101,7 @@ class CategoryController extends Controller
     public function create()
     {
 
-        $categories = ProductCategory::get();
-
-        return view('admin.products.category.create', [
-            'categories' => $categories,
-        ]);
+        return view('admin.products.category.create');
     }
 
 
@@ -117,9 +113,11 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = new ProductCategory();
+        $category->name = $request->name;
+        $category->save();
 
-        return view('admin.products.category.index');
+        return redirect()->route('category.index');
     }
 
       /**
@@ -130,10 +128,10 @@ class CategoryController extends Controller
     public function attachedImages(Request $request, $id)
     {
 
-        $category_images = ProductImage::findOrfail($id);
+        $category = ProductCategory::findOrfail($id);
 
-        return view('admin.products.category.images', [
-            'images' => $category_images,
+        return view('admin.products.category.image', [
+            'category' => $category,
         ]);
     }
 

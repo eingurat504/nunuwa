@@ -135,4 +135,40 @@ class ProductController extends Controller
         return redirect()->route('product.index');
 
     }
+
+    /**
+     * Show Attached images.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function attachedImages(Request $request, $id)
+    {
+
+        $product= Product::findOrfail($id);
+
+        return view('admin.products.image', [
+            'product' => $product,
+        ]);
+    }
+
+    /**
+     * Attach Images.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function attachImages(Request $request, $id)
+    {
+
+        $category = Product::findOrfail($id);
+
+        ProductCategory::where('id', $category->id)
+            ->update([
+                'name' => $request->input('name', $category->name),
+                // 'description' => $request->input('description', $category->description),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+        return redirect()->route('product.index');
+    }
+
 }

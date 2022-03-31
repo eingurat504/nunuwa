@@ -346,7 +346,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Products</h4>
+              <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Products</h6>
 
               <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
@@ -394,7 +394,7 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                   </button>
                                   <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('product.attach', $product->id) }}"
+                                    <a class="dropdown-item" href="{{ route('product.attached', $product->id) }}"
                                       ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
                                     >
                                     <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"
