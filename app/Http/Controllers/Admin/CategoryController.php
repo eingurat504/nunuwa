@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use App\Models\ProductImage;
 
 class CategoryController extends Controller
 {
@@ -119,6 +120,41 @@ class CategoryController extends Controller
         $category = ProductCategory::findOrfail($id);
 
         return view('admin.products.category.index');
+    }
+
+      /**
+     * Show Attached images.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function attachedImages(Request $request, $id)
+    {
+
+        $category_images = ProductImage::findOrfail($id);
+
+        return view('admin.products.category.images', [
+            'images' => $category_images,
+        ]);
+    }
+
+    /**
+     * Attach Images.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function attachImages(Request $request, $id)
+    {
+
+        $category = ProductCategory::findOrfail($id);
+
+        ProductCategory::where('id', $category->id)
+            ->update([
+                'name' => $request->input('name', $category->name),
+                // 'description' => $request->input('description', $category->description),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+        return redirect()->route('category.index');
     }
 
 }
