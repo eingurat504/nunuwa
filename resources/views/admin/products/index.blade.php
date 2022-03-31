@@ -394,7 +394,7 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                   </button>
                                   <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('product.attach', $product->id) }}"
+                                    <a class="dropdown-item" href="{{ route('product.attached', $product->id) }}"
                                       ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
                                     >
                                     <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"
