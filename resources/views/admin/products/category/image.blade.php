@@ -347,113 +347,111 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
-
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Categories</h4>
+          
+                <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> <a href="{{ route('category.index') }}">Categories</a> /</span> {{$category->name }} <span class="text-muted fw-light"> / Attach</span> </h6>
 
-              <!-- Striped Rows -->
-              <div class="card">
-              <div class="card-header d-flex align-items-center justify-content-between">
-                <h5 class="card-title m-0 me-2">Categories</h5>
-                <div class="dropdown">
-                  <button
-                    class="btn p-0"
-                    type="button"
-                    id="transactionID"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="bx bx-dots-vertical-rounded"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                    <a class="dropdown-item" href="{{ route('product.create') }}">Create Category</a>
-                  </div>
+              <div class="row">
+                <div class="col-lg-12 mb-4 order-0">
+                                                  <!-- Striped Rows -->
+                  <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">{{ $category->name }}</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                          <a class="dropdown-item" href="{{ route('product.create') }}">Upload</a>
+                        </div>
+                      </div>
+                    </div>
                 </div>
               </div>
-                <div class="card-body">
-                  <div class="table-responsive text-nowrap">
-                  <table id="tbl_categories" class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
-                        <th class="text-center">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                      @foreach($categories as $category)
-                      <tr>
-                        <td><a href="{{ route('category.show', $category->id) }}">{{$category->name }}</a></td>
-                        <td>{{$category->created_at }}</td>
-                        <td>{{$category->updated_at }}</td>
-                        <td class="text-center">
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('category.attached', $category->id) }}"
-                                      ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
+
+              <div class="row">
+
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="../assets/img/icons/unicons/chart-success.png"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt3"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
                               >
-                              <a class="dropdown-item" href="{{ route('category.edit', $category->id) }}"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
                             </div>
                           </div>
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-                </div>
-                </div>
+                          <span class="fw-semibold d-block mb-1">Profit</span>
+                          <h3 class="card-title mb-2">$12,628</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="../assets/img/icons/unicons/wallet-info.png"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt6"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span>Sales</span>
+                          <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                        </div>
+                      </div>
+                    </div>
+
               </div>
-              <!--/ Striped Rows -->
 
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+            </div>
 
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!-- Content wrapper -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
           <!-- Content wrapper -->
         </div>
         <!-- / Layout page -->
@@ -470,16 +468,6 @@
     <script src="{{ asset('admin/assets/vendor/js/menu.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
     <script src="{{ asset('admin/assets/js/main.js') }}"></script>
-    <!-- <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script> -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready( function () {
-
-          $('#tbl_categories').DataTable();
-      });
-
-    </script>
   </body>
 </html>

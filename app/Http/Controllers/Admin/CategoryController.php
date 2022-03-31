@@ -31,7 +31,7 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = ProductCategory::take(10)->get();
+        $categories = ProductCategory::get();
 
         return view('admin.products.category.index', [
             'categories' => $categories,
@@ -130,10 +130,10 @@ class CategoryController extends Controller
     public function attachedImages(Request $request, $id)
     {
 
-        $category_images = ProductImage::findOrfail($id);
+        $category = ProductCategory::findOrfail($id);
 
-        return view('admin.products.category.images', [
-            'images' => $category_images,
+        return view('admin.products.category.image', [
+            'category' => $category,
         ]);
     }
 
