@@ -356,17 +356,27 @@
                   <div class="card mb-4">
                     <h5 class="card-header">Default</h5>
                     <div class="card-body">
-                      <div>
-                        <label for="defaultFormControlInput" class="form-label">Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="defaultFormControlInput"
-                          placeholder="name"
-                          value="{{ old('name', $category->name) }}"
-                          aria-describedby="defaultFormControlHelp" />
-                        
-                      </div>
+                        <form method="POST" action="{{ route('category.update' , $category->id) }}">
+
+                       {{ method_field('PUT') }}
+
+                        <div class="row">
+                          <div class="mb-3 col-md-12">
+                            <label for="firstName" class="form-label">Name</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName" value="{{ old('name') }}"/>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label for="state" class="form-label">Description</label>
+                            <textarea class="form-control" type="text" id="description" name="description" placeholder="description">
+                              {{ old('description') }}
+                            </textarea> 
+                          </div>
+                        </div>
+                        <div class="mt-2">
+                          <button type="submit" class="btn btn-primary me-2">Save</button>
+                          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
