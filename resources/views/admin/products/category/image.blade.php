@@ -14,7 +14,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Category</title>
 
     <meta name="description" content="" />
 
@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/demo.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
     <script src="{{ asset('admin/assets/vendor/js/helpers.js') }}"></script>
     <script src="{{ asset('admin/assets/js/config.js') }}"></script>
   </head>
@@ -347,60 +349,108 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
-                <a href="{{ route('product.index') }}">Products</a> /</span> Create </h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Categories</h4>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Default</h5>
-                    <div class="card-body">
-                      <form method="POST" action="{{ route('product.store') }}">
-                        
-                          {{ csrf_field() }}
-
-                        <div class="row">
-                          <div class="mb-3 col-md-12">
-                            <label for="name" class="form-label">Name</label>
-                            <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}"/>
-                          </div>
-
-                          <div class="mb-3 col-md-12">
-                            <label for="organization" class="form-label">Category</label>
-                            <select class="form-control" id="category"
-                               name="category" value="{{ old('category') }}">
-                                  <option value="">Choose category</option>
-                                 @foreach($categories as $category) 
-                                      <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                 @endforeach
-                            </select>
-                          </div>
-                          <div class="mb-3 col-md-12">
-                            <label for="email" class="form-label">Price</label>
-                            <input class="form-control" type="integer" id="price"
-                              name="price" value="{{ old('price') }}" placeholder="price" />
-
-                          </div>
-                          <div class="mb-3 col-md-12">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" type="text" id="description" name="description" placeholder="description">
-                              {{ old('description') }}
-                            </textarea> 
-                          </div>
-                        </div>
-                        <div class="mt-2">
-                          <button type="submit" class="btn btn-primary me-2">Save</button>
-                          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
-                        </div>
-                      </form>
-                    </div>
+              <!-- Striped Rows -->
+              <div class="card">
+              <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="card-title m-0 me-2">Categories</h5>
+                <div class="dropdown">
+                  <button
+                    class="btn p-0"
+                    type="button"
+                    id="transactionID"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="bx bx-dots-vertical-rounded"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                    <a class="dropdown-item" href="{{ route('product.create') }}">Create Category</a>
                   </div>
                 </div>
-
               </div>
+                <div class="card-body">
+                  <div class="table-responsive text-nowrap">
+                  <table id="tbl_categories" class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Created At</th>
+                        <th>Updated At</th>
+                        <th class="text-center">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      @foreach($categories as $category)
+                      <tr>
+                        <td><a href="{{ route('category.show', $category->id) }}">{{$category->name }}</a></td>
+                        <td>{{$category->created_at }}</td>
+                        <td>{{$category->updated_at }}</td>
+                        <td class="text-center">
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{{ route('category.attached', $category->id) }}"
+                                      ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
+                              >
+                              <a class="dropdown-item" href="{{ route('category.edit', $category->id) }}"
+                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-2"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+              </div>
+              <!--/ Striped Rows -->
 
-            </div>
-            <!-- / Content -->
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                </div>
+                <div>
+                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                  <a
+                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -414,26 +464,22 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/js/bootstrap.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-
     <script src="{{ asset('admin/assets/vendor/js/menu.js') }}"></script>
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
     <script src="{{ asset('admin/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
-
-    <!-- Main JS -->
     <script src="{{ asset('admin/assets/js/main.js') }}"></script>
-
-    <!-- Page JS -->
-    <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script>
-
-    <!-- Place this tag in your head or just before your close body tag. -->
+    <!-- <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script> -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function () {
+
+          $('#tbl_categories').DataTable();
+      });
+
+    </script>
   </body>
 </html>

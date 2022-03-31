@@ -31,7 +31,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::with('category')->take(10)->get();
+        $products = Product::with('category')->get();
         return view('admin.products.index', [
             'products' => $products,
         ]);
@@ -63,12 +63,13 @@ class ProductController extends Controller
 
         $product = Product::findOrfail($id);
 
+        $categories = ProductCategory::get();
+
         return view('admin.products.edit', [
             'product' => $product,
+            'categories' => $categories
         ]);
     }
-
-
 
     /**
      * Show update product.
@@ -80,8 +81,7 @@ class ProductController extends Controller
 
         $product = Product::findOrfail($id);
 
-        DB::table('products')
-        ->where('id', $product->id)
+       Product::where('id', $product->id)
         ->update([
             'name' => $request->name,
             'price' => $request->price,
@@ -103,7 +103,11 @@ class ProductController extends Controller
     public function create()
     {
 
-        return view('admin.products.create');
+        $categories = ProductCategory::get();
+
+        return view('admin.products.create',[
+            'categories' => $categories
+        ]);
     }
 
 
@@ -115,7 +119,20 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
+       $category = ProductCategory::find($request->category);
 
-        return view('admin.products.index');
+       $product = new Product();
+       $product->name = $request->name;
+       $product->price = $request->price;
+       $product->category_id = $request->category;
+       $product->stock = 50;
+       $product->sku = 50;
+       $product->description = $request->description;
+       $product->created_at = date('Y-m-d H:i:s');
+       $product->updated_at = date('Y-m-d H:i:s');
+       $product->save();
+
+        return redirect()->route('product.index');
+
     }
 }

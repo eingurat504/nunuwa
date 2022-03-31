@@ -31,6 +31,8 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     Route::get('/categories/{category}','CategoryController@show')->name('category.show');
     Route::get('/categories/{category}/edit','CategoryController@edit')->name('category.edit');
     Route::put('/categories/{category}/update','CategoryController@update')->name('category.update');
+    Route::get('/categories/{category}/attached_images','CategoryController@attachedImages')->name('category.attached');
+    Route::put('/categories/{category}/attach','CategoryController@attachImages')->name('category.attach');
 
     // products
     Route::get('/products','ProductController@index')->name('product.index'); 
@@ -38,7 +40,9 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     Route::post('/products/store','ProductController@store')->name('product.store'); 
     Route::get('/products/{product}','ProductController@show')->name('product.show'); 
     Route::get('/products/{product}/edit','ProductController@edit')->name('product.edit');
-    Route::put('/products/{product}/update','ProductController@update')->name('product.update');  
+    Route::put('/products/{product}/update','ProductController@update')->name('product.update');
+    Route::get('/products/{product}/attached_images','ProductController@attachedImages')->name('product.attached');
+    Route::put('/products/{product}/attach','ProductController@attachImages')->name('product.attach');  
 });
 
 
