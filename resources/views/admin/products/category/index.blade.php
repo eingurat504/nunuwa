@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/demo.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
     <script src="{{ asset('admin/assets/vendor/js/helpers.js') }}"></script>
     <script src="{{ asset('admin/assets/js/config.js') }}"></script>
   </head>
@@ -352,8 +354,9 @@
               <!-- Striped Rows -->
               <div class="card">
                 <h5 class="card-header">Category</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table table-striped">
+                <div class="card-body">
+                  <div class="table-responsive text-nowrap">
+                  <table id="tbl_categories" class="table table-striped">
                     <thead>
                       <tr>
                         <th>Name</th>
@@ -387,6 +390,7 @@
                       @endforeach
                     </tbody>
                   </table>
+                </div>
                 </div>
               </div>
               <!--/ Striped Rows -->
@@ -442,24 +446,23 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <!-- <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script> -->
     <script src="{{ asset('admin/assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/js/bootstrap.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-
     <script src="{{ asset('admin/assets/vendor/js/menu.js') }}"></script>
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
     <script src="{{ asset('admin/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
-
-    <!-- Main JS -->
     <script src="{{ asset('admin/assets/js/main.js') }}"></script>
-
-    <!-- Page JS -->
-    <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script>
-
-    <!-- Place this tag in your head or just before your close body tag. -->
+    <!-- <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script> -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function () {
+
+          $('#tbl_categories').DataTable();
+      });
+
+    </script>
   </body>
 </html>
