@@ -369,10 +369,38 @@
                           <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="{{ route('product.create') }}">Upload</a>
+                          <a class="dropdown-item" data-bs-toggle="modal"
+                          data-bs-target="#fullscreenModal" href="{{ route('product.create') }}">Upload</a>
                         </div>
                       </div>
                     </div>
+                </div>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalFullTitle">Image Upload</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                       
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
