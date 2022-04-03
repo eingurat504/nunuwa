@@ -350,29 +350,31 @@
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('category.index') }}">Categories</a> /</span>{{$category->name }}</h4>
 
               <!-- Striped Rows -->
-              <div class="card">
+             <div class="col-md-6">
+                <div class="card">
                 <h5 class="card-header">Category</h5>
-                <div class="table-responsive text-nowrap">
-
-                  <table class="table table-striped">
-                      <tr>
-                        <td>{{$category->name }}</td>
-                        <td>{{$category->created_at }}</td>
-                        <td>{{$category->updated_at }}</td>
-                        <td></td>
-                      </tr>
-                  </table>
+                <div class="col-md-6">
+                  <div class="row">
+                  <label class="col-md-4">Name</label>
+                  <label class="col-md-8">{{$category->name }}</label>
+                </div>
+                <div class="row">
+                  <label class="col-md-4">Date created</label>
+                  <label class="col-md-8">{{$category->created_at }}</label>
+                </div>
+                <div class="row">
+                  <label class="col-md-4">Date Updated</label>
+                  <label class="col-md-8">{{$category->updated_at }}</label>
+                </div>
                 </div>
               </div>
 
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-               
-               
+              <div class="mt-2">
+                <button type="submit" class="btn btn-primary me-2">Edit</button>
+                <a href="{{ route('category.index') }}" class="btn btn-outline-secondary">Cancel</a>
               </div>
-            </footer>
-            <!-- / Footer -->
+
+             </div>
 
             <div class="content-backdrop fade"></div>
           </div>
