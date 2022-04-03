@@ -353,11 +353,12 @@
              <div class="col-md-6">
                 <div class="card">
                 <h5 class="card-header">Category</h5>
-                <div class="col-md-6">
-                  <div class="row">
+               
+                <div class="row">
                   <label class="col-md-4">Name</label>
                   <label class="col-md-8">{{$category->name }}</label>
                 </div>
+       
                 <div class="row">
                   <label class="col-md-4">Date created</label>
                   <label class="col-md-8">{{$category->created_at }}</label>

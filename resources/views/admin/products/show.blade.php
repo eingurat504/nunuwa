@@ -350,22 +350,35 @@
               <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('product.index') }}">Products</a> /</span>{{$product->name }}</h6>
 
              <div class="row">
-                    <div class="col-md-6">
-                              <!-- Striped Rows -->
+                <div class="col-md-6">
+          
                   <div class="card">
                     <h5 class="card-header">Product</h5>
-                    <div class="table-responsive text-nowrap">
 
-                      <table class="table table-striped">
-                          <tr>
-                            <td>{{$product->category->name }}</td>
-                            <td>{{$product->name }}</td>
-                            <td>${{$product->price }}</td>           
-                            <td>{{$product->created_at }}</td>
-                            <td>{{$product->updated_at }}</td>
-                            <td></td>
-                          </tr>
-                      </table>
+                    <div class="row">
+                      <label class="col-md-4">Category</label>
+                      <label class="col-md-4">{{ $product->category->name }}</label>
+                    </div>
+
+
+                    <div class="row">
+                      <label class="col-md-4">Name</label>
+                      <label class="col-md-4">{{ $product->name }}</label>
+                    </div>
+
+                    <div class="row">
+                      <label class="col-md-4">Price</label>
+                      <label class="col-md-4">${{$product->price }}</label>
+                    </div>
+
+                    <div class="row">
+                      <label class="col-md-4">Created Date</label>
+                      <label class="col-md-4">{{$product->created_at }}</label>
+                    </div>
+
+                    <div class="row">
+                      <label class="col-md-4">Updated Date</label>
+                      <label class="col-md-4">{{$product->updated_at }}</label>
                     </div>
                   </div>
               </div>
@@ -373,20 +386,83 @@
               <div class="col-md-6">
                               <!-- Striped Rows -->
                   <div class="card">
-                    <h5 class="card-header">Images</h5>
-                    <div class="table-responsive text-nowrap">
+                    <h5 class="card-header">Attachments</h5>
+                    <div class="card-body">
+                       <div class="row">
 
-                      <table class="table table-striped">
-                          <tr>
-                            <td>{{$product->category->name }}</td>
-                            <td>{{$product->name }}</td>
-                            <td>${{$product->price }}</td>           
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
 
-                            <td>{{$product->created_at }}</td>
-                            <td>{{$product->updated_at }}</td>
-                            <td></td>
-                          </tr>
-                      </table>
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
+                            <div class="card">
+                              <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
+                            </div>
+                          </div>
+
+                      </div>
                     </div>
                   </div>
               </div>
