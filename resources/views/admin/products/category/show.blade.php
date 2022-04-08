@@ -211,13 +211,13 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">PRODUCTs</span></li>
             <!-- Forms -->
             <li class="menu-item">
-              <a href="{{ route('category.index') }}" class="menu-link">
+              <a href="{{ route('categories.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Category</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route('product.index') }}" class="menu-link">
+              <a href="{{ route('products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -347,7 +347,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('category.index') }}">Categories</a> /</span>{{$category->name }}</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('categories.index') }}">Categories</a> /</span>{{$category->name }}</h4>
 
 
               <div class="row">
@@ -369,9 +369,9 @@
                   <label class="col-md-8">{{$category->updated_at }}</label>
                 </div>
                 </div>
-                              <div class="mt-2">
+              <div class="mt-2">
                 <button type="submit" class="btn btn-primary me-2">Edit</button>
-                <a href="{{ route('category.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Cancel</a>
               </div>
               </div>
 

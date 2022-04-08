@@ -213,13 +213,13 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">PRODUCTs</span></li>
             <!-- Forms -->
             <li class="menu-item">
-              <a href="{{ route('category.index') }}" class="menu-link">
+              <a href="{{ route('categories.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Category</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route('product.index') }}" class="menu-link">
+              <a href="{{ route('products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -349,7 +349,7 @@
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
           
-                <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> <a href="{{ route('category.index') }}">Categories</a> /</span> {{$category->name }} <span class="text-muted fw-light"> / Attach</span> </h6>
+                <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> <a href="{{ route('categories.index') }}">Categories</a> /</span> {{$category->name }} <span class="text-muted fw-light"> / Attach</span> </h6>
 
               <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
@@ -369,7 +369,7 @@
                           <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="{{ route('product.create') }}"  data-bs-toggle="modal"
+                          <a class="dropdown-item" href="{{ route('products.create') }}"  data-bs-toggle="modal"
                           data-bs-target="#fullscreenModal">Upload</a>
                         </div>
                       </div>

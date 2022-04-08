@@ -211,13 +211,13 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">PRODUCTs</span></li>
             <!-- Forms -->
             <li class="menu-item">
-              <a href="{{ route('category.index') }}" class="menu-link">
+              <a href="{{ route('categories.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Category</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route('product.index') }}" class="menu-link">
+              <a href="{{ route('products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -347,7 +347,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('product.index') }}">Products</a> /</span>{{$product->name }}</h6>
+              <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('products.index') }}">Products</a> /</span>{{$product->name }}</h6>
 
              <div class="row">
                 <div class="col-md-6">
