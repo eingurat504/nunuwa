@@ -391,8 +391,7 @@
                       ></button>
                     </div>
                     <div class="modal-body">
-                      
-                       
+                        <input type="file" name="product_upload" value="{{ old('product_upload') }}">
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
