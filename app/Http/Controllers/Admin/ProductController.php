@@ -144,7 +144,7 @@ class ProductController extends Controller
      */
     public function attachedImages(Request $request, $id)
     {
-
+        
         $product= Product::findOrfail($id);
 
         return view('admin.products.image', [
@@ -173,9 +173,7 @@ class ProductController extends Controller
         Storage::disk('local')->put($image_path, file_get_contents($request->product_image->getRealPath()));
 
         if (file_exists(public_path() . '/storage/modules/products/' . $product->name)) {
-
             unlink(public_path() . '/storage/modules/products/' . $product->name);
-
         }
 
         $image = new ProductImage();

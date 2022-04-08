@@ -403,7 +403,8 @@
                           </p> 
                           <p>
                             <label for="product_image">Product image</label><br/>
-                            <input type="file" name="product_image" value="{{ old('product_image') }}" onchange="loadFile(event)">
+                            <input class="form-control" type="file" id="product_image"
+                              name="product_image" value="{{ old('product_image') }}" placeholder="product_image" />
                           </p>
                         </div>
                         <div class="modal-footer">
@@ -487,35 +488,53 @@
               var form = $(this);
 
               var product_id = form.find('input[name=product_id]').val();
-              
-               var app = '{{ config('app.url') }}';
 
-              $.ajax({
-                  type: 'POST',
-                  url: app + '/admin/product/' + product_id + '/attach',
-                  data: form.serialize(),
-                  success: function (response) {
+              // var fd = new FormData();
+              var files = $('#product_image')[0].files;
 
-                      console.log(response);
-                      // check if response has not errors; first then redirect...
+              // console.log(files);
 
-                      window.location = app + '/admin/product/'+ product_id +'/attached_images';
-                      // else show error msg on modal
-                  },
-                  error: function (xhr) {
-                      var errors = xhr.responseJSON;
-                      $.each(errors, function (param, error) {
-                          var form_group = form.find('input[name=' + param + '],select[name=' + param + ']').closest('div.form-group');
-                          form_group.addClass('has-error');
-                          var error_msg = '<span class="help-block">' + error[0] + '</span>';
-                          if (form_group.find('.help-block')[0]) {
-                              form.find('.help-block').remove();
-                          }
+              // https://makitweb.com/how-to-upload-image-file-using-ajax-and-jquery/
+        
+              // Check file selected or not
+              if(files.length > 0 ){
 
-                          form_group.find('.col-md-8').append(error_msg);
-                      });
-                  }
-              });
+                 form.append('product_image',files[0]);
+
+                  // console.log(form.serialize());
+                  
+                   var app = '{{ config('app.url') }}';
+
+                  $.ajax({
+                      type: 'POST',
+                      url: app + '/admin/product/' + product_id + '/attach',
+                      data: form,
+                      contentType: false,
+                      processData: false,   
+                      success: function (response) {
+
+                          console.log(response);
+                          // check if response has not errors; first then redirect...
+
+                          window.location = app + '/admin/product/'+ product_id +'/attached_images';
+                          // else show error msg on modal
+                      },
+                      error: function (xhr) {
+                          var errors = xhr.responseJSON;
+                          $.each(errors, function (param, error) {
+                              var form_group = form.find('input[name=' + param + '],select[name=' + param + ']').closest('div.form-group');
+                              form_group.addClass('has-error');
+                              var error_msg = '<span class="help-block">' + error[0] + '</span>';
+                              if (form_group.find('.help-block')[0]) {
+                                  form.find('.help-block').remove();
+                              }
+
+                              form_group.find('.col-md-8').append(error_msg);
+                          });
+                      }
+                  });
+
+              }
 
           });
       });
