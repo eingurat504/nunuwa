@@ -33,7 +33,7 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
         Route::get('/{category}/edit','CategoryController@edit')->name('edit');
         Route::put('/{category}/update','CategoryController@update')->name('update');
         Route::get('/{category}/attached_images','CategoryController@attachedImages')->name('attached');
-        Route::put('/{category}/attach','CategoryController@attachImages')->name('attach');
+        Route::post('/{category}/attach','CategoryController@attachImages')->name('attach');
     });
 
     // Product
@@ -45,7 +45,7 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
         Route::get('/{product}/edit','ProductController@edit')->name('edit');
         Route::put('/{product}/update','ProductController@update')->name('update');
         Route::get('/{product}/attached_images','ProductController@attachedImages')->name('attached');
-        Route::put('/{product}/attach','ProductController@attachImages')->name('attach');
+        Route::post('/{product}/attach','ProductController@attachImages')->name('attach');
     });
 
 });

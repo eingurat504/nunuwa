@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\Product;
+use App\Models\ProductImage;
 
 class ProductController extends Controller
 {
@@ -159,16 +160,31 @@ class ProductController extends Controller
     public function attachImages(Request $request, $id)
     {
 
-        $category = Product::findOrfail($id);
+        $product = Product::findOrfail($id);
 
-        ProductCategory::where('id', $category->id)
-            ->update([
-                'name' => $request->input('name', $category->name),
-                // 'description' => $request->input('description', $category->description),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ]);
+        $dir = 'public/modules/products';
+        $name = $request->product_image->getClientOriginalName();
+        $image_path = $dir . '/' . $name;
 
-        return redirect()->route('product.index');
+        if (!file_exists($dir)) {
+            Storage::makeDirectory($dir);
+        }
+
+        Storage::disk('local')->put($image_path, file_get_contents($request->product_image->getRealPath()));
+
+        if (file_exists(public_path() . '/storage/modules/products/' . $product->name)) {
+
+            unlink(public_path() . '/storage/modules/products/' . $product->name);
+
+        }
+
+        $image = new ProductImage();
+        $image->product_id = $product->id;
+        $image->image_path = $image_path;
+        $image->image_name = $name;
+        $image->save();
+
+        return redirect()->route('products.index');
     }
 
 }

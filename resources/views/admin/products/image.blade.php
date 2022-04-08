@@ -370,7 +370,7 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
                           <a class="dropdown-item" data-bs-toggle="modal"
-                          data-bs-target="#fullscreenModal" href="{{ route('products.create') }}">Upload</a>
+                          data-bs-target="#productImageModal">Upload</a>
                         </div>
                       </div>
                     </div>
@@ -378,29 +378,44 @@
               </div>
 
               <!-- Modal -->
-              <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+              <div class="modal fade" id="productImageModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-fullscreen" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modalFullTitle">Image Upload</h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="product_upload">Product image</label>
-                        <input type="file" name="product_upload" value="{{ old('product_upload') }}">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                        Close
-                      </button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
+
+                  <form id="upload-product-images" action="" method="POST" enctype="multipart/form-data">
+
+                         {{ method_field('POST') }}
+
+                        {{ csrf_field() }}
+
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalFullTitle">{{ $product->name }}</h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>
+                           <input type="hidden" name="product_id" value="{{ $product->id  }}">
+                          </p> 
+                          <p>
+                            <label for="product_image">Product image</label><br/>
+                            <input type="file" name="product_image" value="{{ old('product_image') }}" onchange="loadFile(event)">
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Close
+                          </button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+
+                  </form>
+
                 </div>
               </div>
 
@@ -454,7 +469,6 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-
     <script src="{{ asset('admin/assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/js/bootstrap.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
@@ -462,5 +476,49 @@
     <script src="{{ asset('admin/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
     <script src="{{ asset('admin/assets/js/main.js') }}"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        
+          $('form#upload-product-images').on('submit', function (event) {
+
+              event.preventDefault();
+
+              var form = $(this);
+
+              var product_id = form.find('input[name=product_id]').val();
+              
+               var app = '{{ config('app.url') }}';
+
+              $.ajax({
+                  type: 'POST',
+                  url: app + '/admin/product/' + product_id + '/attach',
+                  data: form.serialize(),
+                  success: function (response) {
+
+                      console.log(response);
+                      // check if response has not errors; first then redirect...
+
+                      window.location = app + '/admin/product/'+ product_id +'/attached_images';
+                      // else show error msg on modal
+                  },
+                  error: function (xhr) {
+                      var errors = xhr.responseJSON;
+                      $.each(errors, function (param, error) {
+                          var form_group = form.find('input[name=' + param + '],select[name=' + param + ']').closest('div.form-group');
+                          form_group.addClass('has-error');
+                          var error_msg = '<span class="help-block">' + error[0] + '</span>';
+                          if (form_group.find('.help-block')[0]) {
+                              form.find('.help-block').remove();
+                          }
+
+                          form_group.find('.col-md-8').append(error_msg);
+                      });
+                  }
+              });
+
+          });
+      });
+    </script>
   </body>
 </html>
