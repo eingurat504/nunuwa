@@ -216,7 +216,7 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route('product.index') }}" class="menu-link">
+              <a href="{{ route('products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -363,7 +363,7 @@
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                      <a class="dropdown-item" href="{{ route('product.create') }}">Create Product</a>
+                      <a class="dropdown-item" href="{{ route('products.create') }}">Create Product</a>
                     </div>
                   </div>
                 </div>
@@ -383,8 +383,8 @@
                           <tbody class="table-border-bottom-0">
                             @foreach($products as $product)
                             <tr>
-                              <td><a href="{{ route('category.show', $product->category->id) }}">{{ $product->category->name }}</a></td>
-                              <td><a href="{{ route('product.show', $product->id) }}">{{$product->name }}</a></td>
+                              <td><a href="{{ route('categories.show', $product->category->id) }}">{{ $product->category->name }}</a></td>
+                              <td><a href="{{ route('products.show', $product->id) }}">{{$product->name }}</a></td>
                               <td>${{ $product->price }}</td>
                               <td>{{ $product->created_at }}</td>
                               <td>{{ $product->updated_at }}</td>
@@ -394,10 +394,10 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                   </button>
                                   <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('product.attached', $product->id) }}"
+                                    <a class="dropdown-item" href="{{ route('products.attached', $product->id) }}"
                                       ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
                                     >
-                                    <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"
+                                    <a class="dropdown-item" href="{{ route('products.edit', $product->id) }}"
                                       ><i class="bx bx-edit-alt me-2"></i> Edit</a
                                     >
                                     <a class="dropdown-item" href="javascript:void(0);"
