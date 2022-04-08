@@ -24,25 +24,30 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     // Admin Dashboard
     Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
 
-    // categories
-    Route::get('/categories','CategoryController@index')->name('category.index');
-    Route::get('/categories/create','CategoryController@create')->name('category.create');
-    Route::post('/categories/store','CategoryController@store')->name('category.store');
-    Route::get('/categories/{category}','CategoryController@show')->name('category.show');
-    Route::get('/categories/{category}/edit','CategoryController@edit')->name('category.edit');
-    Route::put('/categories/{category}/update','CategoryController@update')->name('category.update');
-    Route::get('/categories/{category}/attached_images','CategoryController@attachedImages')->name('category.attached');
-    Route::put('/categories/{category}/attach','CategoryController@attachImages')->name('category.attach');
+    // Category
+    Route::group(['prefix' => 'category', 'as' => 'categories.'], function () {
+        Route::get('/', 'CategoryController@index')->name('index');
+        Route::get('/create','CategoryController@create')->name('create');
+        Route::post('/store','CategoryController@store')->name('store');
+        Route::get('/{category}','CategoryController@show')->name('show');
+        Route::get('/{category}/edit','CategoryController@edit')->name('edit');
+        Route::put('/{category}/update','CategoryController@update')->name('update');
+        Route::get('/{category}/attached_images','CategoryController@attachedImages')->name('attached');
+        Route::post('/{category}/attach','CategoryController@attachImages')->name('attach');
+    });
 
-    // products
-    Route::get('/products','ProductController@index')->name('product.index'); 
-    Route::get('/products/create','ProductController@create')->name('product.create'); 
-    Route::post('/products/store','ProductController@store')->name('product.store'); 
-    Route::get('/products/{product}','ProductController@show')->name('product.show'); 
-    Route::get('/products/{product}/edit','ProductController@edit')->name('product.edit');
-    Route::put('/products/{product}/update','ProductController@update')->name('product.update');
-    Route::get('/products/{product}/attached_images','ProductController@attachedImages')->name('product.attached');
-    Route::put('/products/{product}/attach','ProductController@attachImages')->name('product.attach');  
+    // Product
+    Route::group(['prefix' => 'product', 'as' => 'products.'], function () {
+        Route::get('/', 'ProductController@index')->name('index');
+        Route::get('/create','ProductController@create')->name('create');
+        Route::post('/store','ProductController@store')->name('store');
+        Route::get('/{product}','ProductController@show')->name('show');
+        Route::get('/{product}/edit','ProductController@edit')->name('edit');
+        Route::put('/{product}/update','ProductController@update')->name('update');
+        Route::get('/{product}/attached_images','ProductController@attachedImages')->name('attached');
+        Route::post('/{product}/attach','ProductController@attachImages')->name('attach');
+    });
+
 });
 
 

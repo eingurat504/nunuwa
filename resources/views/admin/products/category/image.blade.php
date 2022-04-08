@@ -213,13 +213,13 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">PRODUCTs</span></li>
             <!-- Forms -->
             <li class="menu-item">
-              <a href="{{ route('category.index') }}" class="menu-link">
+              <a href="{{ route('categories.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Category</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route('product.index') }}" class="menu-link">
+              <a href="{{ route('products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -349,7 +349,7 @@
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
           
-                <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> <a href="{{ route('category.index') }}">Categories</a> /</span> {{$category->name }} <span class="text-muted fw-light"> / Attach</span> </h6>
+                <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> <a href="{{ route('categories.index') }}">Categories</a> /</span> {{$category->name }} <span class="text-muted fw-light"> / Attach</span> </h6>
 
               <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
@@ -369,8 +369,8 @@
                           <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="{{ route('product.create') }}"  data-bs-toggle="modal"
-                          data-bs-target="#fullscreenModal">Upload</a>
+                          <a class="dropdown-item" href="{{ route('products.create') }}" id="upload-product-images"   data-bs-toggle="modal"
+                          data-bs-target="#categoryfullscreenModal">Upload</a>
                         </div>
                       </div>
                     </div>
@@ -378,113 +378,40 @@
               </div>
 
               <!-- Modal -->
-              <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modalFullTitle">Modal title</h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-                        facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-                        at eros.
-                      </p>
-                      <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-                        lacus vel augue laoreet rutrum faucibus dolor auctor.
-                      </p>
-                      <p>
-                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-                        auctor fringilla.
-                      </p>
-                      <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-                        facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-                        at eros.
-                      </p>
-                      <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-                        lacus vel augue laoreet rutrum faucibus dolor auctor.
-                      </p>
-                      <p>
-                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-                        auctor fringilla.
-                      </p>
-                      <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-                        facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-                        at eros.
-                      </p>
-                      <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-                        lacus vel augue laoreet rutrum faucibus dolor auctor.
-                      </p>
-                      <p>
-                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-                        auctor fringilla.
-                      </p>
-                      <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-                        facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-                        at eros.
-                      </p>
-                      <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-                        lacus vel augue laoreet rutrum faucibus dolor auctor.
-                      </p>
-                      <p>
-                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-                        auctor fringilla.
-                      </p>
-                      <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-                        facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-                        at eros.
-                      </p>
-                      <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-                        lacus vel augue laoreet rutrum faucibus dolor auctor.
-                      </p>
-                      <p>
-                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-                        auctor fringilla.
-                      </p>
-                      <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-                        facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
-                        at eros.
-                      </p>
-                      <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-                        lacus vel augue laoreet rutrum faucibus dolor auctor.
-                      </p>
-                      <p>
-                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-                        auctor fringilla.
-                      </p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                        Close
-                      </button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="modal fade" id="categoryfullscreenModal" tabindex="-1" aria-hidden="true">
+
+                <form id="upload-product-images" action="" method="POST">
+
+                    {{ csrf_field() }}
+                    {{ method_field('POST') }}
+
+                      <div class="modal-dialog modal-fullscreen" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalFullTitle">Modal title</h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                          
+                           
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                              Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+
+                </form>
+
+              </div>    
 
               <div class="row">
 

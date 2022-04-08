@@ -213,13 +213,13 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">PRODUCTs</span></li>
             <!-- Forms -->
             <li class="menu-item">
-              <a href="{{ route('category.index') }}" class="menu-link">
+              <a href="{{ route('categories.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Category</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route('product.index') }}" class="menu-link">
+              <a href="{{ route('products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -367,7 +367,7 @@
                     <i class="bx bx-dots-vertical-rounded"></i>
                   </button>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                    <a class="dropdown-item" href="{{ route('category.create') }}">Create</a>
+                    <a class="dropdown-item" href="{{ route('categories.create') }}">Create</a>
                   </div>
                 </div>
               </div>
@@ -385,7 +385,7 @@
                     <tbody class="table-border-bottom-0">
                       @foreach($categories as $category)
                       <tr>
-                        <td><a href="{{ route('category.show', $category->id) }}">{{$category->name }}</a></td>
+                        <td><a href="{{ route('categories.show', $category->id) }}">{{$category->name }}</a></td>
                         <td>{{$category->created_at }}</td>
                         <td>{{$category->updated_at }}</td>
                         <td class="text-center">
@@ -394,10 +394,10 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('category.attached', $category->id) }}"
+                              <a class="dropdown-item" href="{{ route('categories.attached', $category->id) }}"
                                       ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
                               >
-                              <a class="dropdown-item" href="{{ route('category.edit', $category->id) }}"
+                              <a class="dropdown-item" href="{{ route('categories.edit', $category->id) }}"
                                 ><i class="bx bx-edit-alt me-2"></i> Edit</a
                               >
                               <a class="dropdown-item" href="javascript:void(0);"

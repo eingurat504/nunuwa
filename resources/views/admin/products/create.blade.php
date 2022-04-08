@@ -211,13 +211,13 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">PRODUCTs</span></li>
             <!-- Forms -->
             <li class="menu-item">
-              <a href="{{ route('category.index') }}" class="menu-link">
+              <a href="{{ route('categories.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Category</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ route('product.index') }}" class="menu-link">
+              <a href="{{ route('products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Item</div>
               </a>
@@ -348,14 +348,14 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
                <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
-                <a href="{{ route('product.index') }}">Products</a> /</span> Create </h6>
+                <a href="{{ route('products.index') }}">Products</a> /</span> Create </h6>
 
               <div class="row">
                 <div class="col-md-6">
                   <div class="card mb-4">
                     <h5 class="card-header">Default</h5>
                     <div class="card-body">
-                      <form method="POST" action="{{ route('product.store') }}">
+                      <form method="POST" action="{{ route('products.store') }}">
                         
                           {{ csrf_field() }}
 
@@ -390,7 +390,7 @@
                         </div>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save</button>
-                          <a href="{{ route('product.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                          <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">Cancel</a>
                         </div>
                       </form>
                     </div>
