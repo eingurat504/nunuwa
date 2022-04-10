@@ -495,6 +495,7 @@
               // console.log(files);
 
               // https://makitweb.com/how-to-upload-image-file-using-ajax-and-jquery/
+              // https://fellowtuts.com/php/ajax-image-upload-using-php-and-jquery/
         
               // Check file selected or not
               if(files.length > 0 ){
