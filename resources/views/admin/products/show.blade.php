@@ -380,6 +380,10 @@
                       <label class="col-md-4">Updated Date</label>
                       <label class="col-md-4">{{$product->updated_at }}</label>
                     </div>
+                    <div class="mt-2">
+                      <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary me-2">Edit</button>
+                      <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
                   </div>
               </div>
 
@@ -468,14 +472,6 @@
               </div>
 
              </div>
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-               
-               
-              </div>
-            </footer>
-            <!-- / Footer -->
 
             <div class="content-backdrop fade"></div>
           </div>

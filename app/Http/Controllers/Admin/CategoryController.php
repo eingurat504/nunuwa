@@ -89,7 +89,7 @@ class CategoryController extends Controller
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        return redirect()->route('category.index');
+        return redirect()->route('categories.index');
     }
 
 
@@ -117,7 +117,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        return redirect()->route('category.index');
+        return redirect()->route('categories.index');
     }
 
       /**
@@ -152,7 +152,7 @@ class CategoryController extends Controller
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        return redirect()->route('category.index');
+        return redirect()->route('categories.index');
     }
 
 }

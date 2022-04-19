@@ -91,7 +91,7 @@ class ProductController extends Controller
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        return redirect()->route('product.index');
+        return redirect()->route('products.index');
 
     }
 
@@ -133,7 +133,7 @@ class ProductController extends Controller
        $product->updated_at = date('Y-m-d H:i:s');
        $product->save();
 
-        return redirect()->route('product.index');
+        return redirect()->route('products.index');
 
     }
 

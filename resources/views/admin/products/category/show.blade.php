@@ -369,10 +369,10 @@
                   <label class="col-md-8">{{$category->updated_at }}</label>
                 </div>
                 </div>
-              <div class="mt-2">
-                <button type="submit" class="btn btn-primary me-2">Edit</button>
-                <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Cancel</a>
-              </div>
+                <div class="mt-2">
+                  <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary me-2">Edit</a>
+                  <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                </div>
               </div>
 
                <div class="col-md-6">
