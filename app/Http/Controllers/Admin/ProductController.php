@@ -91,6 +91,8 @@ class ProductController extends Controller
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
+        flash($product->name." updated")->success();
+
         return redirect()->route('products.index');
 
     }
@@ -132,6 +134,8 @@ class ProductController extends Controller
        $product->created_at = date('Y-m-d H:i:s');
        $product->updated_at = date('Y-m-d H:i:s');
        $product->save();
+
+       flash($product->name." registered")->success();
 
         return redirect()->route('products.index');
 
@@ -181,6 +185,8 @@ class ProductController extends Controller
         $image->image_path = $image_path;
         $image->image_name = $name;
         $image->save();
+
+        flash($name." uploaded")->success();
 
         return redirect()->route('products.index');
     }
