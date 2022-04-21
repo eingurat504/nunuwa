@@ -348,6 +348,12 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Products</h6>
 
+              <div class="row">
+                  <div class="col-md-12">
+                      @include('flash::message')
+                  </div>
+              </div>
+
               <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                   <h5 class="card-title m-0 me-2">Products</h5>
