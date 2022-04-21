@@ -89,6 +89,8 @@ class CategoryController extends Controller
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
+        flash($category->name." updated")->success();
+
         return redirect()->route('categories.index');
     }
 
@@ -116,6 +118,8 @@ class CategoryController extends Controller
         $category = new ProductCategory();
         $category->name = $request->name;
         $category->save();
+
+        flash($category->name." registered")->success();
 
         return redirect()->route('categories.index');
     }
@@ -151,6 +155,8 @@ class CategoryController extends Controller
                 // 'description' => $request->input('description', $category->description),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
+
+        flash($category->name." photos uploaded")->success();
 
         return redirect()->route('categories.index');
     }
