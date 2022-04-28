@@ -359,7 +359,10 @@
                           <label class="col-md-4">Name</label>
                           <label class="col-md-8">{{$category->name }}</label>
                         </div>
-               
+                        <div class="row">
+                          <label class="col-md-4">Description</label>
+                          <label class="col-md-8">{{$category->description }}</label>
+                        </div>
                         <div class="row">
                           <label class="col-md-4">Date created</label>
                           <label class="col-md-8">{{$category->created_at }}</label>

@@ -85,7 +85,7 @@ class CategoryController extends Controller
         ProductCategory::where('id', $category->id)
             ->update([
                 'name' => $request->input('name', $category->name),
-                // 'description' => $request->input('description', $category->description),
+                'description' => $request->input('description', $category->description),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
@@ -117,6 +117,7 @@ class CategoryController extends Controller
 
         $category = new ProductCategory();
         $category->name = $request->name;
+        $category->description = $request->description;
         $category->save();
 
         flash($category->name." registered")->success();
