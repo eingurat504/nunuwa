@@ -369,8 +369,7 @@
                           </div>
                           <div class="mb-3 col-md-12">
                             <label for="state" class="form-label">Description</label>
-                            <textarea class="form-control" type="text" id="description" name="description" placeholder="description">
-                              {{ old('description') }}
+                            <textarea class="form-control" type="text" id="description" name="description" placeholder="description">{{ old('description', $category->description) }}
                             </textarea> 
                           </div>
                         </div>
