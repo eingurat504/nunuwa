@@ -1,5 +1,4 @@
 <header class="header header-14">
-<header class="header header-14">
     <div class="header-top">
         <div class="container">
             <div class="header-left">

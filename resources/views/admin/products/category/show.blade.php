@@ -351,29 +351,35 @@
 
 
               <div class="row">
-                               <div class="col-md-6">
-                <div class="card">
-                <h5 class="card-header">Category</h5>
-               
-                <div class="row">
-                  <label class="col-md-4">Name</label>
-                  <label class="col-md-8">{{$category->name }}</label>
+                <div class="col-md-6">
+                  <div class="card">
+                    <h5 class="card-header">Category</h5>
+                    <div class="card-body">
+                        <div class="row">
+                          <label class="col-md-4">Name</label>
+                          <label class="col-md-8">{{$category->name }}</label>
+                        </div>
+                        <div class="row">
+                          <label class="col-md-4">Description</label>
+                          <label class="col-md-8">{{$category->description }}</label>
+                        </div>
+                        <div class="row">
+                          <label class="col-md-4">Date created</label>
+                          <label class="col-md-8">{{$category->created_at }}</label>
+                        </div>
+                        <div class="row">
+                          <label class="col-md-4">Date Updated</label>
+                          <label class="col-md-8">{{$category->updated_at }}</label>
+                        </div>
+
+                        <div class="mt-2">
+                          <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary me-2">Edit</a>
+                          <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                  </div>  
                 </div>
-       
-                <div class="row">
-                  <label class="col-md-4">Date created</label>
-                  <label class="col-md-8">{{$category->created_at }}</label>
+              
                 </div>
-                <div class="row">
-                  <label class="col-md-4">Date Updated</label>
-                  <label class="col-md-8">{{$category->updated_at }}</label>
-                </div>
-                </div>
-                <div class="mt-2">
-                  <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary me-2">Edit</a>
-                  <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Cancel</a>
-                </div>
-              </div>
 
                <div class="col-md-6">
                   <div class="card">

@@ -313,7 +313,7 @@
                                         <span class="ratings-text">( 2 Reviews )</span>
                                     </div><!-- End .rating-container -->
                                 </div><!-- End .product-body -->
-                            </div><!-- End .product -->
+                            </div>
 
                             <div class="product text-center">
                                 <figure class="product-media">
@@ -357,7 +357,7 @@
                                         <a href="#" style="background: #333333;"><span class="sr-only">Color name</span></a>
                                     </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
-                            </div><!-- End .product -->
+                            </div>
 
                             <div class="product text-center">
                                 <figure class="product-media">
@@ -396,7 +396,7 @@
                                         <a href="#" style="background: #93a6b0;"><span class="sr-only">Color name</span></a>
                                     </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
-                            </div><!-- End .product -->
+                            </div>
 
                             <div class="product text-center">
                                 <figure class="product-media">
@@ -430,7 +430,7 @@
                                         <span class="ratings-text">( 4 Reviews )</span>
                                     </div><!-- End .rating-container -->
                                 </div><!-- End .product-body -->
-                            </div><!-- End .product -->
+                            </div>
 
                             <div class="product text-center">
                                 <figure class="product-media">
@@ -465,7 +465,7 @@
                                         <span class="ratings-text">( 10 Reviews )</span>
                                     </div><!-- End .rating-container -->
                                 </div><!-- End .product-body -->
-                            </div><!-- End .product -->
+                            </div>
 
                             <div class="product text-center">
                                 <figure class="product-media">
@@ -500,7 +500,7 @@
                                         <span class="ratings-text">( 4 Reviews )</span>
                                     </div><!-- End .rating-container -->
                                 </div><!-- End .product-body -->
-                            </div><!-- End .product -->
+                            </div>
                         </div><!-- End .owl-carousel -->
                     </div><!-- .End .tab-pane -->
                     <div class="tab-pane p-0 fade" id="trending-elec-tab" role="tabpanel" aria-labelledby="trending-elec-link">
@@ -558,7 +558,7 @@
                                         <div class="product-cat">
                                             <a href="#">{{ $electronic->category->name }}</a>
                                         </div>
-                                        <h3 class="product-title"><a href="product.html">{{ $electronic->name }}</a></h3>
+                                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                                         <div class="product-price">
                                             <span class="new-price">${{ $electronic->price }}</span>
                                             <span class="old-price">Was $290.00</span>
