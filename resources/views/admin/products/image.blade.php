@@ -383,9 +383,8 @@
 
                   <form id="upload-product-images" action="" method="POST" enctype="multipart/form-data">
 
-                         {{ method_field('POST') }}
-
-                        {{ csrf_field() }}
+                    {{ csrf_field() }}
+                    {{ method_field('POST') }}
 
                       <div class="modal-content">
                         <div class="modal-header">
@@ -402,9 +401,9 @@
                            <input type="hidden" name="product_id" value="{{ $product->id  }}">
                           </p> 
                           <p>
-                            <label for="product_image">Product image</label><br/>
-                            <input class="form-control" type="file" id="product_image"
-                              name="product_image" value="{{ old('product_image') }}" placeholder="product_image" />
+                            <label for="product_images">Product image</label><br/>
+                            <input class="form-control" type="file" id="product_images"
+                              name="product_images" value="{{ old('product_images') }}" placeholder="product_images" />
                           </p>
                         </div>
                         <div class="modal-footer">
@@ -479,8 +478,15 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script type="text/javascript">
+
       $(document).ready(function () {
-        
+
+          $.ajaxSetup({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+          });
+
           $('form#upload-product-images').on('submit', function (event) {
 
               event.preventDefault();
@@ -489,8 +495,8 @@
 
               var product_id = form.find('input[name=product_id]').val();
 
-              // var fd = new FormData();
-              var files = $('#product_image')[0].files;
+              var fd = new FormData();
+              var files = $('#product_images')[0].files;
 
               // console.log(files);
 
@@ -500,16 +506,14 @@
               // Check file selected or not
               if(files.length > 0 ){
 
-                 form.append('product_image',files[0]);
+                 fd.append('product_images',files[0]);
 
-                  // console.log(form.serialize());
-                  
                    var app = '{{ config('app.url') }}';
 
                   $.ajax({
                       type: 'POST',
                       url: app + '/admin/product/' + product_id + '/attach',
-                      data: form,
+                      data: fd,
                       contentType: false,
                       processData: false,   
                       success: function (response) {
