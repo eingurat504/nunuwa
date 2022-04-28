@@ -355,35 +355,44 @@
                   <div class="card">
                     <h5 class="card-header">Product</h5>
 
-                    <div class="row">
-                      <label class="col-md-4">Category</label>
-                      <label class="col-md-4">{{ $product->category->name }}</label>
-                    </div>
+                     <div class="card-body">
+                        <div class="row">
+                            <label class="col-md-4">Category</label>
+                            <label class="col-md-4">{{ $product->category->name }}</label>
+                        </div>
+                          
+                        <div class="row">
+                          <label class="col-md-4">Category</label>
+                          <label class="col-md-4">{{ $product->category->name }}</label>
+                        </div>
 
+                        <div class="row">
+                          <label class="col-md-4">Name</label>
+                          <label class="col-md-4">{{ $product->name }}</label>
+                        </div>
 
-                    <div class="row">
-                      <label class="col-md-4">Name</label>
-                      <label class="col-md-4">{{ $product->name }}</label>
-                    </div>
+                        <div class="row">
+                          <label class="col-md-4">Price</label>
+                          <label class="col-md-4">${{$product->price }}</label>
+                        </div>
 
-                    <div class="row">
-                      <label class="col-md-4">Price</label>
-                      <label class="col-md-4">${{$product->price }}</label>
-                    </div>
+                        <div class="row">
+                          <label class="col-md-4">Created Date</label>
+                          <label class="col-md-4">{{$product->created_at }}</label>
+                        </div>
 
-                    <div class="row">
-                      <label class="col-md-4">Created Date</label>
-                      <label class="col-md-4">{{$product->created_at }}</label>
-                    </div>
+                        <div class="row">
+                          <label class="col-md-4">Updated Date</label>
+                          <label class="col-md-4">{{$product->updated_at }}</label>
+                        </div>
 
-                    <div class="row">
-                      <label class="col-md-4">Updated Date</label>
-                      <label class="col-md-4">{{$product->updated_at }}</label>
-                    </div>
-                    <div class="mt-2">
-                      <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary me-2">Edit</button>
-                      <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">Cancel</a>
-                    </div>
+                        <div class="mt-2">
+                          <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary me-2">Edit</button>
+                          <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+
+                     </div>  
+                    
                   </div>
               </div>
 
