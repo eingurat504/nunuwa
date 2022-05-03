@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+
+    public function __construct()
+    {
+      $this->middleware('guest:admin', ['except' => ['logout']]);
+    }
     
     /**
      * Create a new user instance after a valid registration.
