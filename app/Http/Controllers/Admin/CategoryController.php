@@ -15,6 +15,7 @@ class CategoryController extends Controller
      * Create a new controller instance.
      *
      * @return void
+     https://www.codermen.com/how-to-make-multi-auth-in-laravel-8/
      */
     public function __construct()
     {
