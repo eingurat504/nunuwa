@@ -14,10 +14,10 @@ class CategoryController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    // public function __construct()
+    // {
       
-    }
+    // }
 
         /**
      * Show Home Appliances.
