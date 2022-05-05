@@ -11,6 +11,7 @@ use App\Http\Controllers\Category\ClothingController;
 use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,14 +50,14 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
 
     // Product
     Route::group(['prefix' => 'product', 'as' => 'products.'], function () {
-        Route::get('/', 'ProductController@index')->name('index');
-        Route::get('/create','ProductController@create')->name('create');
-        Route::post('/store','ProductController@store')->name('store');
-        Route::get('/{product}','ProductController@show')->name('show');
-        Route::get('/{product}/edit','ProductController@edit')->name('edit');
-        Route::put('/{product}/update','ProductController@update')->name('update');
-        Route::get('/{product}/attached_images','ProductController@attachedImages')->name('attached');
-        Route::post('/{product}/attach','ProductController@attachImages')->name('attach');
+        Route::get('/', 'AdminProductController@index')->name('index');
+        Route::get('/create','AdminProductController@create')->name('create');
+        Route::post('/store','AdminProductController@store')->name('store');
+        Route::get('/{product}','AdminProductController@show')->name('show');
+        Route::get('/{product}/edit','AdminProductController@edit')->name('edit');
+        Route::put('/{product}/update','AdminProductController@update')->name('update');
+        Route::get('/{product}/attached_images','AdminProductController@attachedImages')->name('attached');
+        Route::post('/{product}/attach','AdminProductController@attachImages')->name('attach');
     });
 
 });
