@@ -11,10 +11,10 @@ class CartController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    // public function __construct()
+    // {
       
-    }
+    // }
 
     /**
      * Show shopping cart.

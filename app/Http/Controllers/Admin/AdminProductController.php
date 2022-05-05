@@ -10,7 +10,7 @@ use App\Models\ProductCategory;
 use App\Models\Product;
 use App\Models\ProductImage;
 
-class ProductController extends Controller
+class AdminProductController extends Controller
 {
     /**
      * Create a new controller instance.

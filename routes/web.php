@@ -8,6 +8,9 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Category\ElectronicController;
 use App\Http\Controllers\Category\FurnitureController;
 use App\Http\Controllers\Category\ClothingController;
+use App\Http\Controllers\Admin\Auth\AuthController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +27,39 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('admin/login','Auth\AuthController@getlogin')->name('admin.login.index');
+Route::post('admin/login', 'Auth\AuthController@login')->name('admin.login');
+Route::get('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
+
+Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
+    // Admin Dashboard
+    Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
+
+    // Category
+    Route::group(['prefix' => 'category', 'as' => 'categories.'], function () {
+        Route::get('/', 'AdminCategoryController@index')->name('index');
+        Route::get('/create','AdminCategoryController@create')->name('create');
+        Route::post('/store','AdminCategoryController@store')->name('store');
+        Route::get('/{category}','AdminCategoryController@show')->name('show');
+        Route::get('/{category}/edit','AdminCategoryController@edit')->name('edit');
+        Route::put('/{category}/update','AdminCategoryController@update')->name('update');
+        Route::get('/{category}/attached_images','AdminCategoryController@attachedImages')->name('attached');
+        Route::post('/{category}/attach','AdminCategoryController@attachImages')->name('attach');
+    });
+
+    // Product
+    Route::group(['prefix' => 'product', 'as' => 'products.'], function () {
+        Route::get('/', 'ProductController@index')->name('index');
+        Route::get('/create','ProductController@create')->name('create');
+        Route::post('/store','ProductController@store')->name('store');
+        Route::get('/{product}','ProductController@show')->name('show');
+        Route::get('/{product}/edit','ProductController@edit')->name('edit');
+        Route::put('/{product}/update','ProductController@update')->name('update');
+        Route::get('/{product}/attached_images','ProductController@attachedImages')->name('attached');
+        Route::post('/{product}/attach','ProductController@attachImages')->name('attach');
+    });
+
+});
 
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
     Route::get('/', [CategoryController::class, 'getHomeAppliances'])->name('index');
