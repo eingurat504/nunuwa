@@ -33,8 +33,8 @@
     <link rel="stylesheet" href="{{ asset('css/plugins/jquery.countdown.css') }}">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/skins/skin-demo-14.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/demos/demo-14.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/skins/skin-demo-13.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/demos/demo-13.css') }}">
 </head>
 <body>
 <div id="app">
@@ -413,6 +413,6 @@
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <!-- Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/demos/demo-14.js') }}"></script>
+    <script src="{{ asset('js/demos/demo-13.js') }}"></script>
 </body>
 </html>

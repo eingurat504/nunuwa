@@ -50,14 +50,14 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
 
     // Product
     Route::group(['prefix' => 'product', 'as' => 'products.'], function () {
-        Route::get('/', 'AdminProductController@index')->name('index');
-        Route::get('/create','AdminProductController@create')->name('create');
-        Route::post('/store','AdminProductController@store')->name('store');
-        Route::get('/{product}','AdminProductController@show')->name('show');
-        Route::get('/{product}/edit','AdminProductController@edit')->name('edit');
-        Route::put('/{product}/update','AdminProductController@update')->name('update');
-        Route::get('/{product}/attached_images','AdminProductController@attachedImages')->name('attached');
-        Route::post('/{product}/attach','AdminProductController@attachImages')->name('attach');
+        Route::get('/', 'Admin\AdminProductController@index')->name('index');
+        Route::get('/create','Admin\AdminProductController@create')->name('create');
+        Route::post('/store','Admin\AdminProductController@store')->name('store');
+        Route::get('/{product}','Admin\AdminProductController@show')->name('show');
+        Route::get('/{product}/edit','Admin\AdminProductController@edit')->name('edit');
+        Route::put('/{product}/update','Admin\AdminProductController@update')->name('update');
+        Route::get('/{product}/attached_images','Admin\AdminProductController@attachedImages')->name('attached');
+        Route::post('/{product}/attach','Admin\AdminProductController@attachImages')->name('attach');
     });
 
 });
