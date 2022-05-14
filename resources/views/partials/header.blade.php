@@ -201,7 +201,7 @@
                                 <nav class="side-nav">
                                     <ul class="menu-vertical sf-arrows">
                                         <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="#">Electronics</a>
+                                            <a class="sf-with-ul" href="{{ route('electronics.index') }}">Electronics</a>
 
                                             <div class="megamenu">
                                                 <div class="row no-gutters">
@@ -264,7 +264,7 @@
                                             </div><!-- End .megamenu -->
                                         </li>
                                         <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="#">Furniture</a>
+                                            <a class="sf-with-ul" href="{{ route('furniture.index') }}">Furniture</a>
 
                                             <div class="megamenu">
                                                 <div class="row no-gutters">
@@ -326,7 +326,7 @@
                                             </div><!-- End .megamenu -->
                                         </li>
                                         <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="#">Cooking</a>
+                                            <a class="sf-with-ul" href="{{ route('cooking.index') }}">Cooking</a>
 
                                             <div class="megamenu">
                                                 <div class="menu-col">
@@ -396,7 +396,7 @@
                                             </div><!-- End .megamenu -->
                                         </li>
                                         <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="#">Clothing</a>
+                                            <a class="sf-with-ul" href="{{ route('clothing.index') }}">Clothing</a>
 
                                             <div class="megamenu">
                                                 <div class="row no-gutters">
