@@ -485,12 +485,12 @@
                                                 </div><!-- End .menu-brands -->
                                             </div><!-- End .megamenu -->
                                         </li>
-                                        <li><a href="#">Home Appliances</a></li>
-                                        <li><a href="#">Healthy & Beauty</a></li>
-                                        <li><a href="#">Shoes & Boots</a></li>
-                                        <li><a href="#">Travel & Outdoor</a></li>
-                                        <li><a href="#">Smart Phones</a></li>
-                                        <li><a href="#">TV & Audio</a></li>
+                                        <li><a href="{{ route('appliances.index') }}">Home Appliances</a></li>
+                                        <li><a href="{{ route('healthy.index') }}">Healthy & Beauty</a></li>
+                                        <li><a href="{{ route('foot_wear.index') }}">Shoes & Boots</a></li>
+                                        <li><a href="{{ route('travel.index') }}">Travel & Outdoor</a></li>
+                                        <li><a href="{{ route('phones.index') }}">Smart Phones</a></li>
+                                        <li><a href="{{ route('audios.index') }}">TV & Audio</a></li>
                                         <li><a href="#">Gift Ideas</a></li>
                                     </ul><!-- End .menu-vertical -->
                                 </nav><!-- End .side-nav -->
