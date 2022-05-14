@@ -165,7 +165,7 @@
 
                                             <figure class="product-image-container">
                                                 <a href="product.html" class="product-image">
-                                                    <img src="assets/images/products/cart/product-2.jpg" alt="product">
+                                                    <img src="{{ asset('images/products/cart/product-2.jpg') }}" alt="product">
                                                 </a>
                                             </figure>
                                             <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -256,7 +256,7 @@
                                                     <div class="col-md-4">
                                                         <div class="banner banner-overlay">
                                                             <a href="category.html" class="banner banner-menu">
-                                                                <img src="assets/images/demos/demo-13/menu/banner-1.jpg" alt="Banner">
+                                                                <img src="{{ asset('images/demos/demo-13/menu/banner-1.jpg') }}" alt="Banner">
                                                             </a>
                                                         </div><!-- End .banner banner-overlay -->
                                                     </div><!-- End .col-md-4 -->
@@ -318,7 +318,7 @@
                                                     <div class="col-md-4">
                                                         <div class="banner banner-overlay">
                                                             <a href="category.html" class="banner banner-menu">
-                                                                <img src="assets/images/demos/demo-13/menu/banner-2.jpg" alt="Banner">
+                                                                <img src="{{ asset('images/demos/demo-13/menu/banner-2.jpg') }}" alt="Banner">
                                                             </a>
                                                         </div><!-- End .banner banner-overlay -->
                                                     </div><!-- End .col-md-4 -->
@@ -371,7 +371,7 @@
                                                         <div class="col-md-4">
                                                             <div class="banner">
                                                                 <a href="#">
-                                                                    <img src="assets/images/demos/demo-13/menu/1.jpg" alt="image">
+                                                                    <img src="{{ asset('images/demos/demo-13/menu/1.jpg') }}" alt="image">
                                                                 </a>
                                                             </div><!-- End .banner -->
                                                         </div><!-- End .col-md-4 -->
@@ -379,7 +379,7 @@
                                                         <div class="col-md-4">
                                                             <div class="banner">
                                                                 <a href="#">
-                                                                    <img src="assets/images/demos/demo-13/menu/2.jpg" alt="image">
+                                                                    <img src="{{ asset('images/demos/demo-13/menu/2.jpg') }}" alt="image">
                                                                 </a>
                                                             </div><!-- End .banner -->
                                                         </div><!-- End .col-md-4 -->
@@ -387,7 +387,7 @@
                                                         <div class="col-md-4">
                                                             <div class="banner">
                                                                 <a href="#">
-                                                                    <img src="assets/images/demos/demo-13/menu/3.jpg" alt="image">
+                                                                    <img src="{{ asset('images/demos/demo-13/menu/3.jpg') }}" alt="image">
                                                                 </a>
                                                             </div><!-- End .banner -->
                                                         </div><!-- End .col-md-4 -->
@@ -438,7 +438,7 @@
                                                     <div class="col-md-4">
                                                         <div class="banner banner-overlay">
                                                             <a href="category.html" class="banner banner-menu">
-                                                                <img src="assets/images/demos/demo-13/menu/banner-3.jpg" alt="Banner">
+                                                                <img src="{{ asset('images/demos/demo-13/menu/banner-3.jpg') }}" alt="Banner">
                                                             </a>
                                                         </div><!-- End .banner banner-overlay -->
                                                     </div><!-- End .col-md-4 -->
@@ -448,49 +448,49 @@
                                                     <div class="row">
                                                         <div class="col-lg-2">
                                                             <a href="#" class="brand">
-                                                                <img src="assets/images/brands/1.png" alt="Brand Name">
+                                                                <img src="{{ asset('images/brands/1.png') }}" alt="Brand Name">
                                                             </a>
                                                         </div><!-- End .col-lg-2 -->
 
                                                         <div class="col-lg-2">
                                                             <a href="#" class="brand">
-                                                                <img src="assets/images/brands/2.png" alt="Brand Name">
+                                                                <img src="{{ asset('images/brands/2.png') }}" alt="Brand Name">
                                                             </a>
                                                         </div><!-- End .col-lg-2 -->
 
                                                         <div class="col-lg-2">
                                                             <a href="#" class="brand">
-                                                                <img src="assets/images/brands/3.png" alt="Brand Name">
+                                                                <img src="{{ asset('images/brands/3.png') }}" alt="Brand Name">
                                                             </a>
                                                         </div><!-- End .col-lg-2 -->
 
                                                         <div class="col-lg-2">
                                                             <a href="#" class="brand">
-                                                                <img src="assets/images/brands/4.png" alt="Brand Name">
+                                                                <img src="{{ asset('images/brands/4.png') }}" alt="Brand Name">
                                                             </a>
                                                         </div><!-- End .col-lg-2 -->
 
                                                         <div class="col-lg-2">
                                                             <a href="#" class="brand">
-                                                                <img src="assets/images/brands/5.png" alt="Brand Name">
+                                                                <img src="{{ asset('images/brands/5.png') }}" alt="Brand Name">
                                                             </a>
                                                         </div><!-- End .col-lg-2 -->
 
                                                         <div class="col-lg-2">
                                                             <a href="#" class="brand">
-                                                                <img src="assets/images/brands/6.png" alt="Brand Name">
+                                                                <img src="{{ asset('images/brands/6.png') }}" alt="Brand Name">
                                                             </a>
                                                         </div><!-- End .col-lg-2 -->
                                                     </div><!-- End .row -->
                                                 </div><!-- End .menu-brands -->
                                             </div><!-- End .megamenu -->
                                         </li>
-                                        <li><a href="#">Home Appliances</a></li>
-                                        <li><a href="#">Healthy & Beauty</a></li>
-                                        <li><a href="#">Shoes & Boots</a></li>
-                                        <li><a href="#">Travel & Outdoor</a></li>
-                                        <li><a href="#">Smart Phones</a></li>
-                                        <li><a href="#">TV & Audio</a></li>
+                                        <li><a href="{{ route('appliances.index') }}">Home Appliances</a></li>
+                                        <li><a href="{{ route('healthy.index') }}">Healthy & Beauty</a></li>
+                                        <li><a href="{{ route('foot_wear.index') }}">Shoes & Boots</a></li>
+                                        <li><a href="{{ route('travel.index') }}">Travel & Outdoor</a></li>
+                                        <li><a href="{{ route('phones.index') }}">Smart Phones</a></li>
+                                        <li><a href="{{ route('audios.index') }}">TV & Audio</a></li>
                                         <li><a href="#">Gift Ideas</a></li>
                                     </ul><!-- End .menu-vertical -->
                                 </nav><!-- End .side-nav -->
@@ -766,7 +766,7 @@
                                             <div class="col-md-6">
                                                 <div class="banner banner-overlay">
                                                     <a href="category.html">
-                                                        <img src="assets/images/menu/banner-2.jpg" alt="Banner">
+                                                        <img src="{{ asset('images/menu/banner-2.jpg') }}" alt="Banner">
 
                                                         <div class="banner-content banner-content-bottom">
                                                             <div class="banner-title text-white">New Trends<br><span><strong>spring 2019</strong></span></div><!-- End .banner-title -->
