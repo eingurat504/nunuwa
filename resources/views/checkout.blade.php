@@ -32,51 +32,51 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>First Name *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" value="{{ old('first_name') }}" class="form-control" required>
                                 </div><!-- End .col-sm-6 -->
 
                                 <div class="col-sm-6">
                                     <label>Last Name *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" value="{{ old('last_name') }}" class="form-control" required>
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
                             <label>Company Name (Optional)</label>
-                            <input type="text" class="form-control">
+                            <input type="text" value="{{ old('company_name') }}" class="form-control">
 
                             <label>Country *</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" value="{{ old('country') }}" class="form-control" required>
 
                             <label>Street address *</label>
-                            <input type="text" class="form-control" placeholder="House number and Street name" required>
-                            <input type="text" class="form-control" placeholder="Appartments, suite, unit etc ..." required>
+                            <input type="text" class="form-control" value="{{ old('street_address_1') }}" placeholder="House number and Street name" required>
+                            <input type="text" class="form-control" value="{{ old('street_address_1') }}" placeholder="Appartments, suite, unit etc ..." required>
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>Town / City *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" value="{{ old('city') }}" class="form-control" required>
                                 </div><!-- End .col-sm-6 -->
 
                                 <div class="col-sm-6">
                                     <label>State / County *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" value="{{ old('country') }}" class="form-control" required>
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>Postcode / ZIP *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" value="{{ old('zip_code') }}" class="form-control" required>
                                 </div><!-- End .col-sm-6 -->
 
                                 <div class="col-sm-6">
                                     <label>Phone *</label>
-                                    <input type="tel" class="form-control" required>
+                                    <input type="tel" value="{{ old('phone_number') }}" class="form-control" required>
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
                             <label>Email address *</label>
-                            <input type="email" class="form-control" required>
+                            <input type="email" value="{{ old('email_address') }}" class="form-control" required>
 
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="checkout-create-acc">
