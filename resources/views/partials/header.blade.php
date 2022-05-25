@@ -179,8 +179,8 @@
                                     </div><!-- End .dropdown-cart-total -->
 
                                     <div class="dropdown-cart-action">
-                                        <a href="" class="btn btn-primary">View Cart</a>
-                                        <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
+                                        <a href="{{ route('cart.index') }}" class="btn btn-primary">View Cart</a>
+                                        <a href="{{ route('checkout.index') }}" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
                                     </div><!-- End .dropdown-cart-total -->
                                 </div><!-- End .dropdown-menu -->
                             </div><!-- End .cart-dropdown -->
@@ -718,7 +718,7 @@
                                                         <div class="menu-title">Shop Pages</div><!-- End .menu-title -->
                                                         <ul>
                                                             <li><a href="cart.html">Cart</a></li>
-                                                            <li><a href="checkout.html">Checkout</a></li>
+                                                            <li><a href="{{ route('checkout.index')  }}">Checkout</a></li>
                                                             <li><a href="wishlist.html">Wishlist</a></li>
                                                             <li><a href="dashboard.html">My Account</a></li>
                                                             <li><a href="#">Lookbook</a></li>
