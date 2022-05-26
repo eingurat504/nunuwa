@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -25,16 +26,36 @@ class AuthController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Admin login.
      *
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function login()
+    protected function login(Request $request)
     {
-        return view('admin.auth.login');
+         // Validate the form data
+      $this->validate($request, [
+        'email'   => 'required|email',
+        'password' => 'required|min:6'
+      ]);
+
+      // Attempt to log the user in
+      if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
+
+            ddd(Auth::guard('admin'));
+
+        return redirect()->intended(route('admin.dashboard'));
+      } 
+      // if unsuccessful, then redirect back to the login with the form data
+      return redirect()->back()->withInput($request->only('email', 'remember'));
+        
     }
 
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('/admin');
+    }
 
 
 }
