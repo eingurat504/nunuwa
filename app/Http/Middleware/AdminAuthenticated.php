@@ -17,14 +17,19 @@ class AdminAuthenticated
     public function handle(Request $request, Closure $next, $guard = null)
     {
   
-        
-
-        //  if (Auth::user() &&  Auth::user()->admin == 1) {
-        //         return $next($request);
-        //  }
-
-        // return redirect('/');
-
+        switch ($guard) {
+            case 'admin':
+              if (Auth::guard($guard)->check()) {
+                return redirect()->route('admin.dashboard');
+              }
+             
+            default:
+              if (Auth::guard($guard)->check()) {
+                  return redirect('/');
+              }
+              break;
+          }
+          return $next($request);
 
     }
 }
