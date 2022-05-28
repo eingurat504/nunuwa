@@ -39,14 +39,14 @@
 <body>
 <div id="app">
     <div class="page-wrapper">
-        @include('partials.header')
+        @include('partials.admin.header')
 
         <main class="main">
              @yield('content')
         </main><!-- End .main -->
 
     <!--   Footer starts from here -->
-       @include('partials.footer')
+       @include('partials.admin.footer')
         
     </div><!-- End .page-wrapper -->
 
