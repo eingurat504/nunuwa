@@ -1,7 +1,7 @@
 
-@extends('layouts.admin.app')
+@extends('layouts.admin.app-base')
 
-@section('content')
+@section('main-content')
 
     <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
