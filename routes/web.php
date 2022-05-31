@@ -34,18 +34,18 @@ Route::get('admin/logout', 'Admin\Auth\AuthController@logout')->name('admin.logo
 
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     // Admin Dashboard
-    Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
+    Route::get('/dashboard','Admin\AdminController@dashboard')->name('dashboard'); 
 
     // Category
     Route::group(['prefix' => 'category', 'as' => 'categories.'], function () {
-        Route::get('/', 'AdminCategoryController@index')->name('index');
-        Route::get('/create','AdminCategoryController@create')->name('create');
-        Route::post('/store','AdminCategoryController@store')->name('store');
-        Route::get('/{category}','AdminCategoryController@show')->name('show');
-        Route::get('/{category}/edit','AdminCategoryController@edit')->name('edit');
-        Route::put('/{category}/update','AdminCategoryController@update')->name('update');
-        Route::get('/{category}/attached_images','AdminCategoryController@attachedImages')->name('attached');
-        Route::post('/{category}/attach','AdminCategoryController@attachImages')->name('attach');
+        Route::get('/', 'Admin\AdminCategoryController@index')->name('index');
+        Route::get('/create','Admin\AdminCategoryController@create')->name('create');
+        Route::post('/store','Admin\AdminCategoryController@store')->name('store');
+        Route::get('/{category}','Admin\AdminCategoryController@show')->name('show');
+        Route::get('/{category}/edit','Admin\AdminCategoryController@edit')->name('edit');
+        Route::put('/{category}/update','Admin\AdminCategoryController@update')->name('update');
+        Route::get('/{category}/attached_images','Admin\AdminCategoryController@attachedImages')->name('attached');
+        Route::post('/{category}/attach','Admin\AdminCategoryController@attachImages')->name('attach');
     });
 
     // Product
