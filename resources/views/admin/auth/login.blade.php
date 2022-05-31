@@ -83,7 +83,7 @@
               type="text"
               class="form-control"
               id="email"
-              name="email"
+              name="email" value="{{ old('email') }}"
               placeholder="Enter your email or username"
               autofocus
             />
@@ -96,14 +96,10 @@
               </a>
             </div>
             <div class="input-group input-group-merge">
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                name="password"
+              <input type="password" id="password"
+                class="form-control" value="{{ old('password') }}" name="password"
                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                aria-describedby="password"
-              />
+                aria-describedby="password" />
               <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
             </div>
           </div>
