@@ -269,7 +269,7 @@
                     <div class="product">
                         <figure class="product-media">
                             <span class="product-label label-sale">Sale</span>
-                            <a href="product.html">
+                            <a href="{{ route('products.show',$product->id) }}">
                                 <img src="{{ asset('images/demos/demo-13/products/product-1.jpg') }}" alt="Product image" class="product-image">
                             </a>
 
@@ -331,11 +331,11 @@
                             }
                         }
                     }'>
-                    @foreach($electronics as $electronic)
+                    @foreach($furnitures as $furniture)
                     <div class="product">
                         <figure class="product-media">
                             <span class="product-label label-sale">Sale</span>
-                            <a href="product.html">
+                            <a href="{{ route('products.show', $furniture->id) }}">
                                 <img src="{{ asset('images/demos/demo-13/products/product-4.jpg') }}" alt="Product image" class="product-image">
                             </a>
 
@@ -352,11 +352,11 @@
 
                         <div class="product-body">
                             <div class="product-cat">
-                                <a href="#">{{ $electronic->category->name }}</a>
+                                <a href="#">{{ $furniture->category->name }}</a>
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="product.html">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show',$furniture->id)}}">{{ $furniture->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
-                                <span class="new-price">${{ $electronic->price }}</span>
+                                <span class="new-price">${{ $furniture->price }}</span>
                                 <span class="old-price">Was $310.00</span>
                             </div><!-- End .product-price -->
                             <div class="ratings-container">
@@ -405,7 +405,7 @@
                     <div class="product">
                         <figure class="product-media">
                             <span class="product-label label-new">New</span>
-                            <a href="product.html">
+                            <a href="{{ route('products.show',$electronic->id)}}">
                                 <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                             </a>
 
@@ -465,11 +465,11 @@
                             }
                         }
                     }'>
-                    @foreach($electronics as $electronic) 
+                    @foreach($clothings as $clothing) 
                     <div class="product">
                         <figure class="product-media">
                             <span class="product-label label-new">New</span>
-                            <a href="product.html">
+                            <a href="{{ route('products.show',$clothing->id)}}">
                                 <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                             </a>
 
@@ -488,7 +488,7 @@
                             <div class="product-cat">
                                 {{ $electronic->category->name }}
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show', $clothing->id) }}">{{ $clothing->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 ${{ $electronic->price }}
                             </div><!-- End .product-price -->
@@ -533,7 +533,7 @@
                     <div class="product">
                         <figure class="product-media">
                             <span class="product-label label-new">New</span>
-                            <a href="product.html">
+                            <a href="{{ route('products.show',$electronic->id)}}">
                                 <img src="{{ asset('images/demos/demo-13/products/product-6.jpg') }}" alt="Product image" class="product-image">
                             </a>
 
@@ -552,7 +552,7 @@
                             <div class="product-cat">
                                 <a href="#">Appliances</a>
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="product.html">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 $399.00
                             </div><!-- End .product-price -->
@@ -568,7 +568,7 @@
                     <div class="product">
                         <figure class="product-media">
                             <span class="product-label label-sale">Sale</span>
-                            <a href="product.html">
+                            <a href="{{ route('products.show',$electronic->id)}}">
                                 <img src="{{ asset('images/demos/demo-13/products/product-1.jpg') }}" alt="Product image" class="product-image">
                             </a>
 
@@ -587,7 +587,7 @@
                             <div class="product-cat">
                                 <a href="#">Furniture</a>
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="product.html">Butler Stool Ladder</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">Butler Stool Ladder</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 <span class="new-price">$251.99</span>
                                 <span class="old-price">Was $290.00</span>
@@ -662,7 +662,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -726,7 +726,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -790,7 +790,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -915,7 +915,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -979,7 +979,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -1043,7 +1043,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -1134,7 +1134,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -1198,7 +1198,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
@@ -1262,7 +1262,7 @@
                 <div class="product">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="product.html">
+                        <a href="{{ route('products.show',$electronic->id)}}">
                             <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                         </a>
 
