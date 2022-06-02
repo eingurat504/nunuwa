@@ -719,7 +719,7 @@
                                                         <ul>
                                                             <li><a href="cart.html">Cart</a></li>
                                                             <li><a href="{{ route('checkout.index')  }}">Checkout</a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                                            <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
                                                             <li><a href="dashboard.html">My Account</a></li>
                                                             <li><a href="#">Lookbook</a></li>
                                                         </ul>

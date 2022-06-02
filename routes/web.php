@@ -142,6 +142,10 @@ Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
     Route::get('/', [CartController::class, 'showCart'])->name('index');
 });
 
+Route::group(['prefix' => '/wishlist', 'as' => 'wishlist.'], function () {
+    Route::get('/', [WishlistController::class, 'showWishlist'])->name('index');
+});
+
 Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
     Route::get('/', [CheckoutController::class, 'showCheckout'])->name('index');
     Route::post('/', [CheckoutController::class, 'store'])->name('store');
