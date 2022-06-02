@@ -465,11 +465,11 @@
                             }
                         }
                     }'>
-                    @foreach($electronics as $electronic) 
+                    @foreach($clothings as $clothing) 
                     <div class="product">
                         <figure class="product-media">
                             <span class="product-label label-new">New</span>
-                            <a href="{{ route('products.show',$electronic->id)}}">
+                            <a href="{{ route('products.show',$clothing->id)}}">
                                 <img src="{{ asset('images/demos/demo-13/products/product-17.jpg') }}" alt="Product image" class="product-image">
                             </a>
 
@@ -488,7 +488,7 @@
                             <div class="product-cat">
                                 {{ $electronic->category->name }}
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show', $clothing->id) }}">{{ $clothing->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 ${{ $electronic->price }}
                             </div><!-- End .product-price -->
