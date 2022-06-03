@@ -116,7 +116,7 @@
                                 </div><!-- End .dropdown-menu -->
                             </div><!-- End .compare-dropdown -->
 
-                            <a href="wishlist.html" class="wishlist-link">
+                            <a href="{{ route('wishlist.index') }}" class="wishlist-link">
                                 <i class="icon-heart-o"></i>
                                 <span class="wishlist-count">3</span>
                                 <span class="wishlist-txt">Wishlist</span>
