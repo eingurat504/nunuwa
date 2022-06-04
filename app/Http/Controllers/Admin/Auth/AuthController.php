@@ -61,6 +61,8 @@ class AuthController extends Controller
         'password' => 'required|min:6' 
       ]);
 
+      // ddd(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password]));
+
       // Attempt to log the user in
       if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
