@@ -4,10 +4,32 @@ namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Providers\RouteServiceProvider;
 use Auth;
 
 class AuthController extends Controller
 {
+      /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/admin/login';
+
 
     public function __construct()
     {
@@ -42,11 +64,14 @@ class AuthController extends Controller
       // Attempt to log the user in
       if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-        return redirect()->intended(route('admin.dashboard'));
+        // $user = auth()->guard('admin')->user();
+        $user = Auth::guard('admin')->user();
+
+        return redirect()->intended(route('dashboard'));
       } 
       // if unsuccessful, then redirect back to the login with the form data
       return redirect()->back()->withInput($request->only('email', 'remember'));
-        
+     
     }
 
     public function logout()
