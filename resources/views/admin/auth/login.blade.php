@@ -95,8 +95,7 @@
               </a>
             </div>
             <div class="input-group input-group-merge">
-              <input type="password" id="password"
-                class="form-control  @error('password') is-invalid @enderror" name="password"
+              <input type="password" id="password" class="form-control  @error('password') is-invalid @enderror" name="password"
                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                 aria-describedby="password" />
               <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
