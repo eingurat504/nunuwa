@@ -9,10 +9,6 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Category\ElectronicController;
 use App\Http\Controllers\Category\FurnitureController;
 use App\Http\Controllers\Category\ClothingController;
-use App\Http\Controllers\Admin\Auth\AuthController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminCategoryController;
-use App\Http\Controllers\Admin\AdminProductController;
 
 /*
 |--------------------------------------------------------------------------
