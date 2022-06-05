@@ -26,7 +26,7 @@ Route::get('/login','Auth\AuthController@getlogin')->name('admin.login.index');
 Route::post('/login', 'Auth\AuthController@login')->name('admin.login');
 Route::get('/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
-Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], function () {
     // Admin Dashboard
     Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
 
