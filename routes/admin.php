@@ -29,9 +29,9 @@ use App\Http\Controllers\Admin\AdminProductController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('admin/login','Auth\AuthController@getlogin')->name('admin.login.index');
-Route::post('admin/login', 'Auth\AuthController@login')->name('admin.login');
-Route::get('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
+Route::get('/login','Auth\AuthController@getlogin')->name('admin.login.index');
+Route::post('/login', 'Auth\AuthController@login')->name('admin.login');
+Route::get('/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     // Admin Dashboard
