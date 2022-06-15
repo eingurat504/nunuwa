@@ -123,7 +123,7 @@
                             </a>
 
                             <div class="dropdown cart-dropdown">
-                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                <a href="{{ route('cart.index') }}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                     <i class="icon-shopping-cart"></i>
                                     <span class="cart-count">2</span>
                                     <span class="cart-txt">Cart</span>
@@ -717,7 +717,7 @@
                                                         </ul>
                                                         <div class="menu-title">Shop Pages</div><!-- End .menu-title -->
                                                         <ul>
-                                                            <li><a href="cart.html">Cart</a></li>
+                                                            <li><a href="{{ route('cart.index') }}">Cart</a></li>
                                                             <li><a href="{{ route('checkout.index')  }}">Checkout</a></li>
                                                             <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
                                                             <li><a href="dashboard.html">My Account</a></li>
