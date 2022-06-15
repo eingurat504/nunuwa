@@ -334,35 +334,35 @@
                                                         <div class="col-md-4">
                                                             <div class="menu-title">Cookware</div><!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="#">Cookware Sets</a></li>
-                                                                <li><a href="#">Pans, Griddles & Woks</a></li>
-                                                                <li><a href="#">Pots</a></li>
-                                                                <li><a href="#">Skillets & Grill Pans</a></li>
-                                                                <li><a href="#">Kettles</a></li>
-                                                                <li><a href="#">Soup & Stockpots</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Cookware Sets</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Pans, Griddles & Woks</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Pots</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Skillets & Grill Pans</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Kettles</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Soup & Stockpots</a></li>
                                                             </ul>
                                                         </div><!-- End .col-md-4 -->
 
                                                         <div class="col-md-4">
                                                             <div class="menu-title">Dinnerware & Tabletop</div><!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="#">Plates</a></li>
-                                                                <li><a href="#">Cups & Mugs</a></li>
-                                                                <li><a href="#">Trays & Platters</a></li>
-                                                                <li><a href="#">Coffee & Tea Serving</a></li>
-                                                                <li><a href="#">Salt & Pepper Shaker</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Plates</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Cups & Mugs</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Trays & Platters</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Coffee & Tea Serving</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Salt & Pepper Shaker</a></li>
                                                             </ul>
                                                         </div><!-- End .col-md-4 -->
 
                                                         <div class="col-md-4">
                                                             <div class="menu-title">Cooking Appliances</div><!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="#">Microwaves</a></li>
-                                                                <li><a href="#">Coffee Makers</a></li>
-                                                                <li><a href="#">Mixers & Attachments</a></li>
-                                                                <li><a href="#">Slow Cookers</a></li>
-                                                                <li><a href="#">Air Fryers</a></li>
-                                                                <li><a href="#">Toasters & Ovens</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Microwaves</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Coffee Makers</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Mixers & Attachments</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Slow Cookers</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Air Fryers</a></li>
+                                                                <li><a href="{{ route('cooking.index') }}">Toasters & Ovens</a></li>
                                                             </ul>
                                                         </div><!-- End .col-md-4 -->
                                                     </div><!-- End .row -->
