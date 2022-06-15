@@ -211,42 +211,42 @@
                                                                 <div class="col-md-6">
                                                                     <div class="menu-title">Laptops & Computers</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">Desktop Computers</a></li>
-                                                                        <li><a href="#">Monitors</a></li>
-                                                                        <li><a href="#">Laptops</a></li>
-                                                                        <li><a href="#">iPad & Tablets</a></li>
-                                                                        <li><a href="#">Hard Drives & Storage</a></li>
-                                                                        <li><a href="#">Printers & Supplies</a></li>
-                                                                        <li><a href="#">Computer Accessories</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Desktop Computers</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Monitors</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Laptops</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">iPad & Tablets</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Hard Drives & Storage</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Printers & Supplies</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Computer Accessories</a></li>
                                                                     </ul>
 
                                                                     <div class="menu-title">TV & Video</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">TVs</a></li>
-                                                                        <li><a href="#">Home Audio Speakers</a></li>
-                                                                        <li><a href="#">Projectors</a></li>
-                                                                        <li><a href="#">Media Streaming Devices</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">TVs</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Home Audio Speakers</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Projectors</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Media Streaming Devices</a></li>
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
 
                                                                 <div class="col-md-6">
                                                                     <div class="menu-title">Cell Phones</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">Carrier Phones</a></li>
-                                                                        <li><a href="#">Unlocked Phones</a></li>
-                                                                        <li><a href="#">Phone & Cellphone Cases</a></li>
-                                                                        <li><a href="#">Cellphone Chargers </a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Carrier Phones</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Unlocked Phones</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Phone & Cellphone Cases</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Cellphone Chargers </a></li>
                                                                     </ul>
 
                                                                     <div class="menu-title">Digital Cameras</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">Digital SLR Cameras</a></li>
-                                                                        <li><a href="#">Sports & Action Cameras</a></li>
-                                                                        <li><a href="#">Camcorders</a></li>
-                                                                        <li><a href="#">Camera Lenses</a></li>
-                                                                        <li><a href="#">Photo Printer</a></li>
-                                                                        <li><a href="#">Digital Memory Cards</a></li>
-                                                                        <li><a href="#">Camera Bags, Backpacks & Cases</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Digital SLR Cameras</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Sports & Action Cameras</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Camcorders</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Camera Lenses</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Photo Printer</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Digital Memory Cards</a></li>
+                                                                        <li><a href="{{ route('electronics.index') }}">Camera Bags, Backpacks & Cases</a></li>
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
                                                             </div><!-- End .row -->
