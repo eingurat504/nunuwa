@@ -406,29 +406,29 @@
                                                                 <div class="col-md-6">
                                                                     <div class="menu-title">Women</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#"><strong>New Arrivals</strong></a></li>
-                                                                        <li><a href="#"><strong>Best Sellers</strong></a></li>
-                                                                        <li><a href="#"><strong>Trending</strong></a></li>
-                                                                        <li><a href="#">Clothing</a></li>
-                                                                        <li><a href="#">Shoes</a></li>
-                                                                        <li><a href="#">Bags</a></li>
-                                                                        <li><a href="#">Accessories</a></li>
-                                                                        <li><a href="#">Jewlery & Watches</a></li>
-                                                                        <li><a href="#"><strong>Sale</strong></a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}"><strong>New Arrivals</strong></a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Best Sellers</strong></a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Trending</strong></a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Clothing</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Shoes</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Bags</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Accessories</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Jewlery & Watches</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Sale</strong></a></li>
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
 
                                                                 <div class="col-md-6">
                                                                     <div class="menu-title">Men</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#"><strong>New Arrivals</strong></a></li>
-                                                                        <li><a href="#"><strong>Best Sellers</strong></a></li>
-                                                                        <li><a href="#"><strong>Trending</strong></a></li>
-                                                                        <li><a href="#">Clothing</a></li>
-                                                                        <li><a href="#">Shoes</a></li>
-                                                                        <li><a href="#">Bags</a></li>
-                                                                        <li><a href="#">Accessories</a></li>
-                                                                        <li><a href="#">Jewlery & Watches</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}"><strong>New Arrivals</strong></a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Best Sellers</strong></a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Trending</strong></a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Clothing</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Shoes</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Bags</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Accessories</a></li>
+                                                                        <li><a href="{{ route('clothing.index') }}">Jewlery & Watches</a></li>
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
                                                             </div><!-- End .row -->
