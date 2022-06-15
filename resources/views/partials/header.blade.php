@@ -274,41 +274,41 @@
                                                                 <div class="col-md-6">
                                                                     <div class="menu-title">Bedroom</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">Beds, Frames & Bases</a></li>
-                                                                        <li><a href="#">Dressers</a></li>
-                                                                        <li><a href="#">Nightstands</a></li>
-                                                                        <li><a href="#">Kids' Beds & Headboards</a></li>
-                                                                        <li><a href="#">Armoires</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Beds, Frames & Bases</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Dressers</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Nightstands</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Kids' Beds & Headboards</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Armoires</a></li>
                                                                     </ul>
 
                                                                     <div class="menu-title">Living Room</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">Coffee Tables</a></li>
-                                                                        <li><a href="#">Chairs</a></li>
-                                                                        <li><a href="#">Tables</a></li>
-                                                                        <li><a href="#">Futons & Sofa Beds</a></li>
-                                                                        <li><a href="#">Cabinets & Chests</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Coffee Tables</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Chairs</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Tables</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Futons & Sofa Beds</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Cabinets & Chests</a></li>
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
 
                                                                 <div class="col-md-6">
                                                                     <div class="menu-title">Office</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">Office Chairs</a></li>
-                                                                        <li><a href="#">Desks</a></li>
-                                                                        <li><a href="#">Bookcases</a></li>
-                                                                        <li><a href="#">File Cabinets</a></li>
-                                                                        <li><a href="#">Breakroom Tables</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Office Chairs</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Desks</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Bookcases</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">File Cabinets</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Breakroom Tables</a></li>
                                                                     </ul>
 
                                                                     <div class="menu-title">Kitchen & Dining</div><!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#">Dining Sets</a></li>
-                                                                        <li><a href="#">Kitchen Storage Cabinets</a></li>
-                                                                        <li><a href="#">Bakers Racks</a></li>
-                                                                        <li><a href="#">Dining Chairs</a></li>
-                                                                        <li><a href="#">Dining Room Tables</a></li>
-                                                                        <li><a href="#">Bar Stools</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Dining Sets</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Kitchen Storage Cabinets</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Bakers Racks</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Dining Chairs</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Dining Room Tables</a></li>
+                                                                        <li><a href="{{ route('furniture.index') }}">Bar Stools</a></li>
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
                                                             </div><!-- End .row -->
