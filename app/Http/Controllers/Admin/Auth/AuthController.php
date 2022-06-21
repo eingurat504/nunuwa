@@ -21,19 +21,19 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/admin/login';
+    // protected $redirectTo = '/admin/login';
 
 
     public function __construct()
     {
-      $this->middleware('guest:admin', ['except' => ['logout']]);
+      $this->middleware('admin.guest:admin', ['except' => ['logout']]);
     }
     
     /**
