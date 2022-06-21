@@ -21,14 +21,14 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/admin/login';
+    // protected $redirectTo = '/admin/login';
 
 
     public function __construct()

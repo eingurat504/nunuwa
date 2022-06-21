@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Admin extends Authenticatable
 {
 
-    use Notifiable;
+    use HasFactory;
 
     protected $table = 'admins';
-    protected $guarded = array();
+    // protected $guarded = array();
     //https://www.codermen.com/how-to-make-multi-auth-in-laravel-8/
     
     protected $guard = 'admin';

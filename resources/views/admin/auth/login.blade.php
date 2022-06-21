@@ -80,7 +80,7 @@
           <div class="mb-3">
             <label for="email" class="form-label">Email or Username</label>
             <input type="email" class="form-control @error('email') is-invalid @enderror"
-              id="email"name="email" value="{{ old('email') }}" placeholder="Enter your email or username" autofocus />
+              id="email" name="email" value="{{ old('email') }}" placeholder="Enter your email or username" autofocus />
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -95,8 +95,7 @@
               </a>
             </div>
             <div class="input-group input-group-merge">
-              <input type="password" id="password" class="form-control  @error('password') is-invalid @enderror" name="password"
-                placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+              <input type="password" id="password" value="{{ old('password') }}" class="form-control  @error('password') is-invalid @enderror" name="password"
                 aria-describedby="password" />
               <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
               @error('password')
