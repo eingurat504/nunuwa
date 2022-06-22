@@ -69,7 +69,7 @@ class AuthController extends Controller
         // $user = auth()->guard('admin')->user();
         $user = Auth::guard('admin')->user();
 
-        return redirect()->intended(route('dashboard'));
+        return redirect()->intended(route('admin.dashboard'));
       } 
       // if unsuccessful, then redirect back to the login with the form data
       return redirect()->back()->withInput($request->only('email', 'remember'));
