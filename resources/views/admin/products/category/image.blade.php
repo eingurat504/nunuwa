@@ -4,7 +4,7 @@
 <!-- Content -->
 <div class="container-xxl flex-grow-1 container-p-y">
 
-    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> <a href="{{ route('categories.index') }}">Categories</a> /</span> {{$category->name }} <span class="text-muted fw-light"> / Attach</span> </h6>
+    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> <a href="{{ route('admin.categories.index') }}">Categories</a> /</span> {{$category->name }} <span class="text-muted fw-light"> / Attach</span> </h6>
 
   <div class="row">
     <div class="col-lg-12 mb-4 order-0">
@@ -24,7 +24,7 @@
               <i class="bx bx-dots-vertical-rounded"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-              <a class="dropdown-item" href="{{ route('products.create') }}" id="upload-product-images"   data-bs-toggle="modal"
+              <a class="dropdown-item" href="{{ route('admin.products.create') }}" id="upload-product-images"   data-bs-toggle="modal"
               data-bs-target="#categoryfullscreenModal">Upload</a>
             </div>
           </div>

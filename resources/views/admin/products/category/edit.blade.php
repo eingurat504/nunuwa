@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
-    <a href="{{ route('categories.index') }}">Categories</a> /</span>{{$category->name }} <span class="text-muted fw-light"> / Edit</span></h6>
+    <a href="{{ route('admin.categories.index') }}">Categories</a> /</span>{{$category->name }} <span class="text-muted fw-light"> / Edit</span></h6>
 
   <div class="row">
 
@@ -11,7 +11,7 @@
       <div class="card mb-4">
         <h5 class="card-header">Default</h5>
         <div class="card-body">
-            <form method="POST" action="{{ route('categories.update' , $category->id) }}">
+            <form method="POST" action="{{ route('admin.categories.update' , $category->id) }}">
 
             {{ method_field('PUT') }}
 
@@ -30,7 +30,7 @@
             </div>
             <div class="mt-2">
               <button type="submit" class="btn btn-primary me-2">Save</button>
-              <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Cancel</a>
+              <a href="{{ route('admin.categories.index') }}" class="btn btn-outline-secondary">Cancel</a>
             </div>
           </form>
         </div>
