@@ -33,7 +33,7 @@ class AuthController extends Controller
 
     public function __construct()
     {
-      $this->middleware('admin.guest:admin', ['except' => ['logout']]);
+      $this->middleware('guest:admin', ['except' => ['logout']]);
     }
     
     /**
@@ -81,6 +81,5 @@ class AuthController extends Controller
         Auth::guard('admin')->logout();
         return redirect('/admin');
     }
-
 
 }
