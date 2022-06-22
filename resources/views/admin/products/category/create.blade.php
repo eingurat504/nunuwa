@@ -3,14 +3,14 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
-    <a href="{{ route('product.index') }}">Products</a> /</span> Create </h6>
+    <a href="{{ route('admin.product.index') }}">Products</a> /</span> Create </h6>
 
   <div class="row">
     <div class="col-md-6">
       <div class="card mb-4">
         <h5 class="card-header">Default</h5>
         <div class="card-body">
-          <form method="POST" action="{{ route('category.store') }}">
+          <form method="POST" action="{{ route('admin.category.store') }}">
             
               {{ csrf_field() }}
 
@@ -29,7 +29,7 @@
             </div>
             <div class="mt-2">
               <button type="submit" class="btn btn-primary me-2">Save</button>
-              <a href="{{ route('product.index') }}" class="btn btn-outline-secondary">Cancel</a>
+              <a href="{{ route('admin.product.index') }}" class="btn btn-outline-secondary">Cancel</a>
             </div>
           </form>
         </div>

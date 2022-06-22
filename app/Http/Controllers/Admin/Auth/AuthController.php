@@ -21,14 +21,14 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/admin/login';
+    // protected $redirectTo = '/admin/login';
 
 
     public function __construct()
@@ -69,7 +69,7 @@ class AuthController extends Controller
         // $user = auth()->guard('admin')->user();
         $user = Auth::guard('admin')->user();
 
-        return redirect()->intended(route('dashboard'));
+        return redirect()->intended(route('admin.dashboard'));
       } 
       // if unsuccessful, then redirect back to the login with the form data
       return redirect()->back()->withInput($request->only('email', 'remember'));
@@ -81,6 +81,5 @@ class AuthController extends Controller
         Auth::guard('admin')->logout();
         return redirect('/admin');
     }
-
 
 }
