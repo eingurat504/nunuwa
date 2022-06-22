@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('products.index') }}">Products</a> /</span>{{$product->name }}</h6>
+    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('admin.products.index') }}">Products</a> /</span>{{$product->name }}</h6>
 
     <div class="row">
       <div class="col-md-6">
@@ -42,8 +42,8 @@
               </div>
 
               <div class="mt-2">
-                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary me-2">Edit</button>
-                <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-primary me-2">Edit</button>
+                <a href="{{ route('admin.products.index') }}" class="btn btn-outline-secondary">Cancel</a>
               </div>
 
             </div>  
