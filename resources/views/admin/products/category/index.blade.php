@@ -26,7 +26,7 @@
           <i class="bx bx-dots-vertical-rounded"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-          <a class="dropdown-item" href="{{ route('categories.create') }}">Create</a>
+          <a class="dropdown-item" href="{{ route('admin.categories.create') }}">Create</a>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
           <tbody class="table-border-bottom-0">
             @foreach($categories as $category)
             <tr>
-              <td><a href="{{ route('categories.show', $category->id) }}">{{$category->name }}</a></td>
+              <td><a href="{{ route('admin.categories.show', $category->id) }}">{{$category->name }}</a></td>
               <td>{{$category->created_at }}</td>
               <td>{{$category->updated_at }}</td>
               <td class="text-center">
@@ -53,10 +53,10 @@
                     <i class="bx bx-dots-vertical-rounded"></i>
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('categories.attached', $category->id) }}"
+                    <a class="dropdown-item" href="{{ route('admin.categories.attached', $category->id) }}"
                             ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
                     >
-                    <a class="dropdown-item" href="{{ route('categories.edit', $category->id) }}"
+                    <a class="dropdown-item" href="{{ route('admin.categories.edit', $category->id) }}"
                       ><i class="bx bx-edit-alt me-2"></i> Edit</a
                     >
                     <a class="dropdown-item" href="javascript:void(0);"
