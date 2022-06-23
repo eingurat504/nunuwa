@@ -93,7 +93,7 @@ class AdminProductController extends Controller
 
         flash($product->name." updated")->success();
 
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
 
     }
 
