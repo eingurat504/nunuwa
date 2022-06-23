@@ -93,7 +93,7 @@ class AdminProductController extends Controller
 
         flash($product->name." updated")->success();
 
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
 
     }
 
@@ -137,7 +137,7 @@ class AdminProductController extends Controller
 
        flash($product->name." registered")->success();
 
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
 
     }
 
@@ -188,7 +188,7 @@ class AdminProductController extends Controller
 
         flash($name." uploaded")->success();
 
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
     }
 
 }

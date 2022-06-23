@@ -123,7 +123,7 @@ class AdminCategoryController extends Controller
 
         flash($category->name." registered")->success();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
       /**
@@ -160,7 +160,7 @@ class AdminCategoryController extends Controller
 
         flash($category->name." photos uploaded")->success();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
 }
