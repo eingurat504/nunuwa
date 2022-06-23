@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\ProductImage;
 
-class AdminCategoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Create a new controller instance.
