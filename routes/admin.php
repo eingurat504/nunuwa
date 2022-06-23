@@ -32,14 +32,14 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
 
     // Category
     Route::group(['prefix' => 'category', 'as' => 'categories.'], function () {
-        Route::get('/', 'AdminCategoryController@index')->name('index');
-        Route::get('/create','AdminCategoryController@create')->name('create');
-        Route::post('/store','AdminCategoryController@store')->name('store');
-        Route::get('/{category}','AdminCategoryController@show')->name('show');
-        Route::get('/{category}/edit','AdminCategoryController@edit')->name('edit');
-        Route::put('/{category}/update','AdminCategoryController@update')->name('update');
-        Route::get('/{category}/attached_images','AdminCategoryController@attachedImages')->name('attached');
-        Route::post('/{category}/attach','AdminCategoryController@attachImages')->name('attach');
+        Route::get('/', 'CategoryController@index')->name('index');
+        Route::get('/create','CategoryController@create')->name('create');
+        Route::post('/store','CategoryController@store')->name('store');
+        Route::get('/{category}','CategoryController@show')->name('show');
+        Route::get('/{category}/edit','CategoryController@edit')->name('edit');
+        Route::put('/{category}/update','CategoryController@update')->name('update');
+        Route::get('/{category}/attached_images','CategoryController@attachedImages')->name('attached');
+        Route::post('/{category}/attach','CategoryController@attachImages')->name('attach');
     });
 
     // Product
