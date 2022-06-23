@@ -92,7 +92,7 @@ class AdminCategoryController extends Controller
 
         flash($category->name." updated")->success();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
 
