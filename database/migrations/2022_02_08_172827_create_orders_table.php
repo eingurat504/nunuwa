@@ -29,6 +29,21 @@ class CreateOrdersTable extends Migration
             $table->string('billing_postalcode')->nullable();
             $table->string('billing_address_1');
             $table->string('billing_address_2')->nullable();
+
+            $table->text('instructions')->nullable();
+            $table->enum('status', [
+                'PENDING',
+                'ON-HOLD',
+                'PROCESSING',
+                'COMPLETED',
+                'CANCELLED',
+                'FAILED',
+            ])->default('PENDING');
+
+            $table->decimal('sub_total', 10, 2);
+            $table->decimal('tax', 10, 2);
+            $table->decimal('total', 10, 2);
+            
             $table->timestamps();
         });
     }
@@ -43,7 +58,7 @@ class CreateOrdersTable extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
         });
-        
+
         Schema::dropIfExists('orders');
     }
 }
