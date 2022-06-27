@@ -15,16 +15,35 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('set null');
             $table->date('order_date');
-            $table->string('email');
-            $table->string('phone_no');
-            $table->integer('amount');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('tracking_no');
-            $table->string('city');
-            $table->string('shipping_address');
-            $table->string('shipping_address_2');
-            $table->string('country');
+            $table->string('billing_first_name');
+            $table->string('billing_last_name');
+            $table->string('billing_email');
+            $table->string('billing_phone');
+            $table->string('billing_company')->nullable();
+            $table->string('billing_country');
+            $table->string('billing_city');
+            $table->string('billing_state');
+            $table->string('billing_postalcode')->nullable();
+            $table->string('billing_address_1');
+            $table->string('billing_address_2')->nullable();
+
+            $table->text('instructions')->nullable();
+            $table->enum('status', [
+                'PENDING',
+                'ON-HOLD',
+                'PROCESSING',
+                'COMPLETED',
+                'CANCELLED',
+                'FAILED',
+            ])->default('PENDING');
+
+            $table->decimal('sub_total', 10, 2);
+            $table->decimal('tax', 10, 2);
+            $table->decimal('total', 10, 2);
+            
             $table->timestamps();
         });
     }
@@ -36,6 +55,10 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
+
         Schema::dropIfExists('orders');
     }
 }
