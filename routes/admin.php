@@ -54,14 +54,15 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::post('/{product}/attach','ProductController@attachImages')->name('attach');
     });
 
+    // Order
+    Route::group(['prefix' => 'order', 'as' => 'orders.'], function () {
+        Route::get('/', 'OrderController@index')->name('index');
+        // Route::get('/create','OrderController@create')->name('create');
+        // Route::post('/store','OrderController@store')->name('store');
+        Route::get('/{order}','OrderController@show')->name('show');
+        Route::get('/{order}/edit','OrderController@edit')->name('edit');
+        Route::put('/{order}/update','OrderController@update')->name('update');
+    });
+
 });
-
-
-
-
-
-
-
-
-
 

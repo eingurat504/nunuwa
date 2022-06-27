@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('set null');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->date('order_date');
             $table->string('tracking_no');
             $table->string('billing_first_name');
@@ -55,9 +55,9 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-        });
+        // Schema::table('orders', function (Blueprint $table) {
+        //     $table->dropForeign(['user_id']);
+        // });
 
         Schema::dropIfExists('orders');
     }
