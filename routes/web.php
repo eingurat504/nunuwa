@@ -23,7 +23,7 @@ use App\Http\Controllers\Category\ClothingController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
     Route::get('/', [CategoryController::class, 'getHomeAppliances'])->name('index');
