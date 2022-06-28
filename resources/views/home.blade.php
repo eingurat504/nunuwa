@@ -234,8 +234,8 @@
                         <a class="nav-link" id="hot-acc-link" data-toggle="tab" href="#hot-acc-tab" role="tab" aria-controls="hot-acc-tab" aria-selected="false">Accessories</a>
                     </li>
                 </ul>
-            </div><!-- End .heading-right -->
-        </div><!-- End .heading -->
+            </div>
+        </div>
 
         <div class="tab-content tab-content-carousel">
             <div class="tab-pane p-0 fade show active" id="hot-all-tab" role="tabpanel" aria-labelledby="hot-all-link">
@@ -277,33 +277,39 @@
                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                                 <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                            </div><!-- End .product-action-vertical -->
+                            </div>
 
                             <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                    <input type="hidden" name="name" value="{{ $product->name }}">
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+                                    <button type="submit" class="btn-product btn-cart">Add To Cart</button>
+                                </form>
+                            </div>
+                        </figure>
 
                         <div class="product-body">
                             <div class="product-cat">
                                 <a href="#">{{ $product->category->name }}</a>
-                            </div><!-- End .product-cat -->
+                            </div>
                             <h3 class="product-title"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 <span class="new-price">${{ $product->price }}</span>
                                 <span class="old-price">Was $290.00</span>
-                            </div><!-- End .product-price -->
+                            </div>
                             <div class="ratings-container">
                                 <div class="ratings">
                                     <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
+                                </div>
                                 <span class="ratings-text">( 2 Reviews )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
-                </div><!-- End .owl-carousel -->
-            </div><!-- .End .tab-pane -->
+                </div>
+            </div>
 
             <div class="tab-pane p-0 fade" id="hot-elec-tab" role="tabpanel" aria-labelledby="hot-elec-link">
                 <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
@@ -343,38 +349,44 @@
                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                                 <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                            </div><!-- End .product-action-vertical -->
+                            </div>
 
                             <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $furniture->id }}">
+                                    <input type="hidden" name="name" value="{{ $furniture->name }}">
+                                    <input type="hidden" name="price" value="{{ $furniture->price }}">
+                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                </form>
+                            </div>
+                        </figure>
 
                         <div class="product-body">
                             <div class="product-cat">
                                 <a href="#">{{ $furniture->category->name }}</a>
-                            </div><!-- End .product-cat -->
+                            </div>
                             <h3 class="product-title"><a href="{{ route('products.show',$furniture->id)}}">{{ $furniture->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 <span class="new-price">${{ $furniture->price }}</span>
                                 <span class="old-price">Was $310.00</span>
-                            </div><!-- End .product-price -->
+                            </div>
                             <div class="ratings-container">
                                 <div class="ratings">
                                     <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
+                                </div>
                                 <span class="ratings-text">( 4 Reviews )</span>
-                            </div><!-- End .rating-container -->
+                            </div>
 
                             <div class="product-nav product-nav-dots">
                                 <a href="#" class="active" style="background: #b58555;"><span class="sr-only">Color name</span></a>
                                 <a href="#" style="background: #93a6b0;"><span class="sr-only">Color name</span></a>
                             </div><!-- End .product-nav -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
+                        </div>
+                    </div>
                     @endforeach
-                </div><!-- End .owl-carousel -->
-            </div><!-- .End .tab-pane -->
+                </div>
+            </div>
             <div class="tab-pane p-0 fade" id="hot-furn-tab" role="tabpanel" aria-labelledby="hot-furn-link">
                 <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                     data-owl-options='{
@@ -413,32 +425,38 @@
                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                                 <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                            </div><!-- End .product-action-vertical -->
+                            </div>
 
                             <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                    <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                    <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                </form>
+                            </div>
+                        </figure>
 
                         <div class="product-body">
                             <div class="product-cat">
                                 {{ $electronic->category->name }}
-                            </div><!-- End .product-cat -->
+                            </div>
                             <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 ${{ $electronic->price }}
-                            </div><!-- End .product-price -->
+                            </div>
                             <div class="ratings-container">
                                 <div class="ratings">
                                     <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
+                                </div>
                                 <span class="ratings-text">( 10 Reviews )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
-                </div><!-- End .owl-carousel -->
-            </div><!-- .End .tab-pane -->
+                </div>
+            </div>
             <div class="tab-pane p-0 fade" id="hot-clot-tab" role="tabpanel" aria-labelledby="hot-clot-link">
                 <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                     data-owl-options='{
@@ -477,32 +495,38 @@
                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                                 <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                            </div><!-- End .product-action-vertical -->
+                            </div>
 
                             <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $clothing->id }}">
+                                    <input type="hidden" name="name" value="{{ $clothing->name }}">
+                                    <input type="hidden" name="price" value="{{ $clothing->price }}">
+                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                </form>
+                            </div>
+                        </figure>
 
                         <div class="product-body">
                             <div class="product-cat">
                                 {{ $electronic->category->name }}
-                            </div><!-- End .product-cat -->
+                            </div>
                             <h3 class="product-title"><a href="{{ route('products.show', $clothing->id) }}">{{ $clothing->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 ${{ $electronic->price }}
-                            </div><!-- End .product-price -->
+                            </div>
                             <div class="ratings-container">
                                 <div class="ratings">
                                     <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
+                                </div>
                                 <span class="ratings-text">( 10 Reviews )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
-                </div><!-- End .owl-carousel -->
-            </div><!-- .End .tab-pane -->
+                </div>
+            </div>
             <div class="tab-pane p-0 fade" id="hot-acc-tab" role="tabpanel" aria-labelledby="hot-acc-link">
                 <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                     data-owl-options='{
@@ -541,29 +565,35 @@
                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                                 <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                            </div><!-- End .product-action-vertical -->
+                            </div>
 
                             <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                    <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                    <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                </form>
+                            </div>
+                        </figure>
 
                         <div class="product-body">
                             <div class="product-cat">
                                 <a href="#">Appliances</a>
-                            </div><!-- End .product-cat -->
+                            </div>
                             <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 $399.00
-                            </div><!-- End .product-price -->
+                            </div>
                             <div class="ratings-container">
                                 <div class="ratings">
                                     <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
+                                </div>
                                 <span class="ratings-text">( 12 Reviews )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="product">
                         <figure class="product-media">
@@ -576,34 +606,40 @@
                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                                 <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                            </div><!-- End .product-action-vertical -->
+                            </div>
 
                             <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                    <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                    <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                </form>
+                            </div>
+                        </figure>
 
                         <div class="product-body">
                             <div class="product-cat">
                                 <a href="#">Furniture</a>
-                            </div><!-- End .product-cat -->
+                            </div>
                             <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">Butler Stool Ladder</a></h3><!-- End .product-title -->
                             <div class="product-price">
                                 <span class="new-price">$251.99</span>
                                 <span class="old-price">Was $290.00</span>
-                            </div><!-- End .product-price -->
+                            </div>
                             <div class="ratings-container">
                                 <div class="ratings">
                                     <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
+                                </div>
                                 <span class="ratings-text">( 2 Reviews )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
+                            </div>
+                        </div>
+                    </div>
 
                     @endforeach
-                </div><!-- End .owl-carousel -->
-            </div><!-- .End .tab-pane -->
+                </div>
+            </div>
         </div><!-- End .tab-content -->
     </div><!-- End .container -->
 </div><!-- End .bg-light pt-5 pb-5 -->
@@ -628,8 +664,8 @@
                     <a class="nav-link" id="elec-best-link" data-toggle="tab" href="#elec-best-tab" role="tab" aria-controls="elec-best-tab" aria-selected="false">Best Seller</a>
                 </li>
             </ul>
-        </div><!-- End .heading-right -->
-    </div><!-- End .heading -->
+        </div>
+    </div>
 
     <div class="tab-content tab-content-carousel">
         <div class="tab-pane p-0 fade show active" id="elec-new-tab" role="tabpanel" aria-labelledby="elec-new-link">
@@ -670,32 +706,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
         <div class="tab-pane p-0 fade" id="elec-featured-tab" role="tabpanel" aria-labelledby="elec-featured-link">
             <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                 data-owl-options='{
@@ -734,32 +776,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                        <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
         <div class="tab-pane p-0 fade" id="elec-best-tab" role="tabpanel" aria-labelledby="elec-best-link">
             <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                 data-owl-options='{
@@ -798,32 +846,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
     </div><!-- End .tab-content -->
 </div><!-- End .container -->
 
@@ -881,8 +935,8 @@
                     <a class="nav-link" id="furn-best-link" data-toggle="tab" href="#furn-best-tab" role="tab" aria-controls="furn-best-tab" aria-selected="false">Best Seller</a>
                 </li>
             </ul>
-        </div><!-- End .heading-right -->
-    </div><!-- End .heading -->
+        </div>
+    </div>
 
     <div class="tab-content tab-content-carousel">
         <div class="tab-pane p-0 fade show active" id="furn-new-tab" role="tabpanel" aria-labelledby="furn-new-link">
@@ -923,32 +977,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
         <div class="tab-pane p-0 fade" id="furn-featured-tab" role="tabpanel" aria-labelledby="furn-featured-link">
             <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                 data-owl-options='{
@@ -987,32 +1047,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
         <div class="tab-pane p-0 fade" id="furn-best-tab" role="tabpanel" aria-labelledby="furn-best-link">
             <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                 data-owl-options='{
@@ -1051,32 +1117,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
     </div><!-- End .tab-content -->
 </div><!-- End .container -->
 
@@ -1100,8 +1172,8 @@
                     <a class="nav-link" id="clot-best-link" data-toggle="tab" href="#clot-best-tab" role="tab" aria-controls="clot-best-tab" aria-selected="false">Best Seller</a>
                 </li>
             </ul>
-        </div><!-- End .heading-right -->
-    </div><!-- End .heading -->
+        </div>
+    </div>
 
     <div class="tab-content tab-content-carousel">
         <div class="tab-pane p-0 fade show active" id="clot-new-tab" role="tabpanel" aria-labelledby="clot-new-link">
@@ -1142,32 +1214,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
         <div class="tab-pane p-0 fade" id="clot-featured-tab" role="tabpanel" aria-labelledby="clot-featured-link">
             <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                 data-owl-options='{
@@ -1206,32 +1284,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
         <div class="tab-pane p-0 fade" id="clot-best-tab" role="tabpanel" aria-labelledby="clot-best-link">
             <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
                 data-owl-options='{
@@ -1270,32 +1354,38 @@
                             <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
-                        </div><!-- End .product-action-vertical -->
+                        </div>
 
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                            </form>
+                        </div>
+                    </figure>
 
                     <div class="product-body">
                         <div class="product-cat">
                             {{ $electronic->category->name }}
-                        </div><!-- End .product-cat -->
+                        </div>
                         <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
                         <div class="product-price">
                             ${{ $electronic->price }}
-                        </div><!-- End .product-price -->
+                        </div>
                         <div class="ratings-container">
                             <div class="ratings">
                                 <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
+                            </div>
                             <span class="ratings-text">( 10 Reviews )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-            </div><!-- End .owl-carousel -->
-        </div><!-- .End .tab-pane -->
+            </div>
+        </div>
     </div><!-- End .tab-content -->
 </div><!-- End .container -->
 
@@ -1359,7 +1449,7 @@
         <a href="#" class="brand">
             <img src="{{ asset('images/brands/7.png') }}" alt="Brand Name">
         </a>
-    </div><!-- End .owl-carousel -->
+    </div>
 </div><!-- End .container -->
 
 <div class="cta cta-horizontal cta-horizontal-box bg-primary">
@@ -1526,7 +1616,7 @@
                     </div><!-- End .entry-content -->
                 </div><!-- End .entry-body -->
             </article><!-- End .entry -->
-        </div><!-- End .owl-carousel -->
+        </div>
     </div><!-- End .container -->
 </div><!-- End .blog-posts -->
 @endsection

@@ -23,7 +23,7 @@ use App\Http\Controllers\Category\ClothingController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
     Route::get('/', [CategoryController::class, 'getHomeAppliances'])->name('index');
@@ -103,6 +103,10 @@ Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
 
 Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
     Route::get('/', [CartController::class, 'showCart'])->name('index');
+    Route::post('/', [CartController::class, 'store'])->name('store');
+    Route::put('/', [CartController::class, 'store'])->name('store');
+    Route::delete('/{item}', [CartController::class, 'destroy'])->name('destroy');
+    Route::get('/reset', [CartController::class, 'reset'])->name('reset');
 });
 
 Route::group(['prefix' => '/wishlist', 'as' => 'wishlist.'], function () {

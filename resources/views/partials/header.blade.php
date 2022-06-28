@@ -40,8 +40,8 @@
                                 </ul>
                             </li>
                         </ul><!-- End .top-menu -->
-                    </div><!-- End .header-right -->
-                </div><!-- End .container -->
+                    </div>
+                </div>
             </div><!-- End .header-top -->
 
             <div class="header-middle">
@@ -113,7 +113,7 @@
                                         <a href="#" class="action-link">Clear All</a>
                                         <a href="#" class="btn btn-outline-primary-2"><span>Compare</span><i class="icon-long-arrow-right"></i></a>
                                     </div>
-                                </div><!-- End .dropdown-menu -->
+                                </div>
                             </div><!-- End .compare-dropdown -->
 
                             <a href="{{ route('wishlist.index') }}" class="wishlist-link">
@@ -131,63 +131,50 @@
 
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-cart-products">
-                                        <div class="product">
-                                            <div class="product-cart-details">
-                                                <h4 class="product-title">
-                                                    <a href="product.html">Beige knitted elastic runner shoes</a>
-                                                </h4>
+                                        @foreach (Cart::instance('default')->content() as $item)
+                                            <div class="product">
+                                                <div class="product-cart-details">
+                                                    <h4 class="product-title">
+                                                        <a href="product.html">{{ $item->model->name }}</a>
+                                                    </h4>
 
-                                                <span class="cart-product-info">
-                                                    <span class="cart-product-qty">1</span>
-                                                    x $84.00
-                                                </span>
-                                            </div><!-- End .product-cart-details -->
+                                                    <span class="cart-product-info">
+                                                        <!-- <span class="cart-product-qty">1</span> -->
+                                                        ${{ $item->subtotal() }}
+                                                    </span>
+                                                </div><!-- End .product-cart-details -->
 
-                                            <figure class="product-image-container">
-                                                <a href="product.html" class="product-image">
-                                                    <img src="{{ asset('images/products/cart/product-1.jpg') }}" alt="product">
-                                                </a>
-                                            </figure>
-                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                        </div><!-- End .product -->
+                                                <figure class="product-image-container">
+                                                    <a href="product.html" class="product-image">
+                                                        <img src="{{ asset('images/products/cart/product-1.jpg') }}" alt="product">
+                                                    </a>
+                                                </figure>
 
-                                        <div class="product">
-                                            <div class="product-cart-details">
-                                                <h4 class="product-title">
-                                                    <a href="product.html">Blue utility pinafore denim dress</a>
-                                                </h4>
-
-                                                <span class="cart-product-info">
-                                                    <span class="cart-product-qty">1</span>
-                                                    x $76.00
-                                                </span>
-                                            </div><!-- End .product-cart-details -->
-
-                                            <figure class="product-image-container">
-                                                <a href="product.html" class="product-image">
-                                                    <img src="{{ asset('images/products/cart/product-2.jpg') }}" alt="product">
-                                                </a>
-                                            </figure>
-                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                        </div><!-- End .product -->
-                                    </div><!-- End .cart-product -->
+                                                <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn-remove"><i class="icon-close"></i></button>
+                                                </form>
+                                            </div>
+                                        @endforeach
+                                    </div>
 
                                     <div class="dropdown-cart-total">
                                         <span>Total</span>
 
-                                        <span class="cart-total-price">$160.00</span>
-                                    </div><!-- End .dropdown-cart-total -->
+                                        <span class="cart-total-price">${{ Cart::instance('default')->total() }}</span>
+                                    </div>
 
                                     <div class="dropdown-cart-action">
                                         <a href="{{ route('cart.index') }}" class="btn btn-primary">View Cart</a>
                                         <a href="{{ route('checkout.index') }}" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
-                                    </div><!-- End .dropdown-cart-total -->
-                                </div><!-- End .dropdown-menu -->
-                            </div><!-- End .cart-dropdown -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div><!-- End .header-right -->
-                </div><!-- End .container -->
-            </div><!-- End .header-middle -->
+                    </div>
+                </div>
+            </div>
 
             <div class="header-bottom sticky-header">
                 <div class="container">
@@ -494,7 +481,7 @@
                                         <li><a href="#">Gift Ideas</a></li>
                                     </ul><!-- End .menu-vertical -->
                                 </nav><!-- End .side-nav -->
-                            </div><!-- End .dropdown-menu -->
+                            </div>
                         </div><!-- End .category-dropdown -->
                     </div><!-- End .col-lg-3 -->
                     <div class="header-center">
@@ -870,6 +857,6 @@
                     <div class="header-right">
                         <i class="la la-lightbulb-o"></i><p>Clearance Up to 30% Off</span></p>
                     </div>
-                </div><!-- End .container -->
+                </div>
             </div><!-- End .header-bottom -->
         </header><!-- End .header -->
