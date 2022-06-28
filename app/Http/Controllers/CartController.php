@@ -43,4 +43,18 @@ class CartController extends Controller
         return redirect()->route('cart.index');
     }
 
+        /**
+     * Empty shopping cart.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function reset()
+    {
+        Cart::instance('default')->destroy();
+
+        flash('Emptied cart.')->error()->important();
+
+        return redirect()->route('cart.index');
+    }
+
 }
