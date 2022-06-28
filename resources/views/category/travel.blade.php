@@ -5,8 +5,8 @@
 <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
     <div class="container">
         <h1 class="page-title">Travel & Outdoor<span>Shop</span></h1>
-    </div><!-- End .container -->
-</div><!-- End .page-header -->
+    </div>
+</div>
 <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
     <div class="container">
         <ol class="breadcrumb">
@@ -14,8 +14,8 @@
             <li class="breadcrumb-item"><a href="#">Category</a></li>
             <li class="breadcrumb-item active" aria-current="page">Travel & Outdoor</li>
         </ol>
-    </div><!-- End .container -->
-</nav><!-- End .breadcrumb-nav -->
+    </div>
+</nav>
 
 <div class="page-content">
     <div class="container">
@@ -25,8 +25,8 @@
                     <div class="toolbox-left">
                         <div class="toolbox-info">
                             Showing <span>9 of 56</span> Products
-                        </div><!-- End .toolbox-info -->
-                    </div><!-- End .toolbox-left -->
+                        </div>
+                    </div>
 
                     <div class="toolbox-right">
                         <div class="toolbox-sort">
@@ -38,7 +38,7 @@
                                     <option value="date">Date</option>
                                 </select>
                             </div>
-                        </div><!-- End .toolbox-sort -->
+                        </div>
                         <div class="toolbox-layout">
                             <a href="category-list.html" class="btn-layout">
                                 <svg width="16" height="10">
@@ -81,9 +81,9 @@
                                     <rect x="18" y="6" width="4" height="4" />
                                 </svg>
                             </a>
-                        </div><!-- End .toolbox-layout -->
-                    </div><!-- End .toolbox-right -->
-                </div><!-- End .toolbox -->
+                        </div>
+                    </div>
+                </div>
 
                 <div class="products mb-3">
                     <div class="row justify-content-center">
@@ -397,6 +397,6 @@
                 </div><!-- End .sidebar sidebar-shop -->
             </aside><!-- End .col-lg-3 -->
         </div><!-- End .row -->
-    </div><!-- End .container -->
+    </div>
 </div><!-- End .page-content -->
 @endsection
