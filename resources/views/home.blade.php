@@ -280,13 +280,13 @@
                             </div>
 
                             <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $product->id }}">
-                                <input type="hidden" name="name" value="{{ $product->name }}">
-                                <input type="hidden" name="price" value="{{ $product->price }}">
-                                <button type="submit" class="btn-product btn-cart">Add To Cart</button>
-                            </form>
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                    <input type="hidden" name="name" value="{{ $product->name }}">
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+                                    <button type="submit" class="btn-product btn-cart">Add To Cart</button>
+                                </form>
                             </div>
                         </figure>
 
