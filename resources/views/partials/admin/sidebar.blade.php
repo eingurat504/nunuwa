@@ -173,7 +173,7 @@
     <li class="menu-item">
       <a href="{{ route('admin.products.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-detail"></i>
-        <div data-i18n="Form Layouts">Item</div>
+        <div data-i18n="Form Layouts">Product</div>
       </a>
     </li>
     <!-- Tables -->

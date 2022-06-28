@@ -37,8 +37,8 @@
                   <th>Order Date</th>
                   <td>Tracking No</td>
                   <th>Email Address</th>
-                  <th>Price</th>
-                  <th>Created At</th>
+                  <th>Status</th>
+                  <th>Total</th>
                   <th class="text-center">Actions</th>
                 </tr>
               </thead>
@@ -48,8 +48,8 @@
                   <td>{{ $order->order_date }}</td>
                   <td>{{ $order->tracking_no }}</td>
                   <td>{{ $order->billing_phone }}</td>
-                  <td>${{ $order->total }}</td>
-                  <td>{{ $order->created_at }}</td>
+                  <td>{{ $order->status }}</td>
+                  <td>{{ $order->total }}</td>
                   <td class="text-center">
                     <div class="dropdown">
                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
