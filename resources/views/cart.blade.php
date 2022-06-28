@@ -52,8 +52,20 @@
                                         <td class="price-col">${{ $item->subtotal() }}</td>
                                         <td class="quantity-col">
                                             <div class="cart-product-quantity">
-                                                <input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
+                                                <input type="number" class="form-control" value="{{ $item->qty }}" min="1" max="10" step="1" data-decimals="0" required>
                                             </div>
+                                            <!-- <div class="border d-flex align-items-center justify-content-between px-3">
+                                                <div class="quantity">
+                                                    <button class="dec-btn p-0" data-row-id="{{ $item->rowId }}">
+                                                        <i class="fas fa-caret-left"></i>
+                                                    </button>
+                                                    <input class="form-control form-control-sm border-0 shadow-0 p-0 bg-transparent"
+                                                        type="text" value="{{ $item->qty }}" readonly/>
+                                                    <button class="inc-btn p-0" data-row-id="{{ $item->rowId }}">
+                                                        <i class="fas fa-caret-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div> -->
                                         </td>
                                         <td class="total-col">${{ $item->subtotal() }}</td>
                                         <td class="remove-col">
