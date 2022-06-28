@@ -191,4 +191,27 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index');
     }
 
+        /**
+     * Remove the specified product from storage.
+     *
+     * @param int $productId
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($productId)
+    {
+        // $this->authorize('delete', [Product::class, $productId]);
+
+        $product = Product::findOrFail($productId);
+
+        $product->forceDelete();
+
+        flash('Product has been deleted.')->error()->important();
+
+        return redirect()->route('admin.products.index');
+    }
+
+
 }
