@@ -23,11 +23,24 @@ class CartController extends Controller
      */
     public function showCart()
     {
-
         return view('cart');
     }
 
 
+    /**
+     * Remove the specified product from cart.
+     *
+     * @param string $rowId
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($rowId)
+    {
+        Cart::instance('default')->remove($rowId);
 
+        flash('Item removed from cart.')->warning();
+
+        return redirect()->route('cart.index');
+    }
 
 }
