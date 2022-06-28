@@ -82,9 +82,9 @@ class OrderController extends Controller
 
        Order::where('id', $order->id)
         ->update([
-            'name' => $request->name,
-            'price' => $request->price,
-            'description' => $request->description,
+            'status' => $request->status,
+            'total' => $request->price,
+            'order_date' => $request->order_date,
             // 'updated_by' => $request->description,
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
