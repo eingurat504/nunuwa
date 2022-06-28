@@ -24,7 +24,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::get('/login','Auth\AuthController@getlogin')->name('admin.login.index');
 Route::post('/login', 'Auth\AuthController@login')->name('admin.login');
-Route::get('/logout', 'Auth\AuthController@logout')->name('admin.logout');
+Route::post('/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], function () {
     // Admin Dashboard

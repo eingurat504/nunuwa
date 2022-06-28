@@ -146,7 +146,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function attachImages(Request $request, $id)
+    public function attachImages(Request $request, $categoryId)
     {
 
         $category = ProductCategory::findOrfail($id);
@@ -162,5 +162,28 @@ class CategoryController extends Controller
 
         return redirect()->route('admin.categories.index');
     }
+
+        /**
+     * Remove the specified product from storage.
+     *
+     * @param int $productId
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($categoryId)
+    {
+        // $this->authorize('delete', [ProductCategory::class, $productId]);
+
+        $category = ProductCategory::findOrFail($categoryId);
+
+        $category->forceDelete();
+
+        flash('Category has been deleted.')->error()->important();
+
+        return redirect()->route('admin.categories.index');
+    }
+
 
 }
