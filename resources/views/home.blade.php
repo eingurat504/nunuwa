@@ -279,15 +279,15 @@
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                             </div>
 
-                            <div class="product-action">
-                                <form action="{{ route('cart.store') }}" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $product->id }}">
-                                    <input type="hidden" name="name" value="{{ $product->name }}">
-                                    <input type="hidden" name="price" value="{{ $product->price }}">
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                <input type="hidden" name="name" value="{{ $product->name }}">
+                                <input type="hidden" name="price" value="{{ $product->price }}">
+                                <div class="product-action">
                                     <button type="submit" class="btn-product btn-cart">Add To Cart</button>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </figure>
 
                         <div class="product-body">
@@ -351,15 +351,15 @@
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                             </div>
 
-                            <div class="product-action">
-                                <form action="{{ route('cart.store') }}" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $furniture->id }}">
-                                    <input type="hidden" name="name" value="{{ $furniture->name }}">
-                                    <input type="hidden" name="price" value="{{ $furniture->price }}">
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $furniture->id }}">
+                                <input type="hidden" name="name" value="{{ $furniture->name }}">
+                                <input type="hidden" name="price" value="{{ $furniture->price }}">
+                                <div class="product-action">
                                     <button type="submit" class="btn-product btn-cart">add to cart</button>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </figure>
 
                         <div class="product-body">
@@ -427,15 +427,15 @@
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                             </div>
 
-                            <div class="product-action">
-                                <form action="{{ route('cart.store') }}" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                    <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                    <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <div class="product-action">
                                     <button type="submit" class="btn-product btn-cart">add to cart</button>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </figure>
 
                         <div class="product-body">
@@ -497,15 +497,15 @@
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                             </div>
 
-                            <div class="product-action">
-                                <form action="{{ route('cart.store') }}" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $clothing->id }}">
-                                    <input type="hidden" name="name" value="{{ $clothing->name }}">
-                                    <input type="hidden" name="price" value="{{ $clothing->price }}">
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $clothing->id }}">
+                                <input type="hidden" name="name" value="{{ $clothing->name }}">
+                                <input type="hidden" name="price" value="{{ $clothing->price }}">
+                                <div class="product-action">
                                     <button type="submit" class="btn-product btn-cart">add to cart</button>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </figure>
 
                         <div class="product-body">
@@ -567,15 +567,15 @@
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                             </div>
 
-                            <div class="product-action">
-                                <form action="{{ route('cart.store') }}" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                    <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                    <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <div class="product-action">
                                     <button type="submit" class="btn-product btn-cart">add to cart</button>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </figure>
 
                         <div class="product-body">
@@ -608,15 +608,15 @@
                                 <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                             </div>
 
-                            <div class="product-action">
-                                <form action="{{ route('cart.store') }}" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                    <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                    <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                <div class="product-action">
                                     <button type="submit" class="btn-product btn-cart">add to cart</button>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </figure>
 
                         <div class="product-body">
@@ -708,15 +708,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
@@ -778,15 +778,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
                         <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
@@ -848,15 +848,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
@@ -979,15 +979,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
@@ -1049,15 +1049,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
@@ -1119,15 +1119,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
@@ -1216,15 +1216,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
@@ -1286,15 +1286,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
                             <form action="{{ route('cart.store') }}" method="POST">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="id" value="{{ $electronic->id }}">
                                 <input type="hidden" name="name" value="{{ $electronic->name }}">
                                 <input type="hidden" name="price" value="{{ $electronic->price }}">
-                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                <div class="product-action">
+                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                </div>
                             </form>
-                        </div>
                     </figure>
 
                     <div class="product-body">
@@ -1356,15 +1356,15 @@
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
                         </div>
 
-                        <div class="product-action">
-                            <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                <input type="hidden" name="price" value="{{ $electronic->price }}">
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                            <div class="product-action">
                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </figure>
 
                     <div class="product-body">
