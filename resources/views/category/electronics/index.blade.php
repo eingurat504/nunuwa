@@ -101,16 +101,15 @@
                                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                         </div>
 
-    
-                                            <form action="{{ route('cart.store') }}" method="POST">
-                                                {{ csrf_field() }}
-                                                <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                                <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                                <input type="hidden" name="price" value="{{ $electronic->price }}">
-                                                <div class="product-action">
-                                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
-                                                </div>
-                                            </form>
+                                        <form action="{{ route('cart.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{ $electronic->id }}">
+                                            <input type="hidden" name="name" value="{{ $electronic->name }}">
+                                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                            <div class="product-action">
+                                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                            </div>
+                                        </form>
                                        
                                     </figure>
 
@@ -122,7 +121,7 @@
                                         <div class="product-price">${{ $electronic->price }}</div>
                                         <div class="ratings-container">
                                             <div class="ratings">
-                                                <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->
+                                                <div class="ratings-val" style="width: 0%;"></div>
                                             </div>
                                             <span class="ratings-text">( 0 Reviews )</span>
                                         </div>
