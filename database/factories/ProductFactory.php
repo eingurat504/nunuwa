@@ -25,7 +25,7 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(4),
-            'price' => $this->faker->numberBetween($min = 1500, $max = 6000),
+            'price' => $this->faker->numberBetween($min = 50, $max = 1000),
             'stock' => $this->faker->randomDigit,
             'sku' => 800,
             'description' => $this->faker->word(),

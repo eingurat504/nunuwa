@@ -125,7 +125,11 @@
                             <div class="dropdown cart-dropdown">
                                 <a href="{{ route('cart.index') }}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                     <i class="icon-shopping-cart"></i>
-                                    <span class="cart-count">2</span>
+                                    <span class="cart-count">@if(empty(Cart::instance('default')->content())) 
+                                    {{ Cart::instance('default')->count() }}
+                                        @else 
+                                        {{ Cart::instance('default')->count() }}
+                                        @endif</span>
                                     <span class="cart-txt">Cart</span>
                                 </a>
 
