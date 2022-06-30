@@ -34,4 +34,20 @@ class OptionController extends Controller
             'product_options' => $product_options,
         ]);
     }
+
+
+       /**
+     * Show products.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function edit(Request $request, $optionId)
+    {
+
+        $product_option = Option::findOrfail($optionId);
+
+        return view('admin.products.options.edit', [
+            'product_option' => $product_option,
+        ]);
+    }
 }
