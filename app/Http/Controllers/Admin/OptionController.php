@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductOption;
 
-class ProductOptionController extends Controller
+class OptionController extends Controller
 {
     //
         /**
