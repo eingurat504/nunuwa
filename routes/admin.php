@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\WishlistController;
-use App\Http\Controllers\CheckoutController;
+// use App\Http\Controllers\CategoryController;
+// use App\Http\Controllers\ProductController;
+// use App\Http\Controllers\CartController;
+// use App\Http\Controllers\WishlistController;
+// use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +62,15 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::get('/{order}','OrderController@show')->name('show');
         Route::get('/{order}/edit','OrderController@edit')->name('edit');
         Route::put('/{order}/update','OrderController@update')->name('update');
+    });
+
+       // Product options
+    Route::group(['prefix' => 'product_option', 'as' => 'product_options.'], function () {
+        Route::get('/', 'OptionController@index')->name('index');
+        Route::get('/{option}','OptionController@show')->name('show');
+        Route::get('/{option}/edit','OptionController@edit')->name('edit');
+        Route::put('/{option}/update','OptionController@update')->name('update');
+        Route::delete('/{option}/delete','OptionController@delete')->name('delete');
     });
 
 });
