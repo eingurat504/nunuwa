@@ -20,15 +20,21 @@
             <div class="row">
               <div class="mb-3 col-md-12">
                 <label for="name" class="form-label">Name</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name',  $product_option->name) }}"/>
+                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value="{{ old('name',  $product_option->name) }}"/>
+                @error('name')
+                <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                @enderror
               </div>
 
               <div class="mb-3 col-md-12">
-                <label for="organization" class="form-label">Category</label>
-                <select class="form-control" id="category"
-                    name="category" value="{{ old('category') }}">
-                      <option value="">Choose category</option>
+                <label for="option_group" class="form-label">Group</label>
+                <select class="form-control @error('option_group') is-invalid @enderror" id="option_group"
+                    name="option_group" value="{{ old('option_group') }}">
+                      <option value="">Choose option group</option>
                 </select>
+                @error('option_group')
+                <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                @enderror
               </div>
             </div>
             <div class="mt-2">

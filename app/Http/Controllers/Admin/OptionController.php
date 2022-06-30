@@ -60,6 +60,11 @@ class OptionController extends Controller
     public function update(Request $request, $optionId)
     {
 
+        $this->validate($request, [
+            'name' => 'sometimes',
+            'option_group_id' => 'sometimes',
+        ]);
+
         $option = Option::findOrfail($optionId);
 
         Option::where('id', $option->id)
