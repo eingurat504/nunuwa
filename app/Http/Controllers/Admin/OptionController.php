@@ -50,4 +50,29 @@ class OptionController extends Controller
             'product_option' => $product_option,
         ]);
     }
+
+
+      /**
+     * Show product categories.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function update(Request $request, $optionId)
+    {
+
+        $option = Option::findOrfail($optionId);
+
+        Option::where('id', $option->id)
+            ->update([
+                'name' => $request->input('name', $option->name),
+                'description' => $request->input('description', $option->description),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+        flash($option->name." updated")->success();
+
+        return redirect()->route('admin.product_options.index');
+    }
+
+
 }
