@@ -29,7 +29,7 @@ class OptionController extends Controller
     public function index()
     {
 
-        $product_options = ProductOption::get();
+        $product_options = Option::get();
         return view('admin.products.options.index', [
             'product_options' => $product_options,
         ]);
