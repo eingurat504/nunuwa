@@ -53,7 +53,7 @@ class OptionController extends Controller
 
 
       /**
-     * Show product categories.
+     * Update Option.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -65,7 +65,7 @@ class OptionController extends Controller
         Option::where('id', $option->id)
             ->update([
                 'name' => $request->input('name', $option->name),
-                'description' => $request->input('description', $option->description),
+                'option_group_id' => $request->input('option_group', $option->option_group_id),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
