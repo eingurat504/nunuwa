@@ -35,8 +35,23 @@ class OptionController extends Controller
         ]);
     }
 
+    /**
+     * Show product.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function show($optionId)
+    {
 
-       /**
+        $option = Option::findOrfail($optionId);
+
+        return view('admin.products.options.show', [
+            'option' => $option,
+        ]);
+    }
+
+
+    /**
      * Show products.
      *
      * @return \Illuminate\Contracts\Support\Renderable
