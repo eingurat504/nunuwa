@@ -659,9 +659,15 @@
                                                     <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                                 </div><!-- End .product-action-vertical -->
 
-                                                <div class="product-action">
-                                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                                </div><!-- End .product-action -->
+                                                <form action="{{ route('cart.store') }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="id" value="{{ $clothing->id }}">
+                                                    <input type="hidden" name="name" value="{{ $clothing->name }}">
+                                                    <input type="hidden" name="price" value="{{ $clothing->price }}">
+                                                    <div class="product-action">
+                                                        <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                                    </div>
+                                                </form>
                                             </figure><!-- End .product-media -->
 
                                             <div class="product-body">
