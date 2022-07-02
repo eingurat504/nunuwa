@@ -101,9 +101,16 @@
                                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                         </div>
 
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                        </div>
+                                        <form action="{{ route('cart.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{ $cooking->id }}">
+                                            <input type="hidden" name="name" value="{{ $cooking->name }}">
+                                            <input type="hidden" name="price" value="{{ $cooking->price }}">
+                                            <div class="product-action">
+                                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                            </div>
+                                        </form>
+
                                     </figure>
 
                                     <div class="product-body">
