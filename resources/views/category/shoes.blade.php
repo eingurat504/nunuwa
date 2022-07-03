@@ -4,17 +4,17 @@
 <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
     <div class="container">
         <h1 class="page-title">Foot wear and Shoes<span>Shop</span></h1>
-    </div><!-- End .container -->
-</div><!-- End .page-header -->
+    </div>
+</div>
 <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Furniture</li>
+            <li class="breadcrumb-item active" aria-current="page">Foot Wear</li>
         </ol>
-    </div><!-- End .container -->
-</nav><!-- End .breadcrumb-nav -->
+    </div>
+</nav>
 
 <div class="page-content">
     <div class="container">
@@ -24,8 +24,8 @@
                     <div class="toolbox-left">
                         <div class="toolbox-info">
                             Showing <span>9 of 56</span> Products
-                        </div><!-- End .toolbox-info -->
-                    </div><!-- End .toolbox-left -->
+                        </div>
+                    </div>
 
                     <div class="toolbox-right">
                         <div class="toolbox-sort">
@@ -37,7 +37,7 @@
                                     <option value="date">Date</option>
                                 </select>
                             </div>
-                        </div><!-- End .toolbox-sort -->
+                        </div>
                         <div class="toolbox-layout">
                             <a href="category-list.html" class="btn-layout">
                                 <svg width="16" height="10">
@@ -80,9 +80,9 @@
                                     <rect x="18" y="6" width="4" height="4" />
                                 </svg>
                             </a>
-                        </div><!-- End .toolbox-layout -->
-                    </div><!-- End .toolbox-right -->
-                </div><!-- End .toolbox -->
+                        </div>
+                    </div>
+                </div>
 
                 <div class="products mb-3">
                     <div class="row justify-content-center">
@@ -101,9 +101,15 @@
                                             <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                         </div>
 
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                        </div>
+                                        <form action="{{ route('cart.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{ $shoe->id }}">
+                                            <input type="hidden" name="name" value="{{ $shoe->name }}">
+                                            <input type="hidden" name="price" value="{{ $shoe->price }}">
+                                            <div class="product-action">
+                                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                            </div>
+                                        </form>
                                     </figure>
 
                                     <div class="product-body">
@@ -144,13 +150,13 @@
                         </li>
                     </ul>
                 </nav>
-            </div><!-- End .col-lg-9 -->
+            </div>
             <aside class="col-lg-3 order-lg-first">
                 <div class="sidebar sidebar-shop">
                     <div class="widget widget-clean">
                         <label>Filters:</label>
                         <a href="#" class="sidebar-filter-clear">Clean All</a>
-                    </div><!-- End .widget widget-clean -->
+                    </div>
 
                     <div class="widget widget-collapsible">
                         <h3 class="widget-title">
@@ -396,6 +402,6 @@
                 </div><!-- End .sidebar sidebar-shop -->
             </aside><!-- End .col-lg-3 -->
         </div><!-- End .row -->
-    </div><!-- End .container -->
+    </div>
 </div><!-- End .page-content -->
 @endsection
