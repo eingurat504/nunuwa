@@ -67,6 +67,8 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
        // Product options
     Route::group(['prefix' => 'product_option', 'as' => 'product_options.'], function () {
         Route::get('/', 'OptionController@index')->name('index');
+        Route::get('/create','OptionController@create')->name('create');
+        Route::post('/store','OptionController@store')->name('store');
         Route::get('/{option}','OptionController@show')->name('show');
         Route::get('/{option}/edit','OptionController@edit')->name('edit');
         Route::put('/{option}/update','OptionController@update')->name('update');
