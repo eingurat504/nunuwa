@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Option;
+use App\Models\OptionGroup;
 
 class OptionController extends Controller
 {
@@ -50,6 +51,45 @@ class OptionController extends Controller
         ]);
     }
 
+    
+    /**
+     * Show create option .
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function create()
+    {
+
+        $groups = OptionGroup::get();
+
+        return view('admin.products.options.create',[
+            'groups' => $groups
+        ]);
+    }
+
+
+    /**
+     * Show store option.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function store(Request $request)
+    {
+
+       $group = OptionGroup::findOrfail($request->group);
+
+       $option = new Option();
+       $option->name = $request->name;
+       $option->option_group_id = $group->id;
+       $option->created_at = date('Y-m-d H:i:s');
+       $option->updated_at = date('Y-m-d H:i:s');
+       $option->save();
+
+       flash($option->name." registered")->success();
+
+        return redirect()->route('admin.product_options.index');
+
+    }
 
     /**
      * Show products.
@@ -61,8 +101,11 @@ class OptionController extends Controller
 
         $product_option = Option::findOrfail($optionId);
 
+        $groups = OptionGroup::get();
+
         return view('admin.products.options.edit', [
             'product_option' => $product_option,
+            'groups' => $groups
         ]);
     }
 

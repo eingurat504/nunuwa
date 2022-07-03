@@ -31,6 +31,9 @@
                 <select class="form-control @error('option_group') is-invalid @enderror" id="option_group"
                     name="option_group" value="{{ old('option_group') }}">
                       <option value="">Choose option group</option>
+                      @foreach($groups as $group) 
+                          <option value="{{ $group->id }}">{{ $group->name }}</option>
+                      @endforeach
                 </select>
                 @error('option_group')
                 <span class="invalid-feedback" role="alert">{{ $message }}</span>
