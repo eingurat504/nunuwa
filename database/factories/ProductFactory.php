@@ -24,14 +24,7 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence(4),
-            'price' => $this->faker->numberBetween($min = 50, $max = 1000),
-            'stock' => $this->faker->randomDigit,
-            'sku' => 800,
-            'description' => $this->faker->word(),
-            'category_id' => function () {
-                return ProductCategory::factory()->create()->id;
-            },
+   
         ];
     }
 }
