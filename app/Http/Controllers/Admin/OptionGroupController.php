@@ -99,13 +99,10 @@ class OptionGroupController extends Controller
     public function edit(Request $request, $optionId)
     {
 
-        $product_option = Option::findOrfail($optionId);
-
-        $groups = OptionGroup::get();
+        $option_group = OptionGroup::findOrfail($optionId);
 
         return view('admin.groups.edit', [
-            'product_option' => $product_option,
-            'groups' => $groups
+            'option_group' => $option_group
         ]);
     }
 
@@ -115,24 +112,24 @@ class OptionGroupController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function update(Request $request, $optionId)
+    public function update(Request $request, $optionGroupId)
     {
 
         $this->validate($request, [
             'name' => 'sometimes',
-            'option_group_id' => 'sometimes',
+            'description' => 'sometimes',
         ]);
 
-        $option = Option::findOrfail($optionId);
+        $option_group = OptionGroup::findOrfail($optionGroupId);
 
-        Option::where('id', $option->id)
+        OptionGroup::where('id', $option_group->id)
             ->update([
-                'name' => $request->input('name', $option->name),
-                'option_group_id' => $request->input('option_group', $option->option_group_id),
+                'name' => $request->input('name', $option_group->name),
+                // 'description' => $request->input('description', $option_group->description),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        flash($option->name." updated")->success();
+        flash($option_group->name." updated")->success();
 
         return redirect()->route('admin.option_groups.index');
     }
