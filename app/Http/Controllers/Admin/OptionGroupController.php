@@ -47,7 +47,7 @@ class OptionGroupController extends Controller
 
         $option_group = OptionGroup::findOrfail($optionGroupId);
 
-        return view('admin.products.options.show', [
+        return view('admin.groups.show', [
             'option_group' => $option_group,
         ]);
     }
@@ -61,9 +61,7 @@ class OptionGroupController extends Controller
     public function create()
     {
 
-        return view('admin.products.options.create',[
-            'groups' => $groups
-        ]);
+        return view('admin.groups.create');
     }
 
 
@@ -77,21 +75,19 @@ class OptionGroupController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
-            'option_group_id' => 'required',
+            'description' => 'sometimes',
         ]);
 
-       $group = OptionGroup::findOrfail($request->group);
+       $option_group = new OptionGroup();
+       $option_group->name = $request->name;
+    //    $option_group->description = $request->description;
+       $option_group->created_at = date('Y-m-d H:i:s');
+       $option_group->updated_at = date('Y-m-d H:i:s');
+       $option_group->save();
 
-       $option = new Option();
-       $option->name = $request->name;
-       $option->option_group_id = $group->id;
-       $option->created_at = date('Y-m-d H:i:s');
-       $option->updated_at = date('Y-m-d H:i:s');
-       $option->save();
+       flash($option_group->name." registered")->success();
 
-       flash($option->name." registered")->success();
-
-        return redirect()->route('admin.product_options.index');
+        return redirect()->route('admin.option_groups.index');
 
     }
 
@@ -107,7 +103,7 @@ class OptionGroupController extends Controller
 
         $groups = OptionGroup::get();
 
-        return view('admin.products.options.edit', [
+        return view('admin.groups.edit', [
             'product_option' => $product_option,
             'groups' => $groups
         ]);
@@ -138,7 +134,7 @@ class OptionGroupController extends Controller
 
         flash($option->name." updated")->success();
 
-        return redirect()->route('admin.product_options.index');
+        return redirect()->route('admin.option_groups.index');
     }
 
 
