@@ -184,8 +184,15 @@
       </a>
     </li>
 
-        <!-- Tables -->
-        <li class="menu-item">
+      <!-- Option Group -->
+      <li class="menu-item">
+      <a href="{{ route('admin.option_groups.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-table"></i>
+        <div data-i18n="Orders">Option Group</div>
+      </a>
+
+              <!-- Tables -->
+      <li class="menu-item">
       <a href="{{ route('admin.product_options.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-table"></i>
         <div data-i18n="Orders">Options</div>
