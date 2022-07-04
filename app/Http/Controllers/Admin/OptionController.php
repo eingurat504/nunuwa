@@ -76,6 +76,11 @@ class OptionController extends Controller
     public function store(Request $request)
     {
 
+        $this->validate($request, [
+            'name' => 'required',
+            'option_group_id' => 'required',
+        ]);
+
        $group = OptionGroup::findOrfail($request->group);
 
        $option = new Option();

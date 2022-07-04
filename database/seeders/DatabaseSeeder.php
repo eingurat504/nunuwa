@@ -20,13 +20,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Option::factory(10)->create();
+        Option::factory(1)->create();
         Order::factory(10)->create();
-        OptionGroup::factory(10)->create();
+        OptionGroup::factory(2)->create();
         Product::factory(10)->create();
         ProductOption::factory(10)->create();
         ProductReview::factory(10)->create();
 
         $this->call(AdminSeeder::class);
+        
+        // $this->call(OptionSeeder::class);
+        // $this->call(OptionGroupSeeder::class);
     }
 }
