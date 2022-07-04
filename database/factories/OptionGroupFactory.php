@@ -15,7 +15,6 @@ class OptionGroupFactory extends Factory
     {
         return [
 
-            'name' => $this->faker->sentence(4)
         ];
     }
 }

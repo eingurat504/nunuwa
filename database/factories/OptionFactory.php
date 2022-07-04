@@ -16,10 +16,6 @@ class OptionFactory extends Factory
     {
         return [
 
-            'name' => $this->faker->sentence(4),
-            'option_group_id' => function () {
-                return OptionGroup::factory()->create()->id;
-            },
         ];
     }
 }

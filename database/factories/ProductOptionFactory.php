@@ -18,16 +18,7 @@ class ProductOptionFactory extends Factory
     {
         return [
             
-            'product_id' => function () {
-                return Product::factory()->create()->id;
-            },
-            'option_group_id' => function () {
-                return OptionGroup::factory()->create()->id;
-            },
-            'option_price' => 300,
-            'option_id' => function () {
-                return Option::factory()->create()->id;
-            },
+
         ];
     }
 }

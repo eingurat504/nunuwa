@@ -16,14 +16,7 @@ class ProductReviewFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(3),
-            'remarks' => $this->faker->sentence(50),
-            'product_id' => function () {
-                return Product::factory()->create()->id;
-            },
-            'user_id' => function () {
-                return User::factory()->create()->id;
-            },
+
         ];
     }
 }
