@@ -17,18 +17,29 @@
             <div class="row">
               <div class="mb-3 col-md-12">
                 <label for="name" class="form-label">Name</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}"/>
+                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value="{{ old('name') }}" required/>
+                <span class="text-small text-bold">example: -  S,M,L,XL,XXL, red, blue, green, yellow</span>
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
 
               <div class="mb-3 col-md-12">
-                <label for="organization" class="form-label">Option Group</label>
-                <select class="form-control" id="category"
+                <label for="group" class="form-label">Option Group</label>
+                <select class="form-control @error('group') is-invalid @enderror" id="group"
                     name="group" value="{{ old('group') }}">
                       <option value="">Choose Group</option>
                       @foreach($groups as $group) 
                           <option value="{{ $group->id }}">{{ $group->name }}</option>
                       @endforeach
                 </select>
+                @error('group')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
               <div class="mb-3 col-md-12">
                 <label for="description" class="form-label">Description</label>
