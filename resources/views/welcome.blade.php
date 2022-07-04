@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Molla - Bootstrap eCommerce Template</title>
+    <title>Nunuwa</title>
     <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="description" content="Nunuwa">
     <meta name="author" content="p-themes">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/icons/apple-touch-icon.png') }}">
@@ -4108,7 +4108,7 @@
                         <div class="banner-content text-center">
                             <img src="{{ asset('images/popup/newsletter/logo.png') }}" class="logo" alt="logo" width="60" height="15">
                             <h2 class="banner-title">get <span>25<light>%</light></span> off</h2>
-                            <p>Subscribe to the Molla eCommerce newsletter to receive timely updates from your favorite products.</p>
+                            <p>Subscribe to the Nunuwa newsletter to receive timely updates from your favorite products.</p>
                             <form action="#">
                                 <div class="input-group input-group-round">
                                     <input type="email" class="form-control form-control-white" placeholder="Your Email Address" aria-label="Email Adress" required>

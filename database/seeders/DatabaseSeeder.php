@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Option::factory(10)->create();
+        // Option::factory(10)->create();
         Order::factory(10)->create();
         OptionGroup::factory(10)->create();
         Product::factory(10)->create();
@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         ProductReview::factory(10)->create();
 
         $this->call(AdminSeeder::class);
+        $this->call(OptionSeeder::class);
     }
 }
