@@ -75,5 +75,17 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::delete('/{option}/delete','OptionController@delete')->name('delete');
     });
 
+        // Product options
+    Route::group(['prefix' => 'option_group', 'as' => 'option_groups.'], function () {
+        Route::get('/', 'OptionGroupController@index')->name('index');
+        Route::get('/create','OptionGroupController@create')->name('create');
+        Route::post('/store','OptionGroupController@store')->name('store');
+        Route::get('/{option}','OptionGroupController@show')->name('show');
+        Route::get('/{option}/edit','OptionGroupController@edit')->name('edit');
+        Route::put('/{option}/update','OptionGroupController@update')->name('update');
+        Route::delete('/{option}/delete','OptionGroupController@delete')->name('delete');
+    });
+    
+
 });
 

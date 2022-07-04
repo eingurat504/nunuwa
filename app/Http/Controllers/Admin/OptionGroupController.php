@@ -31,6 +31,7 @@ class OptionGroupController extends Controller
     {
 
         $option_groups = OptionGroup::get();
+        
         return view('admin.products.options.index', [
             'option_groups' => $option_groups,
         ]);
