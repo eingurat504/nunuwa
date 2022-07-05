@@ -31,9 +31,20 @@
                 </select>
               </div>
               <div class="mb-3 col-md-12">
+                <label for="stock" class="form-label">Stock Available</label>
+                <input class="form-control" type="integer" id="stock"
+                  name="stock" value="{{ old('stock') }}" placeholder="stock" />
+
+              </div>
+              <div class="mb-3 col-md-12">
                 <label for="email" class="form-label">Price</label>
                 <input class="form-control" type="integer" id="price"
                   name="price" value="{{ old('price') }}" placeholder="price" />
+              </div>
+              <div class="mb-3 col-md-12">
+                <label for="stock" class="form-label">Product Option</label>
+                <input class="form-control" type="integer" id="stock"
+                  name="stock" value="{{ old('stock') }}" placeholder="stock" />
 
               </div>
               <div class="mb-3 col-md-12">
