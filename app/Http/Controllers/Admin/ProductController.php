@@ -128,7 +128,7 @@ class ProductController extends Controller
        $product->name = $request->name;
        $product->price = $request->price;
        $product->category_id = $request->category;
-       $product->stock = 50;
+       $product->stock = $request->stock;
        $product->sku = 50;
        $product->description = $request->description;
        $product->created_at = date('Y-m-d H:i:s');

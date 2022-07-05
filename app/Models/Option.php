@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\OptionGroup;
 
 class Option extends Model
 {
@@ -39,4 +40,14 @@ class Option extends Model
         'option_group_id',
         'name',
     ];
+
+    /**
+     * Products in this category.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function group()
+    {
+        return $this->belongsTo(OptionGroup::class, 'option_group_id', 'id');
+    }
 }

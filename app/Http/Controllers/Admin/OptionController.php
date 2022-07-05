@@ -78,7 +78,7 @@ class OptionController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
-            'option_group_id' => 'required',
+            'group' => 'required',
         ]);
 
        $group = OptionGroup::findOrfail($request->group);
