@@ -80,12 +80,11 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::get('/', 'OptionGroupController@index')->name('index');
         Route::get('/create','OptionGroupController@create')->name('create');
         Route::post('/store','OptionGroupController@store')->name('store');
-        Route::get('/{option}','OptionGroupController@show')->name('show');
-        Route::get('/{option}/edit','OptionGroupController@edit')->name('edit');
-        Route::put('/{option}/update','OptionGroupController@update')->name('update');
-        Route::delete('/{option}/delete','OptionGroupController@delete')->name('delete');
+        Route::get('/{group}','OptionGroupController@show')->name('show');
+        Route::get('/{group}/edit','OptionGroupController@edit')->name('edit');
+        Route::put('/{group}/update','OptionGroupController@update')->name('update');
+        Route::delete('/{group}/delete','OptionGroupController@delete')->name('delete');
     });
     
-
 });
 

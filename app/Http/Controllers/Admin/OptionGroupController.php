@@ -45,10 +45,10 @@ class OptionGroupController extends Controller
     public function show($optionGroupId)
     {
 
-        $option_group = OptionGroup::findOrfail($optionGroupId);
+        $group = OptionGroup::findOrfail($optionGroupId);
 
         return view('admin.groups.show', [
-            'option_group' => $option_group,
+            'group' => $group,
         ]);
     }
 
