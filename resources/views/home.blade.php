@@ -916,6 +916,7 @@
 </div><!-- End .container -->
 
 <div class="mb-1"></div><!-- End .mb-1 -->
+@if(!empty($furnitures))
 
 <div class="container furniture">
     <div class="heading heading-flex heading-border mb-3">
@@ -1151,6 +1152,9 @@
         </div>
     </div><!-- End .tab-content -->
 </div><!-- End .container -->
+@else
+
+@endif
 
 <div class="mb-3"></div><!-- End .mb-3 -->
 

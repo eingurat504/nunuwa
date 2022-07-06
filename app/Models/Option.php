@@ -42,7 +42,7 @@ class Option extends Model
     ];
 
     /**
-     * Products in this category.
+     * Option in this category.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
