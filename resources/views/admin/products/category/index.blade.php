@@ -32,7 +32,7 @@
     </div>
       <div class="card-body">
         <div class="table-responsive text-nowrap">
-        <table id="tbl_categories" class="table table-striped">
+        <table id="tbl_products" class="table table-striped">
           <thead>
             <tr>
               <th>Name</th>
