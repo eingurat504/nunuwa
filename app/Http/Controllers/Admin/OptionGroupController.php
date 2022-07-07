@@ -80,7 +80,7 @@ class OptionGroupController extends Controller
 
        $option_group = new OptionGroup();
        $option_group->name = $request->name;
-    //    $option_group->description = $request->description;
+       $option_group->description = $request->description;
        $option_group->created_at = date('Y-m-d H:i:s');
        $option_group->updated_at = date('Y-m-d H:i:s');
        $option_group->save();
