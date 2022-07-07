@@ -31,7 +31,7 @@ class OptionController extends Controller
     {
 
         $product_options = Option::get();
-        return view('admin.products.options.index', [
+        return view('admin.options.index', [
             'product_options' => $product_options,
         ]);
     }
@@ -46,7 +46,7 @@ class OptionController extends Controller
 
         $option = Option::findOrfail($optionId);
 
-        return view('admin.products.options.show', [
+        return view('admin.options.show', [
             'option' => $option,
         ]);
     }
@@ -62,7 +62,7 @@ class OptionController extends Controller
 
         $groups = OptionGroup::get();
 
-        return view('admin.products.options.create',[
+        return view('admin.options.create',[
             'groups' => $groups
         ]);
     }
@@ -108,7 +108,7 @@ class OptionController extends Controller
 
         $groups = OptionGroup::get();
 
-        return view('admin.products.options.edit', [
+        return view('admin.options.edit', [
             'product_option' => $product_option,
             'groups' => $groups
         ]);
