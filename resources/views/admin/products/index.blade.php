@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Products</h6>
+  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('admin.dashboard') }}">Home /</a></span> Products</h6>
 
   <div class="row">
       <div class="col-md-12">

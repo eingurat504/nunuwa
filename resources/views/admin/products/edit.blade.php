@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
-    <a href="{{ route('admin.products.index') }}">Products</a> /</span>{{$product->name }} <span class="text-muted fw-light"> / Edit</span></h6>
+    <a href="{{ route('admin.dashboard') }}">Home</a> / <a href="{{ route('admin.products.index') }}">Products</a> /</span>{{$product->name }} <span class="text-muted fw-light"> / Edit</span></h6>
 
   <div class="row">
     <div class="col-md-6">
