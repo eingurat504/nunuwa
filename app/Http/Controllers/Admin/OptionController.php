@@ -17,13 +17,11 @@ class OptionController extends Controller
      */
     public function __construct()
     {
-
          $this->middleware('auth:admin');
-      
     }
 
     /**
-     * Show products.
+     * Show Options.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -37,7 +35,7 @@ class OptionController extends Controller
     }
 
     /**
-     * Show product.
+     * Show Option.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -79,6 +77,7 @@ class OptionController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'group' => 'required',
+            'description' => 'required',
         ]);
 
        $group = OptionGroup::findOrfail($request->group);
@@ -86,13 +85,14 @@ class OptionController extends Controller
        $option = new Option();
        $option->name = $request->name;
        $option->option_group_id = $group->id;
+       $option->description = $request->description;
        $option->created_at = date('Y-m-d H:i:s');
        $option->updated_at = date('Y-m-d H:i:s');
        $option->save();
 
        flash($option->name." registered")->success();
 
-        return redirect()->route('admin.product_options.index');
+       return redirect()->route('admin.product_options.index');
 
     }
 
@@ -126,6 +126,7 @@ class OptionController extends Controller
         $this->validate($request, [
             'name' => 'sometimes',
             'option_group_id' => 'sometimes',
+            'description' => 'sometimes',
         ]);
 
         $option = Option::findOrfail($optionId);
@@ -134,6 +135,7 @@ class OptionController extends Controller
             ->update([
                 'name' => $request->input('name', $option->name),
                 'option_group_id' => $request->input('option_group', $option->option_group_id),
+                'description' => $request->input('description', $option->description),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
