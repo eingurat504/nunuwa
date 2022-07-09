@@ -74,10 +74,10 @@
         </div>
     </div>
 
-    <span class="slider-loader"></span><!-- End .slider-loader -->
-</div><!-- End .intro-slider-container -->
+    <span class="slider-loader"></span>
+</div>
 
-<div class="mb-4"></div><!-- End .mb-2 -->
+<div class="mb-4"></div>
 
 <div class="container">
     <h2 class="title text-center mb-2">Explore Popular Categories</h2>
@@ -92,9 +92,9 @@
                         </span>
                     </figure>
 
-                    <h3 class="cat-block-title">Computer & Laptop</h3><!-- End .cat-block-title -->
+                    <h3 class="cat-block-title">Computer & Laptop</h3>
                 </a>
-            </div><!-- End .col-sm-4 col-lg-2 -->
+            </div>
 
             <div class="col-6 col-sm-4 col-lg-2">
                 <a href="category.html" class="cat-block">
@@ -104,9 +104,9 @@
                         </span>
                     </figure>
 
-                    <h3 class="cat-block-title">Lighting</h3><!-- End .cat-block-title -->
+                    <h3 class="cat-block-title">Lighting</h3>
                 </a>
-            </div><!-- End .col-sm-4 col-lg-2 -->
+            </div>
 
             <div class="col-6 col-sm-4 col-lg-2">
                 <a href="category.html" class="cat-block">
@@ -116,9 +116,9 @@
                         </span>
                     </figure>
 
-                    <h3 class="cat-block-title">Smart Phones</h3><!-- End .cat-block-title -->
+                    <h3 class="cat-block-title">Smart Phones</h3>
                 </a>
-            </div><!-- End .col-sm-4 col-lg-2 -->
+            </div>
 
             <div class="col-6 col-sm-4 col-lg-2">
                 <a href="category.html" class="cat-block">
@@ -128,9 +128,9 @@
                         </span>
                     </figure>
 
-                    <h3 class="cat-block-title">Televisions</h3><!-- End .cat-block-title -->
+                    <h3 class="cat-block-title">Televisions</h3>
                 </a>
-            </div><!-- End .col-sm-4 col-lg-2 -->
+            </div>
 
             <div class="col-6 col-sm-4 col-lg-2">
                 <a href="category.html" class="cat-block">
@@ -140,9 +140,9 @@
                         </span>
                     </figure>
 
-                    <h3 class="cat-block-title">Cooking</h3><!-- End .cat-block-title -->
+                    <h3 class="cat-block-title">Cooking</h3>
                 </a>
-            </div><!-- End .col-sm-4 col-lg-2 -->
+            </div>
 
             <div class="col-6 col-sm-4 col-lg-2">
                 <a href="category.html" class="cat-block">
@@ -152,14 +152,14 @@
                         </span>
                     </figure>
 
-                    <h3 class="cat-block-title">Furniture</h3><!-- End .cat-block-title -->
+                    <h3 class="cat-block-title">Furniture</h3>
                 </a>
-            </div><!-- End .col-sm-4 col-lg-2 -->
+            </div>
         </div>
-    </div><!-- End .cat-blocks-container -->
+    </div>
 </div>
 
-<div class="mb-2"></div><!-- End .mb-2 -->
+<div class="mb-2"></div>
 
 <div class="container">
     <div class="row">
@@ -171,11 +171,11 @@
 
                 <div class="banner-content">
                     <h4 class="banner-subtitle text-white"><a href="#">Weekend Sale</a></h4><!-- End .banner-subtitle -->
-                    <h3 class="banner-title text-white"><a href="#">Lighting <br>& Accessories <br><span>25% off</span></a></h3><!-- End .banner-title -->
+                    <h3 class="banner-title text-white"><a href="#">Lighting <br>& Accessories <br><span>25% off</span></a></h3>
                     <a href="#" class="banner-link">Shop Now <i class="icon-long-arrow-right"></i></a>
-                </div><!-- End .banner-content -->
-            </div><!-- End .banner -->
-        </div><!-- End .col-lg-3 -->
+                </div>
+            </div>
+        </div>
 
         <div class="col-sm-6 col-lg-3 order-lg-last">
             <div class="banner banner-overlay">
@@ -185,11 +185,11 @@
 
                 <div class="banner-content">
                     <h4 class="banner-subtitle text-white"><a href="#">Smart Offer</a></h4><!-- End .banner-subtitle -->
-                    <h3 class="banner-title text-white"><a href="#">Anniversary <br>Special <br><span>15% off</span></a></h3><!-- End .banner-title -->
+                    <h3 class="banner-title text-white"><a href="#">Anniversary <br>Special <br><span>15% off</span></a></h3>
                     <a href="#" class="banner-link">Shop Now <i class="icon-long-arrow-right"></i></a>
-                </div><!-- End .banner-content -->
-            </div><!-- End .banner -->
-        </div><!-- End .col-lg-3 -->
+                </div>
+            </div>
+        </div>
 
         <div class="col-lg-6">
             <div class="banner banner-overlay">
@@ -199,11 +199,11 @@
 
                 <div class="banner-content">
                     <h4 class="banner-subtitle text-white d-none d-sm-block"><a href="#">Amazing Value</a></h4><!-- End .banner-subtitle -->
-                    <h3 class="banner-title text-white"><a href="#">Clothes Trending <br>Spring Collection 2019 <br><span>from $12,99</span></a></h3><!-- End .banner-title -->
+                    <h3 class="banner-title text-white"><a href="#">Clothes Trending <br>Spring Collection 2019 <br><span>from $12,99</span></a></h3>
                     <a href="#" class="banner-link">Discover Now <i class="icon-long-arrow-right"></i></a>
-                </div><!-- End .banner-content -->
-            </div><!-- End .banner -->
-        </div><!-- End .col-lg-6 -->
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -294,14 +294,14 @@
                             <div class="product-cat">
                                 <a href="#">{{ $product->category->name }}</a>
                             </div>
-                            <h3 class="product-title"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h3>
                             <div class="product-price">
                                 <span class="new-price">${{ $product->price }}</span>
                                 <span class="old-price">Was $290.00</span>
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: 100%;"></div>
                                 </div>
                                 <span class="ratings-text">( 2 Reviews )</span>
                             </div>
@@ -366,14 +366,14 @@
                             <div class="product-cat">
                                 <a href="#">{{ $furniture->category->name }}</a>
                             </div>
-                            <h3 class="product-title"><a href="{{ route('products.show',$furniture->id)}}">{{ $furniture->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show',$furniture->id)}}">{{ $furniture->name }}</a></h3>
                             <div class="product-price">
                                 <span class="new-price">${{ $furniture->price }}</span>
                                 <span class="old-price">Was $310.00</span>
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: 80%;"></div>
                                 </div>
                                 <span class="ratings-text">( 4 Reviews )</span>
                             </div>
@@ -442,13 +442,13 @@
                             <div class="product-cat">
                                 {{ $electronic->category->name }}
                             </div>
-                            <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                             <div class="product-price">
                                 ${{ $electronic->price }}
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: 100%;"></div>
                                 </div>
                                 <span class="ratings-text">( 10 Reviews )</span>
                             </div>
@@ -512,13 +512,13 @@
                             <div class="product-cat">
                                 {{ $electronic->category->name }}
                             </div>
-                            <h3 class="product-title"><a href="{{ route('products.show', $clothing->id) }}">{{ $clothing->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show', $clothing->id) }}">{{ $clothing->name }}</a></h3>
                             <div class="product-price">
                                 ${{ $electronic->price }}
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: 100%;"></div>
                                 </div>
                                 <span class="ratings-text">( 10 Reviews )</span>
                             </div>
@@ -582,13 +582,13 @@
                             <div class="product-cat">
                                 <a href="#">Appliances</a>
                             </div>
-                            <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">{{ $electronic->name }}</a></h3>
                             <div class="product-price">
                                 $399.00
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: 80%;"></div>
                                 </div>
                                 <span class="ratings-text">( 12 Reviews )</span>
                             </div>
@@ -623,14 +623,14 @@
                             <div class="product-cat">
                                 <a href="#">Furniture</a>
                             </div>
-                            <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">Butler Stool Ladder</a></h3><!-- End .product-title -->
+                            <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">Butler Stool Ladder</a></h3>
                             <div class="product-price">
                                 <span class="new-price">$251.99</span>
                                 <span class="old-price">Was $290.00</span>
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: 100%;"></div>
                                 </div>
                                 <span class="ratings-text">( 2 Reviews )</span>
                             </div>
@@ -723,13 +723,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -793,13 +793,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -869,7 +869,7 @@
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -893,11 +893,11 @@
 
                 <div class="banner-content">
                     <h4 class="banner-subtitle d-none d-sm-block"><a href="#">Spring Sale is Coming</a></h4><!-- End .banner-subtitle -->
-                    <h3 class="banner-title"><a href="#">All Smart Watches <br>Discount <br><span class="text-primary">15% off</span></a></h3><!-- End .banner-title -->
+                    <h3 class="banner-title"><a href="#">All Smart Watches <br>Discount <br><span class="text-primary">15% off</span></a></h3>
                     <a href="#" class="banner-link banner-link-dark">Discover Now <i class="icon-long-arrow-right"></i></a>
-                </div><!-- End .banner-content -->
-            </div><!-- End .banner -->
-        </div><!-- End .col-lg-6 -->
+                </div>
+            </div>
+        </div>
 
         <div class="col-lg-6">
             <div class="banner banner-overlay">
@@ -907,11 +907,11 @@
 
                 <div class="banner-content">
                     <h4 class="banner-subtitle text-white  d-none d-sm-block"><a href="#">Amazing Value</a></h4><!-- End .banner-subtitle -->
-                    <h3 class="banner-title text-white"><a href="#">Headphones Trending <br>JBL Harman <br><span>from $59,99</span></a></h3><!-- End .banner-title -->
+                    <h3 class="banner-title text-white"><a href="#">Headphones Trending <br>JBL Harman <br><span>from $59,99</span></a></h3>
                     <a href="#" class="banner-link">Discover Now <i class="icon-long-arrow-right"></i></a>
-                </div><!-- End .banner-content -->
-            </div><!-- End .banner -->
-        </div><!-- End .col-lg-6 -->
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -995,13 +995,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -1065,13 +1065,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -1135,13 +1135,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -1235,13 +1235,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -1305,13 +1305,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
@@ -1375,13 +1375,13 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
                         <div class="ratings-container">
                             <div class="ratings">
-                                <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
+                                <div class="ratings-val" style="width: 100%;"></div>
                             </div>
                             <span class="ratings-text">( 10 Reviews )</span>
                         </div>
