@@ -14,65 +14,65 @@
             <div class="container intro-content">
                 <div class="row">
                     <div class="col-auto offset-lg-3 intro-col">
-                        <h3 class="intro-subtitle">Trade-In Offer</h3><!-- End .h3 intro-subtitle -->
+                        <h3 class="intro-subtitle">Trade-In Offer</h3>
                         <h1 class="intro-title">MacBook Air <br>Latest Model
                             <span>
                                 <sup class="font-weight-light">from</sup>
                                 <span class="text-primary">$999<sup>,99</sup></span>
                             </span>
-                        </h1><!-- End .intro-title -->
+                        </h1>
 
                         <a href="category.html" class="btn btn-outline-primary-2">
                             <span>Shop Now</span>
                             <i class="icon-long-arrow-right"></i>
                         </a>
-                    </div><!-- End .col-auto offset-lg-3 -->
-                </div><!-- End .row -->
-            </div><!-- End .container intro-content -->
-        </div><!-- End .intro-slide -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="intro-slide" style="background-image: {{ URL::asset('images/demos/demo-13/slider/slide-2.jpg') }}">
             <div class="container intro-content">
                 <div class="row">
                     <div class="col-auto offset-lg-3 intro-col">
-                        <h3 class="intro-subtitle">Trevel & Outdoor</h3><!-- End .h3 intro-subtitle -->
+                        <h3 class="intro-subtitle">Trevel & Outdoor</h3>
                         <h1 class="intro-title">Original Outdoor <br>Beanbag
                             <span>
                                 <sup class="font-weight-light line-through">$89,99</sup>
                                 <span class="text-primary">$29<sup>,99</sup></span>
                             </span>
-                        </h1><!-- End .intro-title -->
+                        </h1>
 
                         <a href="category.html" class="btn btn-outline-primary-2">
                             <span>Shop Now</span>
                             <i class="icon-long-arrow-right"></i>
                         </a>
-                    </div><!-- End .col-auto offset-lg-3 -->
-                </div><!-- End .row -->
-            </div><!-- End .container intro-content -->
-        </div><!-- End .intro-slide -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="intro-slide" style="background-image: {{ URL::asset('images/demos/demo-13/slider/slide-3.jpg') }}">
             <div class="container intro-content">
                 <div class="row">
                     <div class="col-auto offset-lg-3 intro-col">
-                        <h3 class="intro-subtitle">Fashion Promotions</h3><!-- End .h3 intro-subtitle -->
+                        <h3 class="intro-subtitle">Fashion Promotions</h3>
                         <h1 class="intro-title">Tan Suede <br>Biker Jacket
                             <span>
                                 <sup class="font-weight-light line-through">$240,00</sup>
                                 <span class="text-primary">$180<sup>,99</sup></span>
                             </span>
-                        </h1><!-- End .intro-title -->
+                        </h1>
 
                         <a href="category.html" class="btn btn-outline-primary-2">
                             <span>Shop Now</span>
                             <i class="icon-long-arrow-right"></i>
                         </a>
-                    </div><!-- End .col-auto offset-lg-3 -->
-                </div><!-- End .row -->
-            </div><!-- End .container intro-content -->
-        </div><!-- End .intro-slide -->
-    </div><!-- End .owl-carousel owl-simple -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <span class="slider-loader"></span><!-- End .slider-loader -->
 </div><!-- End .intro-slider-container -->
@@ -80,7 +80,7 @@
 <div class="mb-4"></div><!-- End .mb-2 -->
 
 <div class="container">
-    <h2 class="title text-center mb-2">Explore Popular Categories</h2><!-- End .title -->
+    <h2 class="title text-center mb-2">Explore Popular Categories</h2>
 
     <div class="cat-blocks-container">
         <div class="row">
@@ -155,9 +155,9 @@
                     <h3 class="cat-block-title">Furniture</h3><!-- End .cat-block-title -->
                 </a>
             </div><!-- End .col-sm-4 col-lg-2 -->
-        </div><!-- End .row -->
+        </div>
     </div><!-- End .cat-blocks-container -->
-</div><!-- End .container -->
+</div>
 
 <div class="mb-2"></div><!-- End .mb-2 -->
 
@@ -204,17 +204,17 @@
                 </div><!-- End .banner-content -->
             </div><!-- End .banner -->
         </div><!-- End .col-lg-6 -->
-    </div><!-- End .row -->
-</div><!-- End .container -->
+    </div>
+</div>
 
-<div class="mb-3"></div><!-- End .mb-3 -->
+<div class="mb-3"></div>
             
 <div class="bg-light pt-3 pb-5">
     <div class="container">
         <div class="heading heading-flex heading-border mb-3">
             <div class="heading-left">
-                <h2 class="title">Hot Deals Products</h2><!-- End .title -->
-            </div><!-- End .heading-left -->
+                <h2 class="title">Hot Deals Products</h2>
+            </div>
 
             <div class="heading-right">
                 <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
@@ -640,17 +640,17 @@
                     @endforeach
                 </div>
             </div>
-        </div><!-- End .tab-content -->
-    </div><!-- End .container -->
+        </div>
+    </div>
 </div><!-- End .bg-light pt-5 pb-5 -->
 
-<div class="mb-3"></div><!-- End .mb-3 -->
+<div class="mb-3"></div>
 
 <div class="container electronics">
     <div class="heading heading-flex heading-border mb-3">
         <div class="heading-left">
-            <h2 class="title">Electronics</h2><!-- End .title -->
-        </div><!-- End .heading-left -->
+            <h2 class="title">Electronics</h2>
+        </div>
 
         <div class="heading-right">
             <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
@@ -863,7 +863,7 @@
                         <div class="product-cat">
                             {{ $electronic->category->name }}
                         </div>
-                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3><!-- End .product-title -->
+                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
                         <div class="product-price">
                             ${{ $electronic->price }}
                         </div>
@@ -878,10 +878,10 @@
                 @endforeach
             </div>
         </div>
-    </div><!-- End .tab-content -->
-</div><!-- End .container -->
+    </div>
+</div>
 
-<div class="mb-3"></div><!-- End .mb-3 -->
+<div class="mb-3"></div>
 
 <div class="container">
     <div class="row">
@@ -912,8 +912,8 @@
                 </div><!-- End .banner-content -->
             </div><!-- End .banner -->
         </div><!-- End .col-lg-6 -->
-    </div><!-- End .row -->
-</div><!-- End .container -->
+    </div>
+</div>
 
 <div class="mb-1"></div><!-- End .mb-1 -->
 @if(!empty($furnitures))
@@ -921,8 +921,8 @@
 <div class="container furniture">
     <div class="heading heading-flex heading-border mb-3">
         <div class="heading-left">
-            <h2 class="title">Furniture</h2><!-- End .title -->
-        </div><!-- End .heading-left -->
+            <h2 class="title">Furniture</h2>
+        </div>
 
         <div class="heading-right">
             <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
@@ -1150,19 +1150,19 @@
                 @endforeach
             </div>
         </div>
-    </div><!-- End .tab-content -->
-</div><!-- End .container -->
+    </div>
+</div>
 @else
 
 @endif
 
-<div class="mb-3"></div><!-- End .mb-3 -->
+<div class="mb-3"></div>
 
 <div class="container clothing ">
     <div class="heading heading-flex heading-border mb-3">
         <div class="heading-left">
-            <h2 class="title">Clothing & Apparel</h2><!-- End .title -->
-        </div><!-- End .heading-left -->
+            <h2 class="title">Clothing & Apparel</h2>
+        </div>
 
         <div class="heading-right">
             <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
@@ -1390,13 +1390,13 @@
                 @endforeach
             </div>
         </div>
-    </div><!-- End .tab-content -->
-</div><!-- End .container -->
+    </div>
+</div>
 
-<div class="mb-3"></div><!-- End .mb-3 -->
+<div class="mb-3"></div>
 
 <div class="container">
-    <h2 class="title title-border mb-5">Shop by Brands</h2><!-- End .title -->
+    <h2 class="title title-border mb-5">Shop by Brands</h2>
     <div class="owl-carousel mb-5 owl-simple" data-toggle="owl" 
         data-owl-options='{
             "nav": false, 
@@ -1454,7 +1454,7 @@
             <img src="{{ asset('images/brands/7.png') }}" alt="Brand Name">
         </a>
     </div>
-</div><!-- End .container -->
+</div>
 
 <div class="cta cta-horizontal cta-horizontal-box bg-primary">
     <div class="container">
@@ -1462,7 +1462,7 @@
             <div class="col-2xl-5col">
                 <h3 class="cta-title text-white">Join Our Newsletter</h3><!-- End .cta-title -->
                 <p class="cta-desc text-white">Subcribe to get information about products and coupons</p><!-- End .cta-desc -->
-            </div><!-- End .col-lg-5 -->
+            </div>
             
             <div class="col-3xl-5col">
                 <form action="#">
@@ -1470,13 +1470,13 @@
                         <input type="email" class="form-control form-control-white" placeholder="Enter your Email Address" aria-label="Email Adress" required>
                         <div class="input-group-append">
                             <button class="btn btn-outline-white-2" type="submit"><span>Subscribe</span><i class="icon-long-arrow-right"></i></button>
-                        </div><!-- .End .input-group-append -->
-                    </div><!-- .End .input-group -->
+                        </div>
+                    </div>
                 </form>
-            </div><!-- End .col-lg-7 -->
-        </div><!-- End .row -->
-    </div><!-- End .container -->
-</div><!-- End .cta -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="blog-posts bg-light pt-4 pb-7">
     <div class="container">
@@ -1511,117 +1511,117 @@
                     <a href="single.html">
                         <img src="{{ asset('images/demos/demo-13/blog/post-1.jpg') }}" alt="image desc">
                     </a>
-                </figure><!-- End .entry-media -->
+                </figure>
 
                 <div class="entry-body">
                     <div class="entry-meta">
                         <a href="#">Nov 22, 2018</a>, 0 Comments
-                    </div><!-- End .entry-meta -->
+                    </div>
 
                     <h3 class="entry-title">
                         <a href="single.html">Sed adipiscing ornare.</a>
-                    </h3><!-- End .entry-title -->
+                    </h3>
 
                     <div class="entry-content">
                         <p>Lorem ipsum dolor consectetuer adipiscing elit. Phasellus hendrerit. Pelletesque aliquet nibh ...</p>
                         <a href="single.html" class="read-more">Read More</a>
-                    </div><!-- End .entry-content -->
-                </div><!-- End .entry-body -->
-            </article><!-- End .entry -->
+                    </div>
+                </div>
+            </article>
         
             <article class="entry">
                 <figure class="entry-media">
                     <a href="single.html">
                         <img src="{{ asset('images/demos/demo-13/blog/post-2.jpg') }}" alt="image desc">
                     </a>
-                </figure><!-- End .entry-media -->
+                </figure>
 
                 <div class="entry-body">
                     <div class="entry-meta">
                         <a href="#">Dec 12, 2018</a>, 0 Comments
-                    </div><!-- End .entry-meta -->
+                    </div>
 
                     <h3 class="entry-title">
                         <a href="single.html">Vivamus vestibulum ntulla.</a>
-                    </h3><!-- End .entry-title -->
+                    </h3>
 
                     <div class="entry-content">
                         <p>Phasellus hendrerit. Pelletesque aliquet nibh necurna In nisi neque, aliquet vel, dapibus id ... </p>
                         <a href="single.html" class="read-more">Read More</a>
-                    </div><!-- End .entry-content -->
-                </div><!-- End .entry-body -->
-            </article><!-- End .entry -->
+                    </div>
+                </div>
+            </article>
 
             <article class="entry">
                 <figure class="entry-media">
                     <a href="single.html">
                         <img src="{{ asset('images/demos/demo-13/blog/post-3.jpg') }}" alt="image desc">
                     </a>
-                </figure><!-- End .entry-media -->
+                </figure>
 
                 <div class="entry-body">
                     <div class="entry-meta">
                         <a href="#">Dec 19, 2018</a>, 2 Comments
-                    </div><!-- End .entry-meta -->
+                    </div>
 
                     <h3 class="entry-title">
                         <a href="single.html">Praesent placerat risus.</a>
-                    </h3><!-- End .entry-title -->
+                    </h3>
 
                     <div class="entry-content">
                         <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc ...</p>
                         <a href="single.html" class="read-more">Read More</a>
-                    </div><!-- End .entry-content -->
-                </div><!-- End .entry-body -->
-            </article><!-- End .entry -->
+                    </div>
+                </div>
+            </article>
 
             <article class="entry">
                 <figure class="entry-media">
                     <a href="single.html">
                         <img src="{{ asset('images/demos/demo-13/blog/post-4.jpg') }}" alt="image desc">
                     </a>
-                </figure><!-- End .entry-media -->
+                </figure>
 
                 <div class="entry-body">
                     <div class="entry-meta">
                         <a href="#">Dec 19, 2018</a>, 2 Comments
-                    </div><!-- End .entry-meta -->
+                    </div>
 
                     <h3 class="entry-title">
                         <a href="single.html">Fusce pellentesque suscipit.</a>
-                    </h3><!-- End .entry-title -->
+                    </h3>
 
                     <div class="entry-content">
                         <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero augue. </p>
                         <a href="single.html" class="read-more">Read More</a>
-                    </div><!-- End .entry-content -->
-                </div><!-- End .entry-body -->
-            </article><!-- End .entry -->
+                    </div>
+                </div>
+            </article>
 
             <article class="entry">
                 <figure class="entry-media">
                     <a href="single.html">
                         <img src="{{ asset('images/demos/demo-13/blog/post-1.jpg') }}" alt="image desc">
                     </a>
-                </figure><!-- End .entry-media -->
+                </figure>
 
                 <div class="entry-body">
                     <div class="entry-meta">
                         <a href="#">Nov 22, 2018</a>, 0 Comments
-                    </div><!-- End .entry-meta -->
+                    </div>
 
                     <h3 class="entry-title">
                         <a href="single.html">Sed adipiscing ornare.</a>
-                    </h3><!-- End .entry-title -->
+                    </h3>
 
                     <div class="entry-content">
                         <p>Lorem ipsum dolor consectetuer adipiscing elit. Phasellus hendrerit. Pelletesque aliquet nibh ...</p>
                         <a href="single.html" class="read-more">Read More</a>
-                    </div><!-- End .entry-content -->
-                </div><!-- End .entry-body -->
-            </article><!-- End .entry -->
+                    </div>
+                </div>
+            </article>
         </div>
-    </div><!-- End .container -->
-</div><!-- End .blog-posts -->
+    </div>
+</div>
 @endsection
 
