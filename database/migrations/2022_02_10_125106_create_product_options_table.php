@@ -19,7 +19,6 @@ class CreateProductOptionsTable extends Migration
             $table->foreignId('option_id')->constrained('options')->onDelete('cascade');
             $table->foreignId('option_group_id')->constrained('option_groups')->onDelete('cascade');
             $table->string('option_price');
-            $table->string('description');
             $table->timestamps();
         });
     }
