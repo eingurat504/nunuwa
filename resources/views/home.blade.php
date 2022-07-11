@@ -915,7 +915,7 @@
     </div>
 </div>
 
-<div class="mb-1"></div><!-- End .mb-1 -->
+<div class="mb-1"></div>
 @if(!empty($furnitures))
 
 <div class="container furniture">

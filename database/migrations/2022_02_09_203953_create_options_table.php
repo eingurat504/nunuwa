@@ -17,6 +17,7 @@ class CreateOptionsTable extends Migration
             $table->bigIncrements('id');
             $table->foreignId('option_group_id')->constrained('option_groups')->onDelete('cascade');
             $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }
