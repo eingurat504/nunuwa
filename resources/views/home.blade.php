@@ -1460,8 +1460,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-2xl-5col">
-                <h3 class="cta-title text-white">Join Our Newsletter</h3><!-- End .cta-title -->
-                <p class="cta-desc text-white">Subcribe to get information about products and coupons</p><!-- End .cta-desc -->
+                <h3 class="cta-title text-white">Join Our Newsletter</h3>
+                <p class="cta-desc text-white">Subcribe to get information about products and coupons</p>
             </div>
             
             <div class="col-3xl-5col">
@@ -1480,7 +1480,7 @@
 
 <div class="blog-posts bg-light pt-4 pb-7">
     <div class="container">
-        <h2 class="title">From Our Blog</h2><!-- End .title-lg text-center -->
+        <h2 class="title">From Our Blog</h2>
 
         <div class="owl-carousel owl-simple" data-toggle="owl" 
             data-owl-options='{
