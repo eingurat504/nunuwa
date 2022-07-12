@@ -39,6 +39,17 @@
                 <span class="invalid-feedback" role="alert">{{ $message }}</span>
                 @enderror
               </div>
+              <div class="mb-3 col-md-12">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" type="text" id="description" name="description" placeholder="description">
+                  {{ old('description', $product_option->description) }}
+                </textarea>
+                @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
+              </div>
             </div>
             <div class="mt-2">
               <button type="submit" class="btn btn-primary me-2">Save</button>
