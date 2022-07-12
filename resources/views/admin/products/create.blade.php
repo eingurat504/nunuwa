@@ -18,6 +18,11 @@
               <div class="mb-3 col-md-12">
                 <label for="name" class="form-label">Name</label>
                 <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}"/>
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
               </div>
 
               <div class="mb-3 col-md-12">
@@ -29,29 +34,53 @@
                           <option value="{{ $category->id }}">{{ $category->name }}</option>
                       @endforeach
                 </select>
+                @error('category')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
               </div>
               <div class="mb-3 col-md-12">
                 <label for="stock" class="form-label">Stock Available</label>
                 <input class="form-control" type="integer" id="stock"
                   name="stock" value="{{ old('stock') }}" placeholder="stock" />
+                @error('stock')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
 
               </div>
               <div class="mb-3 col-md-12">
                 <label for="email" class="form-label">Price</label>
                 <input class="form-control" type="integer" id="price"
                   name="price" value="{{ old('price') }}" placeholder="price" />
+                @error('price')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
               </div>
               <div class="mb-3 col-md-12">
-                <label for="stock" class="form-label">Product Option</label>
-                <input class="form-control" type="integer" id="stock"
-                  name="stock" value="{{ old('stock') }}" placeholder="stock" />
-
+                <label for="option" class="form-label">Product Option</label>
+                <input class="form-control" type="integer" id="option"
+                  name="stock" value="{{ old('option') }}" placeholder="option" />
+                @error('option')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
               </div>
               <div class="mb-3 col-md-12">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" type="text" id="description" name="description" placeholder="description">
                   {{ old('description') }}
-                </textarea> 
+                </textarea>
+                @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror  
               </div>
             </div>
             <div class="mt-2">
