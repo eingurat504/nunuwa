@@ -20,6 +20,11 @@
               <div class="mb-3 col-md-12">
                 <label for="name" class="form-label">Name</label>
                 <input class="form-control" type="text" id="name" name="name" value="{{ old('name', $product->name) }}"/>
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
               </div>
 
               <div class="mb-3 col-md-12">
@@ -31,16 +36,31 @@
                           <option value="{{ $category->id }}">{{ $category->name }}</option>
                       @endforeach
                 </select>
+                @error('category')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
               </div>
               <div class="mb-3 col-md-12">
                 <label for="email" class="form-label">Price</label>
                 <input class="form-control" type="integer" id="price"
                   name="price" value="{{ old('price', $product->price) }}" placeholder="price" />
+                @error('price')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
 
               </div>
               <div class="mb-3 col-md-12">
                 <label for="state" class="form-label">Description</label>
-                <textarea class="form-control" type="text" id="description" name="description" placeholder="description" required="true">{{ old('description', $product->description) }}</textarea> 
+                <textarea class="form-control" type="text" id="description" name="description" placeholder="description" required="true">{{ old('description', $product->description) }}</textarea>
+                @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror  
               </div>
             </div>
             <div class="mt-2">
