@@ -34,7 +34,7 @@ class CategoryController extends Controller
 
         $categories = ProductCategory::get();
 
-        return view('admin.products.category.index', [
+        return view('admin.category.index', [
             'categories' => $categories,
         ]);
     }
@@ -50,7 +50,7 @@ class CategoryController extends Controller
 
         $category = ProductCategory::findOrfail($id);
 
-        return view('admin.products.category.show', [
+        return view('admin.category.show', [
             'category' => $category,
         ]);
     }
@@ -66,7 +66,7 @@ class CategoryController extends Controller
 
         $category = ProductCategory::findOrfail($id);
 
-        return view('admin.products.category.edit', [
+        return view('admin.category.edit', [
             'category' => $category,
         ]);
     }
@@ -104,7 +104,7 @@ class CategoryController extends Controller
     public function create()
     {
 
-        return view('admin.products.category.create');
+        return view('admin.category.create');
     }
 
 
@@ -136,7 +136,7 @@ class CategoryController extends Controller
 
         $category = ProductCategory::findOrfail($id);
 
-        return view('admin.products.category.image', [
+        return view('admin.category.image', [
             'category' => $category,
         ]);
     }
@@ -184,6 +184,4 @@ class CategoryController extends Controller
 
         return redirect()->route('admin.categories.index');
     }
-
-
 }
