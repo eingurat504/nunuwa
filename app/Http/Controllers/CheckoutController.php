@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class CheckoutController extends Controller
 {
@@ -74,7 +76,12 @@ class CheckoutController extends Controller
         $order->billing_address_1 = $request->billing_address_1;
         $order->billing_address_2 = $request->billing_address_2;
         $order->instructions = $request->instructions;
+        $order->order_date = date('Y-m-d H:i:s');
+        $order->tracking_no = date('Y-m-d H:i:s').'123443';
         $order->status = 'PENDING';
+        $order->sub_total = 300;
+        $order->tax = 100;
+        $order->total = 1200;
         // $order->sub_total = Helper::to_float(Cart::instance('default')->subtotal());
         // $order->tax = Helper::to_float(Cart::instance('default')->tax());
         // $order->total = Helper::to_float(Cart::instance('default')->total());

@@ -21,86 +21,67 @@
         <div class="container">
             <div class="checkout-discount">
                 <form action="#">
-                    <input type="text" class="form-control" required id="checkout-discount-input">
+                    <input type="text" class="form-control @error('billing_email') is-invalid @enderror" required id="checkout-discount-input">
                     <label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
                 </form>
             </div><!-- End .checkout-discount -->
+
             <form action="{{ route('checkout.store') }}" method="POST">
+
+            @csrf
+
                 <div class="row">
                     <div class="col-lg-9">
                         <h2 class="checkout-title">Billing Details</h2>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="billing_first_name">First Name *</label>
-                                    <input type="text" name="billing_first_name" value="{{ old('billing_first_name') }}" class="form-control @error('billing_first_name') is-invalid @enderror" required>
+                                    <input type="text" name="billing_first_name" value="{{ old('billing_first_name') }}" class="form-control @error('billing_first_name') is-invalid @enderror @error('billing_first_name') is-invalid @enderror" required>
                                     @error('billing_first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror 
-                                </div>
+                                    @enderror   
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label for="billing_last_name">Last Name *</label>
-                                    <input type="text" name="billing_last_name" value="{{ old('billing_last_name') }}" class="form-control @error('billing_last_name') is-invalid @enderror" required>
+                                    <input type="text" name="billing_last_name" value="{{ old('billing_last_name') }}" class="form-control @error('billing_last_name') is-invalid @enderror @error('billing_last_name') is-invalid @enderror" required>
                                     @error('billing_last_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror 
+                                    @enderror   
                                 </div>
                             </div>
 
-                            <label for="billing_company">Company Name (Optional)</label>
-                            <input type="text" name="billing_company" value="{{ old('billing_company') }}" class="form-control @error('billing_company') is-invalid @enderror">
-                            @error('billing_company')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror 
-
-                            <label for="billing_country">Country *</label>
-                            <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control @error('billing_country') is-invalid @enderror" required>
-                            @error('billing_country')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror 
-
-                            <label>Street address *</label>
-                            <input type="text" class="form-control @error('billing_address_1') is-invalid @enderror" name="billing_address_1" value="{{ old('billing_address_1') }}" placeholder="House number and Street name" required>
-                            @error('billing_address_1')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror 
-                            <input type="text" class="form-control @error('billing_address_2') is-invalid @enderror" name="billing_address_2" value="{{ old('billing_address_2') }}" placeholder="Appartments, suite, unit etc ..." required>
-                            @error('billing_address_2')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror 
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Company Name (Optional)</label>
+                                    <input type="text" name="billing_company" value="{{ old('billing_company') }}" class="form-control @error('billing_company') is-invalid @enderror">
+                                </div>
+                                <div class="col-sm-12">
+                                    <label>Country *</label>
+                                    <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control @error('billing_country') is-invalid @enderror" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label>Street address *</label>
+                                    <input type="text" class="form-control @error('billing_address_1') is-invalid @enderror" 
+                                    name="billing_address_1" value="{{ old('billing_address_1') }}" placeholder="House number and Street name" required>
+                                    <input type="text" class="form-control @error('billing_address_2v') is-invalid @enderror" 
+                                    name="billing_address_2" value="{{ old('billing_address_2') }}" placeholder="Appartments, suite, unit etc ..." required>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="billing_city">Town / City *</label>
                                     <input type="text" name="billing_city" value="{{ old('billing_city') }}" class="form-control @error('billing_city') is-invalid @enderror" required>
-                                    @error('billing_city')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror 
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label for="billing_state">State / County *</label>
                                     <input type="text" name="billing_state" value="{{ old('billing_state') }}" class="form-control @error('billing_state') is-invalid @enderror" required>
-                                    @error('billing_state')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror 
                                 </div>
                             </div>
 
@@ -112,7 +93,7 @@
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror 
+                                    @enderror   
                                 </div>
 
                                 <div class="col-sm-6">
@@ -122,17 +103,17 @@
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror 
+                                    @enderror   
                                 </div>
                             </div>
 
                             <label for="billing_email">Email address *</label>
-                            <input type="email" name="billing_email" value="{{ old('billing_email') }}" class="form-control @error('billing_email') is-invalid @enderror" required>
+                            <input type="email" name="billing_email" value="{{ old('billing_email') }}" class="form-control @error('billing_email') is-invalid @enderror @error('billing_email') is-invalid @enderror" required>
                             @error('billing_email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror 
+                            @enderror   
 
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="checkout-create-acc">
@@ -145,7 +126,7 @@
                             </div>
 
                             <label>Order notes (optional)</label>
-                            <textarea class="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+                            <textarea class="form-control @error('billing_email') is-invalid @enderror" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
                     </div><!-- End .col-lg-9 -->
                     <aside class="col-lg-3">
                         <div class="summary">
