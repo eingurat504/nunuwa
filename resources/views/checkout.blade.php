@@ -32,7 +32,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="billing_first_name">First Name *</label>
-                                    <input type="text" name="billing_first_name" value="{{ old('billing_first_name') }}" class="form-control" required>
+                                    <input type="text" name="billing_first_name" value="{{ old('billing_first_name') }}" class="form-control @error('billing_first_name') is-invalid @enderror" required>
                                     @error('billing_first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
 
                                 <div class="col-sm-6">
                                     <label for="billing_last_name">Last Name *</label>
-                                    <input type="text" name="billing_last_name" value="{{ old('billing_last_name') }}" class="form-control" required>
+                                    <input type="text" name="billing_last_name" value="{{ old('billing_last_name') }}" class="form-control @error('billing_last_name') is-invalid @enderror" required>
                                     @error('billing_last_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -53,7 +53,7 @@
                             </div>
 
                             <label for="billing_company">Company Name (Optional)</label>
-                            <input type="text" name="billing_company" value="{{ old('billing_company') }}" class="form-control">
+                            <input type="text" name="billing_company" value="{{ old('billing_company') }}" class="form-control @error('billing_company') is-invalid @enderror">
                             @error('billing_company')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -61,7 +61,7 @@
                             @enderror 
 
                             <label for="billing_country">Country *</label>
-                            <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control" required>
+                            <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control @error('billing_country') is-invalid @enderror" required>
                             @error('billing_country')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -69,13 +69,13 @@
                             @enderror 
 
                             <label>Street address *</label>
-                            <input type="text" class="form-control" name="billing_address_1" value="{{ old('billing_address_1') }}" placeholder="House number and Street name" required>
+                            <input type="text" class="form-control @error('billing_address_1') is-invalid @enderror" name="billing_address_1" value="{{ old('billing_address_1') }}" placeholder="House number and Street name" required>
                             @error('billing_address_1')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror 
-                            <input type="text" class="form-control" name="billing_address_2" value="{{ old('billing_address_2') }}" placeholder="Appartments, suite, unit etc ..." required>
+                            <input type="text" class="form-control @error('billing_address_2') is-invalid @enderror" name="billing_address_2" value="{{ old('billing_address_2') }}" placeholder="Appartments, suite, unit etc ..." required>
                             @error('billing_address_2')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -85,7 +85,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="billing_city">Town / City *</label>
-                                    <input type="text" name="billing_city" value="{{ old('billing_city') }}" class="form-control" required>
+                                    <input type="text" name="billing_city" value="{{ old('billing_city') }}" class="form-control @error('billing_city') is-invalid @enderror" required>
                                     @error('billing_city')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -94,9 +94,9 @@
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <label for="billing_country">State / County *</label>
-                                    <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control" required>
-                                    @error('billing_country')
+                                    <label for="billing_state">State / County *</label>
+                                    <input type="text" name="billing_state" value="{{ old('billing_state') }}" class="form-control @error('billing_state') is-invalid @enderror" required>
+                                    @error('billing_state')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -107,7 +107,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="billing_postalcode">Postcode / ZIP *</label>
-                                    <input type="text" name="billing_postalcode" value="{{ old('billing_postalcode') }}" class="form-control" required>
+                                    <input type="text" name="billing_postalcode" value="{{ old('billing_postalcode') }}" class="form-control @error('billing_postalcode') is-invalid @enderror" required>
                                     @error('billing_postalcode')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -117,7 +117,7 @@
 
                                 <div class="col-sm-6">
                                     <label for="billing_phone">Phone *</label>
-                                    <input type="tel" name="billing_phone" value="{{ old('billing_phone') }}" class="form-control" required>
+                                    <input type="tel" name="billing_phone" value="{{ old('billing_phone') }}" class="form-control @error('billing_phone') is-invalid @enderror" required>
                                     @error('billing_phone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -127,7 +127,7 @@
                             </div>
 
                             <label for="billing_email">Email address *</label>
-                            <input type="email" name="billing_email" value="{{ old('billing_email') }}" class="form-control" required>
+                            <input type="email" name="billing_email" value="{{ old('billing_email') }}" class="form-control @error('billing_email') is-invalid @enderror" required>
                             @error('billing_email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
