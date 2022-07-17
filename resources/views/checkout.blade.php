@@ -4,8 +4,8 @@
 <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         <div class="container">
             <h1 class="page-title">Checkout<span>Shop</span></h1>
-        </div><!-- End .container -->
-</div><!-- End .page-header -->
+        </div>
+</div>
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
         <ol class="breadcrumb">
@@ -13,8 +13,8 @@
             <li class="breadcrumb-item"><a href="#">Shop</a></li>
             <li class="breadcrumb-item active" aria-current="page">Checkout</li>
         </ol>
-    </div><!-- End .container -->
-</nav><!-- End .breadcrumb-nav -->
+    </div>
+</nav>
 
 <div class="page-content">
     <div class="checkout">
@@ -28,65 +28,65 @@
             <form action="{{ route('checkout.store') }}" method="POST">
                 <div class="row">
                     <div class="col-lg-9">
-                        <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
+                        <h2 class="checkout-title">Billing Details</h2>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>First Name *</label>
-                                    <input type="text" value="{{ old('first_name') }}" class="form-control" required>
-                                </div><!-- End .col-sm-6 -->
+                                    <input type="text" name="billing_last_name" value="{{ old('billing_first_name') }}" class="form-control" required>
+                                </div>
 
                                 <div class="col-sm-6">
                                     <label>Last Name *</label>
-                                    <input type="text" value="{{ old('last_name') }}" class="form-control" required>
-                                </div><!-- End .col-sm-6 -->
-                            </div><!-- End .row -->
+                                    <input type="text" name="billing_last_name" value="{{ old('billing_last_name') }}" class="form-control" required>
+                                </div>
+                            </div>
 
                             <label>Company Name (Optional)</label>
-                            <input type="text" value="{{ old('company_name') }}" class="form-control">
+                            <input type="text" name="billing_company" value="{{ old('billing_company') }}" class="form-control">
 
                             <label>Country *</label>
-                            <input type="text" value="{{ old('country') }}" class="form-control" required>
+                            <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control" required>
 
                             <label>Street address *</label>
-                            <input type="text" class="form-control" value="{{ old('street_address_1') }}" placeholder="House number and Street name" required>
-                            <input type="text" class="form-control" value="{{ old('street_address_1') }}" placeholder="Appartments, suite, unit etc ..." required>
+                            <input type="text" class="form-control" name="billing_address_1" value="{{ old('billing_address_1') }}" placeholder="House number and Street name" required>
+                            <input type="text" class="form-control" name="billing_address_2" value="{{ old('billing_address_2') }}" placeholder="Appartments, suite, unit etc ..." required>
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>Town / City *</label>
-                                    <input type="text" value="{{ old('city') }}" class="form-control" required>
-                                </div><!-- End .col-sm-6 -->
+                                    <input type="text" name="billing_city" value="{{ old('billing_city') }}" class="form-control" required>
+                                </div>
 
                                 <div class="col-sm-6">
                                     <label>State / County *</label>
-                                    <input type="text" value="{{ old('country') }}" class="form-control" required>
-                                </div><!-- End .col-sm-6 -->
-                            </div><!-- End .row -->
+                                    <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control" required>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>Postcode / ZIP *</label>
-                                    <input type="text" value="{{ old('zip_code') }}" class="form-control" required>
-                                </div><!-- End .col-sm-6 -->
+                                    <input type="text" name="billing_postalcode" value="{{ old('billing_postalcode') }}" class="form-control" required>
+                                </div>
 
                                 <div class="col-sm-6">
                                     <label>Phone *</label>
-                                    <input type="tel" value="{{ old('phone_number') }}" class="form-control" required>
-                                </div><!-- End .col-sm-6 -->
-                            </div><!-- End .row -->
+                                    <input type="tel" name="billing_phone" value="{{ old('billing_phone') }}" class="form-control" required>
+                                </div>
+                            </div>
 
                             <label>Email address *</label>
-                            <input type="email" value="{{ old('email_address') }}" class="form-control" required>
+                            <input type="email" name="billing_email" value="{{ old('billing_email') }}" class="form-control" required>
 
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="checkout-create-acc">
                                 <label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
-                            </div><!-- End .custom-checkbox -->
+                            </div>
 
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="checkout-diff-address">
                                 <label class="custom-control-label" for="checkout-diff-address">Ship to a different address?</label>
-                            </div><!-- End .custom-checkbox -->
+                            </div>
 
                             <label>Order notes (optional)</label>
                             <textarea class="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
@@ -210,9 +210,9 @@
                             </button>
                         </div><!-- End .summary -->
                     </aside><!-- End .col-lg-3 -->
-                </div><!-- End .row -->
+                </div>
             </form>
-        </div><!-- End .container -->
+        </div>
     </div><!-- End .checkout -->
 </div><!-- End .page-content -->
 @endsection
