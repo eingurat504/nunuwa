@@ -57,7 +57,7 @@ class CheckoutController extends Controller
             'billing_address_1' => 'required',
             'billing_address_2' => 'nullable',
             'instructions' => 'nullable',
-            'payment_gateway' => 'required|in:COD,PAYPAL,STRIPE,MTN-MOMO',
+            // 'payment_gateway' => 'required|in:COD,PAYPAL,STRIPE,MTN-MOMO',
         ]);
 
         $order = new Order();
