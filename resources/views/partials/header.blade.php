@@ -2,7 +2,7 @@
             <div class="header-top">
                 <div class="container">
                     <div class="header-left">
-                        <a href="tel:#"><i class="icon-phone"></i>Call: +256779 357 620</a>
+                        <a href="tel:#"><i class="icon-phone"></i>Call: +256779 357 </a>
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
@@ -19,30 +19,29 @@
                                                     <li><a href="#">Eur</a></li>
                                                     <li><a href="#">Usd</a></li>
                                                 </ul>
-                                            </div><!-- End .header-menu -->
-                                        </div><!-- End .header-dropdown -->
+                                            </div>
+                                        </div>
                                     </li>
                                     <li>   
                                         <div class="header-dropdown">
-                                            <a href="#">Engligh</a>
+                                            <a href="#">English</a>
                                             <div class="header-menu">
                                                 <ul>
                                                     <li><a href="#">English</a></li>
-                                                    <li><a href="#">French</a></li>
-                                                    <li><a href="#">Spanish</a></li>
+                                                    <li><a href="#">Kiswahili</a></li>
                                                 </ul>
-                                            </div><!-- End .header-menu -->
-                                        </div><!-- End .header-dropdown -->
+                                            </div>
+                                        </div>
                                     </li>
                                     <li class="login">
                                         <a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a>
                                     </li>
                                 </ul>
                             </li>
-                        </ul><!-- End .top-menu -->
+                        </ul>
                     </div>
                 </div>
-            </div><!-- End .header-top -->
+            </div>
 
             <div class="header-middle">
                 <div class="container">
