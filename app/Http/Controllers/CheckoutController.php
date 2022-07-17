@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Auth;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Support\Helper;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -79,36 +80,22 @@ class CheckoutController extends Controller
         $order->order_date = date('Y-m-d H:i:s');
         $order->tracking_no = date('Y-m-d H:i:s').'123443';
         $order->status = 'PENDING';
-        $order->sub_total = 300;
-        $order->tax = 100;
-        $order->total = 1200;
-        // $order->sub_total = Helper::to_float(Cart::instance('default')->subtotal());
-        // $order->tax = Helper::to_float(Cart::instance('default')->tax());
-        // $order->total = Helper::to_float(Cart::instance('default')->total());
+        $order->sub_total = Helper::to_float(Cart::instance('default')->subtotal());
+        $order->tax = Helper::to_float(Cart::instance('default')->tax());
+        $order->total = Helper::to_float(Cart::instance('default')->total());
         $order->save();
 
-        // $products = Cart::instance('default')->content()->values()->reduce(function ($carry, $item) {
-        //     $carry[$item->id] = [
-        //         'quantity' => $item->qty,
-        //         'unit_price' => Helper::to_float($item->model->price),
-        //     ];
+        $products = Cart::instance('default')->content()->values()->reduce(function ($carry, $item) {
+            $carry[$item->id] = [
+                'quantity' => $item->qty,
+                'unit_price' => Helper::to_float($item->model->price),
+            ];
 
-        //     return $carry;
-        // });
+            return $carry;
+        });
 
-        // $order->products()->attach($products);
+        $order->products()->attach($products);
 
-        // if ($request->payment_gateway == 'STRIPE') {
-        //     return (new StripeBroker())->process($order, $request->all());
-        // }
-
-        // if ($request->payment_gateway == 'PAYPAL') {
-        //     $httpClient = app()->make(HttpClient::class);
-
-        //     return (new PayPalBroker($httpClient))->process($order, $request->all());
-        // }
-
-        // return (new CashOnDeliveryBroker())->process($order, $request->all());
     }
 
 }
