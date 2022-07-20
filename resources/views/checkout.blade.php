@@ -139,29 +139,25 @@
                                         <th>Total</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
-                                    <tr>
-                                        <td><a href="#">Beige knitted elastic runner shoes</a></td>
-                                        <td>$84.00</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><a href="#">Blue utility pinafore denimdress</a></td>
-                                        <td>$76,00</td>
-                                    </tr>
-                                    <tr class="summary-subtotal">
+                                @foreach (Cart::instance('default')->content() as $item)
+                                <tr>
+                                    <td><a href="#">{{ $item->model->name }}</a></td>
+                                    <td>${{ $item->subtotal() }}</td>
+                                </tr>
+                                <tr class="summary-subtotal">
                                         <td>Subtotal:</td>
-                                        <td>$160.00</td>
-                                    </tr><!-- End .summary-subtotal -->
-                                    <tr>
-                                        <td>Shipping:</td>
-                                        <td>Free shipping</td>
+                                        <td>${{ Cart::instance('default')->subtotal() }}</td>
+                                </tr><!-- End .summary-subtotal -->
+                                <tr>
+                                        <td>Tax ({{ config('cart.tax') }}%):</td>
+                                        <td>${{ Cart::instance('default')->tax() }}</td>
                                     </tr>
                                     <tr class="summary-total">
                                         <td>Total:</td>
-                                        <td>$160.00</td>
+                                        <td>${{ Cart::instance('default')->total() }}</td>
                                     </tr><!-- End .summary-total -->
+                                @endforeach
                                 </tbody>
                             </table><!-- End .table table-summary -->
 
