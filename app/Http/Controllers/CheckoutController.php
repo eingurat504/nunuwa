@@ -30,7 +30,6 @@ class CheckoutController extends Controller
      */
     public function showCheckout()
     {
-        // if cart is empty; redirect to home with flash message
 
         return view('checkout');
     }
