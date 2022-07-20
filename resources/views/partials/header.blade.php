@@ -33,9 +33,31 @@
                                             </div>
                                         </div>
                                     </li>
+                                    @if (Auth::guard('web')->guest())
                                     <li class="login">
                                         <a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a>
                                     </li>
+                                    @else
+                                    <li>
+                                        <div class="header-dropdown">
+                                            <a href="#">{{ Auth::guard('web')->user()->name }}</a>
+                                            <div class="header-menu">
+                                                <ul>
+                                                    <!-- <li><a href="#" >English</a></li> -->
+                                                    <li>
+                                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                            Logout
+                                                        </a>
+                                                        
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                            @csrf
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @endguest
                                 </ul>
                             </li>
                         </ul>
