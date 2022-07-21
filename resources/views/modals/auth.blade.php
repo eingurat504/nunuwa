@@ -74,15 +74,25 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                <form action="#">
+                                <form action="{{ route('register') }}">
                                     <div class="form-group">
-                                        <label for="register-email">Your email address *</label>
-                                        <input type="email" class="form-control" id="register-email" name="register-email" required>
+                                        <label for="email">Your email address *</label>
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="register-password">Password *</label>
-                                        <input type="password" class="form-control" id="register-password" name="register-password" required>
+                                        <label for="password">Password *</label>
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required>
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <div class="form-footer">
