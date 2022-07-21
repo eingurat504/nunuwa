@@ -74,15 +74,15 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                <form action="#">
+                                <form action="{{ route('register') }}">
                                     <div class="form-group">
-                                        <label for="register-email">Your email address *</label>
-                                        <input type="email" class="form-control" id="register-email" name="register-email" required>
+                                        <label for="email">Your email address *</label>
+                                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="register-password">Password *</label>
-                                        <input type="password" class="form-control" id="register-password" name="register-password" required>
+                                        <label for="password">Password *</label>
+                                        <input type="password" class="form-control" id="password" name="password" required>
                                     </div>
 
                                     <div class="form-footer">
