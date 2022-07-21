@@ -77,6 +77,16 @@
                                 <form action="{{ route('register') }}" method="POST">
                                         @csrf
                                     <div class="form-group">
+                                        <label for="name">Your name *</label>
+                                        <input type="name" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="email">Your email address *</label>
                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required>
                                         @error('email')
@@ -90,6 +100,16 @@
                                         <label for="password">Password *</label>
                                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required>
                                         @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Confirm Password *</label>
+                                        <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password_confirmation" required autocomplete="new-password">
+                                        @error('password_confirmation')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
