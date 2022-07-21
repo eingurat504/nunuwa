@@ -74,7 +74,8 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                <form action="{{ route('register') }}">
+                                <form action="{{ route('register') }}" method="POST">
+                                        @csrf
                                     <div class="form-group">
                                         <label for="email">Your email address *</label>
                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required>
