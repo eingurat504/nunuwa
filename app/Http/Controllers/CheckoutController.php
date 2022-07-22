@@ -94,6 +94,10 @@ class CheckoutController extends Controller
         });
 
         $order->products()->attach($products);
+        
+        flash($order->tracking_no." order processing")->success();
+
+        return redirect()->route('checkout.index');
 
     }
 
