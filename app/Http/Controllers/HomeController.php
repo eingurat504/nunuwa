@@ -49,4 +49,24 @@ class HomeController extends Controller
             'clothings' => $products,
         ]);
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contact_us()
+    {
+        return view('contact_us');
+    }
+
+        /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function faqs()
+    {
+        return view('faq');
+    }
 }
