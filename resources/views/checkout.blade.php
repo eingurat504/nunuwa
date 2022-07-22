@@ -23,7 +23,7 @@
             @include('flash::message')
         </div>
     </div>
-    
+
     <div class="checkout">
         <div class="container">
             <div class="checkout-discount">
@@ -66,10 +66,20 @@
                                 <div class="col-sm-12">
                                     <label>Company Name (Optional)</label>
                                     <input type="text" name="billing_company" value="{{ old('billing_company') }}" class="form-control @error('billing_company') is-invalid @enderror">
+                                    @error('billing_company')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror  
                                 </div>
                                 <div class="col-sm-12">
                                     <label>Country *</label>
                                     <input type="text" name="billing_country" value="{{ old('billing_country') }}" class="form-control @error('billing_country') is-invalid @enderror" required>
+                                    @error('billing_country')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror 
                                 </div>
                                 <div class="col-sm-12">
                                     <label>Street address *</label>
@@ -77,6 +87,11 @@
                                     name="billing_address_1" value="{{ old('billing_address_1') }}" placeholder="House number and Street name" required>
                                     <input type="text" class="form-control @error('billing_address_2v') is-invalid @enderror" 
                                     name="billing_address_2" value="{{ old('billing_address_2') }}" placeholder="Appartments, suite, unit etc ..." required>
+                                    @error('billing_address_2')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror 
                                 </div>
                             </div>
 
@@ -84,11 +99,21 @@
                                 <div class="col-sm-6">
                                     <label for="billing_city">Town / City *</label>
                                     <input type="text" name="billing_city" value="{{ old('billing_city') }}" class="form-control @error('billing_city') is-invalid @enderror" required>
+                                    @error('billing_city')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror  
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label for="billing_state">State / County *</label>
                                     <input type="text" name="billing_state" value="{{ old('billing_state') }}" class="form-control @error('billing_state') is-invalid @enderror" required>
+                                    @error('billing_state')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror   
                                 </div>
                             </div>
 
