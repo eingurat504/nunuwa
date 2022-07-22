@@ -29,6 +29,7 @@ Auth::routes();
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_us.index');
+    Route::get('/faq', [HomeController::class, 'faqs'])->name('faqs.index');
 });
 
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
