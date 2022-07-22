@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
@@ -23,7 +24,12 @@ use App\Http\Controllers\Category\ClothingController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+
+Route::group(['prefix' => '/', 'as' => '/.'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_us.index');
+});
 
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
     Route::get('/', [CategoryController::class, 'getHomeAppliances'])->name('index');
@@ -33,7 +39,7 @@ Route::group(['prefix' => '/backpack', 'as' => 'backpack.'], function () {
 });
 
 Route::group(['prefix' => '/electronics', 'as' => 'electronics.'], function () {
-    Route::get('/', [CategoryController::class, 'getElectronics'])->name('index');
+    Route::get('/', [ElectronicController::class, 'getElectronics'])->name('index');
     Route::get('/accessories', [ElectronicController::class, 'getAccessories'])->name('accessories.index');
     Route::get('/shoes', [ElectronicController::class, 'getMonitors'])->name('shoes.index');
     Route::get('/laptops', [ElectronicController::class, 'getLaptops'])->name('laptops.index');
