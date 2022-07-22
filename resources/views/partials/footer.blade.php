@@ -90,7 +90,7 @@
                                     <li><a href="about.html">About Nunuwa Kitu</a></li>
                                     <li><a href="#">How to shop on Nunuwa Kitu</a></li>
                                     <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="{{ route('contact_us.index') }}">Contact us</a></li>
                                     <li class="login">
                                         <a href="#signin-modal" data-toggle="modal">Log in</a>
                                     </li>

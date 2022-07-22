@@ -55,8 +55,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function contact_page()
+    public function contact_us()
     {
         return view('contact_us');
+    }
+
+        /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function faqs()
+    {
+        return view('faq');
     }
 }

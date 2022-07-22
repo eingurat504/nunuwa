@@ -26,7 +26,7 @@ Auth::routes();
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
-Route::group(['prefix' => '/', 'as' => '/.'], function () {
+Route::group(['prefix' => '/'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_us.index');
 });
