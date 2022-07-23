@@ -31,6 +31,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/contact_us', [HomeController::class, 'contact_us'])->name('contact_us.index');
     Route::get('/faq', [HomeController::class, 'faqs'])->name('faqs.index');
     Route::get('/terms_n_conditons', [HomeController::class, 'terms_n_conditons'])->name('terms_n_conditons.index');
+    Route::get('/about_us', [HomeController::class, 'about_us'])->name('about_us.index');
 });
 
 Route::group(['prefix' => '/appliances', 'as' => 'appliances.'], function () {
