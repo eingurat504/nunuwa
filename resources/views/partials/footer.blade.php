@@ -87,7 +87,7 @@
                                 <h4 class="widget-title">Information</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
-                                    <li><a href="about.html">About Nunuwa Kitu</a></li>
+                                    <li><a href="{{ route('about_us.index') }}">About Nunuwa Kitu</a></li>
                                     <li><a href="{{ route('terms_n_conditons.index') }}">How to shop on Nunuwa Kitu</a></li>
                                     <li><a href="{{ route('faqs.index') }}">FAQ</a></li>
                                     <li><a href="{{ route('contact_us.index') }}">Contact us</a></li>

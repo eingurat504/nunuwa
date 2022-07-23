@@ -72,7 +72,7 @@ class HomeController extends Controller
 
     
         /**
-     * Show the application dashboard.
+     * Show terms and conditions.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -80,4 +80,15 @@ class HomeController extends Controller
     {
         return view('terms_conditions');
     }
+
+            /**
+     * Show about us.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function about_us()
+    {
+        return view('about_us');
+    }
+
 }
