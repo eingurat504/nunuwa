@@ -4,14 +4,13 @@
 <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">About us</li>
         </ol>
     </div><!-- End .container -->
 </nav><!-- End .breadcrumb-nav -->
 <div class="container">
-    <div class="page-header page-header-big text-center" style="background-image: url('assets/images/about-header-bg.jpg')">
+    <div class="page-header page-header-big text-center" style="background-image: url('{{ asset('images/about-header-bg.jpg') }}')">
         <h1 class="page-title text-white">About us<span class="text-white">Who we are</span></h1>
     </div><!-- End .page-header -->
 </div><!-- End .container -->
@@ -49,8 +48,8 @@
 
                 <div class="col-lg-6 offset-lg-1">
                     <div class="about-images">
-                        <img src="assets/images/about/img-1.jpg" alt="" class="about-img-front">
-                        <img src="assets/images/about/img-2.jpg" alt="" class="about-img-back">
+                        <img src="{{ asset('images/about/img-1.jpg') }}" alt="" class="about-img-front">
+                        <img src="{{ asset('images/about/img-2.jpg') }}" alt="" class="about-img-back">
                     </div><!-- End .about-images -->
                 </div><!-- End .col-lg-6 -->
             </div><!-- End .row -->
@@ -70,55 +69,55 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/1.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/1.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/2.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/2.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/3.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/3.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/4.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/4.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/5.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/5.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/6.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/6.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/7.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/7.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/8.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/8.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
 
                         <div class="col-6 col-sm-4">
                             <a href="#" class="brand">
-                                <img src="assets/images/brands/9.png" alt="Brand Name">
+                                <img src="{{ asset('images/brands/9.png') }}" alt="Brand Name">
                             </a>
                         </div><!-- End .col-sm-4 -->
                     </div><!-- End .row -->
@@ -134,7 +133,7 @@
             <div class="col-md-4">
                 <div class="member member-anim text-center">
                     <figure class="member-media">
-                        <img src="assets/images/team/member-1.jpg" alt="member photo">
+                        <img src="{{ asset('images/team/member-1.jpg') }}" alt="member photo">
 
                         <figcaption class="member-overlay">
                             <div class="member-overlay-content">
@@ -157,7 +156,7 @@
             <div class="col-md-4">
                 <div class="member member-anim text-center">
                     <figure class="member-media">
-                        <img src="assets/images/team/member-2.jpg" alt="member photo">
+                        <img src="{{ asset('images/team/member-2.jpg') }}" alt="member photo">
 
                         <figcaption class="member-overlay">
                             <div class="member-overlay-content">
@@ -180,7 +179,7 @@
             <div class="col-md-4">
                 <div class="member member-anim text-center">
                     <figure class="member-media">
-                        <img src="assets/images/team/member-3.jpg" alt="member photo">
+                        <img src="{{ asset('images/team/member-3.jpg') }}" alt="member photo">
 
                         <figcaption class="member-overlay">
                             <div class="member-overlay-content">
@@ -221,7 +220,7 @@
                     }
                 }'>
                 <blockquote class="testimonial text-center">
-                    <img src="assets/images/testimonials/user-1.jpg" alt="user">
+                    <img src="{{ asset('images/testimonials/user-1.jpg') }}" alt="user">
                     <p>“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque aliquet nibh nec urna. <br>In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. ”</p>
                     <cite>
                         Jenson Gregory
@@ -230,7 +229,7 @@
                 </blockquote><!-- End .testimonial -->
 
                 <blockquote class="testimonial text-center">
-                    <img src="assets/images/testimonials/user-2.jpg" alt="user">
+                    <img src="{{ asset('images/testimonials/user-2.jpg') }}" alt="user">
                     <p>“ Impedit, ratione sequi, sunt incidunt magnam et. Delectus obcaecati optio eius error libero perferendis nesciunt atque dolores magni recusandae! Doloremque quidem error eum quis similique doloribus natus qui ut ipsum.Velit quos ipsa exercitationem, vel unde obcaecati impedit eveniet non. ”</p>
 
                     <cite>
