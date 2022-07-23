@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
     <div class="container">
-        <h1 class="page-title">F.A.Q<span>Pages</span></h1>
+        <h1 class="page-title">Terms and Conditons<span>Pages</span></h1>
     </div><!-- End .container -->
 </div>
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -11,14 +11,14 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+            <li class="breadcrumb-item active" aria-current="page">terms and conditions</li>
         </ol>
     </div><!-- End .container -->
 </nav>
 
 <div class="page-content">
     <div class="container">
-        <h2 class="title text-center mb-3">Shipping Information</h2><!-- End .title -->
+        <h2 class="title text-center mb-3">terms and conditions</h2><!-- End .title -->
         <div class="accordion accordion-rounded" id="accordion-1">
             <div class="card card-box card-sm bg-light">
                 <div class="card-header" id="heading-1">

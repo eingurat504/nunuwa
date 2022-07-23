@@ -69,4 +69,15 @@ class HomeController extends Controller
     {
         return view('faq');
     }
+
+    
+        /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function terms_n_conditons()
+    {
+        return view('terms_conditions');
+    }
 }
