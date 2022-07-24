@@ -9,7 +9,7 @@
 <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Category</a></li>
             <li class="breadcrumb-item active" aria-current="page">TVs & Audios</li>
         </ol>
