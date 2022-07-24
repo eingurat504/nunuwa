@@ -20,24 +20,8 @@
             <div class="row">
               <div class="mb-3 col-md-12">
                 <label for="name" class="form-label">Name</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name', $type->name) }}"/>
+                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value="{{ old('name', $type->name) }}"/>
                 @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror 
-              </div>
-              
-              <div class="mb-3 col-md-12">
-                <label for="organization" class="form-label">Category</label>
-                <select class="form-control" id="category"
-                    name="category" value="{{ old('category') }}">
-                      <option value="">Choose category</option>
-                      @foreach($categories as $category) 
-                          <option value="{{ $category->id }}">{{ $category->name }}</option>
-                      @endforeach
-                </select>
-                @error('category')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -45,8 +29,23 @@
               </div>
 
               <div class="mb-3 col-md-12">
-                <label for="state" class="form-label">Description</label>
-                <textarea class="form-control" type="text" id="description" name="description" placeholder="description">{{ old('description', $type->description) }}</textarea>
+                <label for="category_id" class="form-label">Category</label>
+                <select class="form-control @error('category_id') is-invalid @enderror" name="category_id">
+                      <option value="">Choose category</option>
+                      @foreach($categories as $category) 
+                          <option value="{{ $category->id }}" {{ old('category_id', $type->category_id) == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
+                      @endforeach
+                </select>
+                @error('category_id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
+              </div>
+
+              <div class="mb-3 col-md-12">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control @error('description') is-invalid @enderror" type="text" id="description" name="description" placeholder="description">{{ old('description', $type->description) }}</textarea>
                 @error('description')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
