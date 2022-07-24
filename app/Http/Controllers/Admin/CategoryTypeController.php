@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ProductCategory;
+use App\Models\CategoryType;
 use App\Models\ProductImage;
 
 class CategoryTypeController extends Controller
@@ -31,10 +31,10 @@ class CategoryTypeController extends Controller
     public function index()
     {
 
-        $categories = ProductCategory::get();
+        $category_types = CategoryType::get();
 
         return view('admin.categories.types.index', [
-            'categories' => $categories,
+            'category_types' => $category_types,
         ]);
     }
 
@@ -47,10 +47,10 @@ class CategoryTypeController extends Controller
     public function show($id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category_type = CategoryType::findOrfail($id);
 
-        return view('admin.categories.show', [
-            'category' => $category,
+        return view('admin.categories.types.show', [
+            'category_type' => $category_type,
         ]);
     }
 
@@ -63,7 +63,7 @@ class CategoryTypeController extends Controller
     public function edit($id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = CategoryType::findOrfail($id);
 
         return view('admin.categories.edit', [
             'category' => $category,
@@ -80,9 +80,9 @@ class CategoryTypeController extends Controller
     public function update(Request $request, $id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = CategoryType::findOrfail($id);
 
-        ProductCategory::where('id', $category->id)
+        CategoryType::where('id', $category->id)
             ->update([
                 'name' => $request->input('name', $category->name),
                 'description' => $request->input('description', $category->description),
@@ -115,7 +115,7 @@ class CategoryTypeController extends Controller
     public function store(Request $request)
     {
 
-        $category = new ProductCategory();
+        $category = new CategoryType();
         $category->name = $request->name;
         $category->description = $request->description;
         $category->save();
@@ -133,7 +133,7 @@ class CategoryTypeController extends Controller
     public function attachedImages(Request $request, $id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = CategoryType::findOrfail($id);
 
         return view('admin.categories.image', [
             'category' => $category,
@@ -148,9 +148,9 @@ class CategoryTypeController extends Controller
     public function attachImages(Request $request, $categoryId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = CategoryType::findOrfail($id);
 
-        ProductCategory::where('id', $category->id)
+        CategoryType::where('id', $category->id)
             ->update([
                 'name' => $request->input('name', $category->name),
                 // 'description' => $request->input('description', $category->description),
@@ -173,9 +173,9 @@ class CategoryTypeController extends Controller
      */
     public function destroy($categoryId)
     {
-        // $this->authorize('delete', [ProductCategory::class, $productId]);
+        // $this->authorize('delete', [CategoryType::class, $productId]);
 
-        $category = ProductCategory::findOrFail($categoryId);
+        $category = CategoryType::findOrFail($categoryId);
 
         $category->forceDelete();
 
