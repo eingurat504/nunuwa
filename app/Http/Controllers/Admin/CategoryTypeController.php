@@ -32,7 +32,7 @@ class CategoryTypeController extends Controller
     public function index()
     {
 
-        $category_types = CategoryType::get();
+        $category_types = CategoryType::with('category')->get();
 
         return view('admin.categories.types.index', [
             'category_types' => $category_types,
@@ -127,9 +127,15 @@ class CategoryTypeController extends Controller
     public function store(Request $request)
     {
 
+        $this->validate($request, [
+            'category_id' => 'required|exists:product_categories,id',
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
         $type = new CategoryType();
         $type->name = $request->name;
-        $type->category_id = $request->category;
+        $type->category_id = $request->category_id;
         $type->description = $request->description;
         $type->created_at = date('Y-m-d H:i:s');
         $type->updated_at = date('Y-m-d H:i:s');
