@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('admin.dashboard') }}">Home /</a></span> Category_types</h6>
+    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('admin.dashboard') }}">Home /</a></span> Category Types</h6>
 
     <div class="row">
         <div class="col-md-12">
@@ -29,6 +29,7 @@
           <thead>
             <tr>
               <th>Name</th>
+              <th>Type</th>
               <th>Created At</th>
               <th>Updated At</th>
               <th class="text-center">Actions</th>
@@ -38,6 +39,7 @@
             @foreach($category_types as $category)
             <tr>
               <td><a href="{{ route('admin.category_types.show', $category->id) }}">{{$category->name }}</a></td>
+              <td>{{$category->category->name }}</td>
               <td>{{$category->created_at }}</td>
               <td>{{$category->updated_at }}</td>
               <td class="text-center">
@@ -46,9 +48,6 @@
                     <i class="bx bx-dots-vertical-rounded"></i>
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('admin.category_types.attached', $category->id) }}"
-                            ><i class="bx bx-edit-alt me-2"></i> Attach Images</a
-                    >
                     <a class="dropdown-item" href="{{ route('admin.category_types.edit', $category->id) }}"
                       ><i class="bx bx-edit-alt me-2"></i> Edit</a
                     >
