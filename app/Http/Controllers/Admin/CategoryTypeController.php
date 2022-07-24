@@ -81,17 +81,23 @@ class CategoryTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'category_id' => 'nullable|exists:product_categories,id',
+            'name' => 'nullable',
+            'description' => 'nullable',
+        ]);
 
-        $category = CategoryType::findOrfail($id);
+        $type = CategoryType::findOrfail($id);
 
-        CategoryType::where('id', $category->id)
+        CategoryType::where('id', $type->id)
             ->update([
-                'name' => $request->input('name', $category->name),
-                'description' => $request->input('description', $category->description),
+                'name' => $request->input('name', $type->name),
+                'category_id' => $request->input('category_id', $type->category_id),
+                'description' => $request->input('description', $type->description),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        flash($category->name." updated")->success();
+        flash($type->name." updated")->success();
 
         return redirect()->route('admin.category_types.index');
     }
