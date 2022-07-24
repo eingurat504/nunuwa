@@ -15,7 +15,6 @@ class CategoryTypeController extends Controller
      * Create a new controller instance.
      *
      * @return void
-     https://www.codermen.com/how-to-make-multi-auth-in-laravel-8/
      */
     public function __construct()
     {
@@ -34,7 +33,7 @@ class CategoryTypeController extends Controller
 
         $categories = ProductCategory::get();
 
-        return view('admin.category.index', [
+        return view('admin.categories.types.index', [
             'categories' => $categories,
         ]);
     }
@@ -50,7 +49,7 @@ class CategoryTypeController extends Controller
 
         $category = ProductCategory::findOrfail($id);
 
-        return view('admin.category.show', [
+        return view('admin.categories.show', [
             'category' => $category,
         ]);
     }
@@ -66,7 +65,7 @@ class CategoryTypeController extends Controller
 
         $category = ProductCategory::findOrfail($id);
 
-        return view('admin.category.edit', [
+        return view('admin.categories.edit', [
             'category' => $category,
         ]);
     }
@@ -104,7 +103,7 @@ class CategoryTypeController extends Controller
     public function create()
     {
 
-        return view('admin.category.create');
+        return view('admin.categories.create');
     }
 
 
@@ -136,7 +135,7 @@ class CategoryTypeController extends Controller
 
         $category = ProductCategory::findOrfail($id);
 
-        return view('admin.category.image', [
+        return view('admin.categories.image', [
             'category' => $category,
         ]);
     }
