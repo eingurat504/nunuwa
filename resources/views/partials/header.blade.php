@@ -212,8 +212,14 @@
                             <div class="dropdown-menu show">
                                 <nav class="side-nav">
                                     <ul class="menu-vertical sf-arrows">
+                                        @if(empty(\App\Models\ProductCategory::get())) 
+                                          
+                                        @else 
+                                          
+                                        @foreach(\App\Models\ProductCategory::get() as $category) 
+                                        
                                         <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="{{ route('electronics.index') }}">Electronics</a>
+                                            <a class="sf-with-ul" href="{{ route('electronics.index') }}">{{ $category->name }}</a>
 
                                             <div class="megamenu">
                                                 <div class="row no-gutters">
@@ -221,7 +227,7 @@
                                                         <div class="menu-col">
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <div class="menu-title">Laptops & Computers</div><!-- End .menu-title -->
+                                                                    <div class="menu-title">{{ $category->name }}</div>
                                                                     <ul>
                                                                         <li><a href="{{ route('electronics.index') }}">Desktop Computers</a></li>
                                                                         <li><a href="{{ route('electronics.index') }}">Monitors</a></li>
@@ -232,17 +238,17 @@
                                                                         <li><a href="{{ route('electronics.index') }}">Computer Accessories</a></li>
                                                                     </ul>
 
-                                                                    <div class="menu-title">TV & Video</div><!-- End .menu-title -->
+                                                                    <div class="menu-title">TV & Video</div>
                                                                     <ul>
                                                                         <li><a href="{{ route('electronics.index') }}">TVs</a></li>
                                                                         <li><a href="{{ route('electronics.index') }}">Home Audio Speakers</a></li>
                                                                         <li><a href="{{ route('electronics.index') }}">Projectors</a></li>
                                                                         <li><a href="{{ route('electronics.index') }}">Media Streaming Devices</a></li>
                                                                     </ul>
-                                                                </div><!-- End .col-md-6 -->
+                                                                </div>
 
                                                                 <div class="col-md-6">
-                                                                    <div class="menu-title">Cell Phones</div><!-- End .menu-title -->
+                                                                    <div class="menu-title">Cell Phones</div>
                                                                     <ul>
                                                                         <li><a href="{{ route('electronics.index') }}">Carrier Phones</a></li>
                                                                         <li><a href="{{ route('electronics.index') }}">Unlocked Phones</a></li>
@@ -250,7 +256,7 @@
                                                                         <li><a href="{{ route('electronics.index') }}">Cellphone Chargers </a></li>
                                                                     </ul>
 
-                                                                    <div class="menu-title">Digital Cameras</div><!-- End .menu-title -->
+                                                                    <div class="menu-title">Digital Cameras</div>
                                                                     <ul>
                                                                         <li><a href="{{ route('electronics.index') }}">Digital SLR Cameras</a></li>
                                                                         <li><a href="{{ route('electronics.index') }}">Sports & Action Cameras</a></li>
@@ -260,255 +266,29 @@
                                                                         <li><a href="{{ route('electronics.index') }}">Digital Memory Cards</a></li>
                                                                         <li><a href="{{ route('electronics.index') }}">Camera Bags, Backpacks & Cases</a></li>
                                                                     </ul>
-                                                                </div><!-- End .col-md-6 -->
-                                                            </div><!-- End .row -->
-                                                        </div><!-- End .menu-col -->
-                                                    </div><!-- End .col-md-8 -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
                                                     <div class="col-md-4">
                                                         <div class="banner banner-overlay">
                                                             <a href="category.html" class="banner banner-menu">
                                                                 <img src="{{ asset('images/demos/demo-13/menu/banner-1.jpg') }}" alt="Banner">
                                                             </a>
-                                                        </div><!-- End .banner banner-overlay -->
-                                                    </div><!-- End .col-md-4 -->
-                                                </div><!-- End .row -->
-                                            </div><!-- End .megamenu -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
-                                        <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="{{ route('furniture.index') }}">Furniture</a>
-
-                                            <div class="megamenu">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-8">
-                                                        <div class="menu-col">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="menu-title">Bedroom</div><!-- End .menu-title -->
-                                                                    <ul>
-                                                                        <li><a href="{{ route('furniture.index') }}">Beds, Frames & Bases</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Dressers</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Nightstands</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Kids' Beds & Headboards</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Armoires</a></li>
-                                                                    </ul>
-
-                                                                    <div class="menu-title">Living Room</div><!-- End .menu-title -->
-                                                                    <ul>
-                                                                        <li><a href="{{ route('furniture.index') }}">Coffee Tables</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Chairs</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Tables</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Futons & Sofa Beds</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Cabinets & Chests</a></li>
-                                                                    </ul>
-                                                                </div><!-- End .col-md-6 -->
-
-                                                                <div class="col-md-6">
-                                                                    <div class="menu-title">Office</div><!-- End .menu-title -->
-                                                                    <ul>
-                                                                        <li><a href="{{ route('furniture.index') }}">Office Chairs</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Desks</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Bookcases</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">File Cabinets</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Breakroom Tables</a></li>
-                                                                    </ul>
-
-                                                                    <div class="menu-title">Kitchen & Dining</div><!-- End .menu-title -->
-                                                                    <ul>
-                                                                        <li><a href="{{ route('furniture.index') }}">Dining Sets</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Kitchen Storage Cabinets</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Bakers Racks</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Dining Chairs</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Dining Room Tables</a></li>
-                                                                        <li><a href="{{ route('furniture.index') }}">Bar Stools</a></li>
-                                                                    </ul>
-                                                                </div><!-- End .col-md-6 -->
-                                                            </div><!-- End .row -->
-                                                        </div><!-- End .menu-col -->
-                                                    </div><!-- End .col-md-8 -->
-
-                                                    <div class="col-md-4">
-                                                        <div class="banner banner-overlay">
-                                                            <a href="category.html" class="banner banner-menu">
-                                                                <img src="{{ asset('images/demos/demo-13/menu/banner-2.jpg') }}" alt="Banner">
-                                                            </a>
-                                                        </div><!-- End .banner banner-overlay -->
-                                                    </div><!-- End .col-md-4 -->
-                                                </div><!-- End .row -->
-                                            </div><!-- End .megamenu -->
-                                        </li>
-                                        <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="{{ route('cooking.index') }}">Cooking</a>
-
-                                            <div class="megamenu">
-                                                <div class="menu-col">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="menu-title">Cookware</div><!-- End .menu-title -->
-                                                            <ul>
-                                                                <li><a href="{{ route('cooking.index') }}">Cookware Sets</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Pans, Griddles & Woks</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Pots</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Skillets & Grill Pans</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Kettles</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Soup & Stockpots</a></li>
-                                                            </ul>
-                                                        </div><!-- End .col-md-4 -->
-
-                                                        <div class="col-md-4">
-                                                            <div class="menu-title">Dinnerware & Tabletop</div><!-- End .menu-title -->
-                                                            <ul>
-                                                                <li><a href="{{ route('cooking.index') }}">Plates</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Cups & Mugs</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Trays & Platters</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Coffee & Tea Serving</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Salt & Pepper Shaker</a></li>
-                                                            </ul>
-                                                        </div><!-- End .col-md-4 -->
-
-                                                        <div class="col-md-4">
-                                                            <div class="menu-title">Cooking Appliances</div><!-- End .menu-title -->
-                                                            <ul>
-                                                                <li><a href="{{ route('cooking.index') }}">Microwaves</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Coffee Makers</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Mixers & Attachments</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Slow Cookers</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Air Fryers</a></li>
-                                                                <li><a href="{{ route('cooking.index') }}">Toasters & Ovens</a></li>
-                                                            </ul>
-                                                        </div><!-- End .col-md-4 -->
-                                                    </div><!-- End .row -->
-
-                                                    <div class="row menu-banners">
-                                                        <div class="col-md-4">
-                                                            <div class="banner">
-                                                                <a href="#">
-                                                                    <img src="{{ asset('images/demos/demo-13/menu/1.jpg') }}" alt="image">
-                                                                </a>
-                                                            </div><!-- End .banner -->
-                                                        </div><!-- End .col-md-4 -->
-
-                                                        <div class="col-md-4">
-                                                            <div class="banner">
-                                                                <a href="#">
-                                                                    <img src="{{ asset('images/demos/demo-13/menu/2.jpg') }}" alt="image">
-                                                                </a>
-                                                            </div><!-- End .banner -->
-                                                        </div><!-- End .col-md-4 -->
-
-                                                        <div class="col-md-4">
-                                                            <div class="banner">
-                                                                <a href="#">
-                                                                    <img src="{{ asset('images/demos/demo-13/menu/3.jpg') }}" alt="image">
-                                                                </a>
-                                                            </div><!-- End .banner -->
-                                                        </div><!-- End .col-md-4 -->
-                                                    </div><!-- End .row -->
-                                                </div><!-- End .menu-col -->
-                                            </div><!-- End .megamenu -->
-                                        </li>
-                                        <li class="megamenu-container">
-                                            <a class="sf-with-ul" href="{{ route('clothing.index') }}">Clothing</a>
-
-                                            <div class="megamenu">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-8">
-                                                        <div class="menu-col">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="menu-title">Women</div><!-- End .menu-title -->
-                                                                    <ul>
-                                                                        <li><a href="{{ route('clothing.index') }}"><strong>New Arrivals</strong></a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Best Sellers</strong></a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Trending</strong></a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Clothing</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Shoes</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Bags</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Accessories</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Jewlery & Watches</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Sale</strong></a></li>
-                                                                    </ul>
-                                                                </div><!-- End .col-md-6 -->
-
-                                                                <div class="col-md-6">
-                                                                    <div class="menu-title">Men</div><!-- End .menu-title -->
-                                                                    <ul>
-                                                                        <li><a href="{{ route('clothing.index') }}"><strong>New Arrivals</strong></a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Best Sellers</strong></a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}"><strong>Trending</strong></a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Clothing</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Shoes</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Bags</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Accessories</a></li>
-                                                                        <li><a href="{{ route('clothing.index') }}">Jewlery & Watches</a></li>
-                                                                    </ul>
-                                                                </div><!-- End .col-md-6 -->
-                                                            </div><!-- End .row -->
-                                                        </div><!-- End .menu-col -->
-                                                    </div><!-- End .col-md-8 -->
-
-                                                    <div class="col-md-4">
-                                                        <div class="banner banner-overlay">
-                                                            <a href="category.html" class="banner banner-menu">
-                                                                <img src="{{ asset('images/demos/demo-13/menu/banner-3.jpg') }}" alt="Banner">
-                                                            </a>
-                                                        </div><!-- End .banner banner-overlay -->
-                                                    </div><!-- End .col-md-4 -->
-                                                </div><!-- End .row -->
-
-                                                <div class="menu-col menu-brands">
-                                                    <div class="row">
-                                                        <div class="col-lg-2">
-                                                            <a href="#" class="brand">
-                                                                <img src="{{ asset('images/brands/1.png') }}" alt="Brand Name">
-                                                            </a>
-                                                        </div><!-- End .col-lg-2 -->
-
-                                                        <div class="col-lg-2">
-                                                            <a href="#" class="brand">
-                                                                <img src="{{ asset('images/brands/2.png') }}" alt="Brand Name">
-                                                            </a>
-                                                        </div><!-- End .col-lg-2 -->
-
-                                                        <div class="col-lg-2">
-                                                            <a href="#" class="brand">
-                                                                <img src="{{ asset('images/brands/3.png') }}" alt="Brand Name">
-                                                            </a>
-                                                        </div><!-- End .col-lg-2 -->
-
-                                                        <div class="col-lg-2">
-                                                            <a href="#" class="brand">
-                                                                <img src="{{ asset('images/brands/4.png') }}" alt="Brand Name">
-                                                            </a>
-                                                        </div><!-- End .col-lg-2 -->
-
-                                                        <div class="col-lg-2">
-                                                            <a href="#" class="brand">
-                                                                <img src="{{ asset('images/brands/5.png') }}" alt="Brand Name">
-                                                            </a>
-                                                        </div><!-- End .col-lg-2 -->
-
-                                                        <div class="col-lg-2">
-                                                            <a href="#" class="brand">
-                                                                <img src="{{ asset('images/brands/6.png') }}" alt="Brand Name">
-                                                            </a>
-                                                        </div><!-- End .col-lg-2 -->
-                                                    </div><!-- End .row -->
-                                                </div><!-- End .menu-brands -->
-                                            </div><!-- End .megamenu -->
-                                        </li>
-                                        <li><a href="{{ route('appliances.index') }}">Home Appliances</a></li>
-                                        <li><a href="{{ route('healthy.index') }}">Healthy & Beauty</a></li>
-                                        <li><a href="{{ route('foot_wear.index') }}">Shoes & Boots</a></li>
-                                        <li><a href="{{ route('travel.index') }}">Travel & Outdoor</a></li>
-                                        <li><a href="{{ route('phones.index') }}">Smart Phones</a></li>
-                                        <li><a href="{{ route('audios.index') }}">TV & Audio</a></li>
-                                        <li><a href="#">Gift Ideas</a></li>
-                                    </ul><!-- End .menu-vertical -->
-                                </nav><!-- End .side-nav -->
+                                        @endforeach
+                                        @endif
+                                    </ul>
+                                </nav>
                             </div>
-                        </div><!-- End .category-dropdown -->
-                    </div><!-- End .col-lg-3 -->
+                        </div>
+                    </div>
+
                     <div class="header-center">
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
@@ -528,10 +308,10 @@
                                                             <li><a href="category-list.html">Shop List</a></li>
                                                             <li><a href="category-2cols.html">Shop Grid 2 Columns</a></li>
                                                         </ul>
-                                                    </div><!-- End .col-md-6 -->
-                                                </div><!-- End .row -->
-                                            </div><!-- End .menu-col -->
-                                        </div><!-- End .col-md-8 -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="col-md-4">
                                             <div class="banner banner-overlay">
@@ -542,9 +322,9 @@
                                                         <div class="banner-title text-white">Last <br>Chance<br><span><strong>Sale</strong></span></div><!-- End .banner-title -->
                                                     </div><!-- End .banner-content -->
                                                 </a>
-                                            </div><!-- End .banner banner-overlay -->
-                                        </div><!-- End .col-md-4 -->
-                                    </div><!-- End .row -->
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div><!-- End .megamenu megamenu-md -->
                                 </li>
                                 <li>
@@ -554,7 +334,7 @@
                                         <div class="row no-gutters">
                                             <div class="col-md-6">
                                                 <div class="menu-col">
-                                                    <div class="menu-title">Product Details</div><!-- End .menu-title -->
+                                                    <div class="menu-title">Product Details</div>
                                                     <ul>
                                                         <li><a href="product.html">Default</a></li>
                                                         <li><a href="product-centered.html">Centered</a></li>
@@ -565,8 +345,8 @@
                                                         <li><a href="product-fullwidth.html">Full Width</a></li>
                                                         <li><a href="product-masonry.html">Masonry Sticky Info</a></li>
                                                     </ul>
-                                                </div><!-- End .menu-col -->
-                                            </div><!-- End .col-md-6 -->
+                                                </div>
+                                            </div>
 
                                             <div class="col-md-6">
                                                 <div class="banner banner-overlay">
@@ -577,9 +357,9 @@
                                                             <div class="banner-title text-white">New Trends<br><span><strong>spring 2019</strong></span></div><!-- End .banner-title -->
                                                         </div><!-- End .banner-content -->
                                                     </a>
-                                                </div><!-- End .banner -->
-                                            </div><!-- End .col-md-6 -->
-                                        </div><!-- End .row -->
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div><!-- End .megamenu megamenu-sm -->
                                 </li>
                                 <li>
