@@ -14,6 +14,10 @@
                 <label class="col-md-8">{{$category_type->name }}</label>
               </div>
               <div class="row">
+                <label class="col-md-4">Type</label>
+                <label class="col-md-8">{{$category_type->category->name }}</label>
+              </div>
+              <div class="row">
                 <label class="col-md-4">Description</label>
                 <label class="col-md-8">{{$category_type->description }}</label>
               </div>

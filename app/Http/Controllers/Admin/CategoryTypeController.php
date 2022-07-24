@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CategoryType;
+use App\Models\ProductCategory;
 use App\Models\ProductImage;
 
 class CategoryTypeController extends Controller
@@ -24,7 +25,7 @@ class CategoryTypeController extends Controller
     }
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -40,14 +41,14 @@ class CategoryTypeController extends Controller
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function show($id)
     {
 
-        $category_type = CategoryType::findOrfail($id);
+        $category_type = CategoryType::with('category')->findOrfail($id);
 
         return view('admin.categories.types.show', [
             'category_type' => $category_type,
@@ -56,7 +57,7 @@ class CategoryTypeController extends Controller
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -65,7 +66,7 @@ class CategoryTypeController extends Controller
 
         $category = CategoryType::findOrfail($id);
 
-        return view('admin.categories.edit', [
+        return view('admin.category_types.edit', [
             'category' => $category,
         ]);
     }
@@ -73,7 +74,7 @@ class CategoryTypeController extends Controller
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -91,38 +92,45 @@ class CategoryTypeController extends Controller
 
         flash($category->name." updated")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function create()
     {
 
-        return view('admin.categories.create');
+        $categories = ProductCategory::get();
+
+        return view('admin.categories.types.create',[
+            'categories' => $categories
+        ]);
     }
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function store(Request $request)
     {
 
-        $category = new CategoryType();
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->save();
+        $type = new CategoryType();
+        $type->name = $request->name;
+        $type->category_id = $request->category;
+        $type->description = $request->description;
+        $type->created_at = date('Y-m-d H:i:s');
+        $type->updated_at = date('Y-m-d H:i:s');
+        $type->save();
 
-        flash($category->name." registered")->success();
+        flash($type->name." registered")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 
       /**
@@ -135,7 +143,7 @@ class CategoryTypeController extends Controller
 
         $category = CategoryType::findOrfail($id);
 
-        return view('admin.categories.image', [
+        return view('admin.categories.types.image', [
             'category' => $category,
         ]);
     }
@@ -159,7 +167,7 @@ class CategoryTypeController extends Controller
 
         flash($category->name." photos uploaded")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 
         /**
@@ -181,6 +189,6 @@ class CategoryTypeController extends Controller
 
         flash('Category has been deleted.')->error()->important();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 }
