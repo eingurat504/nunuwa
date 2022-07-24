@@ -165,6 +165,12 @@
     <li class="menu-header small text-uppercase"><span class="menu-header-text">PRODUCTs</span></li>
     <!-- Forms -->
     <li class="menu-item">
+      <a href="{{ route('admin.category_types.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-detail"></i>
+        <div data-i18n="Form Elements">Category Type</div>
+      </a>
+    </li>
+    <li class="menu-item">
       <a href="{{ route('admin.categories.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-detail"></i>
         <div data-i18n="Form Elements">Category</div>

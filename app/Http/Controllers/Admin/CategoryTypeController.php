@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\CategoryType;
 use App\Models\ProductCategory;
 use App\Models\ProductImage;
 
@@ -15,7 +16,6 @@ class CategoryTypeController extends Controller
      * Create a new controller instance.
      *
      * @return void
-     https://www.codermen.com/how-to-make-multi-auth-in-laravel-8/
      */
     public function __construct()
     {
@@ -25,65 +25,66 @@ class CategoryTypeController extends Controller
     }
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
 
-        $categories = ProductCategory::get();
+        $category_types = CategoryType::get();
 
-        return view('admin.category.index', [
-            'categories' => $categories,
+        return view('admin.categories.types.index', [
+            'category_types' => $category_types,
         ]);
     }
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function show($id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category_type = CategoryType::with('category')->findOrfail($id);
 
-        return view('admin.category.show', [
-            'category' => $category,
+        return view('admin.categories.types.show', [
+            'category_type' => $category_type,
         ]);
     }
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function edit($id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $type = CategoryType::findOrfail($id);
 
-        return view('admin.category.edit', [
-            'category' => $category,
+        $categories = ProductCategory::get();
+
+        return view('admin.categories.types.edit', [
+            'type' => $type,
+            'categories' => $categories,
         ]);
     }
 
-
-
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function update(Request $request, $id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = CategoryType::findOrfail($id);
 
-        ProductCategory::where('id', $category->id)
+        CategoryType::where('id', $category->id)
             ->update([
                 'name' => $request->input('name', $category->name),
                 'description' => $request->input('description', $category->description),
@@ -92,38 +93,45 @@ class CategoryTypeController extends Controller
 
         flash($category->name." updated")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function create()
     {
 
-        return view('admin.category.create');
+        $categories = ProductCategory::get();
+
+        return view('admin.categories.types.create',[
+            'categories' => $categories
+        ]);
     }
 
 
     /**
-     * Show product categories.
+     * Show product category_types.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function store(Request $request)
     {
 
-        $category = new ProductCategory();
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->save();
+        $type = new CategoryType();
+        $type->name = $request->name;
+        $type->category_id = $request->category;
+        $type->description = $request->description;
+        $type->created_at = date('Y-m-d H:i:s');
+        $type->updated_at = date('Y-m-d H:i:s');
+        $type->save();
 
-        flash($category->name." registered")->success();
+        flash($type->name." registered")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 
       /**
@@ -134,9 +142,9 @@ class CategoryTypeController extends Controller
     public function attachedImages(Request $request, $id)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = CategoryType::findOrfail($id);
 
-        return view('admin.category.image', [
+        return view('admin.categories.types.image', [
             'category' => $category,
         ]);
     }
@@ -149,9 +157,9 @@ class CategoryTypeController extends Controller
     public function attachImages(Request $request, $categoryId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = CategoryType::findOrfail($id);
 
-        ProductCategory::where('id', $category->id)
+        CategoryType::where('id', $category->id)
             ->update([
                 'name' => $request->input('name', $category->name),
                 // 'description' => $request->input('description', $category->description),
@@ -160,7 +168,7 @@ class CategoryTypeController extends Controller
 
         flash($category->name." photos uploaded")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 
         /**
@@ -174,14 +182,14 @@ class CategoryTypeController extends Controller
      */
     public function destroy($categoryId)
     {
-        // $this->authorize('delete', [ProductCategory::class, $productId]);
+        // $this->authorize('delete', [CategoryType::class, $productId]);
 
-        $category = ProductCategory::findOrFail($categoryId);
+        $category = CategoryType::findOrFail($categoryId);
 
         $category->forceDelete();
 
         flash('Category has been deleted.')->error()->important();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category_types.index');
     }
 }

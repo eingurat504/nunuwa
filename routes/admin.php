@@ -42,6 +42,18 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::post('/{category}/attach','CategoryController@attachImages')->name('attach');
     });
 
+        // Category
+        Route::group(['prefix' => 'category_type', 'as' => 'category_types.'], function () {
+            Route::get('/', 'CategoryTypeController@index')->name('index');
+            Route::get('/create','CategoryTypeController@create')->name('create');
+            Route::post('/store','CategoryTypeController@store')->name('store');
+            Route::get('/{category_type}','CategoryTypeController@show')->name('show');
+            Route::get('/{category_type}/edit','CategoryTypeController@edit')->name('edit');
+            Route::put('/{category_type}/update','CategoryTypeController@update')->name('update');
+            Route::get('/{category_type}/attached_images','CategoryTypeController@attachedImages')->name('attached');
+            Route::post('/{category_type}/attach','CategoryTypeController@attachImages')->name('attach');
+        });
+
     // Product
     Route::group(['prefix' => 'product', 'as' => 'products.'], function () {
         Route::get('/', 'ProductController@index')->name('index');
