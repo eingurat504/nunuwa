@@ -64,14 +64,15 @@ class CategoryTypeController extends Controller
     public function edit($id)
     {
 
-        $category = CategoryType::findOrfail($id);
+        $type = CategoryType::findOrfail($id);
 
-        return view('admin.category_types.edit', [
-            'category' => $category,
+        $categories = ProductCategory::get();
+
+        return view('admin.categories.types.edit', [
+            'type' => $type,
+            'categories' => $categories,
         ]);
     }
-
-
 
     /**
      * Show product category_types.
