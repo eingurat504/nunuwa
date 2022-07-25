@@ -32,7 +32,7 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = ProductCategory::get();
+        $categories = ProductCategory::with('types')->get();
 
         return view('admin.categories.index', [
             'categories' => $categories,
