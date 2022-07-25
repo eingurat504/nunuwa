@@ -3,18 +3,18 @@
 @section('content')
 <div class="page-header text-center" style="background-image: url('{{ asset('images/page-header-bg.jpg') }}')">
     <div class="container">
-        <h1 class="page-title">Electronics<span>Shop</span></h1>
-    </div><!-- End .container -->
-</div><!-- End .page-header -->
+        <h1 class="page-title">{{ $category->name }}<span>Shop</span></h1>
+    </div>
+</div>
 <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $category->name }}</li>
         </ol>
-    </div><!-- End .container -->
-</nav><!-- End .breadcrumb-nav -->
+    </div>
+</nav>
 
 <div class="page-content">
     <div class="container">
@@ -87,11 +87,11 @@
                 <div class="products mb-3">
                     <div class="row justify-content-center">
 
-                        @foreach($categories as $electronic)
+                        @foreach($products as $product)
                             <div class="col-6 col-md-4 col-lg-4">
                                 <div class="product product-7 text-center">
                                     <figure class="product-media">
-                                        <a href="{{ route('products.show', $electronic->id) }}">
+                                        <a href="{{ route('products.show', $product->id) }}">
                                             <img src="{{ asset('images/products/product-12.jpg') }}" alt="Product image" class="product-image">
                                         </a>
 
@@ -103,9 +103,9 @@
 
                                         <form action="{{ route('cart.store') }}" method="POST">
                                             {{ csrf_field() }}
-                                            <input type="hidden" name="id" value="{{ $electronic->id }}">
-                                            <input type="hidden" name="name" value="{{ $electronic->name }}">
-                                            <input type="hidden" name="price" value="{{ $electronic->price }}">
+                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                            <input type="hidden" name="name" value="{{ $product->name }}">
+                                            <input type="hidden" name="price" value="{{ $product->price }}">
                                             <div class="product-action">
                                                 <button type="submit" class="btn-product btn-cart">add to cart</button>
                                             </div>
@@ -115,10 +115,10 @@
 
                                     <div class="product-body">
                                         <div class="product-cat">
-                                            <a href="#">{{ $electronic->category->name }}</a>
+                                            <a href="#">{{ $product->category->name }}</a>
                                         </div>
-                                        <h3 class="product-title"><a href="{{ route('products.show', $electronic->id) }}">{{ $electronic->name }}</a></h3>
-                                        <div class="product-price">${{ $electronic->price }}</div>
+                                        <h3 class="product-title"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h3>
+                                        <div class="product-price">${{ $product->price }}</div>
                                         <div class="ratings-container">
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 0%;"></div>
@@ -130,7 +130,7 @@
                             </div>
                         @endforeach
 
-                    </div><!-- End .row -->
+                    </div>
                 </div><!-- End .products -->
 
                 <nav aria-label="Page navigation">
@@ -151,7 +151,7 @@
                         </li>
                     </ul>
                 </nav>
-            </div><!-- End .col-lg-9 -->
+            </div>
             <aside class="col-lg-3 order-lg-first">
                 <div class="sidebar sidebar-shop">
                     <div class="widget widget-clean">
@@ -169,73 +169,19 @@
                         <div class="collapse show" id="widget-1">
                             <div class="widget-body">
                                 <div class="filter-items filter-items-count">
+                                    @foreach($category->types as $type) 
                                     <div class="filter-item">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="cat-1">
-                                            <label class="custom-control-label" for="cat-1">Dresses</label>
+                                            <label class="custom-control-label" for="cat-1">{{ $type->name }}</label>
                                         </div>
-                                        <span class="item-count">3</span>
+                                        <span class="item-count">{{ $type->count() }}</span>
                                     </div>
-
-                                    <div class="filter-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cat-2">
-                                            <label class="custom-control-label" for="cat-2">T-shirts</label>
-                                        </div>
-                                        <span class="item-count">0</span>
-                                    </div>
-
-                                    <div class="filter-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cat-3">
-                                            <label class="custom-control-label" for="cat-3">Bags</label>
-                                        </div>
-                                        <span class="item-count">4</span>
-                                    </div>
-
-                                    <div class="filter-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cat-4">
-                                            <label class="custom-control-label" for="cat-4">Jackets</label>
-                                        </div>
-                                        <span class="item-count">2</span>
-                                    </div>
-
-                                    <div class="filter-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cat-5">
-                                            <label class="custom-control-label" for="cat-5">Shoes</label>
-                                        </div>
-                                        <span class="item-count">2</span>
-                                    </div>
-
-                                    <div class="filter-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cat-6">
-                                            <label class="custom-control-label" for="cat-6">Jumpers</label>
-                                        </div>
-                                        <span class="item-count">1</span>
-                                    </div>
-
-                                    <div class="filter-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cat-7">
-                                            <label class="custom-control-label" for="cat-7">Jeans</label>
-                                        </div>
-                                        <span class="item-count">1</span>
-                                    </div>
-
-                                    <div class="filter-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cat-8">
-                                            <label class="custom-control-label" for="cat-8">Sportwear</label>
-                                        </div>
-                                        <span class="item-count">0</span>
-                                    </div>
-                                </div><!-- End .filter-items -->
-                            </div><!-- End .widget-body -->
-                        </div><!-- End .collapse -->
-                    </div><!-- End .widget -->
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="widget widget-collapsible">
                         <h3 class="widget-title">
@@ -255,10 +201,10 @@
                                     <a href="#" style="background: #669933;"><span class="sr-only">Color Name</span></a>
                                     <a href="#" style="background: #f2719c;"><span class="sr-only">Color Name</span></a>
                                     <a href="#" style="background: #ebebeb;"><span class="sr-only">Color Name</span></a>
-                                </div><!-- End .filter-colors -->
-                            </div><!-- End .widget-body -->
-                        </div><!-- End .collapse -->
-                    </div><!-- End .widget -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="widget widget-collapsible">
                         <h3 class="widget-title">
@@ -319,10 +265,10 @@
                                         </div>
                                     </div>
 
-                                </div><!-- End .filter-items -->
-                            </div><!-- End .widget-body -->
-                        </div><!-- End .collapse -->
-                    </div><!-- End .widget -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="widget widget-collapsible">
                         <h3 class="widget-title">
@@ -337,16 +283,16 @@
                                     <div class="filter-price-text">
                                         Price Range:
                                         <span id="filter-price-range"></span>
-                                    </div><!-- End .filter-price-text -->
+                                    </div>
 
-                                    <div id="price-slider"></div><!-- End #price-slider -->
-                                </div><!-- End .filter-price -->
-                            </div><!-- End .widget-body -->
-                        </div><!-- End .collapse -->
-                    </div><!-- End .widget -->
-                </div><!-- End .sidebar sidebar-shop -->
-            </aside><!-- End .col-lg-3 -->
-        </div><!-- End .row -->
-    </div><!-- End .container -->
-</div><!-- End .page-content -->
+                                    <div id="price-slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
 @endsection

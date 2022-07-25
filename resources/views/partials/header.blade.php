@@ -219,7 +219,7 @@
                                 @foreach(\App\Models\ProductCategory::with('types')->get() as $category) 
                                 
                                 <li class="megamenu-container">
-                                    <a class="sf-with-ul" href="{{ route('categories.show') }}">{{ $category->name }}</a>
+                                    <a class="sf-with-ul" href="{{ route('categories.show', $category->id) }}">{{ $category->name }}</a>
 
                                     <div class="megamenu">
                                         <div class="row no-gutters">
