@@ -47,5 +47,9 @@ class ProductCategory extends Model
         /**
      * Get the comments for the blog post.
      */
+
+    public function types(){
+        return $this->hasMany(CategoryType::class, 'category_id', 'id');
+    }
   
 }

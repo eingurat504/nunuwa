@@ -49,6 +49,21 @@ class CategoryController extends Controller
         ]);
     }
 
+        /**
+     * Show Electronics.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function show()
+    {
+
+        $categories = Product::with('category')->inRandomOrder()->take(9)->get();
+
+        return view('category.show', [
+            'categories' => $categories,
+        ]);
+    }
+
     /**
      * Show Appliances.
      *

@@ -32,7 +32,7 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = ProductCategory::get();
+        $categories = ProductCategory::with('types')->get();
 
         return view('admin.categories.index', [
             'categories' => $categories,
@@ -45,10 +45,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show($id)
+    public function show($productId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         return view('admin.categories.show', [
             'category' => $category,
@@ -61,10 +61,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function edit($id)
+    public function edit($productId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         return view('admin.categories.edit', [
             'category' => $category,
@@ -78,10 +78,15 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $productId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $this->validate($request, [
+            'name' => 'sometimes',
+            'description' => 'sometimes',
+        ]);
+
+        $category = ProductCategory::findOrfail($productId);
 
         ProductCategory::where('id', $category->id)
             ->update([
@@ -103,7 +108,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
         return view('admin.categories.create');
     }
 
@@ -115,6 +119,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
 
         $category = new ProductCategory();
         $category->name = $request->name;
@@ -131,10 +140,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function attachedImages(Request $request, $id)
+    public function attachedImages(Request $request, $productId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         return view('admin.categories.image', [
             'category' => $category,
@@ -149,7 +158,7 @@ class CategoryController extends Controller
     public function attachImages(Request $request, $categoryId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         ProductCategory::where('id', $category->id)
             ->update([
