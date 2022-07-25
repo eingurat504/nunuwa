@@ -54,13 +54,16 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show()
+    public function show($categoryId)
     {
 
-        $categories = Product::with('category')->inRandomOrder()->take(9)->get();
+        $category = ProductCategory::with('types')->findorfail($categoryId);
+
+        $products = Product::where('category_id', $category->id)->inRandomOrder()->take(9)->get();
 
         return view('category.show', [
-            'categories' => $categories,
+            'category' => $category,
+            'products' => $products,
         ]);
     }
 
