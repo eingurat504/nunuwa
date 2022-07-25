@@ -45,10 +45,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show($id)
+    public function show($productId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         return view('admin.categories.show', [
             'category' => $category,
@@ -61,10 +61,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function edit($id)
+    public function edit($productId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         return view('admin.categories.edit', [
             'category' => $category,
@@ -78,7 +78,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $productId)
     {
 
         $this->validate($request, [
@@ -86,7 +86,7 @@ class CategoryController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         ProductCategory::where('id', $category->id)
             ->update([
@@ -140,10 +140,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function attachedImages(Request $request, $id)
+    public function attachedImages(Request $request, $productId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         return view('admin.categories.image', [
             'category' => $category,
@@ -158,7 +158,7 @@ class CategoryController extends Controller
     public function attachImages(Request $request, $categoryId)
     {
 
-        $category = ProductCategory::findOrfail($id);
+        $category = ProductCategory::findOrfail($productId);
 
         ProductCategory::where('id', $category->id)
             ->update([
