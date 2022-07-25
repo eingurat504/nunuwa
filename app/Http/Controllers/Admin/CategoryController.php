@@ -81,6 +81,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
 
+        $this->validate($request, [
+            'name' => 'sometimes',
+            'description' => 'sometimes',
+        ]);
+
         $category = ProductCategory::findOrfail($id);
 
         ProductCategory::where('id', $category->id)
@@ -103,7 +108,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
         return view('admin.categories.create');
     }
 
@@ -115,6 +119,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
 
         $category = new ProductCategory();
         $category->name = $request->name;
