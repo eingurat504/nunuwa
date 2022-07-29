@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $categories = Product::with('category')->inRandomOrder()->take(4)->get();
+        $categories = ProductCategory::inRandomOrder()->take(4)->get();
 
         $products = Product::with('category')->inRandomOrder()->take(8)->get();
 
