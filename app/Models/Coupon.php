@@ -37,8 +37,4 @@ class Coupon extends Model
         'percent_off',
     ];
 
-
-
-
-
 }
