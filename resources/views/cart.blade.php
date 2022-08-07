@@ -85,7 +85,7 @@
                                 <form action="{{ route('coupon_code.store') }}" method="POST">
                                     @csrf
                                     <div class="input-group">
-                                        <input type="text" class="form-control" value={{ old('coupon_code') }} name="coupon_code" required placeholder="coupon code">
+                                        <input type="text" class="form-control" value="{{ old('coupon_code') }}" name="coupon_code" required placeholder="coupon code">
                                         @error('coupon_code')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
