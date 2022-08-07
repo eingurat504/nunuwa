@@ -14,7 +14,7 @@ class Coupon extends Model
      *
      * @var string
      */
-    protected $table = 'options';
+    protected $table = 'coupons';
 
 
     /**

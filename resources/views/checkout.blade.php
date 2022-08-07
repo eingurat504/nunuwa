@@ -35,7 +35,7 @@
 
             <form action="{{ route('checkout.store') }}" method="POST">
 
-            @csrf
+                @csrf
 
                 <div class="row">
                     <div class="col-lg-9">

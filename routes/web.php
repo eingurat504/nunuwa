@@ -10,6 +10,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Category\ElectronicController;
 use App\Http\Controllers\Category\FurnitureController;
 use App\Http\Controllers\Category\ClothingController;
+use App\Http\Controllers\CouponCodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,10 @@ Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
     Route::post('/', [CheckoutController::class, 'store'])->name('store');
 });
 
+
+Route::group(['prefix' => '/coupon_code', 'as' => 'coupon_code.'], function () {
+    Route::post('/', [CouponCodeController::class, 'store'])->name('store');
+});
 
 
 

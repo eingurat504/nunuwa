@@ -82,9 +82,15 @@
 
                         <div class="cart-bottom">
                             <div class="cart-discount">
-                                <form action="#">
+                                <form action="{{ route('coupon_code.store') }}" method="POST">
+                                    @csrf
                                     <div class="input-group">
-                                        <input type="text" class="form-control" required placeholder="coupon code">
+                                        <input type="text" class="form-control" value="{{ old('coupon_code') }}" name="coupon_code" required placeholder="coupon code">
+                                        @error('coupon_code')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror   
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
                                         </div>
