@@ -70,7 +70,7 @@ Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
 
 
 Route::group(['prefix' => '/coupon_code', 'as' => 'coupon_code.'], function () {
-    Route::post('/', [CouponCodeController::class, 'store'])->name('store');
+    Route::post('/', [CouponController::class, 'store'])->name('store');
 });
 
 

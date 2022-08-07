@@ -111,30 +111,19 @@
                                         <td>Subtotal:</td>
                                         <td>${{ Cart::instance('default')->subtotal() }}</td>
                                     </tr>
-                                    <tr class="summary-shipping">
+                                    <!-- <tr class="summary-shipping">
                                         <td>Shipping:</td>
                                         <td>&nbsp;</td>
-                                    </tr>
-
-                                    <!-- <tr class="summary-shipping-row">
-                                        <td>
-                                            <div class="custom-control custom-radio">
-                                                <input type="radio" id="free-shipping" name="shipping" class="custom-control-input">
-                                                <label class="custom-control-label" for="free-shipping">Free Shipping</label>
-                                            </div>
-                                        </td>
-                                        <td>$0.00</td>
-                                    </tr>
-
+                                    </tr> -->
                                     <tr class="summary-shipping-row">
                                         <td>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="standart-shipping" name="shipping" class="custom-control-input">
-                                                <label class="custom-control-label" for="standart-shipping">Standart:</label>
+                                                <input type="radio" id="express-shipping" name="shipping" class="custom-control-input">
+                                                <label class="custom-control-label" for="express-shipping">Discount ({{ session()->get('coupon')['name'] }}):</label>
                                             </div>
                                         </td>
-                                        <td>$10.00</td>
-                                    </tr> -->
+                                        <td>{{ session()->get('coupon')['discount']}}</td>
+                                    </tr>
 
                                     <tr class="summary-shipping-row">
                                         <td>
