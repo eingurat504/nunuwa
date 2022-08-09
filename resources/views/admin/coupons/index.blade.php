@@ -52,7 +52,7 @@
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('admin.coupons.edit', $coupon->id) }}"
+                        <a class="dropdown-item" href="{{ route('admin.coupon_codes.edit', $coupon->id) }}"
                           ><i class="bx bx-edit-alt me-2"></i> Edit</a
                         >
                         <a class="dropdown-item" href="javascript:void(0);"

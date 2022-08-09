@@ -6,8 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\CouponCode
-;
+use App\Models\Coupon;
 use App\Models\ProductImage;
 
 class CouponController extends Controller
@@ -30,7 +29,7 @@ class CouponController extends Controller
     public function index()
     {
 
-        $coupons = CouponCode::with('types')->get();
+        $coupons = Coupon::get();
 
         return view('admin.coupons.index', [
             'coupons' => $coupons,

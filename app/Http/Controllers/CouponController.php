@@ -7,9 +7,8 @@ use App\Models\Coupon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Support\Helper;
 
-class CouponCodeController extends Controller
+class CouponController extends Controller
 {
-
 
       /**
      * Apply Coupon Code.
@@ -37,7 +36,7 @@ class CouponCodeController extends Controller
             'discount' => $coupon_code->discount(Helper::to_float(Cart::instance('default')->subtotal()))
         ]);
 
-        return redirect()->route('checkout.index')->with('success','Successfully applied coupon code');
+        return redirect()->route('cart.index')->with('success','Coupon code has been applied');
 
     }
 
