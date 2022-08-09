@@ -45,11 +45,10 @@ class CouponController extends Controller
     public function show($productId)
     {
 
-        $category = CouponCode
-        ::findOrfail($productId);
+        $coupon = Coupon::findOrfail($productId);
 
         return view('admin.coupons.show', [
-            'category' => $category,
+            'coupon' => $coupon,
         ]);
     }
 
@@ -62,11 +61,10 @@ class CouponController extends Controller
     public function edit($productId)
     {
 
-        $category = CouponCode
-        ::findOrfail($productId);
+        $coupon = Coupon::findOrfail($productId);
 
         return view('admin.coupons.edit', [
-            'category' => $category,
+            'coupon' => $coupon,
         ]);
     }
 
@@ -85,20 +83,18 @@ class CouponController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $category = Coupon
-        ::findOrfail($productId);
+        $coupon = Coupon::findOrfail($productId);
 
-        CouponCode
-        ::where('id', $category->id)
+        Coupon::where('id', $coupon->id)
             ->update([
-                'name' => $request->input('name', $category->name),
-                'description' => $request->input('description', $category->description),
+                'code' => $request->input('code', $coupon->code),
+                'type' => $request->input('type', $coupon->type),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        flash($category->name." updated")->success();
+        flash($coupon->code." updated")->success();
 
-        return redirect()->route('admin.coupons.index');
+        return redirect()->route('admin.coupon_codes.index');
     }
 
 

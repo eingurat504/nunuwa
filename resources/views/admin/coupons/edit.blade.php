@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Orders/ {{ $order->tracking_no }}</h6>
+  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Orders/ {{ $coupon->code }}</h6>
 
   <div class="row">
       <div class="col-md-12">
@@ -25,12 +25,12 @@
           <i class="bx bx-dots-vertical-rounded"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-          <a class="dropdown-item" href="{{ route('admin.coupons.update', $coupon->id) }}">Create Product</a>
+          <a class="dropdown-item" href="{{ route('admin.coupon_codes.update', $coupon->id) }}">Create Product</a>
         </div>
       </div>
     </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('admin.coupons.update', $coupon->id) }}">
+        <form method="POST" action="{{ route('admin.coupon_codes.update', $coupon->id) }}">
                 
               {{ method_field('PUT') }}
 
@@ -38,12 +38,12 @@
 
               <div class="row">
                 <div class="mb-3 col-md-12">
-                  <label for="name" class="form-label">Tracking Number</label>
-                  <input class="form-control" type="text" id="name" name="name" value="{{ old('name', $order->tracking_no) }}"/>
+                  <label for="code" class="form-label">Coupon Code</label>
+                  <input class="form-control" type="text" id="code" name="code" value="{{ old('code', $coupon->code) }}"/>
                 </div>
               <div class="mt-2">
                 <button type="submit" class="btn btn-primary me-2">Save</button>
-                <a href="{{ route('admin.coupons.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                <a href="{{ route('admin.coupon_codes.index') }}" class="btn btn-outline-secondary">Cancel</a>
               </div>
             </form>
           
