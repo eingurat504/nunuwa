@@ -118,18 +118,20 @@ class CouponController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required',
+            'code' => 'required',
+            'type' => 'required',
+            'value' => 'required',
         ]);
 
-        $category = new Coupon();
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->save();
+        $coupon_code = new Coupon();
+        $coupon_code->code = $request->code;
+        $coupon_code->type = $request->type;
+        $coupon_code->value = $request->value;
+        $coupon_code->save();
 
-        flash($category->name." registered")->success();
+        flash($coupon_code->code." registered")->success();
 
-        return redirect()->route('admin.coupons.index');
+        return redirect()->route('admin.coupon_codes.index');
     }
 
         /**
