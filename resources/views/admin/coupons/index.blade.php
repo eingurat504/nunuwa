@@ -25,7 +25,7 @@
           <i class="bx bx-dots-vertical-rounded"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-          <a class="dropdown-item" href="{{ route('admin.products.create') }}">Create Product</a>
+          <a class="dropdown-item" href="{{ route('admin.coupon_codes.create') }}">Create Coupon Code</a>
         </div>
       </div>
     </div>

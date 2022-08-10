@@ -79,7 +79,7 @@ class CouponController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'sometimes',
+            'code' => 'sometimes',
             'description' => 'sometimes',
         ]);
 
