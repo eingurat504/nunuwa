@@ -37,13 +37,22 @@
               {{ csrf_field() }}
 
               <div class="row">
-                <div class="mb-3 col-md-12">
-                  <label for="code" class="form-label">Coupon Code</label>
-                  <input class="form-control" type="text" id="code" name="code" value="{{ old('code', $coupon->code) }}"/>
-                </div>
-              <div class="mt-2">
-                <button type="submit" class="btn btn-primary me-2">Save</button>
-                <a href="{{ route('admin.coupon_codes.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                  <div class="mb-3 col-md-12">
+                    <label for="code" class="form-label">Coupon Code</label>
+                    <input class="form-control" type="text" id="code" name="code" value="{{ old('code', $coupon->code) }}"/>
+                  </div>
+                  <div class="mb-3 col-md-12">
+                    <label for="type" class="form-label">Type</label>
+                    <input class="form-control" type="text" id="type" name="type" value="{{ old('type',  $coupon->type) }}"/>
+                  </div>
+                  <div class="mb-3 col-md-12">
+                    <label for="value" class="form-label">Value</label>
+                    <input class="form-control" type="text" id="value" name="value" value="{{ old('value',  $coupon->value) }}"/>
+                  </div>
+                  <div class="mt-2">
+                    <button type="submit" class="btn btn-primary me-2">Save</button>
+                    <a href="{{ route('admin.coupon_codes.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                  </div>
               </div>
             </form>
           
