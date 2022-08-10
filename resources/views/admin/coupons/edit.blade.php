@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Orders/ {{ $coupon->code }}</h6>
+  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Coupon Codes/ {{ $coupon->code }} /Update</h6>
 
   <div class="row">
       <div class="col-md-12">
@@ -12,22 +12,7 @@
   <div class="col-md-6">
   <div class="card">
     <div class="card-header d-flex align-items-center justify-content-between">
-      <h5 class="card-title m-0 me-2">Orders</h5>
-      <div class="dropdown">
-        <button
-          class="btn p-0"
-          type="button"
-          id="transactionID"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <i class="bx bx-dots-vertical-rounded"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-          <a class="dropdown-item" href="{{ route('admin.coupon_codes.update', $coupon->id) }}">Create Product</a>
-        </div>
-      </div>
+      <h5 class="card-title m-0 me-2">Coupon Codes</h5>
     </div>
     <div class="card-body">
         <form method="POST" action="{{ route('admin.coupon_codes.update', $coupon->id) }}">
