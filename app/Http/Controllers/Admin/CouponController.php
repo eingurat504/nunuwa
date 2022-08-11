@@ -89,6 +89,9 @@ class CouponController extends Controller
             ->update([
                 'code' => $request->input('code', $coupon->code),
                 'type' => $request->input('type', $coupon->type),
+                'value' => $request->input('value', $coupon->value),
+                'expires_at' => $request->input('expires_at', $coupon->expires_at),
+                'usable_times' => $request->input('usable_times', $coupon->usable_times),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
@@ -121,12 +124,18 @@ class CouponController extends Controller
             'code' => 'required',
             'type' => 'required',
             'value' => 'required',
+            'percent_off' => 'required',
+            'expires_at' => 'required',
+            'usable_times' => 'required|integer',
         ]);
 
         $coupon_code = new Coupon();
         $coupon_code->code = $request->code;
         $coupon_code->type = $request->type;
         $coupon_code->value = $request->value;
+        $coupon_code->percent_off = $request->percent_off;
+        $coupon_code->expires_at = $request->expires_at;
+        $coupon_code->usable_times = $request->usable_times;
         $coupon_code->save();
 
         flash($coupon_code->code." registered")->success();
