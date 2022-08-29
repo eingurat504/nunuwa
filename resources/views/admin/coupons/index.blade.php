@@ -35,6 +35,11 @@
               <thead>
                 <tr>
                   <th>Code</th>
+                  <td>Type</td>
+                  <td>Value</td>
+                  <td>% off</td>
+                  <td>Expiry Date</td>
+                  <td>Usable times</td>
                   <td>created At</td>
                   <td>Updated At</td>
                   <th class="text-center">Actions</th>
@@ -44,6 +49,11 @@
                 @foreach($coupons as $coupon)
                 <tr>
                   <td>{{ $coupon->code }}</td>
+                  <td>{{ $coupon->type }}</td>
+                  <td>{{ $coupon->value }}</td>
+                  <td>{{ $coupon->percent_off }}</td>
+                  <td>{{ $coupon->expires_at }}</td>
+                  <td>{{ $coupon->usable_times }}</td>
                   <td>{{ $coupon->created_at }}</td>
                   <td>{{ $coupon->updated_at }}</td>
                   <td class="text-center">
