@@ -269,39 +269,10 @@
                             <a href="{{ route('home.index') }}">Home</a>
                         </li>
                         <li>
-                            <a href="category.html" class="sf-with-ul">Shop</a>
-
-                            <div class="megamenu megamenu-md">
-                            <div class="row no-gutters">
-                                <div class="col-md-8">
-                                    <div class="menu-col">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <ul>
-                                                    <li><a href="category-list.html">Shop List</a></li>
-                                                    <li><a href="category-2cols.html">Shop Grid 2 Columns</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="banner banner-overlay">
-                                        <a href="category.html" class="banner banner-menu">
-                                            <img src="assets/images/menu/banner-1.jpg" alt="Banner">
-
-                                            <div class="banner-content banner-content-top">
-                                                <div class="banner-title text-white">Last <br>Chance<br><span><strong>Sale</strong></span></div><!-- End .banner-title -->
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="#" class="sf-with-ul">Shop</a>
                         </li>
                         <li>
-                            <a href="product.html" class="sf-with-ul">Product</a>
+                            <a href="#" class="sf-with-ul">Product</a>
 
                             <div class="megamenu megamenu-sm">
                                 <div class="row no-gutters">
@@ -311,12 +282,6 @@
                                             <ul>
                                                 <li><a href="product.html">Default</a></li>
                                                 <li><a href="product-centered.html">Centered</a></li>
-                                                <li><a href="product-extended.html"><span>Extended Info<span class="tip tip-new">New</span></span></a></li>
-                                                <li><a href="product-gallery.html">Gallery</a></li>
-                                                <li><a href="product-sticky.html">Sticky Info</a></li>
-                                                <li><a href="product-sidebar.html">Boxed With Sidebar</a></li>
-                                                <li><a href="product-fullwidth.html">Full Width</a></li>
-                                                <li><a href="product-masonry.html">Masonry Sticky Info</a></li>
                                             </ul>
                                         </div>
                                     </div>
