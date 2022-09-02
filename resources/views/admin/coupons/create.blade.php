@@ -56,10 +56,6 @@
                     <label for="usable_times" class="form-label">Usable times</label>
                     <input class="form-control" type="number" id="usable_times" name="usable_times" value="{{ old('usable_times') }}"/>
                   </div>
-                  <div class="mb-3 col-md-12">
-                    <label for="percent_off" class="form-label">Percent Off</label>
-                    <input class="form-control" type="text" id="percent_off" name="percent_off" value="{{ old('percent_off') }}"/>
-                  </div>
                   <div class="mt-2">
                     <button type="submit" class="btn btn-primary me-2">Save</button>
                     <a href="{{ route('admin.coupon_codes.index') }}" class="btn btn-outline-secondary">Cancel</a>
