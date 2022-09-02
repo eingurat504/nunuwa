@@ -24,9 +24,6 @@
         >
           <i class="bx bx-dots-vertical-rounded"></i>
         </button>
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-          <a class="dropdown-item" href="{{ route('admin.products.create') }}">Create Product</a>
-        </div>
       </div>
     </div>
     <div class="card-body">
