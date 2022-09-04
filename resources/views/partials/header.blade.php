@@ -85,21 +85,10 @@
                         <div class="header-search-wrapper search-wrapper-wide">
                             <div class="select-custom">
                                 <select id="cat" name="cat">
-                                    <option value="">All Departments</option>
-                                    <option value="1">Fashion</option>
-                                    <option value="2">- Women</option>
-                                    <option value="3">- Men</option>
-                                    <option value="4">- Jewellery</option>
-                                    <option value="5">- Kids Fashion</option>
-                                    <option value="6">Electronics</option>
-                                    <option value="7">- Smart TVs</option>
-                                    <option value="8">- Cameras</option>
-                                    <option value="9">- Games</option>
-                                    <option value="10">Home &amp; Garden</option>
-                                    <option value="11">Motors</option>
-                                    <option value="12">- Cars and Trucks</option>
-                                    <option value="15">- Boats</option>
-                                    <option value="16">- Auto Tools &amp; Supplies</option>
+                                    <option value="">All Categories</option>
+                                    @foreach(\App\Models\ProductCategory::get() as $category)  
+                                        <option value="{{ $category->id }}">{{ $category-> name }}</option>
+                                    @endforeach
                                 </select>
                             </div><!-- End .select-custom -->
                             <label for="q" class="sr-only">Search</label>
@@ -374,17 +363,6 @@
                                 <li><a href="elements-products.html">Products</a></li>
                                 <li><a href="elements-typography.html">Typography</a></li>
                                 <li><a href="elements-titles.html">Titles</a></li>
-                                <li><a href="elements-banners.html">Banners</a></li>
-                                <li><a href="elements-product-category.html">Product Category</a></li>
-                                <li><a href="elements-video-banners.html">Video Banners</a></li>
-                                <li><a href="elements-buttons.html">Buttons</a></li>
-                                <li><a href="elements-accordions.html">Accordions</a></li>
-                                <li><a href="elements-tabs.html">Tabs</a></li>
-                                <li><a href="elements-testimonials.html">Testimonials</a></li>
-                                <li><a href="elements-blog-posts.html">Blog Posts</a></li>
-                                <li><a href="elements-portfolio.html">Portfolio</a></li>
-                                <li><a href="elements-cta.html">Call to Action</a></li>
-                                <li><a href="elements-icon-boxes.html">Icon Boxes</a></li>
                             </ul>
                         </li>
                     </ul>
