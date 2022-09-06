@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Support\Helper;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
+use App\Payments\StripeBroker;
 
 class CheckoutController extends Controller
 {
