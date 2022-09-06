@@ -273,6 +273,7 @@
                                 <span class="btn-text">Place Order</span>
                                 <span class="btn-hover-text">Proceed to Checkout</span>
                             </button>
+
                         </div><!-- End .summary -->
                     </aside><!-- End .col-lg-3 -->
                 </div>
