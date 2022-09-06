@@ -59,7 +59,7 @@ class CheckoutController extends Controller
             'billing_address_1' => 'required',
             'billing_address_2' => 'nullable',
             'instructions' => 'nullable',
-            // 'payment_gateway' => 'required|in:COD,PAYPAL,STRIPE,MTN-MOMO',
+            'payment_gateway' => 'required|in:COD,PAYPAL,STRIPE,MTN-MOMO',
         ]);
 
         $order = new Order();
@@ -94,6 +94,10 @@ class CheckoutController extends Controller
         });
 
         $order->products()->attach($products);
+
+        if ($request->payment_gateway == 'STRIPE') {
+            return (new StripeBroker())->process($order, $request->all());
+        }
         
         flash($order->tracking_no." order processing")->success();
 
