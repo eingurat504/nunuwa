@@ -33,6 +33,7 @@
                 <tr>
                   <th>Order Date</th>
                   <td>Tracking No</td>
+                  <td>Promo code</td>
                   <td>User</td>
                   <th>Email Address</th>
                   <th>Billing Address</th>
@@ -46,6 +47,7 @@
                 <tr>
                   <td>{{ $order->order_date }}</td>
                   <td>{{ $order->tracking_no }}</td>
+                  <td>{{ $order->promo_code }}</td>
                   <td>{{ $order->user->name }}</td>
                   <td>{{ $order->email }}</td>
                   <td>{{ $order->billing_address_1 }}</td>
