@@ -31,8 +31,8 @@
             <table id="tbl_orders" class="table table-striped">
               <thead>
                 <tr>
-                  <th>Order Date</th>
                   <td>Tracking No</td>
+                  <th>Order Date</th>
                   <td>Promo code</td>
                   <td>User</td>
                   <th>Email Address</th>
@@ -45,8 +45,8 @@
               <tbody class="table-border-bottom-0">
                 @foreach($orders as $order)
                 <tr>
+                  <td><a href="{{ route('admin.orders.show', $order->id) }}">{{ $order->tracking_no }}</a></td>
                   <td>{{ $order->order_date }}</td>
-                  <td>{{ $order->tracking_no }}</td>
                   <td>{{ $order->promo_code }}</td>
                   <td>{{ $order->user->name }}</td>
                   <td>{{ $order->email }}</td>
