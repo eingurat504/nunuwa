@@ -33,7 +33,9 @@
                 <tr>
                   <th>Order Date</th>
                   <td>Tracking No</td>
+                  <td>User</td>
                   <th>Email Address</th>
+                  <th>Billing Address</th>
                   <th>Status</th>
                   <th>Total</th>
                   <th class="text-center">Actions</th>
@@ -44,7 +46,9 @@
                 <tr>
                   <td>{{ $order->order_date }}</td>
                   <td>{{ $order->tracking_no }}</td>
-                  <td>{{ $order->billing_phone }}</td>
+                  <td>{{ $order->user->name }}</td>
+                  <td>{{ $order->email }}</td>
+                  <td>{{ $order->billing_address_1 }}</td>
                   <td>{{ $order->status }}</td>
                   <td>{{ $order->total }}</td>
                   <td class="text-center">
