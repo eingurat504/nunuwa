@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('billing_email');
             $table->string('billing_phone');
             $table->string('billing_company')->nullable();
+            $table->string('promo_code')->nullable();
             $table->string('billing_country');
             $table->string('billing_city');
             $table->string('billing_state');
