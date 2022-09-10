@@ -28,7 +28,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive text-nowrap">
-            <table id="tbl_orders" class="table table-striped">
+            <table id="tbl_products" class="table table-striped">
               <thead>
                 <tr>
                   <td>Tracking No</td>
