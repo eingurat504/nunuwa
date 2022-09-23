@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Wishlist;
 
 class WishlistController extends Controller
 {
@@ -23,9 +24,13 @@ class WishlistController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function showWishlist()
-    {
+    {  
 
-        return view('wishlist');
+        $wishlists = Wishlist::get();
+
+        return view('wishlist',[
+            'wishlists' => $wishlists
+        ]);
     }
 
 }
