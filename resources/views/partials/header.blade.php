@@ -263,26 +263,13 @@
                         <li>
                             <a href="#" class="sf-with-ul">Product</a>
 
-                            <div class="megamenu megamenu-sm">
-                                <div class="row no-gutters">
-                                    <div class="col-md-6">
-                                        <div class="menu-col">
-                                            <div class="menu-title">Product Details</div>
-                                            <ul>
-                                                <li><a href="product.html">Default</a></li>
-                                                <li><a href="product-centered.html">Centered</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End .megamenu megamenu-sm -->
                         </li>
                         <li>
                             <a href="#" class="sf-with-ul">Pages</a>
 
                             <ul>
                                 <li>
-                                    <a href="about.html" class="sf-with-ul">About</a>
+                                    <a href="about" class="sf-with-ul">About</a>
                                 </li>
                                 <li>
                                     <a href="#" class="sf-with-ul">Contact</a>
