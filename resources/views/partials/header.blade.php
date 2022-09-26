@@ -262,34 +262,12 @@
                         </li>
                         <li>
                             <a href="#" class="sf-with-ul">Product</a>
-
                         </li>
                         <li>
                             <a href="#" class="sf-with-ul">Pages</a>
-
-                            <ul>
-                                <li>
-                                    <a href="about" class="sf-with-ul">About</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="sf-with-ul">Contact</a>
-                                </li>
-                                <li>
-                                    <a href="#signin-modal" data-toggle="modal">Login</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="#" class="sf-with-ul">Blog</a>
-                        </li>
-                        <li>
-                            <a href="elements-list.html" class="sf-with-ul">Elements</a>
-
-                            <ul>
-                                <li><a href="#">Products</a></li>
-                                <li><a href="#">Typography</a></li>
-                                <li><a href="#">Titles</a></li>
-                            </ul>
                         </li>
                     </ul>
                 </nav>
