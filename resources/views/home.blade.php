@@ -10,68 +10,33 @@
                 }
             }
         }'>
-        <div class="intro-slide" style="background-image: url('{{ asset('images/demos/demo-13/slider/slide-1.png') }}')">
-            <div class="container intro-content">
-                <div class="row">
-                    <div class="col-auto offset-lg-3 intro-col">
-                        <h3 class="intro-subtitle">Trade-In Offer</h3>
-                        <h1 class="intro-title">MacBook Air <br>Latest Model
-                            <span>
-                                <sup class="font-weight-light">from</sup>
-                                <span class="text-primary">$999<sup>,99</sup></span>
-                            </span>
-                        </h1>
+        @foreach($products as $product) 
+            <div class="intro-slide" style="background-image: url('{{ asset('images/demos/demo-13/slider/slide-1.png') }}')">
+                <div class="container intro-content">
+                    <div class="row">
+                        <div class="col-auto offset-lg-3 intro-col">
+                            <h3 class="intro-subtitle">Trade-In Offer</h3>
+                            <h1 class="intro-title">{{ $product->name }} <br>Latest Model
+                                <span>
+                                    <sup class="font-weight-light">from</sup>
+                                    <span class="text-primary">{{ $product->price }}<sup>,99</sup></span>
+                                </span>
+                            </h1>
 
-                        <a href="category.html" class="btn btn-outline-primary-2">
-                            <span>Shop Now</span>
-                            <i class="icon-long-arrow-right"></i>
-                        </a>
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                <input type="hidden" name="name" value="{{ $product->name }}">
+                                <input type="hidden" name="price" value="{{ $product->price }}">
+                                <div class="product-action">
+                                    <button type="submit" class="btn btn-outline-primary-2">Shop Now <i class="icon-long-arrow-right"></i></button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="intro-slide" style="background-image: url('{{ asset('images/demos/demo-13/slider/slide-2.jpg') }}')">
-            <div class="container intro-content">
-                <div class="row">
-                    <div class="col-auto offset-lg-3 intro-col">
-                        <h3 class="intro-subtitle">Trevel & Outdoor</h3>
-                        <h1 class="intro-title">Original Outdoor <br>Beanbag
-                            <span>
-                                <sup class="font-weight-light line-through">$89,99</sup>
-                                <span class="text-primary">$29<sup>,99</sup></span>
-                            </span>
-                        </h1>
-
-                        <a href="category.html" class="btn btn-outline-primary-2">
-                            <span>Shop Now</span>
-                            <i class="icon-long-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="intro-slide" style="background-image: url('{{ asset('images/demos/demo-13/slider/slide-3.jpg') }}')">
-            <div class="container intro-content">
-                <div class="row">
-                    <div class="col-auto offset-lg-3 intro-col">
-                        <h3 class="intro-subtitle">Fashion Promotions</h3>
-                        <h1 class="intro-title">Tan Suede <br>Biker Jacket
-                            <span>
-                                <sup class="font-weight-light line-through">$240,00</sup>
-                                <span class="text-primary">$180<sup>,99</sup></span>
-                            </span>
-                        </h1>
-
-                        <a href="category.html" class="btn btn-outline-primary-2">
-                            <span>Shop Now</span>
-                            <i class="icon-long-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <span class="slider-loader"></span>
@@ -105,6 +70,7 @@
 
 <div class="container">
     <div class="row">
+        @foreach($products as $product) 
         <div class="col-sm-6 col-lg-3">
             <div class="banner banner-overlay">
                 <a href="#">
@@ -114,25 +80,20 @@
                 <div class="banner-content">
                     <h4 class="banner-subtitle text-white"><a href="#">Weekend Sale</a></h4><!-- End .banner-subtitle -->
                     <h3 class="banner-title text-white"><a href="#">Lighting <br>& Accessories <br><span>25% off</span></a></h3>
-                    <a href="#" class="banner-link">Shop Now <i class="icon-long-arrow-right"></i></a>
+                    <form action="{{ route('cart.store') }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <div class="product-action">
+                            <button type="submit" class="banner-link">Shop Now <i class="icon-long-arrow-right"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <div class="col-sm-6 col-lg-3 order-lg-last">
-            <div class="banner banner-overlay">
-                <a href="#">
-                    <img src="{{ asset('images/demos/demo-13/banners/banner-3.jpg') }}" alt="Banner">
-                </a>
-
-                <div class="banner-content">
-                    <h4 class="banner-subtitle text-white"><a href="#">Smart Offer</a></h4><!-- End .banner-subtitle -->
-                    <h3 class="banner-title text-white"><a href="#">Anniversary <br>Special <br><span>15% off</span></a></h3>
-                    <a href="#" class="banner-link">Shop Now <i class="icon-long-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-
+        
+        @endforeach
         <div class="col-lg-6">
             <div class="banner banner-overlay">
                 <a href="#">
