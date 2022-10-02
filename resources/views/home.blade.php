@@ -1416,7 +1416,7 @@
                     </div>
 
                     <h3 class="entry-title">
-                        <a href="#">{{ $article->title}}</a>
+                        <a href="{{ route('articles.show', $article->id) }}">{{ $article->title}}</a>
                     </h3>
 
                     <div class="entry-content">

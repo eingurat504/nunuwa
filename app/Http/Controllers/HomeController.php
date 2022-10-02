@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\Product;
+use App\Models\Article;
 
 class HomeController extends Controller
 {
@@ -40,7 +41,10 @@ class HomeController extends Controller
 
         $furnitures = Product::with('category')->inRandomOrder()->take(8)->get();
 
+        $articles = Article::inRandomOrder()->take(8)->get();
+
         return view('home', [
+            'articles' => $articles,
             'categories' => $categories,
             'products' => $products,
             'cookings' => $categories,
