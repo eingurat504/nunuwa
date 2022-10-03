@@ -213,5 +213,13 @@
       </a>
     </li>
 
+    <li class="menu-item">
+      <a href="{{ route('admin.articles.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-detail"></i>
+        <div data-i18n="Form Elements">Articles</div>
+      </a>
+    </li>
+
+
   </ul>
 </aside>
