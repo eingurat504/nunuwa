@@ -108,7 +108,17 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::put('/{group}/update','CouponController@update')->name('update');
         Route::delete('/{group}/delete','CouponController@delete')->name('delete');
     });
-    
+
+      // Article
+      Route::group(['prefix' => 'article', 'as' => 'articles.'], function () {
+        Route::get('/', 'ArticleController@index')->name('index');
+        Route::get('/create','ArticleController@create')->name('create');
+        Route::post('/store','ArticleController@store')->name('store');
+        Route::get('/{article}','ArticleController@show')->name('show');
+        Route::get('/{article}/edit','ArticleController@edit')->name('edit');
+        Route::put('/{article}/update','ArticleController@update')->name('update');
+        Route::delete('/{article}/delete','ArticleController@delete')->name('delete');
+    });
     
 });
 
