@@ -44,13 +44,13 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show($productId)
+    public function show($articleId)
     {
 
-        $category = ProductCategory::findOrfail($productId);
+        $article = Article::findOrfail($articleId);
 
-        return view('admin.categories.show', [
-            'category' => $category,
+        return view('admin.articles.show', [
+            'article' => $article,
         ]);
     }
 
@@ -60,10 +60,10 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function edit($productId)
+    public function edit($articleId)
     {
 
-        $category = ProductCategory::findOrfail($productId);
+        $category = ProductCategory::findOrfail($articleId);
 
         return view('admin.categories.edit', [
             'category' => $category,
@@ -77,7 +77,7 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function update(Request $request, $productId)
+    public function update(Request $request, $articleId)
     {
 
         $this->validate($request, [
@@ -85,7 +85,7 @@ class ArticleController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $category = ProductCategory::findOrfail($productId);
+        $category = ProductCategory::findOrfail($articleId);
 
         ProductCategory::where('id', $category->id)
             ->update([
@@ -124,21 +124,21 @@ class ArticleController extends Controller
             'description' => 'required',
         ]);
 
-        $category = new ProductCategory();
-        $category->name = $request->name;
+        $category = new Article();
+        $category->title = $request->name;
         $category->description = $request->description;
         $category->save();
 
-        flash($category->name." registered")->success();
+        flash($category->title." registered")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.articles.index');
     }
 
 
         /**
      * Remove the specified product from storage.
      *
-     * @param int $productId
+     * @param int $articleId
      *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      *
@@ -146,7 +146,7 @@ class ArticleController extends Controller
      */
     public function destroy($categoryId)
     {
-        // $this->authorize('delete', [ProductCategory::class, $productId]);
+        // $this->authorize('delete', [ProductCategory::class, $articleId]);
 
         $category = ProductCategory::findOrFail($categoryId);
 
