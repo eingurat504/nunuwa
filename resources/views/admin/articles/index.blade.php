@@ -25,7 +25,7 @@
           <i class="bx bx-dots-vertical-rounded"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-          <a class="dropdown-item" href="{{ route('admin.Articles.create') }}">Create article</a>
+          <a class="dropdown-item" href="{{ route('admin.articles.create') }}">Create article</a>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
               <tbody class="table-border-bottom-0">
                 @foreach($articles as $article)
                 <tr>
-                  <td><a href="{{ route('admin.Articles.show', $article->id) }}">{{$article->title }}</a></td>
+                  <td><a href="{{ route('admin.articles.show', $article->id) }}">{{$article->title }}</a></td>
                   <td>${{ $article->description }}</td>
                   <td>{{ $article->created_at }}</td>
                   <td>{{ $article->updated_at }}</td>
@@ -54,7 +54,7 @@
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('admin.Articles.edit', $article->id) }}"
+                        <a class="dropdown-item" href="{{ route('admin.articles.edit', $article->id) }}"
                           ><i class="bx bx-edit-alt me-2"></i> Edit</a
                         >
                         <a class="dropdown-item" href="javascript:void(0);"
