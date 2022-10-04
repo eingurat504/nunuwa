@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\ProductImage;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -106,7 +107,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.articles.create');
     }
 
 
