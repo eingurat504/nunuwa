@@ -55,6 +55,18 @@ class HomeController extends Controller
     }
 
     /**
+     * Show about us.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function showArticle($articleId)
+    {
+        $article = Article::findorfail($articleId);
+
+        return view('articles.show', $article);
+    }
+
+    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable

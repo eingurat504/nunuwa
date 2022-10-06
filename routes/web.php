@@ -73,6 +73,10 @@ Route::group(['prefix' => '/coupon_code', 'as' => 'coupon_code.'], function () {
     Route::post('/', [CouponController::class, 'store'])->name('store');
 });
 
+Route::group(['prefix' => '/article', 'as' => 'articles.'], function () {
+    Route::get('/{article}', [HomeController::class, 'showArticle'])->name('show');
+});
+
 
 
 
