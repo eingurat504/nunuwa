@@ -85,18 +85,18 @@ class ArticleController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $category = ProductCategory::findOrfail($articleId);
+        $article = Article::findOrfail($articleId);
 
-        ProductCategory::where('id', $category->id)
+        Article::where('id', $article->id)
             ->update([
-                'name' => $request->input('name', $category->name),
-                'description' => $request->input('description', $category->description),
+                'title' => $request->input('name', $article->name),
+                'description' => $request->input('description', $article->description),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        flash($category->name." updated")->success();
+        flash($article->title." updated")->success();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.articles.index');
     }
 
 
@@ -124,12 +124,12 @@ class ArticleController extends Controller
             'description' => 'required',
         ]);
 
-        $category = new Article();
-        $category->title = $request->name;
-        $category->description = $request->description;
-        $category->save();
+        $article = new Article();
+        $article->title = $request->name;
+        $article->description = $request->description;
+        $article->save();
 
-        flash($category->title." registered")->success();
+        flash($article->title." registered")->success();
 
         return redirect()->route('admin.articles.index');
     }
@@ -144,16 +144,16 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($categoryId)
+    public function destroy($articleId)
     {
         // $this->authorize('delete', [ProductCategory::class, $articleId]);
 
-        $category = ProductCategory::findOrFail($categoryId);
+        $article = Article::findOrFail($articleId);
 
-        $category->forceDelete();
+        $article->forceDelete();
 
-        flash('Category has been deleted.')->error()->important();
+        flash('Article has been deleted.')->error()->important();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.articles.index');
     }
 }
