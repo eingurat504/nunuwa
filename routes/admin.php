@@ -26,6 +26,8 @@ Route::get('/login','Auth\AuthController@getlogin')->name('admin.login.index');
 Route::post('/login', 'Auth\AuthController@login')->name('admin.login');
 Route::post('/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
+Route::pattern('category', '^\d+$');
+
 Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], function () {
     // Admin Dashboard
     Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
@@ -42,6 +44,8 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::post('/{category}/attach','CategoryController@attachImages')->name('attach');
     });
 
+        Route::pattern('category_type', '^\d+$');
+
         // Category
         Route::group(['prefix' => 'category_type', 'as' => 'category_types.'], function () {
             Route::get('/', 'CategoryTypeController@index')->name('index');
@@ -53,6 +57,8 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
             Route::get('/{category_type}/attached_images','CategoryTypeController@attachedImages')->name('attached');
             Route::post('/{category_type}/attach','CategoryTypeController@attachImages')->name('attach');
         });
+
+    Route::pattern('product', '^\d+$');
 
     // Product
     Route::group(['prefix' => 'product', 'as' => 'products.'], function () {
@@ -66,6 +72,8 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::post('/{product}/attach','ProductController@attachImages')->name('attach');
     });
 
+    Route::pattern('order', '^\d+$');
+
     // Order
     Route::group(['prefix' => 'order', 'as' => 'orders.'], function () {
         Route::get('/', 'OrderController@index')->name('index');
@@ -76,6 +84,7 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::put('/{order}/update','OrderController@update')->name('update');
     });
 
+    Route::pattern('option', '^\d+$');
        // Product options
     Route::group(['prefix' => 'product_option', 'as' => 'product_options.'], function () {
         Route::get('/', 'OptionController@index')->name('index');
@@ -86,6 +95,8 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::put('/{option}/update','OptionController@update')->name('update');
         Route::delete('/{option}/delete','OptionController@delete')->name('delete');
     });
+
+    Route::pattern('group', '^\d+$');
 
         // Product options
     Route::group(['prefix' => 'option_group', 'as' => 'option_groups.'], function () {
@@ -98,17 +109,21 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::delete('/{group}/delete','OptionGroupController@delete')->name('delete');
     });
 
+    
+    Route::pattern('code', '^\d+$');
+
     // Coupon code
     Route::group(['prefix' => 'coupon_code', 'as' => 'coupon_codes.'], function () {
         Route::get('/', 'CouponController@index')->name('index');
         Route::get('/create','CouponController@create')->name('create');
         Route::post('/store','CouponController@store')->name('store');
-        Route::get('/{group}','CouponController@show')->name('show');
-        Route::get('/{group}/edit','CouponController@edit')->name('edit');
-        Route::put('/{group}/update','CouponController@update')->name('update');
-        Route::delete('/{group}/delete','CouponController@delete')->name('delete');
+        Route::get('/{code}','CouponController@show')->name('show');
+        Route::get('/{code}/edit','CouponController@edit')->name('edit');
+        Route::put('/{code}/update','CouponController@update')->name('update');
+        Route::delete('/{code}/delete','CouponController@delete')->name('delete');
     });
 
+        Route::pattern('article', '^\d+$');
       // Article
       Route::group(['prefix' => 'article', 'as' => 'articles.'], function () {
         Route::get('/', 'ArticleController@index')->name('index');
