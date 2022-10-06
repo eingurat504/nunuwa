@@ -56,17 +56,17 @@ class ArticleController extends Controller
 
 
     /**
-     * Show product categories.
+     * Show edit product.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function edit($articleId)
     {
 
-        $category = ProductCategory::findOrfail($articleId);
+        $article = Article::findOrfail($articleId);
 
-        return view('admin.categories.edit', [
-            'category' => $category,
+        return view('admin.articles.edit', [
+            'article' => $article,
         ]);
     }
 
