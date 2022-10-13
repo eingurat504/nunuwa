@@ -51,7 +51,7 @@
         <div class="row">
             @foreach($categories as $category) 
                 <div class="col-6 col-sm-4 col-lg-2">
-                    <a href="category.html" class="cat-block">
+                    <a href="{{ route('categories.show', $category->id) }}" class="cat-block">
                         <figure>
                             <span>
                                 <img src="{{ asset('images/demos/demo-13/cats/1.jpg') }}" alt="Category image">
