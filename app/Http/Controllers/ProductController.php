@@ -27,11 +27,10 @@ class ProductController extends Controller
     public function showProducts()
     {
 
-        $products = Product::with('category:id,name')
-                        ->with('review:id,name')->get();
+        $products = Product::with('category:id,name')->get();
 
         // $reviews = ProductReview::where('product_id', $product->id)->get();
-     
+  
         return view('products.index', [
             'products' => $products
         ]);
