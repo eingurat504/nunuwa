@@ -8,18 +8,6 @@
                         <li class="breadcrumb-item"><a href="#">Articles</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ $article->title }}</li>
                     </ol>
-
-                    <nav class="product-pager ml-auto" aria-label="Product">
-                        <a class="product-pager-link product-pager-prev" href="#" aria-label="Previous" tabindex="-1">
-                            <i class="icon-angle-left"></i>
-                            <span>Prev</span>
-                        </a>
-
-                        <a class="product-pager-link product-pager-next" href="#" aria-label="Next" tabindex="-1">
-                            <span>Next</span>
-                            <i class="icon-angle-right"></i>
-                        </a>
-                    </nav><!-- End .pager-nav -->
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
 
@@ -37,24 +25,6 @@
                                                 <i class="icon-arrows"></i>
                                             </a>
                                         </figure>
-
-                                        <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#" data-image="{{ asset('images/products/single/1.jpg') }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}">
-                                                <img src="{{ asset('images/products/single/1-small.jpg') }}" alt="product side">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/2.jpg') }}" data-zoom-image="{{ asset('images/products/single/2-big.jpg') }}">
-                                                <img src="{{ asset('images/products/single/2-small.jpg') }}" alt="product cross">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/3.jpg') }}" data-zoom-image="{{ asset('images/products/single/3-big.jpg') }}">
-                                                <img src="{{ asset('images/products/single/3-small.jpg') }}" alt="product with model">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="{{ asset('images/products/single/4.jpg') }}" data-zoom-image="{{ asset('images/products/single/4-big.jpg') }}">
-                                                <img src="{{ asset('images/products/single/4-small.jpg') }}" alt="product back">
-                                            </a>
-                                        </div><!-- End .product-image-gallery -->
                                     </div>
                                 </div><!-- End .product-gallery -->
                             </div>
@@ -87,20 +57,6 @@
                                         </div><!-- End .product-nav -->
                                     </div><!-- End .details-filter-row -->
 
-                                    <div class="product-details-footer">
-                                        <div class="product-cat">
-                                            <span>Category:</span>
-                                            <a href="#">{{ $product->category->name }}</a>
-                                        </div>
-
-                                        <div class="social-icons social-icons-sm">
-                                            <span class="social-label">Share:</span>
-                                            <a href="#" class="social-icon" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
-                                            <a href="#" class="social-icon" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
-                                            <a href="#" class="social-icon" title="Instagram" target="_blank"><i class="icon-instagram"></i></a>
-                                            <a href="#" class="social-icon" title="Pinterest" target="_blank"><i class="icon-pinterest"></i></a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -117,14 +73,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="product-shipping-link" data-toggle="tab" href="#product-shipping-tab" role="tab" aria-controls="product-shipping-tab" aria-selected="false">Shipping & Returns</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">Reviews ( {{ $reviews->count() }} )</a>
-                            </li>
+                            <!--  -->
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
                                 <div class="product-desc-content">
-                                    <h3>Product Information</h3>
+                                    <h3>Article Information</h3>
                                     
                                     <p> {{ $article->description }} </p>
                                 </div>
@@ -153,39 +107,6 @@
                                     <h3>Delivery & returns</h3>
                                     <p>We deliver to over 100 countries around the world. For full details of the delivery options we offer, please view our <a href="#">Delivery information</a><br>
                                     We hope you’ll love every purchase, but if you ever need to return an item you can do so within a month of receipt. For full details of how to make a return, please view our <a href="#">Returns information</a></p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="product-review-tab" role="tabpanel" aria-labelledby="product-review-link">
-                                <div class="reviews">
-                                    <h3>Reviews ( {{ $comments->count() }} )</h3>
-                                    @foreach($comments as $comment) 
-                                        <div class="review">
-                                            <div class="row no-gutters">
-                                                <div class="col-auto">
-                                                    <h4><a href="#">{{ $comment->user_id }}</a></h4>
-                                                    <div class="ratings-container">
-                                                        <div class="ratings">
-                                                            <div class="ratings-val" style="width: 100%;"></div>
-                                                        </div>
-                                                    </div>
-                                                    <span class="review-date">{{ $comment->created_at }}</span>
-                                                </div>
-
-                                                <div class="col">
-                                                    <h4>{{ $comment->title }}</h4>
-
-                                                    <div class="review-content">
-                                                        <p> {{ $comment->remarks }} </p>
-                                                    </div>
-
-                                                    <div class="review-action">
-                                                        <a href="#"><i class="icon-thumbs-up"></i>Helpful (0)</a>
-                                                        <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
                                 </div>
                             </div>
                         </div>
