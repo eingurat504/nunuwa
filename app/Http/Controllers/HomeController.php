@@ -63,7 +63,9 @@ class HomeController extends Controller
     {
         $article = Article::findorfail($articleId);
 
-        return view('articles.show', $article);
+        return view('articles.show', [
+            'article' => $article
+        ]);
     }
 
     /**
