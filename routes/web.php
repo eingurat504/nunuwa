@@ -48,6 +48,7 @@ Route::group(['prefix' => '/category', 'as' => 'categories.'], function () {
 });
 
 Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
+    Route::get('/', [ProductController::class, 'showProducts'])->name('index');
     Route::get('/{product}', [ProductController::class, 'showProduct'])->name('show');
 });
 
