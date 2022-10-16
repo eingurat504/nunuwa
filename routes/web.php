@@ -11,6 +11,7 @@ use App\Http\Controllers\Category\ElectronicController;
 use App\Http\Controllers\Category\FurnitureController;
 use App\Http\Controllers\Category\ClothingController;
 use App\Http\Controllers\CouponCodeController;
+use App\Http\Controllers\StripePaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +78,13 @@ Route::group(['prefix' => '/coupon_code', 'as' => 'coupon_code.'], function () {
 Route::group(['prefix' => '/article', 'as' => 'articles.'], function () {
     Route::get('/{article}', [HomeController::class, 'showArticle'])->name('show');
 });
+
+Route::group(['prefix' => '/gateway', 'as' => 'gateways.'], function () {
+    Route::get('stripe', [StripePaymentController::class, 'stripe']);
+    Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
+});
+
+
 
 
 

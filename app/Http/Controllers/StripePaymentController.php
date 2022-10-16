@@ -20,6 +20,7 @@ class StripePaymentController extends Controller
   
     /**
      * success response method.
+     * https://www.itsolutionstuff.com/post/laravel-8-stripe-payment-gateway-integration-exampleexample.html
      *
      * @return \Illuminate\Http\Response
      */
