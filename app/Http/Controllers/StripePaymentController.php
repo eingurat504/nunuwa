@@ -15,7 +15,7 @@ class StripePaymentController extends Controller
      */
     public function stripe()
     {
-        return view('stripe');
+        return view('gateways.stripe');
     }
   
     /**
