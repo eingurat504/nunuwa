@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductReview;
+use App\Models\Order;
 
 class ProductController extends Controller
 {
@@ -51,9 +52,18 @@ class ProductController extends Controller
 
         $related_products = Product::with('category:id,name')
                             ->where('category_id',$product->category->id)->get();
+
+        // maximum stock available 
+        $max_products_available = $product->stock;
+
+        $orders = Order::with('products')->get();
+
+        $products_sold = $orders->products()->where('product_id', $id)->count();
      
         return view('products.show', [
             'product' => $product,
+            'products_sold' => $products_sold,
+            'max_products_available' => $max_products_available,
             'reviews' => $reviews,
             'related_products' => $related_products
         ]);
