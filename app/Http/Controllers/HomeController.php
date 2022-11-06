@@ -43,6 +43,12 @@ class HomeController extends Controller
 
         $articles = Article::inRandomOrder()->take(8)->get();
 
+        // $orders = Order::with('products')->get();
+
+        // $products_sold = $orders->products()->where('')->count();
+
+    //    dd($products);
+
         return view('home', [
             'articles' => $articles,
             'categories' => $categories,
