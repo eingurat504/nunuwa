@@ -117,8 +117,10 @@
                                             <input type="hidden" name="id" value="{{ $product->id }}">
                                             <input type="hidden" name="name" value="{{ $product->name }}">
                                             <input type="hidden" name="price" value="{{ $product->price }}">
-                                            @if($products_sold < $max_products_available){
-                                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                            @if(!empty($products_sold))
+                                                @if($products_sold < $max_products_available){
+                                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                                @endif
                                             @endif
                                         </form>
                                     </div>
@@ -275,8 +277,10 @@
                                             <input type="hidden" name="id" value="{{ $product->id }}">
                                             <input type="hidden" name="name" value="{{ $product->name }}">
                                             <input type="hidden" name="price" value="{{ $product->price }}">
-                                            @if($products_sold < $max_products_available){
-                                                <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                            @if(!empty($products_sold))
+                                                @if($products_sold < $max_products_available){
+                                                    <button type="submit" class="btn-product btn-cart">add to cart</button>
+                                                @endif
                                             @endif
                                         </form>
                                     </div>
