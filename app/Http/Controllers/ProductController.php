@@ -51,7 +51,9 @@ class ProductController extends Controller
         $reviews = ProductReview::where('product_id', $product->id)->get();
 
         $related_products = Product::with('category:id,name')
-                            ->where('category_id',$product->category->id)->get();
+                            ->where('category_id',$product->category->id)
+                            ->where('id','!=',$product->id)
+                            ->get();
 
         // maximum stock available 
         $max_products_available = $product->stock;
