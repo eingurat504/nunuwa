@@ -75,7 +75,7 @@ class OptionGroupController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
-            'description' => 'sometimes',
+            'description' => 'required',
         ]);
 
        $option_group = new OptionGroup();
@@ -125,7 +125,7 @@ class OptionGroupController extends Controller
         OptionGroup::where('id', $option_group->id)
             ->update([
                 'name' => $request->input('name', $option_group->name),
-                // 'description' => $request->input('description', $option_group->description),
+                'description' => $request->input('description', $option_group->description),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
