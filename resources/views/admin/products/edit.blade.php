@@ -29,11 +29,10 @@
 
               <div class="mb-3 col-md-12">
                 <label for="organization" class="form-label">Category</label>
-                <select class="form-control" id="category"
-                    name="category" value="{{ old('category') }}">
+                <select class="form-control" id="category" name="category">
                       <option value="">Choose category</option>
                       @foreach($categories as $category) 
-                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          <option value="{{ $category->id }}" {{ old('category', $product->category_id) == $category->id  ? 'selected' : ''}}>{{ $category->name }}</option>
                       @endforeach
                 </select>
                 @error('category')
