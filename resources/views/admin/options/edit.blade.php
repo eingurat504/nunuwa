@@ -29,10 +29,10 @@
               <div class="mb-3 col-md-12">
                 <label for="option_group" class="form-label">Group</label>
                 <select class="form-control @error('option_group') is-invalid @enderror" id="option_group"
-                    name="option_group" value="{{ old('option_group') }}">
+                    name="option_group">
                       <option value="">Choose option group</option>
                       @foreach($groups as $group) 
-                          <option value="{{ $group->id }}">{{ $group->name }}</option>
+                          <option value="{{ $group->id }}" {{ old('option_group', $product_option->option_group_id) == $group->id  ? 'selected' : ''}}>{{ $group->name }}</option>
                       @endforeach
                 </select>
                 @error('option_group')
