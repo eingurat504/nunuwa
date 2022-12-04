@@ -167,14 +167,14 @@ class ProductController extends Controller
         $product = Product::findOrfail($id);
 
         $dir = 'public/modules/products';
-        $name = $request->product_image->getClientOriginalName();
+        $name = $request->product_images->getClientOriginalName();
         $image_path = $dir . '/' . $name;
 
         if (!file_exists($dir)) {
             Storage::makeDirectory($dir);
         }
 
-        Storage::disk('local')->put($image_path, file_get_contents($request->product_image->getRealPath()));
+        Storage::disk('local')->put($image_path, file_get_contents($request->product_images->getRealPath()));
 
         if (file_exists(public_path() . '/storage/modules/products/' . $product->name)) {
             unlink(public_path() . '/storage/modules/products/' . $product->name);
