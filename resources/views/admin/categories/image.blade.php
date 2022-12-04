@@ -75,37 +75,7 @@
         <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
       </div>
     </div>
-
-    <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-      <div class="card">
-        <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-      <div class="card">
-        <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-      <div class="card">
-        <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-      <div class="card">
-        <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-      <div class="card">
-        <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-      </div>
-    </div>
-
+    
   </div>
 
 </div>
