@@ -13,6 +13,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Category</title>
 
@@ -464,8 +465,6 @@
               var fd = new FormData();
               var files = $('#product_images')[0].files;
 
-              // console.log(files);
-
               // https://makitweb.com/how-to-upload-image-file-using-ajax-and-jquery/
               // https://fellowtuts.com/php/ajax-image-upload-using-php-and-jquery/
         
@@ -484,10 +483,10 @@
                       processData: false,   
                       success: function (response) {
 
-                          console.log(response);
+                          // console.log(response);
                           // check if response has not errors; first then redirect...
 
-                          window.location = app + '/admin/product/'+ product_id +'/attached_images';
+                          window.location = app + '/admin/admin/product/'+ product_id +'/attached_images';
                           // else show error msg on modal
                       },
                       error: function (xhr) {
