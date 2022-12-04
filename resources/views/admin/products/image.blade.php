@@ -33,11 +33,7 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('admin/assets/css/demo.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
-    <script src="{{ asset('admin/assets/vendor/js/helpers.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/config.js') }}"></script>
+    <!-- <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/apex-charts/apex-charts.css') }}" /> -->
   </head>
 
   <body>
@@ -378,7 +374,7 @@
               </div>
 
               <!-- Modal -->
-              <div class="modal fade" id="productImageModal" tabindex="-1" aria-hidden="true">
+              <div  class="modal fade" id="productImageModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-fullscreen" role="document">
 
                   <form id="upload-product-images" action="" method="POST" enctype="multipart/form-data">
@@ -420,36 +416,6 @@
               </div>
 
               <div class="row">
-                <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-                  </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-                  </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-                  </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-                  </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
-                  </div>
-                </div>
-
                 <div class="col-sm-6 col-lg-2 col-md-4 col-6 mb-4">
                   <div class="card">
                     <img class="card-img-top" src="{{ asset('admin/assets/img/elements/4.jpg') }}" alt="Card image cap">
@@ -512,7 +478,7 @@
 
                   $.ajax({
                       type: 'POST',
-                      url: app + '/admin/product/' + product_id + '/attach',
+                      url: app + '/admin/admin/product/' + product_id + '/attach',
                       data: fd,
                       contentType: false,
                       processData: false,   
