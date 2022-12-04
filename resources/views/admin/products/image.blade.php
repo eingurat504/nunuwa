@@ -133,7 +133,7 @@
   <!-- Modal -->
   <div class="modal fade" id="productfullscreenModal" tabindex="-1" aria-hidden="true">
 
-    <form id="upload-product-images" action="" method="POST">
+    <form id="upload-product-images" action="" method="POST" enctype="multipart/form-data">
 
         {{ csrf_field() }}
         {{ method_field('POST') }}
@@ -141,7 +141,7 @@
           <div class="modal-dialog modal-fullscreen" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="modalFullTitle">Modal title</h5>
+                <h5 class="modal-title" id="modalFullTitle">{{ $product->name }}</h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -155,7 +155,7 @@
                 </p> 
                 <p>
                   <label for="product_images">Product image</label><br/>
-                  <input class="form-control" type="file" id="product_images"
+                  <input class="form-control" type="file" id="product_images" id="product_images"
                     name="product_images" value="{{ old('product_images') }}" placeholder="product_images" />
                 </p>
               </div>
