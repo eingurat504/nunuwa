@@ -33,7 +33,7 @@
     <script src="{{ asset('admin/assets/js/main.js') }}"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
-<script type="text/javascript">
+    <script type="text/javascript">
     $(document).ready(function () {
 
         $.ajaxSetup({
@@ -56,47 +56,49 @@
             // https://makitweb.com/how-to-upload-image-file-using-ajax-and-jquery/
             // https://fellowtuts.com/php/ajax-image-upload-using-php-and-jquery/
       
-            // Check file selected or not
-            if(files.length > 0 ){
+            // // Check file selected or not
+            // if(files.length > 0 ){
 
-              fd.append('product_images',files[0]);
+            //   fd.append('product_images',files[0]);
 
-                var app = '{{ config('app.url') }}';
+            //     var app = '{{ config('app.url') }}';
 
-                $.ajax({
-                    type: 'POST',
-                    url: app + '/admin/admin/product/' + product_id + '/attach',
-                    data: fd,
-                    contentType: false,
-                    processData: false,   
-                    success: function (response) {
+            //     console.log(app);
 
-                        // console.log(response);
-                        // check if response has not errors; first then redirect...
+            //     $.ajax({
+            //         type: 'PUT',
+            //         url: app + '/admin/admin/product/' + product_id + '/attach',
+            //         data: fd,
+            //         contentType: false,
+            //         processData: false,   
+            //         success: function (response) {
 
-                        window.location = app + '/admin/admin/product/'+ product_id +'/attached_images';
-                        // else show error msg on modal
-                    },
-                    error: function (xhr) {
-                        var errors = xhr.responseJSON;
-                        $.each(errors, function (param, error) {
-                            var form_group = form.find('input[name=' + param + '],select[name=' + param + ']').closest('div.form-group');
-                            form_group.addClass('has-error');
-                            var error_msg = '<span class="help-block">' + error[0] + '</span>';
-                            if (form_group.find('.help-block')[0]) {
-                                form.find('.help-block').remove();
-                            }
+            //             // console.log(response);
+            //             // check if response has not errors; first then redirect...
 
-                            form_group.find('.col-md-8').append(error_msg);
-                        });
-                    }
-                });
+            //             window.location = app + '/admin/admin/product/'+ product_id +'/attached_images';
+            //             // else show error msg on modal
+            //         },
+            //         error: function (xhr) {
+            //             var errors = xhr.responseJSON;
+            //             $.each(errors, function (param, error) {
+            //                 var form_group = form.find('input[name=' + param + '],select[name=' + param + ']').closest('div.form-group');
+            //                 form_group.addClass('has-error');
+            //                 var error_msg = '<span class="help-block">' + error[0] + '</span>';
+            //                 if (form_group.find('.help-block')[0]) {
+            //                     form.find('.help-block').remove();
+            //                 }
+
+            //                 form_group.find('.col-md-8').append(error_msg);
+            //             });
+            //         }
+            //     });
 
             }
 
         });
     });
-</script>
+</script> -->
 @endpush
 
 @section('content')
@@ -133,12 +135,12 @@
   <!-- Modal -->
   <div class="modal fade" id="productfullscreenModal" tabindex="-1" aria-hidden="true">
 
-    <form id="upload-product-images" action="" method="POST" enctype="multipart/form-data">
+    <form id="upload-product-images" method="POST" enctype="multipart/form-data">
 
-        {{ csrf_field() }}
-        {{ method_field('POST') }}
+          @method('PUT')
+          @csrf
 
-          <div class="modal-dialog modal-fullscreen" role="document">
+          <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="modalFullTitle">{{ $product->name }}</h5>
