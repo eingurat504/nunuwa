@@ -69,7 +69,7 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], fu
         Route::get('/{product}/edit','ProductController@edit')->name('edit');
         Route::put('/{product}/update','ProductController@update')->name('update');
         Route::get('/{product}/attached_images','ProductController@attachedImages')->name('attached');
-        Route::post('/{product}/attach','ProductController@attachImages')->name('attach');
+        Route::put('/{product}/attach','ProductController@attachImages')->name('attach');
     });
 
     Route::pattern('order', '^\d+$');

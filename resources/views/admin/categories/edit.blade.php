@@ -12,10 +12,9 @@
         <h5 class="card-header">Default</h5>
         <div class="card-body">
             <form method="POST" action="{{ route('admin.categories.update' , $category->id) }}">
-
-            {{ method_field('PUT') }}
-
-            {{ csrf_field() }}
+                
+                @method('PUT')
+                @csrf
 
             <div class="row">
               <div class="mb-3 col-md-12">
