@@ -56,49 +56,49 @@
             // https://makitweb.com/how-to-upload-image-file-using-ajax-and-jquery/
             // https://fellowtuts.com/php/ajax-image-upload-using-php-and-jquery/
       
-            // // Check file selected or not
-            // if(files.length > 0 ){
+            // Check file selected or not
+            if(files.length > 0 ){
 
-            //   fd.append('product_images',files[0]);
+              fd.append('product_images',files[0]);
 
-            //     var app = '{{ config('app.url') }}';
+                var app = '{{ config('app.url') }}';
 
-            //     console.log(app);
+                console.log(app);
 
-            //     $.ajax({
-            //         type: 'PUT',
-            //         url: app + '/admin/admin/product/' + product_id + '/attach',
-            //         data: fd,
-            //         contentType: false,
-            //         processData: false,   
-            //         success: function (response) {
+                $.ajax({
+                    type: 'PUT',
+                    url: app + '/admin/admin/product/' + product_id + '/attach',
+                    data: fd,
+                    contentType: false,
+                    processData: false,   
+                    success: function (response) {
 
-            //             // console.log(response);
-            //             // check if response has not errors; first then redirect...
+                        // console.log(response);
+                        // check if response has not errors; first then redirect...
 
-            //             window.location = app + '/admin/admin/product/'+ product_id +'/attached_images';
-            //             // else show error msg on modal
-            //         },
-            //         error: function (xhr) {
-            //             var errors = xhr.responseJSON;
-            //             $.each(errors, function (param, error) {
-            //                 var form_group = form.find('input[name=' + param + '],select[name=' + param + ']').closest('div.form-group');
-            //                 form_group.addClass('has-error');
-            //                 var error_msg = '<span class="help-block">' + error[0] + '</span>';
-            //                 if (form_group.find('.help-block')[0]) {
-            //                     form.find('.help-block').remove();
-            //                 }
+                        window.location = app + '/admin/admin/product/'+ product_id +'/attached_images';
+                        // else show error msg on modal
+                    },
+                    error: function (xhr) {
+                        var errors = xhr.responseJSON;
+                        $.each(errors, function (param, error) {
+                            var form_group = form.find('input[name=' + param + '],select[name=' + param + ']').closest('div.form-group');
+                            form_group.addClass('has-error');
+                            var error_msg = '<span class="help-block">' + error[0] + '</span>';
+                            if (form_group.find('.help-block')[0]) {
+                                form.find('.help-block').remove();
+                            }
 
-            //                 form_group.find('.col-md-8').append(error_msg);
-            //             });
-            //         }
-            //     });
+                            form_group.find('.col-md-8').append(error_msg);
+                        });
+                    }
+                });
 
             }
 
         });
     });
-</script> -->
+</script> 
 @endpush
 
 @section('content')
