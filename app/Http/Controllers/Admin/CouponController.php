@@ -42,10 +42,10 @@ class CouponController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show($productId)
+    public function show($couponId)
     {
 
-        $coupon = Coupon::findOrfail($productId);
+        $coupon = Coupon::findOrfail($couponId);
 
         return view('admin.coupons.show', [
             'coupon' => $coupon,
@@ -58,10 +58,10 @@ class CouponController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function edit($productId)
+    public function edit($couponId)
     {
 
-        $coupon = Coupon::findOrfail($productId);
+        $coupon = Coupon::findOrfail($couponId);
 
         return view('admin.coupons.edit', [
             'coupon' => $coupon,
@@ -75,7 +75,7 @@ class CouponController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function update(Request $request, $productId)
+    public function update(Request $request, $couponId)
     {
 
         $this->validate($request, [
@@ -83,7 +83,7 @@ class CouponController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $coupon = Coupon::findOrfail($productId);
+        $coupon = Coupon::findOrfail($couponId);
 
         Coupon::where('id', $coupon->id)
             ->update([
@@ -146,7 +146,7 @@ class CouponController extends Controller
         /**
      * Remove the specified product from storage.
      *
-     * @param int $productId
+     * @param int $couponId
      *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      *
