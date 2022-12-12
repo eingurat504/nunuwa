@@ -49,8 +49,8 @@
                     <input class="form-control" type="text" id="percent_off" name="percent_off" value="{{ old('percent_off') }}"/>
                   </div>
                   <div class="mb-3 col-md-12">
-                    <label for="expiry_date" class="form-label">Expiry Date</label>
-                    <input class="form-control" type="date" id="expiry_date" name="expiry_date" value="{{ old('expiry_date') }}"/>
+                    <label for="expires_at" class="form-label">Expiry Date</label>
+                    <input class="form-control" type="date" id="expires_at" name="expires_at" value="{{ old('expires_at') }}"/>
                   </div>
                   <div class="mb-3 col-md-12">
                     <label for="usable_times" class="form-label">Usable times</label>
