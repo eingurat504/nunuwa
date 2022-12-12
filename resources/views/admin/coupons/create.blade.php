@@ -50,7 +50,7 @@
                   </div>
                   <div class="mb-3 col-md-12">
                     <label for="expiry_date" class="form-label">Expiry Date</label>
-                    <input class="form-control" type="text" id="expiry_date" name="expiry_date" value="{{ old('expiry_date') }}"/>
+                    <input class="form-control" type="date" id="expiry_date" name="expiry_date" value="{{ old('expiry_date') }}"/>
                   </div>
                   <div class="mb-3 col-md-12">
                     <label for="usable_times" class="form-label">Usable times</label>
