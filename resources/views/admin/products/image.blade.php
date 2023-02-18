@@ -135,7 +135,7 @@
   <!-- Modal -->
   <div class="modal fade" id="productfullscreenModal" tabindex="-1" aria-hidden="true">
 
-    <form id="upload-product-images" method="POST" enctype="multipart/form-data">
+    <form id="upload-product-images" method="POST" action="{{ route('admin.products.attach',$product->id )}}" enctype="multipart/form-data">
 
           @method('PUT')
           @csrf
