@@ -35,15 +35,15 @@
   <!-- Modal -->
   <div class="modal fade" id="categoryfullscreenModal" tabindex="-1" aria-hidden="true">
 
-    <form id="upload-product-images" action="" method="POST">
+    <form id="upload-product-images" action="{{ route('admin.categories.attach',$category->id )}}" method="POST">
 
         {{ csrf_field() }}
         {{ method_field('POST') }}
 
-          <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="modalFullTitle">Modal title</h5>
+                <h5 class="modal-title" id="modalFullTitle">{{ $category->name }}</h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -52,8 +52,14 @@
                 ></button>
               </div>
               <div class="modal-body">
-              
-                
+                <p>
+                  <input type="hidden" name="category_id" value="{{ $category->id  }}">
+                </p> 
+                <p>
+                  <label for="category_images">Category image</label><br/>
+                  <input class="form-control" type="file" id="category_images" id="category_images"
+                    name="category_images" value="{{ old('category_images') }}" placeholder="category_images" />
+                </p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
