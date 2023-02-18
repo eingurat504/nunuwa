@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\Product;
 use App\Models\ProductImage;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -166,7 +167,7 @@ class ProductController extends Controller
 
         $product = Product::findOrfail($id);
 
-        $dir = 'public/modules/products';
+        $dir = 'public/category/products';
         $name = $request->product_images->getClientOriginalName();
         $image_path = $dir . '/' . $name;
 
@@ -176,8 +177,8 @@ class ProductController extends Controller
 
         Storage::disk('local')->put($image_path, file_get_contents($request->product_images->getRealPath()));
 
-        if (file_exists(public_path() . '/storage/modules/products/' . $product->name)) {
-            unlink(public_path() . '/storage/modules/products/' . $product->name);
+        if (file_exists(public_path() . '/storage/category/products/' . $product->name)) {
+            unlink(public_path() . '/storage/category/products/' . $product->name);
         }
 
         $image = new ProductImage();
