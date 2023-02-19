@@ -166,8 +166,12 @@
                         <figure class="product-media">
                             <span class="product-label label-sale">Sale</span>
                             <a href="{{ route('products.show',$product->id) }}">
-                                <!-- <img src="{{ asset('images/demos/demo-13/products/product-1.jpg') }}" alt="Product image" class="product-image"> -->
-                                <img src="{{ asset('storage/modules/products/'.$product->image->image_name) }}" alt="Product image" class="product-image">
+                                <img src="{{ asset('images/demos/demo-13/products/product-1.jpg') }}" alt="Product image" class="product-image">
+                                <!-- @foreach($product->images as $image) 
+                                {{ $image->image_name }}
+                                <img src="{{ asset('storage/category/products/'.$image->image_name) }}" alt="Product image" class="product-image" style="width=300px;"
+            >
+                                @endforeach -->
                             </a>
 
                             <div class="product-action-vertical">
