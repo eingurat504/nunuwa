@@ -90,7 +90,7 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function product_images()
+    public function images()
     {
         return $this->hasMany(ProductImage::class,'product_id');
     }

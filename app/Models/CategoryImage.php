@@ -33,8 +33,8 @@ class CategoryImage extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function product()
+    public function category()
     {
-        return $this->belongsTo(Product::class,'product_id');
+        return $this->belongsTo(Product::class,'category_id');
     }
 }
