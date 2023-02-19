@@ -49,8 +49,11 @@ class ProductController extends Controller
 
         $product = Product::findOrfail($id);
 
+        $product_image = ProductImage::where('product_id', $id)->first();
+
         return view('admin.products.show', [
             'product' => $product,
+            'product_image' =>  $product_image
         ]);
     }
 
