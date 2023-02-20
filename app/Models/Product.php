@@ -90,10 +90,10 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function images()
-    {
-        return $this->hasMany(ProductImage::class,'product_id');
-    }
+    // public function images()
+    // {
+    //     return $this->hasMany(ProductImage::class,'product_id');
+    // }
 
     /**
      * Reviews for this product.

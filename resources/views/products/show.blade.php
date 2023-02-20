@@ -32,9 +32,6 @@
                                     <div class="row">
                                         <figure class="product-main-image">
                                             <img id="product-zoom" src="{{ asset('images/products/single/1.jpg') }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}" alt="product image">
-
-                                            <!-- <img id="product-zoom" src="{{ asset('storage/category/products/'.$product_image->image_name) }}" data-zoom-image="{{ asset('images/products/single/1-big.jpg') }}" alt="product image"> -->
-
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
                                             </a>
