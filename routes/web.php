@@ -26,6 +26,8 @@ use App\Http\Controllers\StripePaymentController;
 
 Auth::routes();
 
+
+$int = '^\d+$';
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::group(['prefix' => '/'], function () {
@@ -43,15 +45,22 @@ Route::group(['prefix' => '/'], function () {
 //     Route::get('/', [CategoryController::class, 'getBackPacks'])->name('index');
 // });
 
+Route::pattern('category', $int);
 
 Route::group(['prefix' => '/category', 'as' => 'categories.'], function () {
     Route::get('/{category}', [CategoryController::class, 'show'])->name('show');
 });
 
+
+Route::pattern('product', $int);
+
 Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
     Route::get('/', [ProductController::class, 'showProducts'])->name('index');
     Route::get('/{product}', [ProductController::class, 'showProduct'])->name('show');
 });
+
+
+Route::pattern('item', $int);
 
 Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
     Route::get('/', [CartController::class, 'showCart'])->name('index');
@@ -74,6 +83,9 @@ Route::group(['prefix' => '/checkout', 'as' => 'checkout.'], function () {
 Route::group(['prefix' => '/coupon_code', 'as' => 'coupon_code.'], function () {
     Route::post('/', [CouponController::class, 'store'])->name('store');
 });
+
+
+Route::pattern('article', $int);
 
 Route::group(['prefix' => '/article', 'as' => 'articles.'], function () {
     Route::get('/{article}', [HomeController::class, 'showArticle'])->name('show');
