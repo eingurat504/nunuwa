@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductReview;
 use App\Models\Order;
+use App\Models\ProductCategory;
 
 class ProductController extends Controller
 {
@@ -61,13 +62,17 @@ class ProductController extends Controller
         $orders = Order::with('products')->get();
 
         $products_sold = $orders->products()->where('product_id', $id)->count();
+
+
+        $categories = ProductCategory::get();
      
         return view('products.show', [
             'product' => $product,
             'products_sold' => $products_sold,
             'max_products_available' => $max_products_available,
-            'reviews' => $reviews,
-            'related_products' => $related_products
+            'reviews' => count($reviews),
+            'related_products' => $related_products,
+            'categories' => $categories
         ]);
     }
 }
