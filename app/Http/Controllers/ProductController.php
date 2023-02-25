@@ -57,20 +57,20 @@ class ProductController extends Controller
                             ->get();
 
         // maximum stock available 
-        $max_products_available = $product->stock;
+        // $max_products_available = $product->stock;
 
-        $orders = Order::with('products')->get();
+        // $orders = Order::with('products')->get();
 
-        $products_sold = $orders->products()->where('product_id', $id)->count();
+        // $products_sold = $orders->products()->where('product_id', $id)->count();
 
 
         $categories = ProductCategory::get();
      
         return view('products.show', [
             'product' => $product,
-            'products_sold' => $products_sold,
-            'max_products_available' => $max_products_available,
-            'reviews' => count($reviews),
+        //     'products_sold' => $products_sold,
+        //     'max_products_available' => $max_products_available,
+            'reviews' => $reviews,
             'related_products' => $related_products,
             'categories' => $categories
         ]);

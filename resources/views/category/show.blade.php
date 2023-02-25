@@ -123,7 +123,7 @@
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 0%;"></div>
                                             </div>
-                                            <span class="ratings-text">( {{ $reviews  }} Reviews )</span>
+                                            <span class="ratings-text">( {{ count($reviews) }} Reviews )</span>
                                         </div>
                                     </div>
                                 </div>
