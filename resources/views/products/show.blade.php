@@ -297,7 +297,7 @@
                                         <div class="ratings">
                                             <div class="ratings-val" style="width: 20%;"></div>
                                         </div>
-                                        <span class="ratings-text">( 2 Reviews )</span>
+                                        <span class="ratings-text">( {{ $reviews }} Reviews )</span>
                                     </div>
                                 </div>
                             </div>
