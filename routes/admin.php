@@ -28,7 +28,7 @@ Route::post('/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 Route::pattern('category', '^\d+$');
 
-Route::group(['prefix' => 'admin','middleware' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     // Admin Dashboard
     Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
 
