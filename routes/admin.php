@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 // Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/login','Auth\AuthController@getlogin')->name('admin.login.index');
 Route::post('/login', 'Auth\AuthController@login')->name('admin.login');
