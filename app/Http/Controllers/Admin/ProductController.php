@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\Product;
+use App\Models\Brand;
 use App\Models\ProductImage;
 use Illuminate\Support\Facades\Storage;
 
@@ -70,8 +71,11 @@ class ProductController extends Controller
 
         $categories = ProductCategory::get();
 
+        $brands = Brand::get();
+
         return view('admin.products.edit', [
             'product' => $product,
+            'brands' => $brands,
             'categories' => $categories
         ]);
     }
@@ -112,8 +116,11 @@ class ProductController extends Controller
 
         $categories = ProductCategory::get();
 
+        $brands = Brand::get();
+
         return view('admin.products.create',[
-            'categories' => $categories
+            'categories' => $categories,
+            'brands' => $brands
         ]);
     }
 
@@ -132,6 +139,7 @@ class ProductController extends Controller
        $product->name = $request->name;
        $product->price = $request->price;
        $product->category_id = $request->category;
+       $product->brand_id = $request->brand;
        $product->stock = $request->stock;
        $product->sku = 50;
        $product->description = $request->description;
