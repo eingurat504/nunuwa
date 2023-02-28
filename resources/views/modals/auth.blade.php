@@ -19,7 +19,7 @@
                         </ul>
                         <div class="tab-content" id="tab-content-5">
                             <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-                                <form action="{{ route('login') }}" method="POST">
+                                <form action="#" method="POST">
                                         @csrf
                                     <div class="form-group">
                                         <label for="email">Username or email address *</label>

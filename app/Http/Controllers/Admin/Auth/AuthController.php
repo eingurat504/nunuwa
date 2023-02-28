@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/admin/login';
+    protected $redirectTo = '/admin/login';
 
 
     public function __construct()
@@ -44,6 +44,7 @@ class AuthController extends Controller
      */
     protected function getlogin()
     {
+
         return view('admin.auth.login');
     }
 

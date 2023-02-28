@@ -112,7 +112,6 @@
                                             <li><a href="contact-2.html">Contact 02</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ route('login') }}">Login</a></li>
                                     <li><a href="#">FAQs</a></li>
                                 </ul>
                             </li>
