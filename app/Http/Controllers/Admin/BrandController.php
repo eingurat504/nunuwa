@@ -46,7 +46,7 @@ class BrandController extends Controller
     public function show($brandId)
     {
 
-        $brand = Brand::findOrfail($optionbrandId);
+        $brand = Brand::findOrfail($brandId);
 
         return view('admin.brands.show', [
             'brand' => $brand,
@@ -113,7 +113,7 @@ class BrandController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function update(Request $request, $optionGroupId)
+    public function update(Request $request, $brandId)
     {
 
         $this->validate($request, [
@@ -121,9 +121,9 @@ class BrandController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $brand = OptionGroup::findOrfail($optionGroupId);
+        $brand = Brand::findOrfail($brandId);
 
-        OptionGroup::where('id', $brand->id)
+        Brand::where('id', $brand->id)
             ->update([
                 'name' => $request->input('name', $brand->name),
                 'description' => $request->input('description', $brand->description),
@@ -131,6 +131,28 @@ class BrandController extends Controller
             ]);
 
         flash($brand->name." updated")->success();
+
+        return redirect()->route('admin.brands.index');
+    }
+
+    /**
+     * Remove the specified product from storage.
+     *
+     * @param int $productId
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($brandId)
+    {
+        // $this->authorize('delete', [ProductCategory::class, $productId]);
+
+        $brand = Brand::findOrFail($brandId);
+
+        $brand->forceDelete();
+
+        flash('Brand has been deleted.')->error()->important();
 
         return redirect()->route('admin.brands.index');
     }
