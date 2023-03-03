@@ -43,7 +43,7 @@ class AuthController extends Controller
      * @return \App\Models\User
      */
     protected function getlogin()
-    {
+    {  
 
         return view('admin.auth.login');
     }
