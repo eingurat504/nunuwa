@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/login','Auth\AuthController@getlogin')->name('admin.login.index');
-Route::post('/login', 'Auth\AuthController@login')->name('admin.login');
-Route::post('/logout', 'Auth\AuthController@logout')->name('admin.logout');
+Route::get('/admin/login','Auth\AuthController@getlogin')->name('admin.login.index');
+Route::post('/admin/login', 'Auth\AuthController@login')->name('admin.login');
+Route::post('/admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 Route::pattern('category', '^\d+$');
 

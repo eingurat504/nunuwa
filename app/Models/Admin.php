@@ -16,7 +16,8 @@ class Admin extends Authenticatable
 
     //https://www.codermen.com/how-to-make-multi-auth-in-laravel-8/
     
-    protected $guard = 'admin';
+    // protected $guard = 'admin';
+    protected $guarded = array();
 
     /**
      * The attributes that are mass assignable.
