@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Option;
 use App\Models\OptionGroup;
+use App\Models\Brand;
 
 class BrandController extends Controller
 {

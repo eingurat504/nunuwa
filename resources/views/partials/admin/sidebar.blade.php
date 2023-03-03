@@ -185,6 +185,13 @@
     </li>
 
     <li class="menu-item">
+      <a href="{{ route('admin.brands.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-detail"></i>
+        <div data-i18n="Form Layouts">Brand</div>
+      </a>
+    </li>
+
+    <li class="menu-item">
       <a href="{{ route('admin.products.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-detail"></i>
         <div data-i18n="Form Layouts">Product</div>

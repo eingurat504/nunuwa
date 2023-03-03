@@ -44,9 +44,14 @@ class BrandController extends Controller
      * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function show($brandId)
     {
-        //
+        
+        $brand = Brand::findorfail($brandId);
+
+        return view('brands.show', [
+            'brand' => $brand
+        ]);
     }
 
     /**

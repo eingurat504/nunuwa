@@ -21,11 +21,11 @@ Route::get('/admin/login','Auth\AuthController@getlogin')->name('admin.login.ind
 Route::post('/admin/login', 'Auth\AuthController@login')->name('admin.login');
 Route::post('/admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
-Route::pattern('category', '^\d+$');
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     // Admin Dashboard
     Route::get('/dashboard','AdminController@dashboard')->name('dashboard'); 
+
+    Route::pattern('category', '^\d+$');
 
     // Category
     Route::group(['prefix' => 'category', 'as' => 'categories.'], function () {
@@ -39,19 +39,33 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/{category}/attach','CategoryController@attachImages')->name('attach');
     });
 
-        Route::pattern('category_type', '^\d+$');
+    Route::pattern('brand', '^\d+$');
 
-        // Category
-        Route::group(['prefix' => 'category_type', 'as' => 'category_types.'], function () {
-            Route::get('/', 'CategoryTypeController@index')->name('index');
-            Route::get('/create','CategoryTypeController@create')->name('create');
-            Route::post('/store','CategoryTypeController@store')->name('store');
-            Route::get('/{category_type}','CategoryTypeController@show')->name('show');
-            Route::get('/{category_type}/edit','CategoryTypeController@edit')->name('edit');
-            Route::put('/{category_type}/update','CategoryTypeController@update')->name('update');
-            Route::get('/{category_type}/attached_images','CategoryTypeController@attachedImages')->name('attached');
-            Route::post('/{category_type}/attach','CategoryTypeController@attachImages')->name('attach');
-        });
+     // Brand
+     Route::group(['prefix' => 'brand', 'as' => 'brands.'], function () {
+        Route::get('/', 'BrandController@index')->name('index');
+        Route::get('/create','BrandController@create')->name('create');
+        Route::post('/store','BrandController@store')->name('store');
+        Route::get('/{brand}','BrandController@show')->name('show');
+        Route::get('/{brand}/edit','BrandController@edit')->name('edit');
+        Route::put('/{brand}/update','BrandController@update')->name('update');
+        Route::get('/{brand}/attached_images','BrandController@attachedImages')->name('attached');
+        Route::post('/{brand}/attach','BrandController@attachImages')->name('attach');
+    });
+
+    Route::pattern('category_type', '^\d+$');
+
+    // Category
+    Route::group(['prefix' => 'category_type', 'as' => 'category_types.'], function () {
+        Route::get('/', 'CategoryTypeController@index')->name('index');
+        Route::get('/create','CategoryTypeController@create')->name('create');
+        Route::post('/store','CategoryTypeController@store')->name('store');
+        Route::get('/{category_type}','CategoryTypeController@show')->name('show');
+        Route::get('/{category_type}/edit','CategoryTypeController@edit')->name('edit');
+        Route::put('/{category_type}/update','CategoryTypeController@update')->name('update');
+        Route::get('/{category_type}/attached_images','CategoryTypeController@attachedImages')->name('attached');
+        Route::post('/{category_type}/attach','CategoryTypeController@attachImages')->name('attach');
+    });
 
     Route::pattern('product', '^\d+$');
 
