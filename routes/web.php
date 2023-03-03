@@ -24,8 +24,7 @@ use App\Http\Controllers\StripePaymentController;
 |
 */
 
-Auth::routes();
-
+// Auth::routes();
 
 $int = '^\d+$';
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
