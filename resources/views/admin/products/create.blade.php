@@ -42,7 +42,7 @@
               </div>
 
               <div class="mb-3 col-md-12">
-                <label for="organization" class="form-label">Category</label>
+                <label for="organization" class="form-label">Brand</label>
                 <select class="form-control" id="brand"
                     name="brand" value="{{ old('brand') }}">
                       <option value="">Choose brand</option>
