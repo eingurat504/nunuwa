@@ -16,7 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name' ,100);
-            $table->integer('price');
+            $table->integer('regular_price');
+            $table->integer('sale_price');
             $table->string('description' ,255);
             $table->foreignId('category_id')->constrained('product_categories')->onDelete('cascade');
             $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade');
