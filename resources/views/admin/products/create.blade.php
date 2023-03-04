@@ -40,6 +40,23 @@
                     </span>
                 @enderror 
               </div>
+
+              <div class="mb-3 col-md-12">
+                <label for="organization" class="form-label">Category</label>
+                <select class="form-control" id="brand"
+                    name="brand" value="{{ old('brand') }}">
+                      <option value="">Choose brand</option>
+                      @foreach($brands as $brand) 
+                          <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                      @endforeach
+                </select>
+                @error('brand')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
+              </div>
+
               <div class="mb-3 col-md-12">
                 <label for="stock" class="form-label">Stock Available</label>
                 <input class="form-control" type="integer" id="stock"
