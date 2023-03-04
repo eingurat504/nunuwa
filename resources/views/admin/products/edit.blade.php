@@ -28,6 +28,21 @@
               </div>
 
               <div class="mb-3 col-md-12">
+                <label for="organization" class="form-label">Brand</label>
+                <select class="form-control" id="brand" name="brand">
+                      <option value="">Choose brand</option>
+                      @foreach($categories as $brand) 
+                          <option value="{{ $brand->id }}" {{ old('brand', $product->brand_id) == $brand->id  ? 'selected' : ''}}>{{ $brand->name }}</option>
+                      @endforeach
+                </select>
+                @error('brand')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
+              </div>
+
+              <div class="mb-3 col-md-12">
                 <label for="organization" class="form-label">Category</label>
                 <select class="form-control" id="category" name="category">
                       <option value="">Choose category</option>
@@ -41,6 +56,7 @@
                     </span>
                 @enderror 
               </div>
+
               <div class="mb-3 col-md-12">
                 <label for="email" class="form-label">Price</label>
                 <input class="form-control" type="integer" id="price"
