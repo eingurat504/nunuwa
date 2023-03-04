@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('admin.dashboard') }}">Home /</a></span> brands</h6>
+    <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="{{ route('admin.dashboard') }}">Home /</a></span> Brands</h6>
 
     <div class="row">
         <div class="col-md-12">
@@ -13,7 +13,7 @@
     <!-- Striped Rows -->
     <div class="card">
     <div class="card-header d-flex align-items-center justify-content-between">
-      <h5 class="card-title m-0 me-2">brands</h5>
+      <h5 class="card-title m-0 me-2">Brands</h5>
       <div class="dropdown">
         <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="bx bx-dots-vertical-rounded"></i>
