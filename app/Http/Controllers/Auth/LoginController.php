@@ -20,26 +20,6 @@ class LoginController extends Controller
     |
     */
 
-    // use AuthenticatesUsers;
-
-    // /**
-    //  * Where to redirect users after login.
-    //  *
-    //  * @var string
-    //  */
-    // protected $redirectTo = RouteServiceProvider::HOME;
-
-    // /**
-    //  * Create a new controller instance.
-    //  *
-    //  * @return void
-    //  */
-    // public function __construct()
-    // {
-    //     $this->middleware('guest')->except('logout');
-    // }
-
-
     public function login(Request $request){
         
         
@@ -50,7 +30,7 @@ class LoginController extends Controller
    
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home')
+            return redirect()->intended('/')
                         ->withSuccess('You have Successfully logged in');
         }
   
