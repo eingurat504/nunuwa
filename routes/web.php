@@ -12,6 +12,7 @@ use App\Http\Controllers\Category\FurnitureController;
 use App\Http\Controllers\Category\ClothingController;
 use App\Http\Controllers\CouponCodeController;
 use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ use App\Http\Controllers\StripePaymentController;
 
 $int = '^\d+$';
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+// Route::get('login', [LoginController::class, 'index'])->name('login.index');
+Route::post('post-login', [LoginController::class, 'login'])->name('login'); 
 
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
