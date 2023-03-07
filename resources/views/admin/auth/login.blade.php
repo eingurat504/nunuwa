@@ -3,7 +3,7 @@
 
 @section('main-content')
 
-    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Nunuwa</title>
 
 <div class="authentication-wrapper authentication-basic container-p-y">
   <div class="authentication-inner">
@@ -68,12 +68,12 @@
                 </g>
               </svg>
             </span>
-            <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+            <span class="app-brand-text demo text-body fw-bolder">Nunuwa</span>
           </a>
         </div>
         <!-- /Logo -->
         <h4 class="mb-2">Welcome to Nunuwa! 👋</h4>
-        <p class="mb-4">Please sign-in to your account and start the adventure</p>
+        <p class="mb-4">&nbsp;</p>
 
         <form id="formAuthentication" class="mb-3" action="{{ route('admin.login') }}" method="POST">
         {{ csrf_field() }}
@@ -115,13 +115,6 @@
             <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
           </div>
         </form>
-
-        <p class="text-center">
-          <span>New on our platform?</span>
-          <a href="auth-register-basic.html">
-            <span>Create an account</span>
-          </a>
-        </p>
       </div>
     </div>
   </div>
