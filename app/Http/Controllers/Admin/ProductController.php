@@ -94,6 +94,8 @@ class ProductController extends Controller
         ->update([
             'name' => $request->name,
             'price' => $request->price,
+            'sale_price' => $request->sale_price,
+            'regular_price' => $request->regular_price,
             'description' => $request->description,
             // 'updated_by' => $request->description,
             'updated_at' => date('Y-m-d H:i:s'),
