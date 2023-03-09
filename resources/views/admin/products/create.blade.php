@@ -69,10 +69,20 @@
 
               </div>
               <div class="mb-3 col-md-12">
-                <label for="email" class="form-label">Price</label>
-                <input class="form-control" type="integer" id="price"
-                  name="price" value="{{ old('price') }}" placeholder="price" />
-                @error('price')
+                <label for="regular_price" class="form-label">Regular Price</label>
+                <input class="form-control" type="integer" id="regular_price"
+                  name="regular_price" value="{{ old('regular_price') }}" placeholder="regular_price" />
+                @error('regular_price')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
+              </div>
+              <div class="mb-3 col-md-12">
+                <label for="sale_price" class="form-label">Sale Price</label>
+                <input class="form-control" type="integer" id="sale_price"
+                  name="sale_price" value="{{ old('sale_price') }}" placeholder="sale_price" />
+                @error('sale_price')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

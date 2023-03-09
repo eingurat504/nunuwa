@@ -137,7 +137,8 @@ class ProductController extends Controller
 
        $product = new Product();
        $product->name = $request->name;
-       $product->price = $request->price;
+       $product->sale_price = $request->sale_price;
+       $product->regular_price = $request->regular_price;
        $product->category_id = $request->category;
        $product->brand_id = $request->brand;
        $product->stock = $request->stock;
