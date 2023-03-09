@@ -27,9 +27,15 @@
               </div>
 
               <div class="row">
-                <label class="col-md-4">Price</label>
-                <label class="col-md-4">${{$product->price }}</label>
+                <label class="col-md-4">Regular Price</label>
+                <label class="col-md-4">${{$product->regular_price }}</label>
               </div>
+
+              <div class="row">
+                <label class="col-md-4">Sale Price</label>
+                <label class="col-md-4">${{$product->sale_price }}</label>
+              </div>
+
 
               <div class="row">
                 <label class="col-md-4">Created Date</label>
