@@ -17,6 +17,7 @@ class CreateCouponsTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('type');
+            $table->foreignId('type_id')->constrained('coupon_types')->onDelete('cascade');
             $table->string('value')->nullable();
             $table->string('percent_off')->nullable();
             $table->timestamp('expires_at')->nullable();
