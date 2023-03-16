@@ -197,8 +197,8 @@
                             </div>
                             <h3 class="product-title"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h3>
                             <div class="product-price">
-                                <span class="new-price">${{ $product->price }}</span>
-                                <span class="old-price">Was $290.00</span>
+                                <span class="new-price">${{ $product->sale_price }}</span>
+                                <span class="old-price">${{ $product->regular_price }}</span>
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
@@ -269,8 +269,8 @@
                             </div>
                             <h3 class="product-title"><a href="{{ route('products.show',$furniture->id)}}">{{ $furniture->name }}</a></h3>
                             <div class="product-price">
-                                <span class="new-price">${{ $furniture->price }}</span>
-                                <span class="old-price">Was $310.00</span>
+                                <span class="new-price">${{ $furniture->sale_price }}</span>
+                                <span class="old-price">${{ $furniture->regular_price }}</span>
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
@@ -485,7 +485,7 @@
                             </div>
                             <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">{{ $electronic->name }}</a></h3>
                             <div class="product-price">
-                                $399.00
+                                {{ $electronic->sale_price }}
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
@@ -526,8 +526,8 @@
                             </div>
                             <h3 class="product-title"><a href="{{ route('products.show',$electronic->id)}}">Butler Stool Ladder</a></h3>
                             <div class="product-price">
-                                <span class="new-price">$251.99</span>
-                                <span class="old-price">Was $290.00</span>
+                                <span class="new-price">${{ $product->regular_price }}</span>
+                                <span class="old-price">${{ $product->sale_price }}</span>
                             </div>
                             <div class="ratings-container">
                                 <div class="ratings">
