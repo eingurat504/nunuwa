@@ -61,7 +61,7 @@ class CouponTypeController extends Controller
     public function edit($couponTypeId)
     {
 
-        $coupon = Coupon::findOrfail($couponTypeId);
+        $coupon = CouponType::findOrfail($couponTypeId);
 
         return view('admin.coupons.edit', [
             'coupon' => $coupon,
@@ -85,7 +85,7 @@ class CouponTypeController extends Controller
 
         $coupon = Coupon::findOrfail($couponTypeId);
 
-        Coupon::where('id', $coupon->id)
+        CouponType::where('id', $coupon->id)
             ->update([
                 'code' => $request->input('code', $coupon->code),
                 'type' => $request->input('type', $coupon->type),
@@ -97,7 +97,7 @@ class CouponTypeController extends Controller
 
         flash($coupon->code." updated")->success();
 
-        return redirect()->route('admin.coupon_codes.index');
+        return redirect()->route('admin.coupon_types.index');
     }
 
 
@@ -129,7 +129,7 @@ class CouponTypeController extends Controller
             'usable_times' => 'required|integer',
         ]);
 
-        $coupon_code = new Coupon();
+        $coupon_code = new CouponType();
         $coupon_code->code = $request->code;
         $coupon_code->type = $request->type;
         $coupon_code->value = $request->value;
@@ -140,7 +140,7 @@ class CouponTypeController extends Controller
 
         flash($coupon_code->code." registered")->success();
 
-        return redirect()->route('admin.coupon_codes.index');
+        return redirect()->route('admin.coupon_types.index');
     }
 
         /**
