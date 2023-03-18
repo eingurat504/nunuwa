@@ -132,6 +132,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::delete('/{code}/delete','CouponController@delete')->name('delete');
     });
 
+    Route::pattern('coupon_type', '^\d+$');
+
+    // Coupon coupon_type
+    Route::group(['prefix' => 'coupon_type', 'as' => 'coupon_types.'], function () {
+        Route::get('/', 'CouponTypeController@index')->name('index');
+        Route::get('/create','CouponTypeController@create')->name('create');
+        Route::post('/store','CouponTypeController@store')->name('store');
+        Route::get('/{coupon_type}','CouponTypeController@show')->name('show');
+        Route::get('/{coupon_type}/edit','CouponTypeController@edit')->name('edit');
+        Route::put('/{coupon_type}/update','CouponTypeController@update')->name('update');
+        Route::delete('/{coupon_type}/delete','CouponTypeController@delete')->name('delete');
+    });
+
         Route::pattern('article', '^\d+$');
       // Article
       Route::group(['prefix' => 'article', 'as' => 'articles.'], function () {
