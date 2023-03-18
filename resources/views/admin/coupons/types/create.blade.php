@@ -27,68 +27,24 @@
         </div>
       </div>
       <div class="card-body">
-          <form method="POST" action="{{ route('admin.coupon_codes.store') }}">
+          <form method="POST" action="{{ route('admin.coupon_types.store') }}">
                   
                 {{ csrf_field() }}
 
                 <div class="row">
                   <div class="mb-3 col-md-12">
-                    <label for="code" class="form-label">Coupon Code</label>
-                    <input class="form-control" type="text" id="code" name="code" value="{{ old('code') }}"/>
-                  @error('code')
+                    <label for="name" class="form-label">Name</label>
+                    <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}"/>
+                  @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                   @enderror 
                   </div>
-                  <div class="mb-3 col-md-12">
-                    <label for="type" class="form-label">Type</label>
-                    <input class="form-control" type="text" id="type" name="type" value="{{ old('type') }}"/>
-                  @error('type')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror 
-                  </div>
-                  <div class="mb-3 col-md-12">
-                    <label for="value" class="form-label">Value</label>
-                    <input class="form-control" type="text" id="value" name="value" value="{{ old('value') }}"/>
-                  @error('value')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror 
-                  </div>
-                  <div class="mb-3 col-md-12">
-                    <label for="percent_off" class="form-label">Percent Off</label>
-                    <input class="form-control" type="text" id="percent_off" name="percent_off" value="{{ old('percent_off') }}"/>
-                  @error('percent_off')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror 
-                  </div>
-                  <div class="mb-3 col-md-12">
-                    <label for="expires_at" class="form-label">Expiry Date</label>
-                    <input class="form-control" type="date" id="expires_at" name="expires_at" value="{{ old('expires_at') }}"/>
-                  @error('expires_at')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror 
-                  </div>
-                  <div class="mb-3 col-md-12">
-                    <label for="usable_times" class="form-label">Usable times</label>
-                    <input class="form-control" type="number" id="usable_times" name="usable_times" value="{{ old('usable_times') }}"/>
-                  @error('usable_times')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror 
                   </div>
                   <div class="mt-2">
                     <button type="submit" class="btn btn-primary me-2">Save</button>
-                    <a href="{{ route('admin.coupon_codes.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                    <a href="{{ route('admin.coupon_types.index') }}" class="btn btn-outline-secondary">Cancel</a>
                   </div>
                 </div>
             </form>

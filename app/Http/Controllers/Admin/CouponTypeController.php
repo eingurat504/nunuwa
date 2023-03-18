@@ -108,7 +108,7 @@ class CouponTypeController extends Controller
      */
     public function create()
     {
-        return view('admin.coupons.create');
+        return view('admin.coupons.types.create');
     }
 
 
@@ -121,24 +121,14 @@ class CouponTypeController extends Controller
     {
 
         $this->validate($request, [
-            'code' => 'required',
-            'type' => 'required',
-            'value' => 'required',
-            'percent_off' => 'required',
-            'expires_at' => 'required',
-            'usable_times' => 'required|integer',
+            'name' => 'required',
         ]);
 
-        $coupon_code = new CouponType();
-        $coupon_code->code = $request->code;
-        $coupon_code->type = $request->type;
-        $coupon_code->value = $request->value;
-        $coupon_code->percent_off = $request->percent_off;
-        $coupon_code->expires_at = $request->expires_at;
-        $coupon_code->usable_times = $request->usable_times;
-        $coupon_code->save();
+        $type = new CouponType();
+        $type->name = $request->name;
+        $type->save();
 
-        flash($coupon_code->code." registered")->success();
+        flash($type->code." registered")->success();
 
         return redirect()->route('admin.coupon_types.index');
     }
