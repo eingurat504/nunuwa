@@ -43,9 +43,9 @@
               <tbody class="table-bcoupon-bottom-0">
                 @foreach($types as $type)
                 <tr>
-                  <td>{{ $coupon->name }}</td>
-                  <td>{{ $coupon->created_at }}</td>
-                  <td>{{ $coupon->updated_at }}</td>
+                  <td>{{ $type->name }}</td>
+                  <td>{{ $type->created_at }}</td>
+                  <td>{{ $type->updated_at }}</td>
                   <td class="text-center">
                     <div class="dropdown">
                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
