@@ -29,10 +29,10 @@ class CouponTypeController extends Controller
     public function index()
     {
 
-        $coupons = CouponType::get();
+        $types = CouponType::get();
 
-        return view('admin.coupons.index', [
-            'coupons' => $coupons,
+        return view('admin.coupons.types.index', [
+            'types' => $types,
         ]);
     }
 
@@ -47,7 +47,7 @@ class CouponTypeController extends Controller
 
         $coupon = CouponType::findOrfail($couponTypeId);
 
-        return view('admin.coupons.show', [
+        return view('admin.coupon.types.show', [
             'coupon' => $coupon,
         ]);
     }
@@ -63,7 +63,7 @@ class CouponTypeController extends Controller
 
         $coupon = CouponType::findOrfail($couponTypeId);
 
-        return view('admin.coupons.edit', [
+        return view('admin.coupon.types.edit', [
             'coupon' => $coupon,
         ]);
     }
