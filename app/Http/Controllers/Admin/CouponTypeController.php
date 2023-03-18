@@ -42,12 +42,12 @@ class CouponTypeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show($couponTypeId)
+    public function show($typeId)
     {
 
-        $coupon = CouponType::findOrfail($couponTypeId);
+        $coupon = CouponType::findOrfail($typeId);
 
-        return view('admin.coupon.types.show', [
+        return view('admin.coupons.types.show', [
             'coupon' => $coupon,
         ]);
     }
@@ -58,13 +58,13 @@ class CouponTypeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function edit($couponTypeId)
+    public function edit($typeId)
     {
 
-        $coupon = CouponType::findOrfail($couponTypeId);
+        $type = CouponType::findOrfail($typeId);
 
-        return view('admin.coupon.types.edit', [
-            'coupon' => $coupon,
+        return view('admin.coupons.types.edit', [
+            'type' => $type,
         ]);
     }
 
@@ -75,7 +75,7 @@ class CouponTypeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function update(Request $request, $couponTypeId)
+    public function update(Request $request, $typeId)
     {
 
         $this->validate($request, [
@@ -83,7 +83,7 @@ class CouponTypeController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $coupon = Coupon::findOrfail($couponTypeId);
+        $coupon = Coupon::findOrfail($typeId);
 
         CouponType::where('id', $coupon->id)
             ->update([
@@ -128,7 +128,7 @@ class CouponTypeController extends Controller
         $type->name = $request->name;
         $type->save();
 
-        flash($type->code." registered")->success();
+        flash($type->name." registered")->success();
 
         return redirect()->route('admin.coupon_types.index');
     }
@@ -136,22 +136,22 @@ class CouponTypeController extends Controller
         /**
      * Remove the specified product from storage.
      *
-     * @param int $couponTypeId
+     * @param int $typeId
      *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($categoryId)
+    public function destroy($typeId)
     {
 
-        $category = Coupon
-        ::findOrFail($categoryId);
+        $type = CouponType
+        ::findOrFail($typeId);
 
-        $category->forceDelete();
+        $type->forceDelete();
 
-        flash('Category has been deleted.')->error()->important();
+        flash('Coupon type has been deleted.')->error()->important();
 
-        return redirect()->route('admin.coupons.index');
+        return redirect()->route('admin.coupon_types.index');
     }
 }
