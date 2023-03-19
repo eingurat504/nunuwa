@@ -83,19 +83,15 @@ class CouponTypeController extends Controller
             'description' => 'sometimes',
         ]);
 
-        $coupon = Coupon::findOrfail($typeId);
+        $type = CouponType::findOrfail($typeId);
 
-        CouponType::where('id', $coupon->id)
+        CouponType::where('id', $type->id)
             ->update([
-                'code' => $request->input('code', $coupon->code),
-                'type' => $request->input('type', $coupon->type),
-                'value' => $request->input('value', $coupon->value),
-                'expires_at' => $request->input('expires_at', $coupon->expires_at),
-                'usable_times' => $request->input('usable_times', $coupon->usable_times),
+                'name' => $request->input('name', $type->name),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        flash($coupon->code." updated")->success();
+        flash($type->name." updated")->success();
 
         return redirect()->route('admin.coupon_types.index');
     }
