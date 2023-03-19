@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> coupons</h6>
+  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Home /</span> coupon Types</h6>
 
   <div class="row">
       <div class="col-md-12">
@@ -12,7 +12,7 @@
 
   <div class="card">
     <div class="card-header d-flex align-items-center justify-content-between">
-      <h5 class="card-title m-0 me-2">coupons</h5>
+      <h5 class="card-title m-0 me-2">coupon Types</h5>
       <div class="dropdown">
         <button
           class="btn p-0"
