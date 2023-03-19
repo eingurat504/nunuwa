@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Coupon Codes/ {{ $coupon->code }} /Update</h6>
+  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Coupon Types/ {{ $type->name }} /Update</h6>
 
   <div class="row">
       <div class="col-md-12">
@@ -15,7 +15,7 @@
       <h5 class="card-title m-0 me-2">Coupon Codes</h5>
     </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('admin.coupon_codes.update', $type->id) }}">
+        <form method="POST" action="{{ route('admin.coupon_types.update', $type->id) }}">
                 
               {{ method_field('PUT') }}
 
