@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Home / </span><span class="text-muted fw-light"><a href="{{ route('admin.coupon_types.index') }}">Coupon Types </a> /</span> Create</h6>
+  <h6 class="fw-bold py-3 mb-4">
+     <span class="text-muted fw-light">Home / </span><span class="text-muted fw-light"><a href="{{ route('admin.coupon_types.index') }}">Coupon Types </a> /</span> Create</h6>
 
   <div class="row">
       <div class="col-md-12">

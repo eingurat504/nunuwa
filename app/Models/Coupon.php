@@ -55,4 +55,14 @@ class Coupon extends Model
          }
      }
 
+         /**
+     * Categories to which the coupon belongs.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function type()
+    {
+        return $this->belongsTo(CouponType::class);
+    }
+
 }
