@@ -64,8 +64,11 @@ class CouponController extends Controller
 
         $coupon = Coupon::findOrfail($couponId);
 
+        $types = CouponType::get();
+
         return view('admin.coupons.edit', [
             'coupon' => $coupon,
+            'types' => $types
         ]);
     }
 
@@ -90,6 +93,7 @@ class CouponController extends Controller
             ->update([
                 'code' => $request->input('code', $coupon->code),
                 'type' => $request->input('type', $coupon->type),
+                'type_id' => $request->input('type', $coupon->type_id),
                 'value' => $request->input('value', $coupon->value),
                 'expires_at' => $request->input('expires_at', $coupon->expires_at),
                 'usable_times' => $request->input('usable_times', $coupon->usable_times),

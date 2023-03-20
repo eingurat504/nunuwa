@@ -32,13 +32,19 @@
                   @enderror 
                   </div>
                   <div class="mb-3 col-md-12">
-                    <label for="type" class="form-label">Type</label>
-                    <input class="form-control" type="text" id="type" name="type" value="{{ old('type',  $coupon->type) }}"/>
-                  @error('type')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror 
+                    <label for="type" class="form-label">Coupon Type</label>
+                    <select class="form-control" id="type"
+                        name="type" value="{{ old('type') }}">
+                          <option value="">Choose types</option>
+                          @foreach($types as $type) 
+                              <option value="{{ $type->id }}">{{ $type->name }}</option>
+                          @endforeach
+                    </select>
+                    @error('type')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror 
                   </div>
                   <div class="mb-3 col-md-12">
                     <label for="value" class="form-label">Value</label>
