@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Coupon;
+use App\Models\CouponType;
 use App\Models\ProductImage;
 
 class CouponController extends Controller
@@ -108,7 +109,11 @@ class CouponController extends Controller
      */
     public function create()
     {
-        return view('admin.coupons.create');
+        $types = CouponType::get();
+
+        return view('admin.coupons.create',[
+            'types' => $types
+        ]);
     }
 
 
@@ -132,6 +137,7 @@ class CouponController extends Controller
         $coupon_code = new Coupon();
         $coupon_code->code = $request->code;
         $coupon_code->type = $request->type;
+        $coupon_code->type_id = $request->type;
         $coupon_code->value = $request->value;
         $coupon_code->percent_off = $request->percent_off;
         $coupon_code->expires_at = $request->expires_at;
