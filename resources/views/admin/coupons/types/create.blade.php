@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Create</h6>
+  <h6 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Home / </span><span class="text-muted fw-light"><a href="{{ route('admin.coupon_types.index') }}">Coupon Types </a> /</span> Create</h6>
 
   <div class="row">
       <div class="col-md-12">
@@ -12,7 +12,7 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-header d-flex align-items-center justify-content-between">
-        <h5 class="card-title m-0 me-2">Coupon Code</h5>
+        <h5 class="card-title m-0 me-2">Coupon Type</h5>
         <div class="dropdown">
           <button
             class="btn p-0"
