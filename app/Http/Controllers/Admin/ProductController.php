@@ -94,7 +94,12 @@ class ProductController extends Controller
         ->update([
             'name' => $request->name,
             'price' => $request->price,
+            'category_id' => $request->category,
+            'category_type_id' => $request->category_type->id,
+            'brand_id' => $request->brand,
+            'stock' => $request->stock,
             'sale_price' => $request->sale_price,
+            'category_type_id' => $request->category_type->id,
             'regular_price' => $request->regular_price,
             'description' => $request->description,
             // 'updated_by' => $request->description,
@@ -136,12 +141,15 @@ class ProductController extends Controller
     {
 
        $category = ProductCategory::find($request->category);
+       
+       $category_type = CategoryType::find($request->category_type_id);
 
        $product = new Product();
        $product->name = $request->name;
        $product->sale_price = $request->sale_price;
        $product->regular_price = $request->regular_price;
        $product->category_id = $request->category;
+       $product->category_type_id = $request->category_type->id;
        $product->brand_id = $request->brand;
        $product->stock = $request->stock;
        $product->sku = 50;
