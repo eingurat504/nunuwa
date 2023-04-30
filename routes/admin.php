@@ -65,6 +65,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::put('/{category_type}/update','CategoryTypeController@update')->name('update');
         Route::get('/{category_type}/attached_images','CategoryTypeController@attachedImages')->name('attached');
         Route::post('/{category_type}/attach','CategoryTypeController@attachImages')->name('attach');
+        Route::delete('/{category_type}/delete','CategoryTypeController@delete')->name('delete');
     });
 
     Route::pattern('product', '^\d+$');
