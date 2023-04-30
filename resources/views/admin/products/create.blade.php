@@ -42,6 +42,22 @@
               </div>
 
               <div class="mb-3 col-md-12">
+                <label for="category_type" class="form-label">Category Type</label>
+                <select class="form-control" id="category_type"
+                    name="category_type" value="{{ old('category_type') }}">
+                      <option value="">Choose category_type</option>
+                      @foreach($categories as $category_type) 
+                          <option value="{{ $category_type->id }}">{{ $category_type->name }}</option>
+                      @endforeach
+                </select>
+                @error('category_type')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
+              </div>
+
+              <div class="mb-3 col-md-12">
                 <label for="organization" class="form-label">Brand</label>
                 <select class="form-control" id="brand"
                     name="brand" value="{{ old('brand') }}">

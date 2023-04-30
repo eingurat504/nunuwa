@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use App\Models\CategoryType;
 use App\Models\Product;
 use App\Models\Brand;
 use App\Models\ProductImage;
@@ -142,7 +143,7 @@ class ProductController extends Controller
 
        $category = ProductCategory::find($request->category);
        
-       $category_type = CategoryType::find($request->category_type_id);
+       $category_type = CategoryType::find($request->category_type);
 
        $product = new Product();
        $product->name = $request->name;
