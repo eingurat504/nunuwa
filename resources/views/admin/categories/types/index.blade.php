@@ -51,7 +51,7 @@
                     <a class="dropdown-item" href="{{ route('admin.category_types.edit', $category->id) }}"
                       ><i class="bx bx-edit-alt me-2"></i> Edit</a
                     >
-                    <a class="dropdown-item" href="javascript:void(0);"
+                    <a class="dropdown-item" href="{{ route('admin.category_types.delete', $category->id) }}"
                       ><i class="bx bx-trash me-2"></i> Delete</a
                     >
                   </div>
