@@ -58,6 +58,22 @@
               </div>
 
               <div class="mb-3 col-md-12">
+                <label for="category_type" class="form-label">Category Type</label>
+                <select class="form-control" id="category_type"
+                    name="category_type" value="{{ old('category_type') }}">
+                      <option value="">Choose category_type</option>
+                      @foreach($categories as $category_type) 
+                          <option value="{{ $category_type->id }}" {{ old('category_type', $product->category_type) == $category_type->id  ? 'selected' : ''}}>{{ $category_type->name }}</option>
+                      @endforeach
+                </select>
+                @error('category_type')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror 
+              </div>
+
+              <div class="mb-3 col-md-12">
                 <label for="regular_price" class="form-label">Regular Price</label>
                 <input class="form-control" type="integer" id="regular_price"
                   name="regular_price" value="{{ old('regular_price', $product->regular_price) }}" placeholder="regular_price" />
