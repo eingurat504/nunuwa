@@ -150,7 +150,7 @@ class ProductController extends Controller
        $product->sale_price = $request->sale_price;
        $product->regular_price = $request->regular_price;
        $product->category_id = $request->category;
-       $product->category_type_id = $request->category_type->id;
+       $product->category_type_id = $category_type->id;
        $product->brand_id = $request->brand;
        $product->stock = $request->stock;
        $product->sku = 50;
