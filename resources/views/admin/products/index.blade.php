@@ -47,7 +47,7 @@
                 <tr>
                   <td><a href="{{ route('admin.categories.show', $product->category->id) }}">{{ $product->category->name }}</a></td>
                   <td><a href="{{ route('admin.products.show', $product->id) }}">{{$product->name }}</a></td>
-                  <td>${{ $product->price }}</td>
+                  <td>${{ $product->regular_price }}</td>
                   <td>{{ $product->created_at }}</td>
                   <td>{{ $product->updated_at }}</td>
                   <td class="text-center">
